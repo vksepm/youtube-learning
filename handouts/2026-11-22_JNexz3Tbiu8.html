@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build the Workshop Before the Software Factory — Armin Ronacher, Earendil — Technical Learning Handout</title>
+  <!-- Tailwind Play CDN is a JIT runtime (no versioned URL, no CORS/SRI) - SRI
+       not applicable; mermaid below is version-pinned and SRI-hardened instead. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js" integrity="sha384-EOXBFmc3gx5mb+vn0vPvvGqACToJD24hhacX5Yx+8NUUQrHIle/Qi5Bg9o3zKwW2" crossorigin="anonymous"></script>
+  <style>
+    .handout-body p { margin: 0.5rem 0; }
+    .handout-body ul { margin: 0.5rem 0; }
+    .handout-body code { background: #f1f5f9; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.85em; }
+    pre.mermaid { display: flex; justify-content: center; background: #ffffff; }
+    pre code.block { display: block; white-space: pre-wrap; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+<header class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+  <div class="max-w-4xl mx-auto px-6 py-10">
+    <p class="text-xs uppercase tracking-widest text-indigo-200">Technical Learning Handout</p>
+    <h1 class="text-3xl font-bold mt-2 leading-tight">Build the Workshop Before the Software Factory — Armin Ronacher, Earendil</h1>
+    <p class="mt-3 text-sm text-indigo-100">
+      AI Engineer ·
+      <a class="underline hover:text-white" href="https://www.youtube.com/watch?v=JNexz3Tbiu8">▶ Watch on YouTube</a> ·
+      Generated 2026-11-22 21:53 UTC
+    </p>
+    
+    <p class="mt-1 text-xs text-indigo-200">
+      Model: <code class="text-indigo-100">gemini-3.6-flash</code> (agentic mode) ·
+      <a class="underline hover:text-white" href="../transcripts/2026-11-22_JNexz3Tbiu8_enriched.md">Full Interleaved Transcript</a>
+    </p>
+    
+  </div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-8 space-y-10 handout-body">
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">⚡ TL;DR</h2>
+    <ul class="list-disc pl-5 space-y-1">
+      <li>Model intelligence, not harness prompting tricks, drove a 6x jump in task autonomy: P90 runtime expanded from 2.4m to 14m per prompt while manual corrections dropped from 8.8 to 2.9 per 100 prompts on an unchanged harness.</li><li>Human attention is the fundamental scaling bottleneck: While daily active agent execution scaled from 6.0 to 43.7 hours, human prompt volume (120–180/day) and actively maintained repositories (10–12/month) remained completely flat.</li><li>Reject the &#39;Software Factory&#39; in favor of the &#39;Software Atelier&#39;: Direct agent leverage toward high-ambition engineering—formal verification, extreme performance, and memory safety (Rust)—rather than mass-producing unmaintainable code slop.</li><li>Harness architecture must pivot to Durability and &#39;Codemode&#39;: Replace massive context-window tool dumps with harness-side script orchestration (loops/concurrency) and durable execution that suspends runs during human delays or flexible inference windows.</li>
+    </ul>
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">📋 Executive Summary</h2>
+    <p>In &#39;Build the Workshop Before the Software Factory,&#39; Armin Ronacher analyzes telemetry from over 3,100 production sessions using Earendel&#39;s Pi coding agent across multiple model generations (GPT-5.3 Codex through Opus 5.5). He demonstrates that the core agent harness required zero modifications over the past year; raw model improvements alone eliminated the need for bespoke prompt hacking and complex sub-plugins. However, as agent autonomy expanded from 2.4 minutes (19 tool calls) to 14 minutes (64 tool calls) per prompt, a profound operational asymmetry emerged. While active agent compute surged exponentially to 43.7 hours per day, human developer prompt throughput remained pinned at 120–180 prompts per day, and actively maintained projects plateaued strictly at 10–12 repositories despite 141 cumulative projects started.</p><p>Ronacher argues against the current industry obsession with building fully autonomous &#39;software factories&#39; that generate throwaway, low-quality software and tax upstream ecosystems (e.g., GitHub, package registries, web infrastructure). Instead, teams must cultivate the &#39;Software Atelier&#39;—treating agents as precision power tools (comparable to CNC mills or 3D printers) guided by senior architectural taste. This operating model requires moderating agent execution speed to human comprehension limits, curbing uncontrolled codebase sprawl (&#39;Wildwuchs&#39;) in favor of shared open protocols, and evolving harness architectures toward durable execution (suspending tasks across asynchronous human review or discounted batch-inference windows) and harness-side &#39;Codemode&#39; script loops powered by cheap classifier models (Chef, Jev).</p>
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">🏗️ Architecture at a Glance</h2>
+    <pre class="mermaid">flowchart TD
+    subgraph Workshop [The Software Atelier - Human Paced]
+        User[Senior Engineer / Taste] -->|Directs & Prunes| Pacing[Pacing & Verification Gate]
+        Pacing -->|Say 'Not Like This'| Reject[Halt Architectural Drift / Wildwuchs]
+        Pacing -->|Exec Summary / HTML Spec| Approve[Approve Plan]
+    end
+
+    subgraph Harness [Durable Harness Architecture]
+        Approve --> Orchestrator[Durable Agent Orchestrator]
+        Orchestrator -->|Suspend / Resume| StateStore[(Transcript & State Store)]
+        Orchestrator -->|Flexible Scheduling / Batch Pricing| API[Inference Engine]
+        
+        subgraph Codemode [Harness-Side Execution Sandbox]
+            Orchestrator -->|Dispatch Programmatic Task| JS[Codemode: JS/Bash Engine]
+            JS -->|Tight Loop / No Context Bloat| Classifiers[Fast Classifier Models: Chef / Jev]
+            Classifiers -->|Scores & Structured Decisions| JS
+            JS -->|Run Tools / Git / AST / Edits| LocalEnv[Local Execution & FS]
+        end
+        
+        LocalEnv -->|Synthesized Result Only| Orchestrator
+    end
+
+    Orchestrator -->|Presents Verified Output| Workshop</pre>
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">🖥️ Key Screens &amp; Metrics</h2>
+    <div class="grid gap-3 md:grid-cols-2">
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=161s">[02:41] I step in less with every model</a>
+        <p class="text-sm text-slate-600 mt-1">Telemetry over N=3,153 sessions reveals human corrections dropped monotonically from 8.8 per 100 prompts (GPT-5.3 Codex) to 7.2 (GPT-5.5), 5.3 (GPT-5.6), and 2.9 (Opus 5.5). Escape aborts declined from 13.1 to 7.2 per 100 prompts.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=190s">[03:10] How far one prompt carries, by model</a>
+        <p class="text-sm text-slate-600 mt-1">P90 runtime per prompt surged from 2.4 minutes (Opus 4.6 and GPT-5.3 Codex) to 5.0m (GPT-5.5), 5.5m (GPT-5.6), and 14.0m (Opus 5.5). Concurrently, P90 tool calls per prompt rose from 19 to 64.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=227s">[03:47] Tool use by model, same harness</a>
+        <p class="text-sm text-slate-600 mt-1">Under an identical harness, modern models dramatically shifted invocation strategy: Opus 5.5 compressed structured file edit tools (edit: 6%, write: 4%) while expanding direct shell execution to 41% &#39;bash: git&#39; and 20% &#39;bash: other&#39;.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=371s">[06:11] Agent-hours per day and my prompts per day</a>
+        <p class="text-sm text-slate-600 mt-1">Contrasts static human prompt input (~110–180 prompts/day) against an exponential rise in parallel agent execution hours, rocketing from ~5–6 hours/day in March–June to 14.4 hours/day in October and 43.7 hours/day in early November.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=407s">[06:47] Projects started and projects I keep working on</a>
+        <p class="text-sm text-slate-600 mt-1">Cumulative repositories initiated climbed steadily from 24 (March) to 141 (October). Conversely, repositories with active maintenance (&gt;5 days/month) remained completely flat at a baseline of 6 to 12 projects.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=1012s">[16:52] Codemode: expressiveness in the tool call</a>
+        <p class="text-sm text-slate-600 mt-1">Outlines architectural evolution: bash/JS scripts compose tool workflows harness-side, running programmatic loops and concurrency without pushing raw intermediate iterations through the model&#39;s context window.</p>
+      </div>
+      
+    </div>
+  </section>
+  
+  
+  <section class="space-y-5">
+    <h2 class="text-xl font-bold text-indigo-700">🔍 Timestamped Deep Dives</h2>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=81s">[01:21] The Stable Harness Hypothesis &amp; Model Autonomy Telemetry</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>A prevalent assumption in agent engineering is that improving system utility requires increasingly sophisticated harnesses, complex prompt architectures, and dynamic multi-agent research plugins. Ronacher's production data disproves this hypothesis. The core harness of the <code>Pi</code> coding agent remained virtually unchanged over an entire calendar year, retaining the identical baseline tool interfaces (file read, AST analysis, text edit, file write, and bash).</p><p>Despite this frozen harness, agent capabilities scaled exponentially strictly via raw model capability gains:</p><ul><li><strong>Intervention collapse:</strong> Developer corrections dropped by 67% (from 8.8 to 2.9 per 100 prompts), while manual user aborts (hitting <code>ESC</code>) fell from 13.1 to 7.2.</li><li><strong>Expansion of autonomous horizon:</strong> The P90 execution envelope expanded from 2.4 minutes and 19 tool calls under Opus 4.6 to 14.0 minutes and 64 tool calls under Opus 5.5.</li><li><strong>Emergent CLI affinity:</strong> Without prompt modification, advanced reasoning models naturally abandoned rigid structured editing primitives (edit/write fell from ~35% down to 10%) in favor of direct CLI workflows (Git operations accounted for 41% of total tool calls).</li><li><strong>Plugin obsolescence:</strong> Bespoke agent mechanisms like 'Pi Auto Research' became fully redundant; modern frontier models perform sophisticated discovery without harness steering.</li></ul></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Model Generation | P90 Minutes / Prompt | P90 Tool Calls | Corrections / 100 Prompts | ESC Aborts / 100 Prompts |
+|:---|:---:|:---:|:---:|:---:|
+| GPT-5.3 Codex | 2.4 min | 19 | 8.8 | 13.1 |
+| GPT-5.5 | 5.0 min | 37 | 7.2 | 12.0 |
+| GPT-5.6 | 5.5 min | 54 | 5.3 | 10.4 |
+| Opus 5.5 | 14.0 min | 64 | 2.9 | 7.2 |</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=277s">[04:37] The Attention Bottleneck and the &#39;Wildwuchs&#39; Ecosystem Hazard</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>While agent autonomy scales compute without friction, human cognitive bandwidth remains strictly constant. Telemetry illustrates this severe operational decoupling: daily developer prompt volume remained flat within a band of 111–182 prompts per day, yet aggregate agent execution hours exploded from 6.0 hours/day to 43.7 hours/day due to massive parallel execution.</p><p>This asymmetry creates critical failure modes across the software development lifecycle:</p><ul><li><strong>The Maintenance Horizon Trap:</strong> Zero-marginal-cost software generation resulted in 141 cumulative projects initiated, but active monthly project maintenance (>5 days/month) was capped at 10–12 repositories. Software factories generate immense initial surface area that human operators ultimately abandon once the novelty or immediate need subsides.</li><li><strong>Ecosystem Taxation:</strong> Autonomous agent loops heavily tax upstream infrastructure that was never designed for non-human traffic, including Git remotes, package registries (npm/crates.io), CI runners, and external web properties scraped for context.</li><li><strong>'Wildwuchs' (Uncontrolled Code Sprawl):</strong> Agents possess an intrinsic bias toward reimplementing components from scratch rather than negotiating the friction of external dependencies or shared standards. Ronacher warns this leads to severe divergence—citing examples like incompatible, ad-hoc TAR parsers that parse archives differently—eroding open protocols and cross-system interoperability.</li></ul></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">Telemetry Disconnect (March - November):
+  Cumulative Repositories Created:  24  --&gt; 141 (+487%)
+  Active Repositories Maintained:   12  --&gt;  11 (-8%)
+  Parallel Agent-Hours / Active Day: 6.0 --&gt; 43.7 (+628%)
+  Human Prompts Ingested / Day:     126 --&gt; 159 (+26%)</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=477s">[07:57] The Software Atelier: Pacing, Senior Taste, and Excellence</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>The alternative to the high-volume, low-quality software factory is the <em>Software Atelier</em> (workshop). In this paradigm, agents are power tools analogous to CNC mills or 3D printers: they do not replace the artisan; they dramatically expand the technical ambition and fidelity of what an individual artisan can construct.</p><p>Key engineering principles of the workshop model include:</p><ul><li><strong>Exercising Architectural Taste ('Not Like This'):</strong> Senior domain expertise is distinguished by knowing when and how to reject agent proposals. Without deliberate pruning, agents accumulate features into incoherent, bloated systems (the 'Homer Simpson car').</li><li><strong>Matching Velocity to Human Comprehension:</strong> Developers must deliberately slow down agent execution to match their own verification bandwidth. A proven tactical pattern is forcing the agent to render a concise executive summary formatted into a clean, typeset HTML artifact prior to executing verification or code commits.</li><li><strong>Directing Surplus Power Toward Hard Engineering:</strong> Rather than producing disposable application slop, agentic power should be channeled into high-leverage domains that humans traditionally skip due to time constraints: formal verification proofs, aggressive performance tuning/benchmarking, and porting systems to memory-safe architectures (Rust).</li></ul></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block"># Atelier Workflow: Verification Pacing Constraint Pattern
+PROMPT_RULE=&#34;&#34;&#34;
+Before invoking test suites or committing changes to git:
+1. Stop code modifications.
+2. Emit a structured, typeset HTML executive summary to `.workshop/review.html`:
+   - Invariant check: architectural invariants maintained vs broken.
+   - Dependency delta: external vs internal primitives used.
+   - Verification plan: formal constraints and performance regression risks.
+3. Await explicit human acknowledgement before proceeding.
+&#34;&#34;&#34;</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=902s">[15:02] Harness Architectural Evolution: Durability, Codemode &amp; Classifiers</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>To support the atelier paradigm, agent harnesses must undergo fundamental architectural shifts rather than incremental prompt tuning:</p><ul><li><strong>Durable Execution Workflows:</strong> Runs now routinely outlive human attention spans and terminal session lifecycles. Humans take hours to review pull requests or answer clarifying questions. The harness must be a durable state machine that can suspend execution, persist its context transcript, and safely wake up.</li><li><strong>Economic Inference Scheduling:</strong> With provider pricing offering substantial discounts for flexible/batch scheduling, durable agents can pause intermediate runs when token latency is high and resume execution when spot capacity opens.</li><li><strong>Codemode (Harness-Side Orchestration):</strong> Instead of dumping hundreds of tools into the LLM context and bouncing every intermediate step back into the transcript, the harness provides a JavaScript/Bash execution engine. The LLM writes small scripts that execute concurrency and loops harness-side, returning only final transformed states.</li><li><strong>Loop-Embedded Classifier Models:</strong> Codemode allows embedding fast, ultra-cheap classification models (e.g., Chef, Jev) directly inside iterative loops. For example, processing 3,000 incoming support tickets or issue triage can be executed programmatically: the classifier outputs discrete scores and choices directly to the script without flooding the main agent context with prose.</li></ul></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">// Conceptual Harness-Side Codemode Execution
+// Executes locally within the harness sandbox; keeps intermediate loops out of LLM context
+async function triageSupportIssues(issues) {
+  const results = [];
+  for (const issue of issues) {
+    // Direct invocation of fast classifier model (e.g., Chef/Jev) via harness RPC
+    const classification = await harness.classify({
+      model: &#39;chef-v1&#39;,
+      prompt: `Score severity (1-5) and assign domain category: ${issue.body}`,
+      responseFormat: { type: &#39;json_object&#39; }
+    });
+    
+    if (classification.score &gt;= 4) {
+      results.push({ id: issue.id, category: classification.category });
+    }
+  }
+  // Only return aggregate summary to primary agent context
+  return results;
+}</code></pre>
+      
+    </article>
+    
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">✅ Actionable Engineering Checklist</h2>
+    <ul class="space-y-2">
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Freeze and simplify the agent harness: Eliminate bespoke prompt wrappers and complex research plugins; rely on frontier reasoning models to handle tool planning natively.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Implement an intentional pacing gate: Require agents to generate human-readable executive summaries (e.g., styled HTML specs) before executing verification runs or finalizing commits.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Enforce open protocol standards over rewrites: Actively reject agent tendencies toward &#39;Wildwuchs&#39; (bespoke reinvention of parsers, formats, or protocols) to preserve ecosystem interoperability.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Architect for durable agent workflows: Decouple the execution harness from interactive terminal lifecycles so agents can suspend state, await human reviews for hours, and leverage discounted flexible-tier inference.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Adopt &#39;Codemode&#39; for bulk operations: Execute programmatic loops (bash/JS) and fast classifier models (Chef/Jev) harness-side to crunch high-volume tasks without polluting the primary context window.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Redirect agent leverage into high-assurance engineering: Mandate agent-driven formal verification proofs, performance profiling, and memory-safe language adoption (Rust) across production repositories.</span></li>
+      
+    </ul>
+  </section>
+  
+  <footer class="text-xs text-slate-400 border-t border-slate-200 pt-4">
+    Autonomously generated by the Hermes YouTube Learning Pipeline (Gemini
+    Interactions API) from the
+    <a class="underline hover:text-slate-600" href="../transcripts/2026-11-22_JNexz3Tbiu8_enriched.md">persisted interleaved transcript</a>.
+    Verify claims against the source video before acting on them.
+  </footer>
+</main>
+<script>
+  if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose' }); }
+</script>
+</body>
+</html>
