@@ -3,229 +3,267 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build the Workshop Before the Software Factory — Armin Ronacher, Earendil — Technical Learning Handout</title>
-  <!-- Tailwind Play CDN is a JIT runtime (no versioned URL, no CORS/SRI) - SRI
-       not applicable; mermaid below is version-pinned and SRI-hardened instead. -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js" integrity="sha384-EOXBFmc3gx5mb+vn0vPvvGqACToJD24hhacX5Yx+8NUUQrHIle/Qi5Bg9o3zKwW2" crossorigin="anonymous"></script>
+  <title>Build the Workshop Before the Software Factory - Armin Ronacher, Earendil — Handout</title>
+  
+  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.inline{display:inline}.flex{display:flex}.table{display:table}.grid{display:grid}.w-full{width:100%}.max-w-4xl{max-width:56rem}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-baseline{align-items:baseline}.justify-between{justify-content:space-between}.gap-2{gap:.5rem}.gap-4{gap:1rem}.gap-x-4{-moz-column-gap:1rem;column-gap:1rem}.gap-y-1{row-gap:.25rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px*var(--tw-divide-y-reverse))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity,1))}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:.25rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-indigo-600{--tw-gradient-from:#4f46e5 var(--tw-gradient-from-position);--tw-gradient-to:rgba(79,70,229,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-violet-600{--tw-gradient-to:#7c3aed var(--tw-gradient-to-position)}.p-3{padding:.75rem}.p-5{padding:1.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pl-5{padding-left:1.25rem}.pr-3{padding-right:.75rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.align-top{vertical-align:top}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-tight{line-height:1.25}.tracking-wide{letter-spacing:.025em}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70/var(--tw-text-opacity,1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255/var(--tw-text-opacity,1))}.text-indigo-200{--tw-text-opacity:1;color:rgb(199 210 254/var(--tw-text-opacity,1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229/var(--tw-text-opacity,1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-sky-800{--tw-text-opacity:1;color:rgb(7 89 133/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.accent-indigo-600{accent-color:#4f46e5}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.hover\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:underline:hover{text-decoration-line:underline}@media (min-width:768px){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:grid-cols-\[max-content_1fr\]{grid-template-columns:max-content 1fr}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}}</style>
   <style>
-    .handout-body p { margin: 0.5rem 0; }
-    .handout-body ul { margin: 0.5rem 0; }
-    .handout-body code { background: #f1f5f9; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.85em; }
-    pre.mermaid { display: flex; justify-content: center; background: #ffffff; }
-    pre code.block { display: block; white-space: pre-wrap; }
+    html { scroll-behavior: smooth; }
+    .mermaid-wrap svg { max-width: 100%; height: auto; margin: 0 auto; }
+    @media print {
+      body { background: #fff; }
+      header { background: #fff !important; color: #000 !important; }
+      header * { color: #000 !important; }
+      section, article, tr { break-inside: avoid; }
+      a { text-decoration: none; color: inherit; }
+      nav { display: none; }
+    }
   </style>
 </head>
+
+
 <body class="bg-slate-50 text-slate-800 antialiased">
 <header class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
-  <div class="max-w-4xl mx-auto px-6 py-10">
-    <p class="text-xs uppercase tracking-widest text-indigo-200">Technical Learning Handout</p>
-    <h1 class="text-3xl font-bold mt-2 leading-tight">Build the Workshop Before the Software Factory — Armin Ronacher, Earendil</h1>
-    <p class="mt-3 text-sm text-indigo-100">
-      AI Engineer ·
-      <a class="underline hover:text-white" href="https://www.youtube.com/watch?v=JNexz3Tbiu8">▶ Watch on YouTube</a> ·
-      Generated 2026-11-22 21:53 UTC
+  <div class="max-w-4xl mx-auto px-6 py-8">
+    <h1 class="text-2xl md:text-3xl font-bold leading-tight">Build the Workshop Before the Software Factory - Armin Ronacher, Earendil</h1>
+    <p class="mt-2 text-sm text-indigo-100">
+      AI Engineer · 19 min talk ·
+      <a class="underline hover:text-white" href="https://www.youtube.com/watch?v=JNexz3Tbiu8" target="_blank" rel="noopener">Watch</a> ·
+      <a class="underline hover:text-white" href="https://vksepm.github.io/youtube-learning/transcripts/2026-11-22_JNexz3Tbiu8_enriched.md">Transcript</a> ·
+      2026-11-22 23:31 UTC · <span class="text-indigo-200">gemini-3.6-flash</span>
     </p>
-    
-    <p class="mt-1 text-xs text-indigo-200">
-      Model: <code class="text-indigo-100">gemini-3.6-flash</code> (agentic mode) ·
-      <a class="underline hover:text-white" href="../transcripts/2026-11-22_JNexz3Tbiu8_enriched.md">Full Interleaved Transcript</a>
-    </p>
-    
+    <p class="mt-4 text-base md:text-lg font-medium text-white">Build the atelier before the factory: models improved exponentially on an unchanged harness while human attention and maintenance did not scale, so spend the surplus on excellent, ambitious software.</p>
   </div>
 </header>
-<main class="max-w-4xl mx-auto px-6 py-8 space-y-10 handout-body">
+
+<main class="max-w-4xl mx-auto px-6 py-6 space-y-6">
+
   
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">⚡ TL;DR</h2>
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">TL;DR</h2>
     <ul class="list-disc pl-5 space-y-1">
-      <li>Model intelligence, not harness prompting tricks, drove a 6x jump in task autonomy: P90 runtime expanded from 2.4m to 14m per prompt while manual corrections dropped from 8.8 to 2.9 per 100 prompts on an unchanged harness.</li><li>Human attention is the fundamental scaling bottleneck: While daily active agent execution scaled from 6.0 to 43.7 hours, human prompt volume (120–180/day) and actively maintained repositories (10–12/month) remained completely flat.</li><li>Reject the &#39;Software Factory&#39; in favor of the &#39;Software Atelier&#39;: Direct agent leverage toward high-ambition engineering—formal verification, extreme performance, and memory safety (Rust)—rather than mass-producing unmaintainable code slop.</li><li>Harness architecture must pivot to Durability and &#39;Codemode&#39;: Replace massive context-window tool dumps with harness-side script orchestration (loops/concurrency) and durable execution that suspends runs during human delays or flexible inference windows.</li>
+      <li>Model upgrades, not harness engineering, delivered the year&#39;s capability gains on an unchanged Pi harness; most prompting tricks became unnecessary.</li><li>Human attention did not scale: starting projects got fast while finishing and maintenance did not, and maintained projects stayed flat as starts accumulated.</li><li>Evolve the harness where it pays — durable suspend-resume, codemode, cheap classifier models — to keep runs alive and context lean.</li><li>Spend the surplus on excellence: verified, faster, memory-safe (Rust) software, not mass-produced slop — &#39;we can build anything, but should we?&#39;</li>
     </ul>
+    <p class="mt-3 text-sm text-slate-600">Talk &#39;The Software Atelier — a year of harnesses, models and machines&#39; by Armin Ronacher, CTO of Earendel (slide spelling; the video title writes Earendil), maker of the Pi coding agent, at the AI Engineer Code Summit. The evidence is his own Pi session corpus filtered to the default tool set: self-measured, single-user workflow data, not a cross-user or team benchmark. The harness-evolution section is argument with illustrative examples rather than measured results.</p>
   </section>
   
-  
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">📋 Executive Summary</h2>
-    <p>In &#39;Build the Workshop Before the Software Factory,&#39; Armin Ronacher analyzes telemetry from over 3,100 production sessions using Earendel&#39;s Pi coding agent across multiple model generations (GPT-5.3 Codex through Opus 5.5). He demonstrates that the core agent harness required zero modifications over the past year; raw model improvements alone eliminated the need for bespoke prompt hacking and complex sub-plugins. However, as agent autonomy expanded from 2.4 minutes (19 tool calls) to 14 minutes (64 tool calls) per prompt, a profound operational asymmetry emerged. While active agent compute surged exponentially to 43.7 hours per day, human developer prompt throughput remained pinned at 120–180 prompts per day, and actively maintained projects plateaued strictly at 10–12 repositories despite 141 cumulative projects started.</p><p>Ronacher argues against the current industry obsession with building fully autonomous &#39;software factories&#39; that generate throwaway, low-quality software and tax upstream ecosystems (e.g., GitHub, package registries, web infrastructure). Instead, teams must cultivate the &#39;Software Atelier&#39;—treating agents as precision power tools (comparable to CNC mills or 3D printers) guided by senior architectural taste. This operating model requires moderating agent execution speed to human comprehension limits, curbing uncontrolled codebase sprawl (&#39;Wildwuchs&#39;) in favor of shared open protocols, and evolving harness architectures toward durable execution (suspending tasks across asynchronous human review or discounted batch-inference windows) and harness-side &#39;Codemode&#39; script loops powered by cheap classifier models (Chef, Jev).</p>
-  </section>
-  
-  
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">🏗️ Architecture at a Glance</h2>
-    <pre class="mermaid">flowchart TD
-    subgraph Workshop [The Software Atelier - Human Paced]
-        User[Senior Engineer / Taste] -->|Directs & Prunes| Pacing[Pacing & Verification Gate]
-        Pacing -->|Say 'Not Like This'| Reject[Halt Architectural Drift / Wildwuchs]
-        Pacing -->|Exec Summary / HTML Spec| Approve[Approve Plan]
-    end
 
-    subgraph Harness [Durable Harness Architecture]
-        Approve --> Orchestrator[Durable Agent Orchestrator]
-        Orchestrator -->|Suspend / Resume| StateStore[(Transcript & State Store)]
-        Orchestrator -->|Flexible Scheduling / Batch Pricing| API[Inference Engine]
-        
-        subgraph Codemode [Harness-Side Execution Sandbox]
-            Orchestrator -->|Dispatch Programmatic Task| JS[Codemode: JS/Bash Engine]
-            JS -->|Tight Loop / No Context Bloat| Classifiers[Fast Classifier Models: Chef / Jev]
-            Classifiers -->|Scores & Structured Decisions| JS
-            JS -->|Run Tools / Git / AST / Edits| LocalEnv[Local Execution & FS]
-        end
-        
-        LocalEnv -->|Synthesized Result Only| Orchestrator
-    end
-
-    Orchestrator -->|Presents Verified Output| Workshop</pre>
-  </section>
   
-  
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">🖥️ Key Screens &amp; Metrics</h2>
-    <div class="grid gap-3 md:grid-cols-2">
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=161s">[02:41] I step in less with every model</a>
-        <p class="text-sm text-slate-600 mt-1">Telemetry over N=3,153 sessions reveals human corrections dropped monotonically from 8.8 per 100 prompts (GPT-5.3 Codex) to 7.2 (GPT-5.5), 5.3 (GPT-5.6), and 2.9 (Opus 5.5). Escape aborts declined from 13.1 to 7.2 per 100 prompts.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=190s">[03:10] How far one prompt carries, by model</a>
-        <p class="text-sm text-slate-600 mt-1">P90 runtime per prompt surged from 2.4 minutes (Opus 4.6 and GPT-5.3 Codex) to 5.0m (GPT-5.5), 5.5m (GPT-5.6), and 14.0m (Opus 5.5). Concurrently, P90 tool calls per prompt rose from 19 to 64.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=227s">[03:47] Tool use by model, same harness</a>
-        <p class="text-sm text-slate-600 mt-1">Under an identical harness, modern models dramatically shifted invocation strategy: Opus 5.5 compressed structured file edit tools (edit: 6%, write: 4%) while expanding direct shell execution to 41% &#39;bash: git&#39; and 20% &#39;bash: other&#39;.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=371s">[06:11] Agent-hours per day and my prompts per day</a>
-        <p class="text-sm text-slate-600 mt-1">Contrasts static human prompt input (~110–180 prompts/day) against an exponential rise in parallel agent execution hours, rocketing from ~5–6 hours/day in March–June to 14.4 hours/day in October and 43.7 hours/day in early November.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=407s">[06:47] Projects started and projects I keep working on</a>
-        <p class="text-sm text-slate-600 mt-1">Cumulative repositories initiated climbed steadily from 24 (March) to 141 (October). Conversely, repositories with active maintenance (&gt;5 days/month) remained completely flat at a baseline of 6 to 12 projects.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=1012s">[16:52] Codemode: expressiveness in the tool call</a>
-        <p class="text-sm text-slate-600 mt-1">Outlines architectural evolution: bash/JS scripts compose tool workflows harness-side, running programmatic loops and concurrency without pushing raw intermediate iterations through the model&#39;s context window.</p>
-      </div>
-      
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h2 class="text-lg font-bold text-indigo-700">Evidence &amp; caveats</h2>
+      <p class="text-xs text-slate-500">
+        <span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span> on-screen data ·
+        <span class="px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">stated</span> speaker claim ·
+        <span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800">anecdote</span>
+      </p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="text-left text-xs uppercase tracking-wide text-slate-500 border-b border-slate-200">
+          <tr><th class="py-2 pr-3">When</th><th class="py-2 pr-3">Claim</th><th class="py-2 pr-3">Figures</th><th class="py-2">Caveat</th></tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 align-top">
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=161s" target="_blank" rel="noopener">[02:41]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">The same user intervened less with every newer model on an unchanged harness.</td>
+            <td class="py-2 pr-3 text-slate-700">Corrections per 100 prompts: 8.8, 7.2, 5.3, 2.9; ESC aborts per 100 prompts: 13.1, 12.0, 10.4, 7.2 for GPT-5.3 Codex, GPT-5.5, GPT-5.6, Opus 5.5; N=3,153 sessions, March 14 to November 2026</td>
+            <td class="py-2 text-slate-600">Single user, sessions outside task engine, default tool set; corrections counted via the Chef model.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=190s" target="_blank" rel="noopener">[03:10]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">One prompt now carries far more autonomous work; P90 runtime and tool calls rose across five model generations.</td>
+            <td class="py-2 pr-3 text-slate-700">P90 agent minutes per prompt 2.4 with Opus 4.6 and GPT-5.3 Codex to 14 with Opus 5.5; tool calls 19 to 64; N=3,153 sessions</td>
+            <td class="py-2 text-slate-600">Runs grouped by the model that made most calls; slide footnote window reads December 2026, unclear in transcript.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=227s" target="_blank" rel="noopener">[03:47]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">The newest model shifted the tool mix heavily toward bash git, away from the harness&#39;s own edit and write tools.</td>
+            <td class="py-2 pr-3 text-slate-700">bash git 14-18 percent for GPT-5.3 Codex, GPT-5.5, GPT-5.6 versus 41 percent for Opus 5.5; Opus 5.5 edit 6 percent, write 4 percent</td>
+            <td class="py-2 text-slate-600">Codemode was not yet in Pi before the Opus 5.5 sessions; Astra and Sonnet excluded, insufficient data in his test set.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=371s" target="_blank" rel="noopener">[06:11]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Human prompt volume stayed flat while agent working time per day climbed on the same sessions.</td>
+            <td class="py-2 pr-3 text-slate-700">Prompts per day 111-182 March-October; agent-hours per day 4.8-14.4 March-October and 43.7 in partial November 1-8; N=3,153 sessions</td>
+            <td class="py-2 text-slate-600">Hours are minutes with activity, gaps under 2 minutes folded, summed across parallel sessions — not wall-clock; per active day.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=407s" target="_blank" rel="noopener">[06:47]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Project starts accumulated cumulatively while regularly maintained projects stayed roughly flat.</td>
+            <td class="py-2 pr-3 text-slate-700">Cumulative projects started 24 in March to 141 by October; projects with 5-plus active days per month ranged 6-12</td>
+            <td class="py-2 text-slate-600">Single user; maintenance proxied by working 5-plus days in a month.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=1097s" target="_blank" rel="noopener">[18:17]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">stated</span></td>
+            <td class="py-2 pr-3">Classifier models called from codemode loops can crunch large numbers of squishy human tasks at machine speed.</td>
+            <td class="py-2 pr-3 text-slate-700">Illustrative: 3,000 incoming customer support requests; thousands of issues in no time versus hours previously; no measured run</td>
+            <td class="py-2 text-slate-600">Illustrative scenario; throughput, accuracy and cost not quantified.</td>
+          </tr>
+          
+        </tbody>
+      </table>
     </div>
   </section>
   
+
   
-  <section class="space-y-5">
-    <h2 class="text-xl font-bold text-indigo-700">🔍 Timestamped Deep Dives</h2>
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-base font-bold text-indigo-700 mb-2">Minutes of agent work and tool calls per prompt, 90th percentile, by model <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=190s" target="_blank" rel="noopener">[03:10]</a></h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-slate-100 text-slate-600"><tr><th class="px-3 py-1.5 font-semibold">Model</th><th class="px-3 py-1.5 font-semibold">Minutes per prompt P90</th><th class="px-3 py-1.5 font-semibold">Tool calls per prompt P90</th></tr></thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr><td class="px-3 py-1.5">Opus 4.6</td><td class="px-3 py-1.5">2.4 min</td><td class="px-3 py-1.5">19</td></tr><tr><td class="px-3 py-1.5">GPT-5.3 Codex</td><td class="px-3 py-1.5">2.4 min</td><td class="px-3 py-1.5">19</td></tr><tr><td class="px-3 py-1.5">GPT-5.5</td><td class="px-3 py-1.5">5.0 min</td><td class="px-3 py-1.5">37</td></tr><tr><td class="px-3 py-1.5">GPT-5.6</td><td class="px-3 py-1.5">5.5 min</td><td class="px-3 py-1.5">54</td></tr><tr><td class="px-3 py-1.5">Opus 5.5</td><td class="px-3 py-1.5">14 min</td><td class="px-3 py-1.5">64</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-base font-bold text-indigo-700 mb-2">My prompts per day versus agent-hours per day, parallel agents counted separately <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=371s" target="_blank" rel="noopener">[06:11]</a></h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-slate-100 text-slate-600"><tr><th class="px-3 py-1.5 font-semibold">Month</th><th class="px-3 py-1.5 font-semibold">Prompts per day</th><th class="px-3 py-1.5 font-semibold">Agent-hours per day</th></tr></thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr><td class="px-3 py-1.5">Mar</td><td class="px-3 py-1.5">126</td><td class="px-3 py-1.5">6.0 h</td></tr><tr><td class="px-3 py-1.5">Apr</td><td class="px-3 py-1.5">160</td><td class="px-3 py-1.5">5.6 h</td></tr><tr><td class="px-3 py-1.5">May</td><td class="px-3 py-1.5">111</td><td class="px-3 py-1.5">4.8 h</td></tr><tr><td class="px-3 py-1.5">Jun</td><td class="px-3 py-1.5">137</td><td class="px-3 py-1.5">5.2 h</td></tr><tr><td class="px-3 py-1.5">Jul</td><td class="px-3 py-1.5">117</td><td class="px-3 py-1.5">6.1 h</td></tr><tr><td class="px-3 py-1.5">Aug</td><td class="px-3 py-1.5">182</td><td class="px-3 py-1.5">8.4 h</td></tr><tr><td class="px-3 py-1.5">Sep</td><td class="px-3 py-1.5">136</td><td class="px-3 py-1.5">9.3 h</td></tr><tr><td class="px-3 py-1.5">Oct</td><td class="px-3 py-1.5">159</td><td class="px-3 py-1.5">14.4 h</td></tr><tr><td class="px-3 py-1.5">Nov 1 to 8</td><td class="px-3 py-1.5">-</td><td class="px-3 py-1.5">43.7 h</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">System sketch</h2>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=81s">[01:21] The Stable Harness Hypothesis &amp; Model Autonomy Telemetry</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>A prevalent assumption in agent engineering is that improving system utility requires increasingly sophisticated harnesses, complex prompt architectures, and dynamic multi-agent research plugins. Ronacher's production data disproves this hypothesis. The core harness of the <code>Pi</code> coding agent remained virtually unchanged over an entire calendar year, retaining the identical baseline tool interfaces (file read, AST analysis, text edit, file write, and bash).</p><p>Despite this frozen harness, agent capabilities scaled exponentially strictly via raw model capability gains:</p><ul><li><strong>Intervention collapse:</strong> Developer corrections dropped by 67% (from 8.8 to 2.9 per 100 prompts), while manual user aborts (hitting <code>ESC</code>) fell from 13.1 to 7.2.</li><li><strong>Expansion of autonomous horizon:</strong> The P90 execution envelope expanded from 2.4 minutes and 19 tool calls under Opus 4.6 to 14.0 minutes and 64 tool calls under Opus 5.5.</li><li><strong>Emergent CLI affinity:</strong> Without prompt modification, advanced reasoning models naturally abandoned rigid structured editing primitives (edit/write fell from ~35% down to 10%) in favor of direct CLI workflows (Git operations accounted for 41% of total tool calls).</li><li><strong>Plugin obsolescence:</strong> Bespoke agent mechanisms like 'Pi Auto Research' became fully redundant; modern frontier models perform sophisticated discovery without harness steering.</li></ul></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Model Generation | P90 Minutes / Prompt | P90 Tool Calls | Corrections / 100 Prompts | ESC Aborts / 100 Prompts |
-|:---|:---:|:---:|:---:|:---:|
-| GPT-5.3 Codex | 2.4 min | 19 | 8.8 | 13.1 |
-| GPT-5.5 | 5.0 min | 37 | 7.2 | 12.0 |
-| GPT-5.6 | 5.5 min | 54 | 5.3 | 10.4 |
-| Opus 5.5 | 14.0 min | 64 | 2.9 | 7.2 |</code></pre>
-      
+      <div class="mermaid-wrap overflow-x-auto"><svg id="my-svg" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 552px; background-color: white;" viewBox="4 4 552 496" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#666;stroke:#666;}#my-svg .marker.cross{stroke:#666;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#my-svg .cluster-label text{fill:#333;}#my-svg .cluster-label span{color:#333;}#my-svg .cluster-label span p{background-color:transparent;}#my-svg .label text,#my-svg span{fill:#000000;color:#000000;}#my-svg .node rect,#my-svg .node circle,#my-svg .node ellipse,#my-svg .node polygon,#my-svg .node path{fill:#eee;stroke:#999;stroke-width:1px;}#my-svg .rough-node .label text,#my-svg .node .label text,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-anchor:middle;}#my-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#my-svg .rough-node .label,#my-svg .node .label,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-align:center;}#my-svg .node.clickable{cursor:pointer;}#my-svg .root .anchor path{fill:#666!important;stroke-width:0;stroke:#666;}#my-svg .arrowheadPath{fill:#333333;}#my-svg .edgePaths .path{stroke:#666;stroke-width:1px;}#my-svg .flowchart-link{stroke:#666;fill:none;}#my-svg .edgeLabel{background-color:white;text-align:center;}#my-svg .edgeLabel p{background-color:white;}#my-svg .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#my-svg .labelBkg{background-color:rgba(255, 255, 255, 0.5);}#my-svg .cluster rect{fill:hsl(0, 0%, 98.9215686275%);stroke:#707070;stroke-width:1px;}#my-svg .cluster text{fill:#333;}#my-svg .cluster span{color:#333;}#my-svg .node .collapsed-indicator{fill:#707070;stroke:none;opacity:0.6;}#my-svg .node .collapsed-separator{stroke:#707070;stroke-width:0.75px;}#my-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160, 0%, 93.3333333333%);border:1px solid #707070;border-radius:2px;pointer-events:none;z-index:100;}#my-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#000000;}#my-svg rect.text{fill:none;stroke-width:0;}#my-svg .icon-shape,#my-svg .image-shape{background-color:white;text-align:center;}#my-svg .icon-shape p,#my-svg .image-shape p{background-color:white;padding:2px;}#my-svg .icon-shape .label rect,#my-svg .image-shape .label rect{opacity:0.5;background-color:white;fill:white;}#my-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#my-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#my-svg .node .neo-node{stroke:#999;}#my-svg [data-look="neo"].node rect,#my-svg [data-look="neo"].cluster rect,#my-svg [data-look="neo"].node polygon{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].swimlane.cluster rect{filter:none;}#my-svg [data-look="neo"].node path{stroke:url(#my-svg-gradient);stroke-width:1px;}#my-svg [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node .neo-line path{stroke:#999;filter:none;}#my-svg [data-look="neo"].node circle{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node circle .state-start{fill:#000000;}#my-svg [data-look="neo"].icon-shape .icon{fill:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].icon-shape .icon-neo path{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="my-svg_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"/></marker><marker id="my-svg_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edges edgePaths"><path d="M424,60L424,96" id="my-svg-L_human_pi_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_human_pi_0" data-points="W3sieCI6NDI0LCJ5Ijo2MH0seyJ4Ijo0MjQsInkiOjEwMH1d" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M391,196L391,208.92893218813452Q391,216 383.9289321881345,216L117.07106781186548,216Q110,216 110,223.07106781186548L110,232" id="my-svg-L_pi_codemode_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 307.67169189453125 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_pi_codemode_0" data-points="W3sieCI6MzkxLCJ5IjoxOTZ9LHsieCI6MzkxLCJ5IjoyMTZ9LHsieCI6MTEwLCJ5IjoyMTZ9LHsieCI6MTEwLCJ5IjoyMzZ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M77,332L77,346.5Q77,352 71.5,352L71.5,352Q66,352 66,357.5L66,368" id="my-svg-L_codemode_clf_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 38.85558319091797 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_codemode_clf_0" data-points="W3sieCI6NzcsInkiOjMzMn0seyJ4Ijo3NywieSI6MzUyfSx7IngiOjY2LCJ5IjozNTJ9LHsieCI6NjYsInkiOjM3Mn1d" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M110,372L110,336" id="my-svg-L_clf_codemode_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_clf_codemode_0" data-points="W3sieCI6MTEwLCJ5IjozNzJ9LHsieCI6MTEwLCJ5IjozMzJ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M143,332L143,344.9289321881345Q143,352 150.07106781186548,352L272.9289321881345,352Q280,352 280,359.0710678118655L280,368" id="my-svg-L_codemode_state_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 163.6717071533203 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_codemode_state_0" data-points="W3sieCI6MTQzLCJ5IjozMzJ9LHsieCI6MTQzLCJ5IjozNTJ9LHsieCI6MjgwLCJ5IjozNTJ9LHsieCI6MjgwLCJ5IjozNzJ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M424,196L424,232" id="my-svg-L_pi_wait_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_pi_wait_0" data-points="W3sieCI6NDI0LCJ5IjoxOTZ9LHsieCI6NDI0LCJ5IjoyMzZ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M424,332L424,344.9289321881345Q424,352 431.0710678118655,352L442.9289321881345,352Q450,352 450,359.0710678118655L450,368" id="my-svg-L_wait_durable_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 52.67170715332031 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_wait_durable_0" data-points="W3sieCI6NDI0LCJ5IjozMzJ9LHsieCI6NDI0LCJ5IjozNTJ9LHsieCI6NDUwLCJ5IjozNTJ9LHsieCI6NDUwLCJ5IjozNzJ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M494,372L494,359.0710678118655Q494,352 501.0710678118655,352L512.9289321881345,352Q520,352 520,344.9289321881345L520,284L520,223.07106781186548Q520,216 512.9289321881345,216L464.0710678118655,216Q457,216 457,208.92893218813452L457,200" id="my-svg-L_durable_pi_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 246.3434600830078 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_durable_pi_0" data-points="W3sieCI6NDk0LCJ5IjozNzJ9LHsieCI6NDk0LCJ5IjozNTJ9LHsieCI6NTIwLCJ5IjozNTJ9LHsieCI6NTIwLCJ5IjoyODR9LHsieCI6NTIwLCJ5IjoyMTZ9LHsieCI6NDU3LCJ5IjoyMTZ9LHsieCI6NDU3LCJ5IjoxOTZ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/></g><g class="edgeLabels"/><g class="nodes"><g class="node default" id="my-svg-flowchart-human-0" data-look="neo" transform="translate(424, 36)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"/><g class="label" style="" transform="translate(-60, -12)"><rect/><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Human prompt</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-pi-1" data-look="neo" transform="translate(424, 148)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"/><g class="label" style="" transform="translate(-60, -36)"><rect/><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Pi harness unchanged core tools</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-codemode-3" data-look="neo" transform="translate(110, 284)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"/><g class="label" style="" transform="translate(-60, -36)"><rect/><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Codemode scripts run on harness side</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-clf-5" data-look="neo" transform="translate(88, 432)"><rect class="basic label-container" style="" x="-76" y="-60" width="152" height="120"/><g class="label" style="" transform="translate(-60, -48)"><rect/><foreignObject width="120" height="96"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Classifier models return choices and scores</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-state-9" data-look="neo" transform="translate(280, 408)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"/><g class="label" style="" transform="translate(-60, -24)"><rect/><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>State lives in the transcript</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-wait-11" data-look="neo" transform="translate(424, 284)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"/><g class="label" style="" transform="translate(-60, -36)"><rect/><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Human answers in hours</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-durable-13" data-look="neo" transform="translate(472, 420)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"/><g class="label" style="" transform="translate(-60, -36)"><rect/><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Durable suspend and resume</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="my-svg-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><defs><filter id="my-svg-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><linearGradient id="my-svg-gradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="hsl(0, 0%, 83.3333333333%)" stop-opacity="1"/><stop offset="100%" stop-color="hsl(0, 0%, 88.9215686275%)" stop-opacity="1"/></linearGradient></svg></div>
+    
+    <details class="mt-2 text-xs text-slate-500">
+      <summary class="cursor-pointer">Diagram source</summary>
+      <pre class="mt-2 bg-slate-100 rounded p-3 overflow-x-auto"><code>flowchart TD
+  human[Human prompt] --&gt; pi[Pi harness unchanged core tools]
+  pi --&gt; codemode[Codemode scripts run on harness side]
+  codemode --&gt; clf[Classifier models return choices and scores]
+  clf --&gt; codemode
+  codemode --&gt; state[State lives in the transcript]
+  pi --&gt; wait[Human answers in hours]
+  wait --&gt; durable[Durable suspend and resume]
+  durable --&gt; pi</code></pre>
+    </details>
+  </section>
+  
+
+  
+  <section class="space-y-4">
+    <h2 class="text-lg font-bold text-indigo-700">Deep dives</h2>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=81s" target="_blank" rel="noopener">[01:21]</a> A stable harness absorbed a year of model progress</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Pi&#39;s core harness is unchanged in a year; same tools today as December last year.</li><li>Most prompting ideas were replaced by better models; the Pi Auto Research plugin is no longer necessary with present-day state-of-the-art models.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Design for model-driven capability: keep the harness thin, and re-audit prompt tricks each model generation instead of accumulating scaffolding. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Single-user evidence from the harness&#39;s vendor; other harnesses may still need their tricks.</p>
     </article>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=277s">[04:37] The Attention Bottleneck and the &#39;Wildwuchs&#39; Ecosystem Hazard</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>While agent autonomy scales compute without friction, human cognitive bandwidth remains strictly constant. Telemetry illustrates this severe operational decoupling: daily developer prompt volume remained flat within a band of 111–182 prompts per day, yet aggregate agent execution hours exploded from 6.0 hours/day to 43.7 hours/day due to massive parallel execution.</p><p>This asymmetry creates critical failure modes across the software development lifecycle:</p><ul><li><strong>The Maintenance Horizon Trap:</strong> Zero-marginal-cost software generation resulted in 141 cumulative projects initiated, but active monthly project maintenance (>5 days/month) was capped at 10–12 repositories. Software factories generate immense initial surface area that human operators ultimately abandon once the novelty or immediate need subsides.</li><li><strong>Ecosystem Taxation:</strong> Autonomous agent loops heavily tax upstream infrastructure that was never designed for non-human traffic, including Git remotes, package registries (npm/crates.io), CI runners, and external web properties scraped for context.</li><li><strong>'Wildwuchs' (Uncontrolled Code Sprawl):</strong> Agents possess an intrinsic bias toward reimplementing components from scratch rather than negotiating the friction of external dependencies or shared standards. Ronacher warns this leads to severe divergence—citing examples like incompatible, ad-hoc TAR parsers that parse archives differently—eroding open protocols and cross-system interoperability.</li></ul></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">Telemetry Disconnect (March - November):
-  Cumulative Repositories Created:  24  --&gt; 141 (+487%)
-  Active Repositories Maintained:   12  --&gt;  11 (-8%)
-  Parallel Agent-Hours / Active Day: 6.0 --&gt; 43.7 (+628%)
-  Human Prompts Ingested / Day:     126 --&gt; 159 (+26%)</code></pre>
-      
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=277s" target="_blank" rel="noopener">[04:37]</a> The human did not</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Human attention is the limiting factor; we do not have more humans.</li><li>Starting projects got incredibly easy; maintaining them did not get easier.</li><li>Agents tax systems never meant for it: GitHub, npm, random third-party websites.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Size agent rollouts by review, finishing and maintenance capacity, not generation throughput; downstream systems need load checks too. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> External-system strain is slide assertion plus anecdote; no request volumes measured.</p>
     </article>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=477s">[07:57] The Software Atelier: Pacing, Senior Taste, and Excellence</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>The alternative to the high-volume, low-quality software factory is the <em>Software Atelier</em> (workshop). In this paradigm, agents are power tools analogous to CNC mills or 3D printers: they do not replace the artisan; they dramatically expand the technical ambition and fidelity of what an individual artisan can construct.</p><p>Key engineering principles of the workshop model include:</p><ul><li><strong>Exercising Architectural Taste ('Not Like This'):</strong> Senior domain expertise is distinguished by knowing when and how to reject agent proposals. Without deliberate pruning, agents accumulate features into incoherent, bloated systems (the 'Homer Simpson car').</li><li><strong>Matching Velocity to Human Comprehension:</strong> Developers must deliberately slow down agent execution to match their own verification bandwidth. A proven tactical pattern is forcing the agent to render a concise executive summary formatted into a clean, typeset HTML artifact prior to executing verification or code commits.</li><li><strong>Directing Surplus Power Toward Hard Engineering:</strong> Rather than producing disposable application slop, agentic power should be channeled into high-leverage domains that humans traditionally skip due to time constraints: formal verification proofs, aggressive performance tuning/benchmarking, and porting systems to memory-safe architectures (Rust).</li></ul></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block"># Atelier Workflow: Verification Pacing Constraint Pattern
-PROMPT_RULE=&#34;&#34;&#34;
-Before invoking test suites or committing changes to git:
-1. Stop code modifications.
-2. Emit a structured, typeset HTML executive summary to `.workshop/review.html`:
-   - Invariant check: architectural invariants maintained vs broken.
-   - Dependency delta: external vs internal primitives used.
-   - Verification plan: formal constraints and performance regression risks.
-3. Await explicit human acknowledgement before proceeding.
-&#34;&#34;&#34;</code></pre>
-      
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=477s" target="_blank" rel="noopener">[07:57]</a> Workshop discipline: pushback, true skill, moderated speed</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Know when to tell the agent &#39;not like this&#39; and redirect it.</li><li>True skill versus agent skill: experienced engineers get different results working with the same agent.</li><li>Moderate speed by understanding: he prompts for a short executive summary and a typeset HTML page before verification.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Readable intermediate artifacts keep human judgment attached to long runs; otherwise agents assemble a &#39;Simpson car&#39; of mismatched features. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Personal practice; no measured comparison of skilled versus unskilled users.</p>
     </article>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=902s">[15:02] Harness Architectural Evolution: Durability, Codemode &amp; Classifiers</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>To support the atelier paradigm, agent harnesses must undergo fundamental architectural shifts rather than incremental prompt tuning:</p><ul><li><strong>Durable Execution Workflows:</strong> Runs now routinely outlive human attention spans and terminal session lifecycles. Humans take hours to review pull requests or answer clarifying questions. The harness must be a durable state machine that can suspend execution, persist its context transcript, and safely wake up.</li><li><strong>Economic Inference Scheduling:</strong> With provider pricing offering substantial discounts for flexible/batch scheduling, durable agents can pause intermediate runs when token latency is high and resume execution when spot capacity opens.</li><li><strong>Codemode (Harness-Side Orchestration):</strong> Instead of dumping hundreds of tools into the LLM context and bouncing every intermediate step back into the transcript, the harness provides a JavaScript/Bash execution engine. The LLM writes small scripts that execute concurrency and loops harness-side, returning only final transformed states.</li><li><strong>Loop-Embedded Classifier Models:</strong> Codemode allows embedding fast, ultra-cheap classification models (e.g., Chef, Jev) directly inside iterative loops. For example, processing 3,000 incoming support tickets or issue triage can be executed programmatically: the classifier outputs discrete scores and choices directly to the script without flooding the main agent context with prose.</li></ul></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">// Conceptual Harness-Side Codemode Execution
-// Executes locally within the harness sandbox; keeps intermediate loops out of LLM context
-async function triageSupportIssues(issues) {
-  const results = [];
-  for (const issue of issues) {
-    // Direct invocation of fast classifier model (e.g., Chef/Jev) via harness RPC
-    const classification = await harness.classify({
-      model: &#39;chef-v1&#39;,
-      prompt: `Score severity (1-5) and assign domain category: ${issue.body}`,
-      responseFormat: { type: &#39;json_object&#39; }
-    });
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=672s" target="_blank" rel="noopener">[11:12]</a> Wildwuchs: resist uncontrolled bespoke growth</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>He prefers few dependencies, yet warns &#39;Wildwuchs&#39; — uncontrolled growth — harms interoperability.</li><li>Open protocols, specifications and file formats let humans and tools work together; a crafted tar archive is read differently by different tar implementations.</li><li>Collaboration between humans remains human slow, itself slowing things down.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Anchor agent-written code to shared protocols and formats; bespoke glue multiplies one-off integration surfaces. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Argument with anecdote; standards alignment still costs human-slow coordination time.</p>
+    </article>
     
-    if (classification.score &gt;= 4) {
-      results.push({ id: issue.id, category: classification.category });
-    }
-  }
-  // Only return aggregate summary to primary agent context
-  return results;
-}</code></pre>
-      
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=902s" target="_blank" rel="noopener">[15:02]</a> Harness evolution: durability, codemode, classifier models</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Durable workflows outlive the process and human attention: start, stop, suspend, come back; humans answer in hours.</li><li>Codemode runs agent-composed JavaScript and bash harness-side; loops and concurrency bypass the context; state lives in the transcript.</li><li>Classifier models (Jev, Chef) return choices and scores, not prose, called from codemode loops to crunch squishy human tasks.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Cost and latency levers: suspend through idle token windows for flexible-scheduling discounts on raw token cost; move bulk judgment off the context path. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Discount size, classifier accuracy and throughput unquantified; the support-triage example is illustrative, not measured.</p>
     </article>
     
   </section>
   
+
   
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">✅ Actionable Engineering Checklist</h2>
-    <ul class="space-y-2">
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700">Field playbook <span class="text-xs font-normal text-slate-500">(inferred from the talk, not claims made in it)</span></h2>
+    <div class="mt-3 grid gap-4 md:grid-cols-3 text-sm">
+      <div><h3 class="font-semibold mb-1">Ask the customer</h3><ul class="list-disc pl-5 space-y-1"><li>Who reviews agent-generated changes today, and how much more volume can that review capacity absorb? (inference)</li><li>Which external systems will agent volume tax beyond their design limits — source hosting, package registries, third-party sites? (inference)</li><li>Where do workflows wait on human answers, and are those waits measured in hours or days? (inference)</li><li>What share of agent work is bulk judgment that cheap classifiers could score instead of prose review? (inference)</li></ul></div>
+      <div><h3 class="font-semibold mb-1">Measure in a pilot</h3><ul class="list-disc pl-5 space-y-1"><li>Corrections and aborts per 100 prompts, split by model, to track supervision load. (inference)</li><li>P90 agent minutes and tool calls per prompt, by model, to size how far one instruction carries. (inference)</li><li>Human prompts per day versus summed agent-hours per day, to expose the attention bottleneck. (inference)</li></ul></div>
+      <div><h3 class="font-semibold mb-1">Where it breaks</h3><ul class="list-disc pl-5 space-y-1"><li>Agent output outruns reviewer comprehension; changes land faster than anyone can push back. (inference)</li><li>Bespoke agent-written glue proliferates; interoperability decays and integrations become one-off. (inference)</li><li>Long runs lose state on process restart or hours-long human waits without durable suspend-resume. (inference)</li></ul></div>
+    </div>
+  </section>
+  
+
+  
+  <section class="bg-amber-50 rounded-xl border border-amber-200 p-5">
+    <h2 class="text-lg font-bold text-amber-800 mb-2">What the talk does not establish</h2>
+    <ul class="list-disc pl-5 space-y-1 text-sm"><li>All quantitative evidence is one user&#39;s sessions on one harness; no team, cross-user or cross-harness replication.</li><li>Classifier triage has no measured throughput, accuracy or cost; the bulk-task claim stays illustrative.</li><li>The flexible-scheduling discount is asserted without size, terms or measured savings.</li><li>No cost or effort numbers for verified, faster, memory-safe software versus ordinary output.</li></ul>
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">Checklist</h2>
+    <ul class="space-y-2 text-sm">
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Freeze and simplify the agent harness: Eliminate bespoke prompt wrappers and complex research plugins; rely on frontier reasoning models to handle tool planning natively.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Audit the agent harness for prompt tricks and plugins made unnecessary by newer models; remove dead scaffolding. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=140s" target="_blank" rel="noopener">[02:20]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Implement an intentional pacing gate: Require agents to generate human-readable executive summaries (e.g., styled HTML specs) before executing verification runs or finalizing commits.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Log corrections and aborts per 100 prompts by model to quantify supervision load before and after upgrades. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=161s" target="_blank" rel="noopener">[02:41]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Enforce open protocol standards over rewrites: Actively reject agent tendencies toward &#39;Wildwuchs&#39; (bespoke reinvention of parsers, formats, or protocols) to preserve ecosystem interoperability.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Require a short executive summary and typeset HTML page from agents before verification on long runs. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=636s" target="_blank" rel="noopener">[10:36]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Architect for durable agent workflows: Decouple the execution harness from interactive terminal lifecycles so agents can suspend state, await human reviews for hours, and leverage discounted flexible-tier inference.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Constrain agent-written integrations to open protocols, specifications and file formats rather than bespoke ones. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=720s" target="_blank" rel="noopener">[12:00]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Adopt &#39;Codemode&#39; for bulk operations: Execute programmatic loops (bash/JS) and fast classifier models (Chef/Jev) harness-side to crunch high-volume tasks without polluting the primary context window.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Build suspend-and-resume into long agent runs so workflows survive hour-long human waits. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=949s" target="_blank" rel="noopener">[15:49]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Redirect agent leverage into high-assurance engineering: Mandate agent-driven formal verification proofs, performance profiling, and memory-safe language adoption (Rust) across production repositories.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Route bulk judgment tasks through cheap classifier models returning choices and scores, invoked from codemode loops. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=JNexz3Tbiu8&amp;t=1122s" target="_blank" rel="noopener">[18:42]</a></span></li>
       
     </ul>
   </section>
   
+
+  
+  <section class="text-sm text-slate-600">
+    <h2 class="text-base font-bold text-slate-700 mb-1">Terms as used in the talk</h2>
+    <dl class="grid gap-x-4 gap-y-1 md:grid-cols-[max-content_1fr]">
+      <dt class="font-semibold">harness</dt><dd>The scaffold around a model — tools, orchestration, prompting; Pi&#39;s core harness stayed fixed while models improved.</dd><dt class="font-semibold">codemode</dt><dd>Agent-composed JavaScript and bash executed harness-side; loops and concurrency bypass the context, state lives in the transcript.</dd><dt class="font-semibold">Wildwuchs</dt><dd>German for uncontrolled growth; bespoke proliferation that harms interoperability.</dd><dt class="font-semibold">durable workflow</dt><dd>Agent runs that outlive the process and the human&#39;s attention — start, stop, suspend, and resume.</dd><dt class="font-semibold">classifier models</dt><dd>Fast, cheap models such as Jev and Chef returning choices and scores, not prose, called from codemode loops.</dd>
+    </dl>
+  </section>
+  
+
   <footer class="text-xs text-slate-400 border-t border-slate-200 pt-4">
-    Autonomously generated by the Hermes YouTube Learning Pipeline (Gemini
-    Interactions API) from the
-    <a class="underline hover:text-slate-600" href="../transcripts/2026-11-22_JNexz3Tbiu8_enriched.md">persisted interleaved transcript</a>.
-    Verify claims against the source video before acting on them.
+    Generated by the Hermes YouTube Learning Pipeline from the
+    <a class="underline hover:text-slate-600" href="https://vksepm.github.io/youtube-learning/transcripts/2026-11-22_JNexz3Tbiu8_enriched.md">interleaved transcript</a>.
+    Figures come from the speaker's slides; verify against the video before relying on them.
   </footer>
 </main>
-<script>
-  if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose' }); }
-</script>
 </body>
 </html>
