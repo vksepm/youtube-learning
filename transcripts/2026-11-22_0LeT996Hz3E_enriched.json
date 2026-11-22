@@ -1,0 +1,608 @@
+{
+  "estimated_duration_seconds": 1110,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:25",
+      "visual_type": "SPEAKER_ONLY",
+      "screen_title": "AI Engineer Code Summit",
+      "visual_summary": "Event introduction screens for AI Engineer Code Summit presented by Google DeepMind, followed by speaker Zach Lloyd standing on stage.",
+      "ocr_details": [
+        "AI Engineer Code Summit",
+        "PRESENTED BY Google DeepMind",
+        "PLATINUM SPONSORS: aws, Devin, databricks, exa, FACTORY, Sonar"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:13",
+          "text": "All right. Hi everyone. I'm excited to be here and today I'm going to chat about the evolution of software factoring. Software engineering and how it's becoming factory engineering, so excited to do this."
+        }
+      ],
+      "alignment_note": "Speaker introduces himself and the central topic of the presentation on the main stage."
+    },
+    {
+      "scene_index": 2,
+      "start_time": "00:25",
+      "end_time": "01:07",
+      "visual_type": "SLIDE",
+      "screen_title": "Zach Lloyd",
+      "visual_summary": "Introductory slide introducing Zach Lloyd with bullet points detailing his experience at Google Docs, 20 years in engineering, and founding Warp.",
+      "ocr_details": [
+        "Zach Lloyd",
+        "Principal engineer at Google, lead on GDocs",
+        "20 years of engineering",
+        "Founder of Warp",
+        "Software Engineering Is Becoming Factory Engineering",
+        "Zach Lloyd | Founder & CEO | warp"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:25",
+          "text": "First, a little bit about me. I've been an engineer for a long time. I was a principal engineer at Google. I used to lead engineering on the Google Docs suite, helped scale that product to hundreds of millions of users."
+        },
+        {
+          "timestamp": "00:38",
+          "text": "I'm currently the founder and CEO of Warp. Warp builds a platform for companies to build their own internal software factories. I'm going to show a little bit of that today."
+        },
+        {
+          "timestamp": "00:50",
+          "text": "Warp is also well known for our open source Agentic terminal, has about 65,000 GitHub stars. It's used by almost a million developers. Our mission has always been helping developers ship better software more quickly and it's cool to evolve what we're doing as the world changes around us."
+        }
+      ],
+      "alignment_note": "Spoken background directly matches the bullet points listed under Zach Lloyd's name."
+    },
+    {
+      "scene_index": 3,
+      "start_time": "01:07",
+      "end_time": "01:43",
+      "visual_type": "SLIDE",
+      "screen_title": "Interactive prompting",
+      "visual_summary": "Slide showing a photograph of a multi-monitor developer desk setup representing local multi-threaded interactive prompting.",
+      "ocr_details": [
+        "Interactive prompting",
+        "Software Engineering Is Becoming Factory Engineering"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:07",
+          "text": "This is where I think we're still mostly at. Most developers that I talk to, most platform teams, they're working with individuals who are running their own coding agents locally. Maybe they're running multiple of them at a time. It could be through their terminal, it could be through an agentic development environment."
+        },
+        {
+          "timestamp": "01:30",
+          "text": "Just show of hands quickly, actually, how many people in here are mostly working in this fashion, local multi threading? Okay, so still most people but actually not everyone."
+        }
+      ],
+      "alignment_note": "The desk photo visually illustrates the 'local multi threading' and interactive prompting approach discussed."
+    },
+    {
+      "scene_index": 4,
+      "start_time": "01:43",
+      "end_time": "03:03",
+      "visual_type": "SLIDE",
+      "screen_title": "Software factories are coming.",
+      "visual_summary": "Slide listing three key arguments for why the industry is shifting towards cloud software factories.",
+      "ocr_details": [
+        "Software factories are coming.",
+        "1 Automation increases throughput",
+        "2 Centralization for measuring and improving quality and cost",
+        "3 Security and governance in the cloud"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:43",
+          "text": "I think that this is going to change and it's starting to change already. The reasons are there's a few of them."
+        },
+        {
+          "timestamp": "01:54",
+          "text": "So one is like, if you are doing local interactive prompting as your main way of working with coding agents, you're kind of limited by human throughput really. Like you cannot automate if every agent needs to be interactively prompted."
+        },
+        {
+          "timestamp": "02:10",
+          "text": "There's a second reason too that I hear a lot from platform teams, and from engineering leaders. This mechanism of like everyone choosing their own local setup, their own models, their own skills. It makes it very hard to actually make sure that you're using these agents efficiently from like a cost perspective and a productivity perspective."
+        },
+        {
+          "timestamp": "02:31",
+          "text": "And then finally, there's like a big security problem and governance problem when everyone is setting up and running their own local agents."
+        }
+      ],
+      "alignment_note": "Points 1, 2, and 3 on screen correspond directly to the speaker's discussion of human throughput limits, cost centralization, and cloud governance."
+    },
+    {
+      "scene_index": 5,
+      "start_time": "03:03",
+      "end_time": "03:37",
+      "visual_type": "SLIDE",
+      "screen_title": "What a software factory is not:",
+      "visual_summary": "Slide featuring four boxes marked with red crosses indicating common misconceptions about software factories.",
+      "ocr_details": [
+        "What a software factory is not:",
+        "A loose set of automations",
+        "A collection of AI teammates",
+        "A shared skills and mcp setup",
+        "A personal agent swarm"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "03:03",
+          "text": "I'm going to define what I think of as a software factory, but I'll start by saying what I think a software factory is not."
+        },
+        {
+          "timestamp": "03:14",
+          "text": "I think it's not just a loose set of automations. I don't think of a software factory as a collection of AI teammates. I don't think it's a shared set of skills and MCPs, and I also don't think software factories are personal agent swarms. I think these are all useful primitives, but they're not the end state that we should be shooting for."
+        }
+      ],
+      "alignment_note": "The four crossed-out cards on screen align item-by-item with the speaker's enumeration."
+    },
+    {
+      "scene_index": 6,
+      "start_time": "03:37",
+      "end_time": "03:55",
+      "visual_type": "SLIDE",
+      "screen_title": "What is a software factory?",
+      "visual_summary": "Slide displaying Zach's formal definition of a software factory highlighted in yellow background text.",
+      "ocr_details": [
+        "What is a software factory?",
+        "A code-defined, closed-loop system for continuously measuring and improving cloud coding agents."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "03:37",
+          "text": "And so, to me, the way that I define software factory is very specific. I define it as a code-defined closed loop system for continuously measuring and improving cloud coding agents."
+        }
+      ],
+      "alignment_note": "Speaker reads the verbatim highlighted definition shown on the slide."
+    },
+    {
+      "scene_index": 7,
+      "start_time": "03:55",
+      "end_time": "04:35",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Factories as code:",
+      "visual_summary": "Slide explaining 'Factories as code' on the left alongside a YAML code configuration snippet defining a factory on the right.",
+      "ocr_details": [
+        "Factories as code:",
+        "The way a factory engineer defines and improves a factory.",
+        "factory: eng-factory-slim",
+        "automations:",
+        "auto-server-version",
+        "description: Automated software development factory for warp-server"
+      ],
+      "structured_reconstruction": "factory: eng-factory-slim\ndescription: Automated software development factory for warp-server\n\nautomations:\n  - auto-server-version:\n      name: server-version\n      description: Automated software development factory for warp-server\n      repo: warp-server\n      models:\n        - gpt-4o\n      skills:\n        - web-search",
+      "spoken_segments": [
+        {
+          "timestamp": "03:55",
+          "text": "I believe the first thing you need to do is fully encode it in a declarative language. So you need to say, okay, these are all of the coding agents that I want to run, these are how they're triggered. When work comes into this factory, this is the workflow from triage to spec, whatever your workflow is."
+        },
+        {
+          "timestamp": "04:24",
+          "text": "You need to specify what MCPs are available, where your agents run. Really, as much as you can in a Terraform style declarative set of code files that define your factory."
+        }
+      ],
+      "alignment_note": "Speaker points out specifying agents, triggers, and MCPs in a Terraform-like declarative code format while showing YAML snippet."
+    },
+    {
+      "scene_index": 8,
+      "start_time": "04:35",
+      "end_time": "05:15",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "A cloud software factory",
+      "visual_summary": "Circular workflow diagram representing the continuous SDLC loop around 'A cloud software factory', incorporating human review gates.",
+      "ocr_details": [
+        "New product idea or bug reported",
+        "Triage",
+        "Spec",
+        "Reviewing the spec",
+        "Implement",
+        "Reviewing the code",
+        "Verify",
+        "Ship",
+        "Reviewing the product",
+        "Monitor",
+        "A cloud software factory"
+      ],
+      "structured_reconstruction": "flowchart TD\n    Idea[New product idea or bug reported] --> Triage\n    Triage --> Spec\n    Spec -->|Reviewing the spec| Implement\n    Implement -->|Reviewing the code| Verify\n    Verify --> Ship\n    Ship -->|Reviewing the product| Monitor\n    Monitor --> Idea",
+      "spoken_segments": [
+        {
+          "timestamp": "04:35",
+          "text": "The second part of it is a continuous closed loop of improvement. And that closed loop can look something like this. This is the typical one. This is just really the SDLC, where you have ideas that come in from people... and then your agents do some amount of work."
+        },
+        {
+          "timestamp": "05:05",
+          "text": "The important piece here is really this closed loop concept, where the more that your agents run, the more efficient you can make this loop."
+        }
+      ],
+      "alignment_note": "The speaker references the continuous circular flow of triage, spec, implementation, verification, and monitoring depicted in the diagram."
+    },
+    {
+      "scene_index": 9,
+      "start_time": "05:15",
+      "end_time": "05:42",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Measurement > Vibes",
+      "visual_summary": "Scatter plot chart mapping model correctness against average cost, highlighting 'gpt-5.6-sol (high)' as the Benchmark Winner.",
+      "ocr_details": [
+        "Measurement > Vibes",
+        "Benchmark Results",
+        "gpt-5.6-sol (high): Average cost $8.13, Correctness 96%, Benchmark Winner",
+        "gpt-5.6-sol (med)",
+        "gpt-5.3-flash",
+        "gemini 3.7 flash",
+        "grok 4.0 (high)",
+        "claude opus 5 (high)"
+      ],
+      "structured_reconstruction": "| Model | Average Cost | Correctness | Status |\n| --- | --- | --- | --- |\n| gpt-5.6-sol (high) | $8.13 | 96% | Benchmark Winner |\n| gpt-5.6-sol (med) | Medium | ~90% | Evaluated |\n| grok 4.0 (high) | High | ~85% | Evaluated |\n| claude opus 5 (high) | ~$13.00 | ~78% | Evaluated |\n| gpt-5.3-flash | Low | ~75% | Evaluated |\n| gemini 3.7 flash | Low | ~68% | Evaluated |",
+      "spoken_segments": [
+        {
+          "timestamp": "05:15",
+          "text": "The third really key aspect, if you're building a software factory, is that everything needs to be measurable. If you're just going on vibes in terms of how you deploy coding agents, you can't be confident that you're actually getting the best, highest quality outputs, at the best cost."
+        }
+      ],
+      "alignment_note": "The 'Measurement > Vibes' header and chart contrast empirical benchmark metrics against subjective feelings."
+    },
+    {
+      "scene_index": 10,
+      "start_time": "05:42",
+      "end_time": "06:35",
+      "visual_type": "SLIDE",
+      "screen_title": "Prompt your agents. Manage your agents. Engineer your agents.",
+      "visual_summary": "Blue slide presenting three evolution stages of working with agents, emphasizing 'Engineer your agents.' in bold white.",
+      "ocr_details": [
+        "Prompt your agents.",
+        "Manage your agents.",
+        "Engineer your agents."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "05:42",
+          "text": "And so, if there's one thing that I'm hoping people walk away from this talk with, it's the idea that the way to work with coding agents and the way to think about them is that there's a really cool fundamental new engineering problem, which is How do you take this magic new primitive that we all have... and how do you engineer a system around them to use them most effectively?"
+        },
+        {
+          "timestamp": "06:15",
+          "text": "When you think of coding agents as a new engineering primitive, then you naturally start to build a certain way of using them. That's the mindset."
+        }
+      ],
+      "alignment_note": "The speaker emphasizes 'Engineer your agents' as the key thesis takeaway."
+    },
+    {
+      "scene_index": 11,
+      "start_time": "06:35",
+      "end_time": "06:41",
+      "visual_type": "SLIDE",
+      "screen_title": "The factory engineering mindset:",
+      "visual_summary": "Slide detailing two foundational principles of the factory engineering mindset.",
+      "ocr_details": [
+        "The factory engineering mindset:",
+        "1 Measure everything yourself based on your own data",
+        "2 Continually improve"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "06:35",
+          "text": "That's the mindset. So yeah, just to unpack that a bit, so there's continual measurement and continual learning."
+        }
+      ],
+      "alignment_note": "Bullet points 1 and 2 summarize measurement and continuous improvement."
+    },
+    {
+      "scene_index": 12,
+      "start_time": "06:41",
+      "end_time": "07:27",
+      "visual_type": "SLIDE",
+      "screen_title": "The factory engineer toolbelt:",
+      "visual_summary": "Slide listing core tool categories available to factory engineers.",
+      "ocr_details": [
+        "The factory engineer toolbelt:",
+        "Blueprints",
+        "Automations",
+        "Evals",
+        "Self-improvement",
+        "Benchmarks",
+        "A/B tests"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "06:41",
+          "text": "But there's also a new set of tools... In the new world of factory engineering, there's a new set of tools that everyone should be trying to master. And so those are things like, evals, it's can you set up self-improvement loops that work. Can you write benchmarks? Can you A/B test your factory?"
+        }
+      ],
+      "alignment_note": "Speaker explicitly lists the tools shown horizontally across the slide (Evals, self-improvement, benchmarks, A/B tests)."
+    },
+    {
+      "scene_index": 13,
+      "start_time": "07:27",
+      "end_time": "08:06",
+      "visual_type": "SLIDE",
+      "screen_title": "Product engineering and factory engineering.",
+      "visual_summary": "Slide contrasting Product engineering ('Building the product') with Factory engineering ('Improving the factory that builds the product').",
+      "ocr_details": [
+        "Product engineering and factory engineering.",
+        "Product engineering = Building the product",
+        "Factory engineering = Improving the factory that builds the product"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "07:27",
+          "text": "Now, that doesn't mean that that's the only kind of engineering you're going to be doing. You're still going to be doing product engineering, meaning, you as an engineer should still feel responsible for does the product you ship actually solve a real user problem."
+        },
+        {
+          "timestamp": "07:55",
+          "text": "But the best engineers... is going to need to learn this new tool set of how do you improve the system, not just build the product."
+        }
+      ],
+      "alignment_note": "Distinction between building the product vs. improving the system/factory aligns directly with the definitions on screen."
+    },
+    {
+      "scene_index": 14,
+      "start_time": "08:06",
+      "end_time": "10:38",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "THE FACTORIES STACK",
+      "visual_summary": "Detailed 7-layer architecture pyramid diagram covering layer 00 (Factories-as-code) up to layer 06 (Access).",
+      "ocr_details": [
+        "THE FACTORIES STACK",
+        "06 ACCESS: IDE / CLI, Warp Terminal, Warp Mobile, Web, Slack / Linear / Jira / GH, Open API",
+        "05 ORCHESTRATION: Workflow DAG, Triggers, Human-in-the-loop, Multi-agent, Task Broker",
+        "04 IMPROVEMENT: Online Evals, Scorer Dashboard, Benchmarking, Self-Improvement",
+        "03 INFERENCE: Multi-model (OpenAI, Anthropic, Gemini, DeepSeek), Bring Your Own Model, Custom Router",
+        "02 COMPUTE: Sandboxing (Docker, MicroVM, K8s, E2B), Agent Runner, Compute Size",
+        "01 DATA & CONTEXT: Runs + Transcripts, Agent Artifacts, MCPs / Internal Knowledge, Access Control",
+        "00 FACTORIES-AS-CODE: Declarative Config, Agent Definitions, Automation Definitions, Launch Config, Repo Config"
+      ],
+      "structured_reconstruction": "flowchart TD\n    L6[\"06 ACCESS: IDE/CLI, Warp Terminal, Slack/Linear/Jira, Open API\"]\n    L5[\"05 ORCHESTRATION: Workflow DAG, Triggers, Human-in-the-loop, Multi-agent\"]\n    L4[\"04 IMPROVEMENT: Online Evals, Scorer Dashboard, Benchmarking, Self-Improvement\"]\n    L3[\"03 INFERENCE: Multi-model, Bring Your Own Model, Custom Router\"]\n    L2[\"02 COMPUTE: Sandboxing, Agent Runner, Compute Size\"]\n    L1[\"01 DATA & CONTEXT: Runs + Transcripts, Agent Artifacts, MCPs, Access Control\"]\n    L0[\"00 FACTORIES-AS-CODE: Declarative Config, Agent Definitions, Automation Definitions\"]\n    L6 --> L5 --> L4 --> L3 --> L2 --> L1 --> L0",
+      "spoken_segments": [
+        {
+          "timestamp": "08:06",
+          "text": "And so what does that look like? If you think from first principles about how do you engineer an agentic system. I think you come up with something like this, doesn't have to be exactly this, but it's kind of an infrastructure stack that you're going to want to use..."
+        },
+        {
+          "timestamp": "08:25",
+          "text": "At the bottom of this is what I call factories as code... Above that is a layer of data and context... On top of that is the compute layer... Above that is the inference layer... On top of that, you need an orchestration layer... And then finally, your factory should be all API and MCP first..."
+        }
+      ],
+      "alignment_note": "Speaker walks through each layer of the pyramid from bottom (00 Factories-as-code) to top (06 Access)."
+    },
+    {
+      "scene_index": 15,
+      "start_time": "10:38",
+      "end_time": "11:34",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "factory.yml \u2014 eng-factory-slim",
+      "visual_summary": "Live repository code viewer on GitHub displaying `factory.yml` configuration defining agents, triggers, and lifecycle operations.",
+      "ocr_details": [
+        "Let's take a look at the tools ->",
+        "GitHub - warp-agent-staging / eng-factory-slim / factory.yml",
+        "factory: eng-factory-slim",
+        "description: Automated software development operations with a facilitator foreman and autonomous lifecycle workers.",
+        "owners: - zacklloyd@warp.dev",
+        "triggers: - github-prs",
+        "agents: warp-server, warp-docs, warp-web, warp-ios, warp-android"
+      ],
+      "structured_reconstruction": "factory: eng-factory-slim\ndescription: Automated software development operations with a facilitator foreman and autonomous lifecycle workers.\n\nowners:\n  - zacklloyd@warp.dev\n\ntriggers:\n  - github-prs\n\nagents:\n  - name: warp-server\n  - name: warp-docs\n  - name: warp-web\n  - name: warp-ios\n  - name: warp-android",
+      "spoken_segments": [
+        {
+          "timestamp": "10:38",
+          "text": "I'm going to give a quick demo of what some of these tools look like in the context of warp factories."
+        },
+        {
+          "timestamp": "10:55",
+          "text": "So, let me start here, so at the foundation, I mentioned earlier, this factory is in code. And so, I'm going to show some code... You basically want a declarative way of saying, this is my factory."
+        }
+      ],
+      "alignment_note": "Demonstrates the code implementation of the bottom stack layer (Factories-as-code)."
+    },
+    {
+      "scene_index": 16,
+      "start_time": "11:34",
+      "end_time": "12:33",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Runs \u2014 eng-factory-slim",
+      "visual_summary": "Warp platform UI showing live team agent runs, real-time activity feeds, task duration, models used, and generated artifacts.",
+      "ocr_details": [
+        "platform.staging.warp.dev",
+        "Runs",
+        "Inventory GitHub Repository Capabilities \u2014 Maggie Web \u2014 5m ago",
+        "Implement Opus 5.5 High Plan \u2014 Maggie Web \u2014 11m ago",
+        "Artifacts: GitHub migration push step, GitHub name step, GitHub push step, GitHub success screen",
+        "Metadata: Model gpt-4-0125-preview, Autopilot slack-mention"
+      ],
+      "structured_reconstruction": "Run: Implement Opus 5.5 High Plan\nAssignee: Maggie Web\nStatus: Delivered (Completed in 14m 25s)\nModel: gpt-4-0125-preview\nAutopilot: slack-mention\nArtifacts:\n  - GitHub migration push step\n  - GitHub name step (step 2 of 3) with purple banner\n  - GitHub push step\n  - GitHub success screen",
+      "spoken_segments": [
+        {
+          "timestamp": "11:34",
+          "text": "The second thing, moving up a layer is the idea that everything that you do in the factory should be tracked across your entire team."
+        },
+        {
+          "timestamp": "11:55",
+          "text": "This is a sort of Google Docs style live view of what every coding agent on Warp's team across all of our engineers are doing at all times."
+        },
+        {
+          "timestamp": "12:08",
+          "text": "And so I could click in and I could see, Maggie is implementing Opus 55 on the high plan. She's doing it from Slack. It has this artifact, I could look in and see the actual conversation here."
+        }
+      ],
+      "alignment_note": "Speaker points to Maggie's run item on screen and inspects metadata and generated artifacts."
+    },
+    {
+      "scene_index": 17,
+      "start_time": "12:33",
+      "end_time": "13:24",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Dashboard \u2014 Productivity & Spending",
+      "visual_summary": "Analytics dashboard displaying productivity metrics (human interactions, cycle time, PR counts) and spending analytics.",
+      "ocr_details": [
+        "eng-factory-slim \u2014 Dashboard",
+        "Productivity | Spending | Scorers",
+        "Human interactions per PR: 19.4",
+        "Median cycle time: Kickoff -> Merge 5.7h, Kickoff -> PR 20m",
+        "Pull requests: 342 (341 merged)",
+        "Total runs: 1,188",
+        "Cost per PR: $10.68",
+        "Most expensive PRs: $4,697.41 total spend"
+      ],
+      "structured_reconstruction": "| Metric | Value |\n| --- | --- |\n| Human interactions per PR | 19.4 |\n| Median Kickoff -> Merge | 5.7h |\n| Median Kickoff -> PR | 20m |\n| Total Pull Requests | 342 |\n| Total Runs | 1,188 |\n| Average Cost per PR | $10.68 |",
+      "spoken_segments": [
+        {
+          "timestamp": "12:33",
+          "text": "That brings me to the third thing moving up the stack here is once you have all of this information... You get the ability very easily... to understand how these coding agents are working."
+        },
+        {
+          "timestamp": "12:55",
+          "text": "You can think of that in terms of like traditional output metrics, like your Dora metrics... cycle time... how many human interactions per PR... cost..."
+        }
+      ],
+      "alignment_note": "Speaker points out exact numbers on dashboard: 19.4 human interactions per PR, cycle times, and cost per PR."
+    },
+    {
+      "scene_index": 18,
+      "start_time": "13:24",
+      "end_time": "14:58",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Scorers \u2014 Redundant Tests & Online Evals",
+      "visual_summary": "Scorer evaluation overview detailing automated test quality metrics, zooming into 'Redundant Tests' pass rates and execution history.",
+      "ocr_details": [
+        "Dashboard -> Scorers",
+        "Stage Transition Compliance: 71% pass",
+        "Self-improvement Quality: 69% pass",
+        "Redundant Tests: 82% pass, All-time answer cost: $43.54",
+        "Scorer prompt: Whether the worker's final delivered test diff included redundant, low-signal, or trivial tests",
+        "Recent runs: Pass/Fail scores (1.0 vs 0.4 - 'Some surplus tests')"
+      ],
+      "structured_reconstruction": "| Scorer Name | Pass Rate | Score Metric |\n| --- | --- | --- |\n| Stage Transition Compliance | 71% | 69 passed, 28 failed |\n| Self-improvement Quality | 69% | 29 passed, 13 failed |\n| Redundant Tests | 82% | Score history ~0.8 |\n| Human Feedback | 70% | 284 passed, 122 failed |",
+      "spoken_segments": [
+        {
+          "timestamp": "13:24",
+          "text": "And then, there's this next layer of data, which is also really important that I mentioned earlier, which is the ability to set up online Evals that run across all your coding agent sessions."
+        },
+        {
+          "timestamp": "13:55",
+          "text": "So, it's like we have an eval score here that we use that is looking for redundant tests... one common failure mode of coding agents is that sometimes they will write tests that are unnecessary."
+        }
+      ],
+      "alignment_note": "Speaker navigates into the Redundant Tests scorer tab to demonstrate online evaluation capabilities."
+    },
+    {
+      "scene_index": 19,
+      "start_time": "14:58",
+      "end_time": "15:54",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Self-improvement Inbox & GitHub PR #1328",
+      "visual_summary": "Self-improvement inbox view listing automated bug fix proposals, opening GitHub PR #1328 showing diff additions to `SKILL.md`.",
+      "ocr_details": [
+        "Self-improvement",
+        "Approval 1 / 43 (2%)",
+        "Inbox item: Check GitHub capabilities before declaring publication blocked",
+        "GitHub PR #1328: Check GitHub capabilities before declaring publication blocked",
+        "Diff file: eng-factory/skills/github/SKILL.md (+18 lines)",
+        "Before reporting on access tracker: Check GitHub capabilities before declaring publication blocked"
+      ],
+      "structured_reconstruction": "PR #1328: Check GitHub capabilities before declaring publication blocked\nBranch: self-improvement-auto-fix\nFile changed: eng-factory/skills/github/SKILL.md\n\n+ ### Before reporting on access tracker\n+ All transports, open-PR visibility, PR creation, and PR metadata write access have different permissions. An empty response from a GitHub API check does not imply total lack of access...",
+      "spoken_segments": [
+        {
+          "timestamp": "14:58",
+          "text": "Once you have that in place, You can do something that we call self-improvement which is rather than having humans look at the outputs of these scorers you have agents look at the output."
+        },
+        {
+          "timestamp": "15:30",
+          "text": "So this is like the awesome thing about having your factory defined as code and being able to use coding agents is that you can then have the coding agents diagnose problems with how they're working internally and suggest fixes to them."
+        }
+      ],
+      "alignment_note": "Shows an agent-generated GitHub PR (#1328) proposing a skill configuration patch based on automated scorer feedback."
+    },
+    {
+      "scene_index": 20,
+      "start_time": "15:54",
+      "end_time": "17:15",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Benchmarks \u2014 WarpBench 0.1",
+      "visual_summary": "Benchmark evaluation suite 'WarpBench 0.1' showing test runs and scatter plot graph of Correctness vs Average Cost on real tasks.",
+      "ocr_details": [
+        "Benchmarks -> WarpBench 0.1",
+        "Synthesized, self-contained implementation agent tasks distilled from real Warp factory runs.",
+        "Scatter plot: Correctness vs Average cost",
+        "gpt-5.6-sol (med): Correctness ~93.8%, Avg cost $4.23",
+        "gpt-5.3-flash: Correctness ~86.2%",
+        "gemini 3.7 flash: Correctness ~77.1%",
+        "claude opus 5 (high): Correctness ~84.5%, Avg cost ~$15.20"
+      ],
+      "structured_reconstruction": "| Model | Correctness | Average Cost |\n| --- | --- | --- |\n| gpt-5.6-sol (med) | 93.8% | $4.23 |\n| gpt-5.3-flash | 86.2% | $1.85 |\n| gemini 3.7 flash | 77.1% | $1.10 |\n| claude opus 5 (high) | 84.5% | $15.20 |",
+      "spoken_segments": [
+        {
+          "timestamp": "15:54",
+          "text": "The final tool that I'm going to point out that I mentioned earlier is the ability to create and run benchmarks. This is also essential..."
+        },
+        {
+          "timestamp": "16:05",
+          "text": "The only way to answer those questions for real is to test on your own data. And so you should have in place some mechanism where you can basically create a benchmark set out of your real data..."
+        },
+        {
+          "timestamp": "16:45",
+          "text": "This is something that looks like what you might get when a new model drops, like in Sweetbench or Terminal Bench. It's showing the trade-offs of different models here in terms of cost and quality..."
+        }
+      ],
+      "alignment_note": "Speaker demonstrates running WarpBench 0.1 on actual production tasks to compare model cost vs. correctness."
+    },
+    {
+      "scene_index": 21,
+      "start_time": "17:15",
+      "end_time": "17:36",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Factory proof points:",
+      "visual_summary": "Slide showing empirical results achieved by Warp: 40% more PRs merged, 70% lower PR review rate, and 67% lower cost per merged PR.",
+      "ocr_details": [
+        "Factory proof points:",
+        "40% MORE PRS MERGED (Merged PR volume increased from 1,692 to 2,362 across the seven weeks before and after comparison)",
+        "70% LOWER OBSERVED PR REVIEW RATE (Declined from 0.80% to 0.24% across matched four-week periods)",
+        "67% LOWER FACTORY COST PER MERGED PR (Average cost per merged PR fell from approximately $55 to $18 between September and October 2025)",
+        "How we improved our own factory:"
+      ],
+      "structured_reconstruction": "| Metric | Result | Context |\n| --- | --- | --- |\n| Merged PRs | +40% | Increased from 1,692 to 2,362 |\n| PR Review Rate | -70% | Declined from 0.80% to 0.24% |\n| Factory Cost / PR | -67% | Fell from ~$55 to ~$18 |",
+      "spoken_segments": [
+        {
+          "timestamp": "17:15",
+          "text": "And just to return to this big concept like this has worked well for us. We've managed to use these tools to drastically improve our throughput and lower our cost. We are just constantly doing this because this cost really matters to us..."
+        }
+      ],
+      "alignment_note": "Spoken points highlight the 40% throughput increase and cost reduction metrics visible on the slide."
+    },
+    {
+      "scene_index": 22,
+      "start_time": "17:36",
+      "end_time": "18:30",
+      "visual_type": "SLIDE",
+      "screen_title": "Engineer your agents.",
+      "visual_summary": "Concluding slides reinforcing the core message 'Engineer your agents.', followed by closing thoughts and a final QR code slide.",
+      "ocr_details": [
+        "Engineer your agents.",
+        "How I feel about being an engineer today.",
+        "TRY WARP FACTORIES TODAY"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "17:36",
+          "text": "Engineer your agents. It's a new engineering primitive we're all engineers. Think about how you can get the most out of them and build the system for that."
+        },
+        {
+          "timestamp": "17:51",
+          "text": "I think this is very exciting. I know there's a lot of angst around what it means to be an engineer right now... but I'm still using all the engineering skills that I spent my whole career learning..."
+        },
+        {
+          "timestamp": "18:08",
+          "text": "If you're interested in more factories, you can check it out here. Thank you all for coming to the talk."
+        }
+      ],
+      "alignment_note": "Speaker delivers concluding remarks while showing final call-to-action slides and QR code."
+    }
+  ]
+}

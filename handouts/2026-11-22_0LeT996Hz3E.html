@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineer Your Coding Agents Like Any Other System — Zach Lloyd, Warp — Technical Learning Handout</title>
+  <!-- Tailwind Play CDN is a JIT runtime (no versioned URL, no CORS/SRI) - SRI
+       not applicable; mermaid below is version-pinned and SRI-hardened instead. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js" integrity="sha384-EOXBFmc3gx5mb+vn0vPvvGqACToJD24hhacX5Yx+8NUUQrHIle/Qi5Bg9o3zKwW2" crossorigin="anonymous"></script>
+  <style>
+    .handout-body p { margin: 0.5rem 0; }
+    .handout-body ul { margin: 0.5rem 0; }
+    .handout-body code { background: #f1f5f9; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.85em; }
+    pre.mermaid { display: flex; justify-content: center; background: #ffffff; }
+    pre code.block { display: block; white-space: pre-wrap; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+<header class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+  <div class="max-w-4xl mx-auto px-6 py-10">
+    <p class="text-xs uppercase tracking-widest text-indigo-200">Technical Learning Handout</p>
+    <h1 class="text-3xl font-bold mt-2 leading-tight">Engineer Your Coding Agents Like Any Other System — Zach Lloyd, Warp</h1>
+    <p class="mt-3 text-sm text-indigo-100">
+      AI Engineer ·
+      <a class="underline hover:text-white" href="https://www.youtube.com/watch?v=0LeT996Hz3E">▶ Watch on YouTube</a> ·
+      Generated 2026-11-22 22:15 UTC
+    </p>
+    
+  </div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-8 space-y-10 handout-body">
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">⚡ TL;DR</h2>
+    <ul class="list-disc pl-5 space-y-1">
+      <li>A software factory is not a pile of automations, AI teammates, shared skills/MCPs, or a personal agent swarm — it is a code-defined, closed-loop system for continuously measuring and improving cloud coding agents.</li><li>Treat agents as a new engineering primitive: define the whole factory declaratively (Terraform-style YAML), then engineer the system around the primitive instead of hand-prompting each run.</li><li>Local interactive prompting caps you at human throughput and hides cost, quality, and security posture; centralizing in the cloud is what makes automation, measurement, and governance possible.</li><li>Build a new toolbelt: online evals/scorers, self-improvement loops (agents filing PRs against their own SKILL.md), benchmarks distilled from your own production runs, and A/B testing of the factory itself.</li><li>Results are empirical, not vibes: Warp reports +40% merged PRs, -70% observed PR review rate, and -67% cost per merged PR after iterating on its own factory.</li>
+    </ul>
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">📋 Executive Summary</h2>
+    <p>Zach Lloyd (founder/CEO of Warp, ex-Google principal engineer who led engineering on Google Docs) argues that software engineering is becoming factory engineering. Most teams still run coding agents as local, interactively prompted, multi-threaded sessions; that model is capped by human throughput, leaves platform teams unable to compare cost against quality across engineers, and creates governance and security exposure when every developer configures their own models, skills, and MCPs. His definition is deliberately narrow: a software factory is a code-defined, closed-loop system for continuously measuring and improving cloud coding agents. The architecture is a seven-layer stack — factories-as-code at the base, then data and context, compute and sandboxing, multi-model inference, an improvement layer of online evals and scorers, orchestration, and an API/MCP-first access layer on top — with the closed SDLC loop (triage, spec, implement, verify, ship, monitor) executed by agents and gated by humans at spec, code, and product review.</p><p>The back half of the talk is about instrumentation. Every run is tracked team-wide — triggering surface, model, duration, artifacts — yielding unit economics around eng-factory-slim: 342 PRs (341 merged) from 1,188 runs, $10.68 per PR, and 19.4 human interactions per PR against a 5.7h median kickoff-to-merge. Online LLM-as-judge scorers run across production sessions rather than curated eval sets (stage-transition compliance 71%, redundant tests 82%, human feedback 70%), and agents then read scorer failures and open PRs against their own SKILL.md files with human review as the merge gate. WarpBench 0.1, distilled from real factory runs, inverts the generic leaderboard: gpt-5.6-sol (med) at 93.8% and $4.23 beats claude opus 5 (high) at 84.5% and ~$15.20. Iterating on the factory produced +40% merged PRs, -70% observed PR review rate, and -67% cost per merged PR.</p>
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">🏗️ Architecture at a Glance</h2>
+    <pre class="mermaid">flowchart TB
+  L6["06 ACCESS<br/>IDE / CLI · Warp Terminal · Mobile · Web<br/>Slack / Linear / Jira / GitHub · Open API"]
+  L5["05 ORCHESTRATION<br/>Workflow DAG · Triggers · Human-in-the-loop<br/>Multi-agent · Task Broker"]
+  L4["04 IMPROVEMENT<br/>Online Evals · Scorer Dashboard<br/>Benchmarking · Self-Improvement"]
+  L3["03 INFERENCE<br/>Multi-model (OpenAI, Anthropic, Gemini, DeepSeek)<br/>Bring Your Own Model · Custom Router"]
+  L2["02 COMPUTE<br/>Sandboxing (Docker, MicroVM, K8s, E2B)<br/>Agent Runner · Compute Size"]
+  L1["01 DATA AND CONTEXT<br/>Runs + Transcripts · Agent Artifacts<br/>MCPs / Internal Knowledge · Access Control"]
+  L0["00 FACTORIES-AS-CODE<br/>Declarative Config · Agent Definitions<br/>Automation Definitions · Launch/Repo Config"]
+  SDLC["Closed SDLC loop<br/>Triage → Spec → Implement → Verify → Ship → Monitor"]
+  L6 --> L5 --> L4 --> L3 --> L2 --> L1 --> L0
+  L4 -. "scorer findings become self-improvement PRs" .-> L0
+  L0 -. "agents execute the loop" .-> SDLC
+  SDLC -. "runs, transcripts, artifacts" .-> L1</pre>
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">🖥️ Key Screens &amp; Metrics</h2>
+    <div class="grid gap-3 md:grid-cols-2">
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=315s">[05:15] Measurement &gt; Vibes — Benchmark Results scatter (correctness vs. average cost)</a>
+        <p class="text-sm text-slate-600 mt-1">Cost/quality frontier chart. gpt-5.6-sol (high) marked Benchmark Winner at $8.13 average cost and 96% correctness; gpt-5.6-sol (med) ~90%; grok 4.0 (high) ~85%; claude opus 5 (high) ~$13.00 at ~78%; gpt-5.3-flash ~75% at low cost; gemini 3.7 flash ~68%. The visual argument: the most expensive model is not automatically on the frontier, so model choice must be measured per task class.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=486s">[08:06] The Factories Stack (7-layer architecture diagram)</a>
+        <p class="text-sm text-slate-600 mt-1">Layer 00 Factories-as-code (declarative config, agent definitions, automation definitions, launch config, repo config) → 01 Data &amp; Context (runs + transcripts, agent artifacts, MCPs/internal knowledge, access control) → 02 Compute (Docker/MicroVM/K8s/E2B sandboxing, agent runner, compute size) → 03 Inference (multi-model OpenAI/Anthropic/Gemini/DeepSeek, BYO model, custom router) → 04 Improvement (online evals, scorer dashboard, benchmarking, self-improvement) → 05 Orchestration (workflow DAG, triggers, human-in-the-loop, multi-agent, task broker) → 06 Access (IDE/CLI, Warp Terminal, mobile, web, Slack/Linear/Jira/GitHub, open API). Improvement sits below orchestration.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=753s">[12:33] eng-factory-slim Dashboard — Productivity &amp; Spending</a>
+        <p class="text-sm text-slate-600 mt-1">Human interactions per PR: 19.4 (the leverage metric). Median kickoff→merge 5.7h; kickoff→PR 20m. 342 pull requests, 341 merged; 1,188 total runs; $10.68 cost per PR; $4,697.41 total spend with a most-expensive-PRs drill-down. This is DORA-style measurement rebuilt for agents: cycle time, human touch count, and unit economics per merged PR.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=804s">[13:24] Scorers — Online Evals (Redundant Tests, Stage Transition Compliance)</a>
+        <p class="text-sm text-slate-600 mt-1">Scorer pass rates: Stage Transition Compliance 71% (69 pass / 28 fail), Self-improvement Quality 69% (29/13), Redundant Tests 82% with $43.54 all-time answer cost, Human Feedback 70% (284/122). Scorer prompt text: &#39;Whether the worker&#39;s final delivered test diff included redundant, low-signal, or trivial tests.&#39; Individual runs score 1.0 vs 0.4 with the note &#39;Some surplus tests&#39; — LLM-as-judge applied to every production session, not a curated offline set.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=954s">[15:54] WarpBench 0.1 — benchmark built from real factory runs</a>
+        <p class="text-sm text-slate-600 mt-1">Synthesized, self-contained implementation tasks distilled from real Warp factory runs, plotted correctness vs. average cost. gpt-5.6-sol (med) 93.8% at $4.23; gpt-5.3-flash 86.2%; claude opus 5 (high) 84.5% at ~$15.20; gemini 3.7 flash 77.1%. Note the inversion versus the earlier generic chart: the medium-reasoning tier wins on this workload, which is the entire point of benchmarking on your own data.</p>
+      </div>
+      
+      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=1035s">[17:15] Factory proof points</a>
+        <p class="text-sm text-slate-600 mt-1">+40% merged PRs (1,692 → 2,362 across the seven weeks before and after); -70% observed PR review rate (0.80% → 0.24% across matched four-week periods); -67% factory cost per merged PR (~$55 → ~$18 between September and October 2025). Three axes — throughput, review load, unit cost — improved simultaneously, which is the evidence of a system optimization rather than a local speedup.</p>
+      </div>
+      
+    </div>
+  </section>
+  
+  
+  <section class="space-y-5">
+    <h2 class="text-xl font-bold text-indigo-700">🔍 Timestamped Deep Dives</h2>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=183s">[03:03] What a Software Factory Is — and Is Not</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>Lloyd fences off the term before defining it. A factory is <strong>not</strong>: a loose set of automations, a collection of AI teammates, a shared skills/MCP setup, or a personal agent swarm. Each is a useful primitive; none is the end state.</p><p>The positive definition is architectural: <code>a code-defined, closed-loop system for continuously measuring and improving cloud coding agents</code>. Three forces push teams off local interactive prompting: (1) <strong>throughput ceiling</strong> — any agent needing a human prompt cannot be automated; (2) <strong>no central measurement</strong> — per-developer model and skill choices make cost/quality comparison impossible for platform teams; (3) <strong>security and governance</strong> — locally configured agents are unauditable. The factory is the system that owns those three problems, which is why the definition includes 'closed loop' and 'measuring' rather than just 'automation'.</p></div>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=235s">[03:55] Factories as Code (Layer 00)</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>The foundation is declarative: a repo-resident config file that names the factory, its automations, the repo each automation targets, the models it may use, and the skills it may load — Terraform-style, so the factory is diffable and reviewable like code. On screen this is a slim per-automation block; in speech Lloyd extends the same idea to the full surface a factory engineer must declare: which coding agents run, how they are triggered, the workflow stages (triage to spec and onward), which MCPs are available, and where agents execute.</p><p>This is the load-bearing decision. Because the factory is data in version control, an agent can read it, propose a patch to it, and open a PR against it — the exact mechanism used later for self-improvement. It also supplies the audit trail local setups lack and makes the factory itself A/B testable.</p></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">factory: eng-factory-slim
+
+automations:
+  - auto-server-version:
+      description: Automated software development factory for warp-server
+      repo: warp-server
+      models:
+        - gpt-4o
+      skills:
+        - web-search</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=486s">[08:06] The Factories Stack — Seven Layers, Bottom-Up</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>Reasoning from first principles about engineering an agentic system yields an infrastructure stack, not a tool list. Bottom to top: <strong>00 Factories-as-code</strong>; <strong>01 Data &amp; context</strong> (runs and transcripts, artifacts, MCPs and internal knowledge, access control); <strong>02 Compute</strong> (Docker/MicroVM/K8s/E2B sandboxing, agent runner, compute sizing); <strong>03 Inference</strong> (multi-model, bring-your-own-model, custom router); <strong>04 Improvement</strong> (online evals, scorer dashboard, benchmarking, self-improvement); <strong>05 Orchestration</strong> (workflow DAG, triggers, human-in-the-loop, multi-agent, task broker); <strong>06 Access</strong> (IDE/CLI, terminal, mobile, web, Slack/Linear/Jira/GitHub, open API).</p><p>Two constraints matter for architects: the factory should be <strong>API- and MCP-first</strong> so any surface can submit work, and the improvement layer sits <em>below</em> orchestration — measurement is infrastructure the control plane consumes, not a reporting afterthought bolted on top.</p></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Layer | Concern | Example components |
+| --- | --- | --- |
+| 06 Access | How work enters | IDE/CLI, Slack, Linear, Jira, GitHub, Open API |
+| 05 Orchestration | Control flow | Workflow DAG, triggers, HITL gates, task broker |
+| 04 Improvement | Learning | Online evals, scorers, benchmarks, self-improvement |
+| 03 Inference | Model selection | Multi-model, BYO model, custom router |
+| 02 Compute | Execution | Docker, MicroVM, K8s, E2B, agent runner |
+| 01 Data &amp; Context | Memory | Runs, transcripts, artifacts, MCPs, ACLs |
+| 00 Factories-as-code | Definition | Declarative config, agent + automation defs |</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=753s">[12:33] Measurement Layer — Dashboards and Scorers Replace Vibes</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>Every run is tracked team-wide in a Google-Docs-style live view: who triggered it, from which surface, with which model, how long it took, and what artifacts it produced. Rolled up, that yields traditional delivery metrics plus agent-specific economics: 19.4 human interactions per PR, median kickoff→merge 5.7h against kickoff→PR 20m (the gap is review latency, not generation), 342 PRs from 1,188 runs, $10.68 per PR.</p><p>Above run data sit <strong>online evals</strong>: LLM-as-judge scorers applied to every production session rather than a curated offline set. Named scorers include Stage Transition Compliance (71%), Self-improvement Quality (69%), Human Feedback (70%), and Redundant Tests (82%) — the last targeting a known failure mode where agents write low-signal or trivial tests. Scorer pass rate becomes a leading indicator you can regress against whenever you change a model, prompt, or skill.</p></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Scorer | Pass rate | Signal |
+| --- | --- | --- |
+| Stage Transition Compliance | 71% | 69 pass / 28 fail |
+| Self-improvement Quality | 69% | 29 pass / 13 fail |
+| Redundant Tests | 82% | all-time answer cost $43.54 |
+| Human Feedback | 70% | 284 pass / 122 fail |
+
+Dashboard: human interactions/PR 19.4 · kickoff→merge 5.7h · kickoff→PR 20m · 342 PRs (341 merged) · 1,188 runs · $10.68 per PR</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=898s">[14:58] Self-Improvement Loop — Agents Patch Their Own Skills</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>The improvement layer closes the loop: instead of humans reading scorer output, agents read it, diagnose the failure mode in their own operating instructions, and propose a fix as a reviewable PR. The demo shows a self-improvement inbox at 1 of 43 approvals (2%) and PR #1328, opened on branch <code>self-improvement-auto-fix</code>, adding 18 lines to <code>eng-factory/skills/github/SKILL.md</code>.</p><p>The fix is instructive: an agent had been declaring publication blocked because a GitHub capability probe returned empty, conflating 'no access' with 'wrong transport.' The remedy is a written rule that PR visibility, creation, and metadata write are distinct permissions. This is the payoff of factories-as-code — failure, evidence, and patch live in the same versioned artifact, and a human gate still applies before merge.</p></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">PR #1328 — Check GitHub capabilities before declaring publication blocked
+Branch: self-improvement-auto-fix
+File: eng-factory/skills/github/SKILL.md (+18 lines)
+
++ ### Before reporting on access tracker
++ All transports, open-PR visibility, PR creation, and PR metadata write
++ access have different permissions. An empty response from a GitHub API
++ check does not imply total lack of access...</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=954s">[15:54] Benchmarks on Your Own Data — WarpBench 0.1</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>Public leaderboards (SWE-bench, Terminal-Bench) cannot answer 'which model should this factory use for these tasks at this cost?' Lloyd's answer is a benchmark synthesized from real factory runs: self-contained implementation tasks distilled from production history, replayed across models to plot correctness against average cost.</p><p>WarpBench 0.1 inverts the earlier generic-chart ranking: gpt-5.6-sol (med) reaches 93.8% at $4.23 while claude opus 5 (high) sits at 84.5% for roughly 3.6x the cost. That inversion is the argument — model tiers must be chosen per workload with your own data and re-run whenever a new model drops. Pair it with A/B testing of the factory itself so routing changes are validated rather than assumed.</p></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Model | Correctness | Avg cost |
+| --- | --- | --- |
+| gpt-5.6-sol (med) | 93.8% | $4.23 |
+| gpt-5.3-flash | 86.2% | $1.85 |
+| claude opus 5 (high) | 84.5% | $15.20 |
+| gemini 3.7 flash | 77.1% | $1.10 |
+
+Generic-chart winner for contrast: gpt-5.6-sol (high), 96%, $8.13</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=1035s">[17:15] Proof Points — What Iterating on the Factory Actually Moved</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>Warp reports three simultaneous improvements, the credible signature of a system change rather than a local speedup: <strong>+40% merged PRs</strong> (1,692 → 2,362 across the seven weeks before and after), <strong>-70% observed PR review rate</strong> (0.80% → 0.24% across matched four-week periods), and <strong>-67% cost per merged PR</strong> (~$55 → ~$18, September to October 2025).</p><p>The review-rate drop is the most interesting number for an architect: it implies the binding constraint moved away from reviewer attention, and that human gates were being spent on work scorers could now adjudicate. Cost per merged PR fell while volume rose, so unit economics improved faster than total spend grew — the intended shape when scaling agent capacity.</p></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Metric | Change | Raw comparison |
+| --- | --- | --- |
+| Merged PRs | +40% | 1,692 → 2,362 (7-week windows) |
+| Observed PR review rate | -70% | 0.80% → 0.24% (matched 4-week) |
+| Factory cost per merged PR | -67% | ~$55 → ~$18 (Sep–Oct 2025) |</code></pre>
+      
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <h3 class="text-lg font-semibold">
+        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=395s">[06:35] Mindset — Product Engineering vs. Factory Engineering</a>
+      </h3>
+      <div class="mt-2 text-slate-700"><p>The thesis compresses to three verbs: <em>prompt</em> your agents, <em>manage</em> your agents, <strong>engineer</strong> your agents. The first is the current default (local, interactive, multi-threaded); the second adds oversight without systemization; the third treats the agent as a primitive and designs the surrounding system.</p><p>Two principles define the mindset: measure everything on your own data, and continually improve. The supporting toolbelt — blueprints, automations, evals, self-improvement, benchmarks, A/B tests — is an engineering discipline, not a product feature. Factory engineering does not replace product engineering (still owning whether the shipped thing solves a real user problem); it is an added responsibility for senior engineers, and the differentiator between teams that get compounding returns from agents and teams capped at linear ones.</p></div>
+      
+      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">Prompt your agents.  -&gt;  Manage your agents.  -&gt;  Engineer your agents.
+
+Mindset:
+  1. Measure everything yourself, based on your own data
+  2. Continually improve
+
+Toolbelt: Blueprints · Automations · Evals · Self-improvement · Benchmarks · A/B tests</code></pre>
+      
+    </article>
+    
+  </section>
+  
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <h2 class="text-xl font-bold text-indigo-700 mb-3">✅ Actionable Engineering Checklist</h2>
+    <ul class="space-y-2">
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Write a factory.yml in the repo today: agents, triggers, workflow stages, models, skills, MCPs, and execution target — no factory without a versioned definition.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Instrument every run centrally: transcript, triggering surface, model, duration, artifacts, and cost. If you cannot attribute cost per merged PR, you cannot improve the system.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Stand up three online scorers before adding more agents: stage-transition compliance, test quality (redundant/trivial tests), and human-feedback capture on every PR.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Distill 30-50 self-contained tasks from your own merged PRs into an internal benchmark; re-run it whenever a model drops instead of trusting public leaderboards.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Route by measured economics, not habit — plot correctness vs. cost per task class and prefer the cheapest model that clears your quality bar.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Close the loop: let agents read scorer failures and open PRs against their own skill/config files, with human review as the merge gate.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Track human interactions per PR as your primary leverage metric; a high count means orchestration work is still being done manually.</span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Keep human-in-the-loop gates only where a scorer cannot adjudicate — treat review attention as the scarce resource the factory exists to conserve.</span></li>
+      
+    </ul>
+  </section>
+  
+  <footer class="text-xs text-slate-400 border-t border-slate-200 pt-4">
+    Autonomously generated by the Hermes YouTube Learning Pipeline (Gemini
+    Interactions API) from the
+    <a class="underline hover:text-slate-600" href="../transcripts/2026-11-22_0LeT996Hz3E_enriched.md">persisted interleaved transcript</a>.
+    Verify claims against the source video before acting on them.
+  </footer>
+</main>
+<script>
+  if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose' }); }
+</script>
+</body>
+</html>
