@@ -3,268 +3,235 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineer Your Coding Agents Like Any Other System — Zach Lloyd, Warp — Technical Learning Handout</title>
-  <!-- Tailwind Play CDN is a JIT runtime (no versioned URL, no CORS/SRI) - SRI
-       not applicable; mermaid below is version-pinned and SRI-hardened instead. -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js" integrity="sha384-EOXBFmc3gx5mb+vn0vPvvGqACToJD24hhacX5Yx+8NUUQrHIle/Qi5Bg9o3zKwW2" crossorigin="anonymous"></script>
+  <title>Engineer Your Coding Agents Like Any Other System — Zach Lloyd, Warp — Handout</title>
+  
+  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.inline{display:inline}.flex{display:flex}.table{display:table}.grid{display:grid}.w-full{width:100%}.max-w-4xl{max-width:56rem}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-baseline{align-items:baseline}.justify-between{justify-content:space-between}.gap-2{gap:.5rem}.gap-4{gap:1rem}.gap-x-4{-moz-column-gap:1rem;column-gap:1rem}.gap-y-1{row-gap:.25rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px*var(--tw-divide-y-reverse))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity,1))}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:.25rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-indigo-600{--tw-gradient-from:#4f46e5 var(--tw-gradient-from-position);--tw-gradient-to:rgba(79,70,229,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-violet-600{--tw-gradient-to:#7c3aed var(--tw-gradient-to-position)}.p-3{padding:.75rem}.p-5{padding:1.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pl-5{padding-left:1.25rem}.pr-3{padding-right:.75rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.align-top{vertical-align:top}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-tight{line-height:1.25}.tracking-wide{letter-spacing:.025em}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70/var(--tw-text-opacity,1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255/var(--tw-text-opacity,1))}.text-indigo-200{--tw-text-opacity:1;color:rgb(199 210 254/var(--tw-text-opacity,1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229/var(--tw-text-opacity,1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-sky-800{--tw-text-opacity:1;color:rgb(7 89 133/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.accent-indigo-600{accent-color:#4f46e5}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.hover\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:underline:hover{text-decoration-line:underline}@media (min-width:768px){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:grid-cols-\[max-content_1fr\]{grid-template-columns:max-content 1fr}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}}</style>
   <style>
-    .handout-body p { margin: 0.5rem 0; }
-    .handout-body ul { margin: 0.5rem 0; }
-    .handout-body code { background: #f1f5f9; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.85em; }
-    pre.mermaid { display: flex; justify-content: center; background: #ffffff; }
-    pre code.block { display: block; white-space: pre-wrap; }
+    html { scroll-behavior: smooth; }
+    .mermaid-wrap svg { max-width: 100%; height: auto; margin: 0 auto; }
+    @media print {
+      body { background: #fff; }
+      header { background: #fff !important; color: #000 !important; }
+      header * { color: #000 !important; }
+      section, article, tr { break-inside: avoid; }
+      a { text-decoration: none; color: inherit; }
+      nav { display: none; }
+    }
   </style>
 </head>
+
+
 <body class="bg-slate-50 text-slate-800 antialiased">
 <header class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
-  <div class="max-w-4xl mx-auto px-6 py-10">
-    <p class="text-xs uppercase tracking-widest text-indigo-200">Technical Learning Handout</p>
-    <h1 class="text-3xl font-bold mt-2 leading-tight">Engineer Your Coding Agents Like Any Other System — Zach Lloyd, Warp</h1>
-    <p class="mt-3 text-sm text-indigo-100">
-      AI Engineer ·
-      <a class="underline hover:text-white" href="https://www.youtube.com/watch?v=0LeT996Hz3E">▶ Watch on YouTube</a> ·
-      Generated 2026-11-22 22:15 UTC
+  <div class="max-w-4xl mx-auto px-6 py-8">
+    <h1 class="text-2xl md:text-3xl font-bold leading-tight">Engineer Your Coding Agents Like Any Other System — Zach Lloyd, Warp</h1>
+    <p class="mt-2 text-sm text-indigo-100">
+      AI Engineer · 18 min talk ·
+      <a class="underline hover:text-white" href="https://www.youtube.com/watch?v=0LeT996Hz3E" target="_blank" rel="noopener">Watch</a> ·
+      <a class="underline hover:text-white" href="https://vksepm.github.io/youtube-learning/transcripts/2026-11-22_0LeT996Hz3E_enriched.md">Transcript</a> ·
+      2026-11-22 23:53 UTC · <span class="text-indigo-200">gemini-3.6-flash</span>
     </p>
-    
+    <p class="mt-4 text-base md:text-lg font-medium text-white">Coding agents are a new engineering primitive: engineer them as a code-defined, closed-loop factory, because local interactive use caps throughput, blocks cost and quality control, and escapes governance.</p>
   </div>
 </header>
-<main class="max-w-4xl mx-auto px-6 py-8 space-y-10 handout-body">
+
+<main class="max-w-4xl mx-auto px-6 py-6 space-y-6">
+
   
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">⚡ TL;DR</h2>
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">TL;DR</h2>
     <ul class="list-disc pl-5 space-y-1">
-      <li>A software factory is not a pile of automations, AI teammates, shared skills/MCPs, or a personal agent swarm — it is a code-defined, closed-loop system for continuously measuring and improving cloud coding agents.</li><li>Treat agents as a new engineering primitive: define the whole factory declaratively (Terraform-style YAML), then engineer the system around the primitive instead of hand-prompting each run.</li><li>Local interactive prompting caps you at human throughput and hides cost, quality, and security posture; centralizing in the cloud is what makes automation, measurement, and governance possible.</li><li>Build a new toolbelt: online evals/scorers, self-improvement loops (agents filing PRs against their own SKILL.md), benchmarks distilled from your own production runs, and A/B testing of the factory itself.</li><li>Results are empirical, not vibes: Warp reports +40% merged PRs, -70% observed PR review rate, and -67% cost per merged PR after iterating on its own factory.</li>
+      <li>A software factory is a code-defined, closed-loop system for continuously measuring and improving cloud coding agents — not automations, teammates, or shared skill collections.</li><li>Centralization paid for Warp: 40% more merged PRs and 67% lower cost per merged PR, roughly $55 to $18 between September and October 2025.</li><li>Decide model and factory choices by measuring your own data: online evals across all sessions, plus benchmarks like WarpBench 0.1 distilled from real runs.</li><li>Self-improvement closes the loop — agents read scorer outputs and propose fixes as PRs — with human approval as the gate.</li>
     </ul>
+    <p class="mt-3 text-sm text-slate-600">Talk by Zach Lloyd, founder and CEO of Warp (previously principal engineer at Google, led Google Docs engineering), at AI Engineer Code Summit. Warp sells a platform for building internal software factories; its open-source agentic terminal has about 65,000 GitHub stars and almost a million developer users. All evidence shown is from Warp&#39;s own internal factory, eng-factory-slim, demonstrated on a staging platform — a vendor presenting its own product.</p>
   </section>
   
+
   
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">📋 Executive Summary</h2>
-    <p>Zach Lloyd (founder/CEO of Warp, ex-Google principal engineer who led engineering on Google Docs) argues that software engineering is becoming factory engineering. Most teams still run coding agents as local, interactively prompted, multi-threaded sessions; that model is capped by human throughput, leaves platform teams unable to compare cost against quality across engineers, and creates governance and security exposure when every developer configures their own models, skills, and MCPs. His definition is deliberately narrow: a software factory is a code-defined, closed-loop system for continuously measuring and improving cloud coding agents. The architecture is a seven-layer stack — factories-as-code at the base, then data and context, compute and sandboxing, multi-model inference, an improvement layer of online evals and scorers, orchestration, and an API/MCP-first access layer on top — with the closed SDLC loop (triage, spec, implement, verify, ship, monitor) executed by agents and gated by humans at spec, code, and product review.</p><p>The back half of the talk is about instrumentation. Every run is tracked team-wide — triggering surface, model, duration, artifacts — yielding unit economics around eng-factory-slim: 342 PRs (341 merged) from 1,188 runs, $10.68 per PR, and 19.4 human interactions per PR against a 5.7h median kickoff-to-merge. Online LLM-as-judge scorers run across production sessions rather than curated eval sets (stage-transition compliance 71%, redundant tests 82%, human feedback 70%), and agents then read scorer failures and open PRs against their own SKILL.md files with human review as the merge gate. WarpBench 0.1, distilled from real factory runs, inverts the generic leaderboard: gpt-5.6-sol (med) at 93.8% and $4.23 beats claude opus 5 (high) at 84.5% and ~$15.20. Iterating on the factory produced +40% merged PRs, -70% observed PR review rate, and -67% cost per merged PR.</p>
-  </section>
-  
-  
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">🏗️ Architecture at a Glance</h2>
-    <pre class="mermaid">flowchart TB
-  L6["06 ACCESS<br/>IDE / CLI · Warp Terminal · Mobile · Web<br/>Slack / Linear / Jira / GitHub · Open API"]
-  L5["05 ORCHESTRATION<br/>Workflow DAG · Triggers · Human-in-the-loop<br/>Multi-agent · Task Broker"]
-  L4["04 IMPROVEMENT<br/>Online Evals · Scorer Dashboard<br/>Benchmarking · Self-Improvement"]
-  L3["03 INFERENCE<br/>Multi-model (OpenAI, Anthropic, Gemini, DeepSeek)<br/>Bring Your Own Model · Custom Router"]
-  L2["02 COMPUTE<br/>Sandboxing (Docker, MicroVM, K8s, E2B)<br/>Agent Runner · Compute Size"]
-  L1["01 DATA AND CONTEXT<br/>Runs + Transcripts · Agent Artifacts<br/>MCPs / Internal Knowledge · Access Control"]
-  L0["00 FACTORIES-AS-CODE<br/>Declarative Config · Agent Definitions<br/>Automation Definitions · Launch/Repo Config"]
-  SDLC["Closed SDLC loop<br/>Triage → Spec → Implement → Verify → Ship → Monitor"]
-  L6 --> L5 --> L4 --> L3 --> L2 --> L1 --> L0
-  L4 -. "scorer findings become self-improvement PRs" .-> L0
-  L0 -. "agents execute the loop" .-> SDLC
-  SDLC -. "runs, transcripts, artifacts" .-> L1</pre>
-  </section>
-  
-  
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">🖥️ Key Screens &amp; Metrics</h2>
-    <div class="grid gap-3 md:grid-cols-2">
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=315s">[05:15] Measurement &gt; Vibes — Benchmark Results scatter (correctness vs. average cost)</a>
-        <p class="text-sm text-slate-600 mt-1">Cost/quality frontier chart. gpt-5.6-sol (high) marked Benchmark Winner at $8.13 average cost and 96% correctness; gpt-5.6-sol (med) ~90%; grok 4.0 (high) ~85%; claude opus 5 (high) ~$13.00 at ~78%; gpt-5.3-flash ~75% at low cost; gemini 3.7 flash ~68%. The visual argument: the most expensive model is not automatically on the frontier, so model choice must be measured per task class.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=486s">[08:06] The Factories Stack (7-layer architecture diagram)</a>
-        <p class="text-sm text-slate-600 mt-1">Layer 00 Factories-as-code (declarative config, agent definitions, automation definitions, launch config, repo config) → 01 Data &amp; Context (runs + transcripts, agent artifacts, MCPs/internal knowledge, access control) → 02 Compute (Docker/MicroVM/K8s/E2B sandboxing, agent runner, compute size) → 03 Inference (multi-model OpenAI/Anthropic/Gemini/DeepSeek, BYO model, custom router) → 04 Improvement (online evals, scorer dashboard, benchmarking, self-improvement) → 05 Orchestration (workflow DAG, triggers, human-in-the-loop, multi-agent, task broker) → 06 Access (IDE/CLI, Warp Terminal, mobile, web, Slack/Linear/Jira/GitHub, open API). Improvement sits below orchestration.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=753s">[12:33] eng-factory-slim Dashboard — Productivity &amp; Spending</a>
-        <p class="text-sm text-slate-600 mt-1">Human interactions per PR: 19.4 (the leverage metric). Median kickoff→merge 5.7h; kickoff→PR 20m. 342 pull requests, 341 merged; 1,188 total runs; $10.68 cost per PR; $4,697.41 total spend with a most-expensive-PRs drill-down. This is DORA-style measurement rebuilt for agents: cycle time, human touch count, and unit economics per merged PR.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=804s">[13:24] Scorers — Online Evals (Redundant Tests, Stage Transition Compliance)</a>
-        <p class="text-sm text-slate-600 mt-1">Scorer pass rates: Stage Transition Compliance 71% (69 pass / 28 fail), Self-improvement Quality 69% (29/13), Redundant Tests 82% with $43.54 all-time answer cost, Human Feedback 70% (284/122). Scorer prompt text: &#39;Whether the worker&#39;s final delivered test diff included redundant, low-signal, or trivial tests.&#39; Individual runs score 1.0 vs 0.4 with the note &#39;Some surplus tests&#39; — LLM-as-judge applied to every production session, not a curated offline set.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=954s">[15:54] WarpBench 0.1 — benchmark built from real factory runs</a>
-        <p class="text-sm text-slate-600 mt-1">Synthesized, self-contained implementation tasks distilled from real Warp factory runs, plotted correctness vs. average cost. gpt-5.6-sol (med) 93.8% at $4.23; gpt-5.3-flash 86.2%; claude opus 5 (high) 84.5% at ~$15.20; gemini 3.7 flash 77.1%. Note the inversion versus the earlier generic chart: the medium-reasoning tier wins on this workload, which is the entire point of benchmarking on your own data.</p>
-      </div>
-      
-      <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
-        <a class="text-sm font-semibold text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=1035s">[17:15] Factory proof points</a>
-        <p class="text-sm text-slate-600 mt-1">+40% merged PRs (1,692 → 2,362 across the seven weeks before and after); -70% observed PR review rate (0.80% → 0.24% across matched four-week periods); -67% factory cost per merged PR (~$55 → ~$18 between September and October 2025). Three axes — throughput, review load, unit cost — improved simultaneously, which is the evidence of a system optimization rather than a local speedup.</p>
-      </div>
-      
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h2 class="text-lg font-bold text-indigo-700">Evidence &amp; caveats</h2>
+      <p class="text-xs text-slate-500">
+        <span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span> on-screen data ·
+        <span class="px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">stated</span> speaker claim ·
+        <span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800">anecdote</span>
+      </p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="text-left text-xs uppercase tracking-wide text-slate-500 border-b border-slate-200">
+          <tr><th class="py-2 pr-3">When</th><th class="py-2 pr-3">Claim</th><th class="py-2 pr-3">Figures</th><th class="py-2">Caveat</th></tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 align-top">
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=315s" target="_blank" rel="noopener">[05:15]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Choose models on benchmark data, not vibes; on the shown results gpt-5.6-sol (high) is the winner.</td>
+            <td class="py-2 pr-3 text-slate-700">gpt-5.6-sol (high): 96% correctness, $8.13 average cost, labeled Benchmark Winner on a six-model correctness-versus-cost scatter.</td>
+            <td class="py-2 text-slate-600">Task set, N, and window unstated on the slide; its relation to WarpBench 0.1 later is unclear in transcript.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=753s" target="_blank" rel="noopener">[12:33]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Centralized run tracking yields team-level productivity and cost metrics per PR.</td>
+            <td class="py-2 pr-3 text-slate-700">342 PRs (341 merged), 1,188 total runs; 19.4 human interactions per PR; median kickoff to PR 20m, kickoff to merge 5.7h; cost per PR $10.68; most expensive PRs $4,697.41 total spend.</td>
+            <td class="py-2 text-slate-600">Single factory, single team, staging dashboard; measurement window not stated.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=804s" target="_blank" rel="noopener">[13:24]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Online evals score every coding-agent session against named quality prompts.</td>
+            <td class="py-2 pr-3 text-slate-700">Redundant Tests 82% pass, all-time answer cost $43.54; Stage Transition Compliance 71% pass; Self-improvement Quality 69% pass; Human Feedback 70% pass.</td>
+            <td class="py-2 text-slate-600">Scores come from a scorer prompt, not ground-truth tests; some scorers have few scored runs; window unstated.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=898s" target="_blank" rel="noopener">[14:58]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Agents review scorer outputs and propose fixes to their own skills as pull requests.</td>
+            <td class="py-2 pr-3 text-slate-700">Self-improvement inbox approval 1 of 43 (2%); PR #1328 adds 18 lines to eng-factory/skills/github/SKILL.md on branch self-improvement-auto-fix.</td>
+            <td class="py-2 text-slate-600">One inbox view; approval criteria and time window not characterized.</td>
+          </tr>
+          
+        </tbody>
+      </table>
     </div>
   </section>
   
+
   
-  <section class="space-y-5">
-    <h2 class="text-xl font-bold text-indigo-700">🔍 Timestamped Deep Dives</h2>
-    
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=183s">[03:03] What a Software Factory Is — and Is Not</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>Lloyd fences off the term before defining it. A factory is <strong>not</strong>: a loose set of automations, a collection of AI teammates, a shared skills/MCP setup, or a personal agent swarm. Each is a useful primitive; none is the end state.</p><p>The positive definition is architectural: <code>a code-defined, closed-loop system for continuously measuring and improving cloud coding agents</code>. Three forces push teams off local interactive prompting: (1) <strong>throughput ceiling</strong> — any agent needing a human prompt cannot be automated; (2) <strong>no central measurement</strong> — per-developer model and skill choices make cost/quality comparison impossible for platform teams; (3) <strong>security and governance</strong> — locally configured agents are unauditable. The factory is the system that owns those three problems, which is why the definition includes 'closed loop' and 'measuring' rather than just 'automation'.</p></div>
-      
-    </article>
-    
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=235s">[03:55] Factories as Code (Layer 00)</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>The foundation is declarative: a repo-resident config file that names the factory, its automations, the repo each automation targets, the models it may use, and the skills it may load — Terraform-style, so the factory is diffable and reviewable like code. On screen this is a slim per-automation block; in speech Lloyd extends the same idea to the full surface a factory engineer must declare: which coding agents run, how they are triggered, the workflow stages (triage to spec and onward), which MCPs are available, and where agents execute.</p><p>This is the load-bearing decision. Because the factory is data in version control, an agent can read it, propose a patch to it, and open a PR against it — the exact mechanism used later for self-improvement. It also supplies the audit trail local setups lack and makes the factory itself A/B testable.</p></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">factory: eng-factory-slim
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-base font-bold text-indigo-700 mb-2">WarpBench 0.1 — correctness vs average cost, implementation-agent tasks <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=954s" target="_blank" rel="noopener">[15:54]</a></h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-slate-100 text-slate-600"><tr><th class="px-3 py-1.5 font-semibold">Model</th><th class="px-3 py-1.5 font-semibold">Correctness</th><th class="px-3 py-1.5 font-semibold">Average cost</th></tr></thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr><td class="px-3 py-1.5">gpt-5.6-sol (med)</td><td class="px-3 py-1.5">93.8%</td><td class="px-3 py-1.5">$4.23</td></tr><tr><td class="px-3 py-1.5">gpt-5.3-flash</td><td class="px-3 py-1.5">86.2%</td><td class="px-3 py-1.5">$1.85</td></tr><tr><td class="px-3 py-1.5">gemini 3.7 flash</td><td class="px-3 py-1.5">77.1%</td><td class="px-3 py-1.5">$1.10</td></tr><tr><td class="px-3 py-1.5">claude opus 5 (high)</td><td class="px-3 py-1.5">84.5%</td><td class="px-3 py-1.5">~$15.20</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-base font-bold text-indigo-700 mb-2">Factory proof points — Warp&#39;s own factory, before vs after <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=1035s" target="_blank" rel="noopener">[17:15]</a></h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-slate-100 text-slate-600"><tr><th class="px-3 py-1.5 font-semibold">Metric</th><th class="px-3 py-1.5 font-semibold">Change</th><th class="px-3 py-1.5 font-semibold">Before</th><th class="px-3 py-1.5 font-semibold">After</th><th class="px-3 py-1.5 font-semibold">Window</th></tr></thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr><td class="px-3 py-1.5">Merged PRs</td><td class="px-3 py-1.5">+40%</td><td class="px-3 py-1.5">1,692</td><td class="px-3 py-1.5">2,362</td><td class="px-3 py-1.5">Seven weeks before vs after</td></tr><tr><td class="px-3 py-1.5">Observed PR review rate</td><td class="px-3 py-1.5">-70%</td><td class="px-3 py-1.5">0.80%</td><td class="px-3 py-1.5">0.24%</td><td class="px-3 py-1.5">Matched four-week periods</td></tr><tr><td class="px-3 py-1.5">Factory cost per merged PR</td><td class="px-3 py-1.5">-67%</td><td class="px-3 py-1.5">~$55</td><td class="px-3 py-1.5">~$18</td><td class="px-3 py-1.5">September to October 2025</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
 
-automations:
-  - auto-server-version:
-      description: Automated software development factory for warp-server
-      repo: warp-server
-      models:
-        - gpt-4o
-      skills:
-        - web-search</code></pre>
-      
-    </article>
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">System sketch</h2>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=486s">[08:06] The Factories Stack — Seven Layers, Bottom-Up</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>Reasoning from first principles about engineering an agentic system yields an infrastructure stack, not a tool list. Bottom to top: <strong>00 Factories-as-code</strong>; <strong>01 Data &amp; context</strong> (runs and transcripts, artifacts, MCPs and internal knowledge, access control); <strong>02 Compute</strong> (Docker/MicroVM/K8s/E2B sandboxing, agent runner, compute sizing); <strong>03 Inference</strong> (multi-model, bring-your-own-model, custom router); <strong>04 Improvement</strong> (online evals, scorer dashboard, benchmarking, self-improvement); <strong>05 Orchestration</strong> (workflow DAG, triggers, human-in-the-loop, multi-agent, task broker); <strong>06 Access</strong> (IDE/CLI, terminal, mobile, web, Slack/Linear/Jira/GitHub, open API).</p><p>Two constraints matter for architects: the factory should be <strong>API- and MCP-first</strong> so any surface can submit work, and the improvement layer sits <em>below</em> orchestration — measurement is infrastructure the control plane consumes, not a reporting afterthought bolted on top.</p></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Layer | Concern | Example components |
-| --- | --- | --- |
-| 06 Access | How work enters | IDE/CLI, Slack, Linear, Jira, GitHub, Open API |
-| 05 Orchestration | Control flow | Workflow DAG, triggers, HITL gates, task broker |
-| 04 Improvement | Learning | Online evals, scorers, benchmarks, self-improvement |
-| 03 Inference | Model selection | Multi-model, BYO model, custom router |
-| 02 Compute | Execution | Docker, MicroVM, K8s, E2B, agent runner |
-| 01 Data &amp; Context | Memory | Runs, transcripts, artifacts, MCPs, ACLs |
-| 00 Factories-as-code | Definition | Declarative config, agent + automation defs |</code></pre>
-      
-    </article>
+      <div class="mermaid-wrap overflow-x-auto"><svg id="my-svg" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 216px; background-color: white;" viewBox="4 4 216 976" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#666;stroke:#666;}#my-svg .marker.cross{stroke:#666;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#my-svg .cluster-label text{fill:#333;}#my-svg .cluster-label span{color:#333;}#my-svg .cluster-label span p{background-color:transparent;}#my-svg .label text,#my-svg span{fill:#000000;color:#000000;}#my-svg .node rect,#my-svg .node circle,#my-svg .node ellipse,#my-svg .node polygon,#my-svg .node path{fill:#eee;stroke:#999;stroke-width:1px;}#my-svg .rough-node .label text,#my-svg .node .label text,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-anchor:middle;}#my-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#my-svg .rough-node .label,#my-svg .node .label,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-align:center;}#my-svg .node.clickable{cursor:pointer;}#my-svg .root .anchor path{fill:#666!important;stroke-width:0;stroke:#666;}#my-svg .arrowheadPath{fill:#333333;}#my-svg .edgePaths .path{stroke:#666;stroke-width:1px;}#my-svg .flowchart-link{stroke:#666;fill:none;}#my-svg .edgeLabel{background-color:white;text-align:center;}#my-svg .edgeLabel p{background-color:white;}#my-svg .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#my-svg .labelBkg{background-color:rgba(255, 255, 255, 0.5);}#my-svg .cluster rect{fill:hsl(0, 0%, 98.9215686275%);stroke:#707070;stroke-width:1px;}#my-svg .cluster text{fill:#333;}#my-svg .cluster span{color:#333;}#my-svg .node .collapsed-indicator{fill:#707070;stroke:none;opacity:0.6;}#my-svg .node .collapsed-separator{stroke:#707070;stroke-width:0.75px;}#my-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160, 0%, 93.3333333333%);border:1px solid #707070;border-radius:2px;pointer-events:none;z-index:100;}#my-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#000000;}#my-svg rect.text{fill:none;stroke-width:0;}#my-svg .icon-shape,#my-svg .image-shape{background-color:white;text-align:center;}#my-svg .icon-shape p,#my-svg .image-shape p{background-color:white;padding:2px;}#my-svg .icon-shape .label rect,#my-svg .image-shape .label rect{opacity:0.5;background-color:white;fill:white;}#my-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#my-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#my-svg .node .neo-node{stroke:#999;}#my-svg [data-look="neo"].node rect,#my-svg [data-look="neo"].cluster rect,#my-svg [data-look="neo"].node polygon{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].swimlane.cluster rect{filter:none;}#my-svg [data-look="neo"].node path{stroke:url(#my-svg-gradient);stroke-width:1px;}#my-svg [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node .neo-line path{stroke:#999;filter:none;}#my-svg [data-look="neo"].node circle{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node circle .state-start{fill:#000000;}#my-svg [data-look="neo"].icon-shape .icon{fill:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].icon-shape .icon-neo path{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="my-svg_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"/></marker><marker id="my-svg_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edges edgePaths"><path d="M114,108L114,120.92893218813452Q114,128 106.92893218813452,128L95.07106781186548,128Q88,128 88,135.07106781186548L88,144" id="my-svg-L_Idea_Triage_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 52.6716423034668 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Idea_Triage_0" data-points="W3sieCI6MTE0LCJ5IjoxMDh9LHsieCI6MTE0LCJ5IjoxMjh9LHsieCI6ODgsInkiOjEyOH0seyJ4Ijo4OCwieSI6MTQ4fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,196L88,232" id="my-svg-L_Triage_Spec_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Triage_Spec_0" data-points="W3sieCI6ODgsInkiOjE5Nn0seyJ4Ijo4OCwieSI6MjM2fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,284L88,320" id="my-svg-L_Spec_SpecReview_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Spec_SpecReview_0" data-points="W3sieCI6ODgsInkiOjI4NH0seyJ4Ijo4OCwieSI6MzI0fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,396L88,432" id="my-svg-L_SpecReview_Implement_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_SpecReview_Implement_0" data-points="W3sieCI6ODgsInkiOjM5Nn0seyJ4Ijo4OCwieSI6NDM2fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,484L88,520" id="my-svg-L_Implement_CodeReview_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Implement_CodeReview_0" data-points="W3sieCI6ODgsInkiOjQ4NH0seyJ4Ijo4OCwieSI6NTI0fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,596L88,632" id="my-svg-L_CodeReview_Verify_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_CodeReview_Verify_0" data-points="W3sieCI6ODgsInkiOjU5Nn0seyJ4Ijo4OCwieSI6NjM2fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,684L88,720" id="my-svg-L_Verify_Ship_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Verify_Ship_0" data-points="W3sieCI6ODgsInkiOjY4NH0seyJ4Ijo4OCwieSI6NzI0fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,772L88,808" id="my-svg-L_Ship_ProductReview_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Ship_ProductReview_0" data-points="W3sieCI6ODgsInkiOjc3Mn0seyJ4Ijo4OCwieSI6ODEyfV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M88,884L88,896.9289321881345Q88,904 95.07106781186548,904L106.92893218813452,904Q114,904 114,911.0710678118655L114,920" id="my-svg-L_ProductReview_Monitor_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 52.67171859741211 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_ProductReview_Monitor_0" data-points="W3sieCI6ODgsInkiOjg4NH0seyJ4Ijo4OCwieSI6OTA0fSx7IngiOjExNCwieSI6OTA0fSx7IngiOjExNCwieSI6OTI0fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M158,924L158,911.0710678118655Q158,904 165.07106781186548,904L176.92893218813452,904Q184,904 184,896.9289321881345L184,848L184,748L184,660L184,560L184,460L184,360L184,260L184,172L184,135.07106781186548Q184,128 176.92893218813452,128L165.07106781186548,128Q158,128 158,120.92893218813452L158,112" id="my-svg-L_Monitor_Idea_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 849.3434448242188 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Monitor_Idea_0" data-points="W3sieCI6MTU4LCJ5Ijo5MjR9LHsieCI6MTU4LCJ5Ijo5MDR9LHsieCI6MTg0LCJ5Ijo5MDR9LHsieCI6MTg0LCJ5Ijo4NDh9LHsieCI6MTg0LCJ5Ijo3NDh9LHsieCI6MTg0LCJ5Ijo2NjB9LHsieCI6MTg0LCJ5Ijo1NjB9LHsieCI6MTg0LCJ5Ijo0NjB9LHsieCI6MTg0LCJ5IjozNjB9LHsieCI6MTg0LCJ5IjoyNjB9LHsieCI6MTg0LCJ5IjoxNzJ9LHsieCI6MTg0LCJ5IjoxMjh9LHsieCI6MTU4LCJ5IjoxMjh9LHsieCI6MTU4LCJ5IjoxMDh9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/></g><g class="edgeLabels"/><g class="nodes"><g class="node default" id="my-svg-flowchart-Idea-0" data-look="neo" transform="translate(136, 60)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"/><g class="label" style="" transform="translate(-60, -36)"><rect/><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>New product idea or bug reported</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-Triage-1" data-look="neo" transform="translate(88, 172)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"/><g class="label" style="" transform="translate(-60, -12)"><rect/><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Triage</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-Spec-3" data-look="neo" transform="translate(88, 260)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"/><g class="label" style="" transform="translate(-60, -12)"><rect/><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Spec</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-SpecReview-5" data-look="neo" transform="translate(88, 360)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"/><g class="label" style="" transform="translate(-60, -24)"><rect/><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Reviewing the spec</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-Implement-7" data-look="neo" transform="translate(88, 460)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"/><g class="label" style="" transform="translate(-60, -12)"><rect/><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Implement</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-CodeReview-9" data-look="neo" transform="translate(88, 560)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"/><g class="label" style="" transform="translate(-60, -24)"><rect/><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Reviewing the code</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-Verify-11" data-look="neo" transform="translate(88, 660)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"/><g class="label" style="" transform="translate(-60, -12)"><rect/><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Verify</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-Ship-13" data-look="neo" transform="translate(88, 748)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"/><g class="label" style="" transform="translate(-60, -12)"><rect/><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Ship</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-ProductReview-15" data-look="neo" transform="translate(88, 848)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"/><g class="label" style="" transform="translate(-60, -24)"><rect/><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Reviewing the product</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-Monitor-17" data-look="neo" transform="translate(136, 948)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"/><g class="label" style="" transform="translate(-60, -12)"><rect/><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Monitor</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="my-svg-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><defs><filter id="my-svg-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><linearGradient id="my-svg-gradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="hsl(0, 0%, 83.3333333333%)" stop-opacity="1"/><stop offset="100%" stop-color="hsl(0, 0%, 88.9215686275%)" stop-opacity="1"/></linearGradient></svg></div>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=753s">[12:33] Measurement Layer — Dashboards and Scorers Replace Vibes</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>Every run is tracked team-wide in a Google-Docs-style live view: who triggered it, from which surface, with which model, how long it took, and what artifacts it produced. Rolled up, that yields traditional delivery metrics plus agent-specific economics: 19.4 human interactions per PR, median kickoff→merge 5.7h against kickoff→PR 20m (the gap is review latency, not generation), 342 PRs from 1,188 runs, $10.68 per PR.</p><p>Above run data sit <strong>online evals</strong>: LLM-as-judge scorers applied to every production session rather than a curated offline set. Named scorers include Stage Transition Compliance (71%), Self-improvement Quality (69%), Human Feedback (70%), and Redundant Tests (82%) — the last targeting a known failure mode where agents write low-signal or trivial tests. Scorer pass rate becomes a leading indicator you can regress against whenever you change a model, prompt, or skill.</p></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Scorer | Pass rate | Signal |
-| --- | --- | --- |
-| Stage Transition Compliance | 71% | 69 pass / 28 fail |
-| Self-improvement Quality | 69% | 29 pass / 13 fail |
-| Redundant Tests | 82% | all-time answer cost $43.54 |
-| Human Feedback | 70% | 284 pass / 122 fail |
+    <details class="mt-2 text-xs text-slate-500">
+      <summary class="cursor-pointer">Diagram source</summary>
+      <pre class="mt-2 bg-slate-100 rounded p-3 overflow-x-auto"><code>flowchart TD
+  Idea[New product idea or bug reported] --&gt; Triage[Triage]
+  Triage --&gt; Spec[Spec]
+  Spec --&gt; SpecReview[Reviewing the spec]
+  SpecReview --&gt; Implement[Implement]
+  Implement --&gt; CodeReview[Reviewing the code]
+  CodeReview --&gt; Verify[Verify]
+  Verify --&gt; Ship[Ship]
+  Ship --&gt; ProductReview[Reviewing the product]
+  ProductReview --&gt; Monitor[Monitor]
+  Monitor --&gt; Idea</code></pre>
+    </details>
+  </section>
+  
 
-Dashboard: human interactions/PR 19.4 · kickoff→merge 5.7h · kickoff→PR 20m · 342 PRs (341 merged) · 1,188 runs · $10.68 per PR</code></pre>
-      
+  
+  <section class="space-y-4">
+    <h2 class="text-lg font-bold text-indigo-700">Deep dives</h2>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=217s" target="_blank" rel="noopener">[03:37]</a> What a software factory is — and is not</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Not a loose automation set, AI teammates, a shared skills-and-MCP setup, or a personal agent swarm — useful primitives, not the end state.</li><li>Encode the factory declaratively, Terraform-style: agents, triggers, triage-to-spec workflow, available MCPs, where agents run — demoed as one factory.yml.</li><li>The loop is the SDLC with human review gates at spec, code, and product; more agent runs let you improve loop efficiency.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Gives a binary maturity test: without code-defined config and a measurement loop, an agent deployment is not a factory. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Continuously measuring and improving sets no operational bar; how much measurement suffices is left undefined.</p>
     </article>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=898s">[14:58] Self-Improvement Loop — Agents Patch Their Own Skills</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>The improvement layer closes the loop: instead of humans reading scorer output, agents read it, diagnose the failure mode in their own operating instructions, and propose a fix as a reviewable PR. The demo shows a self-improvement inbox at 1 of 43 approvals (2%) and PR #1328, opened on branch <code>self-improvement-auto-fix</code>, adding 18 lines to <code>eng-factory/skills/github/SKILL.md</code>.</p><p>The fix is instructive: an agent had been declaring publication blocked because a GitHub capability probe returned empty, conflating 'no access' with 'wrong transport.' The remedy is a written rule that PR visibility, creation, and metadata write are distinct permissions. This is the payoff of factories-as-code — failure, evidence, and patch live in the same versioned artifact, and a human gate still applies before merge.</p></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">PR #1328 — Check GitHub capabilities before declaring publication blocked
-Branch: self-improvement-auto-fix
-File: eng-factory/skills/github/SKILL.md (+18 lines)
-
-+ ### Before reporting on access tracker
-+ All transports, open-PR visibility, PR creation, and PR metadata write
-+ access have different permissions. An empty response from a GitHub API
-+ check does not imply total lack of access...</code></pre>
-      
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=486s" target="_blank" rel="noopener">[08:06]</a> The factories stack</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Seven layers, 00 to 06, bottom-up: factories-as-code, data and context, compute, inference, improvement, orchestration, access.</li><li>Data and context: runs, transcripts, agent artifacts, MCPs and internal knowledge, access control; compute: sandboxing, agent runner, compute size.</li><li>Inference is multi-model with bring-your-own-model and a custom router; the whole factory is API and MCP first.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> A scoping template: each layer is a gap-analysis dimension and a build-or-buy decision for any agent deployment. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> One vendor&#39;s first-principles sketch; the speaker says it does not have to be exactly this.</p>
     </article>
     
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=954s">[15:54] Benchmarks on Your Own Data — WarpBench 0.1</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>Public leaderboards (SWE-bench, Terminal-Bench) cannot answer 'which model should this factory use for these tasks at this cost?' Lloyd's answer is a benchmark synthesized from real factory runs: self-contained implementation tasks distilled from production history, replayed across models to plot correctness against average cost.</p><p>WarpBench 0.1 inverts the earlier generic-chart ranking: gpt-5.6-sol (med) reaches 93.8% at $4.23 while claude opus 5 (high) sits at 84.5% for roughly 3.6x the cost. That inversion is the argument — model tiers must be chosen per workload with your own data and re-run whenever a new model drops. Pair it with A/B testing of the factory itself so routing changes are validated rather than assumed.</p></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Model | Correctness | Avg cost |
-| --- | --- | --- |
-| gpt-5.6-sol (med) | 93.8% | $4.23 |
-| gpt-5.3-flash | 86.2% | $1.85 |
-| claude opus 5 (high) | 84.5% | $15.20 |
-| gemini 3.7 flash | 77.1% | $1.10 |
-
-Generic-chart winner for contrast: gpt-5.6-sol (high), 96%, $8.13</code></pre>
-      
-    </article>
-    
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=1035s">[17:15] Proof Points — What Iterating on the Factory Actually Moved</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>Warp reports three simultaneous improvements, the credible signature of a system change rather than a local speedup: <strong>+40% merged PRs</strong> (1,692 → 2,362 across the seven weeks before and after), <strong>-70% observed PR review rate</strong> (0.80% → 0.24% across matched four-week periods), and <strong>-67% cost per merged PR</strong> (~$55 → ~$18, September to October 2025).</p><p>The review-rate drop is the most interesting number for an architect: it implies the binding constraint moved away from reviewer attention, and that human gates were being spent on work scorers could now adjudicate. Cost per merged PR fell while volume rose, so unit economics improved faster than total spend grew — the intended shape when scaling agent capacity.</p></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">| Metric | Change | Raw comparison |
-| --- | --- | --- |
-| Merged PRs | +40% | 1,692 → 2,362 (7-week windows) |
-| Observed PR review rate | -70% | 0.80% → 0.24% (matched 4-week) |
-| Factory cost per merged PR | -67% | ~$55 → ~$18 (Sep–Oct 2025) |</code></pre>
-      
-    </article>
-    
-    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <h3 class="text-lg font-semibold">
-        <a class="text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=395s">[06:35] Mindset — Product Engineering vs. Factory Engineering</a>
-      </h3>
-      <div class="mt-2 text-slate-700"><p>The thesis compresses to three verbs: <em>prompt</em> your agents, <em>manage</em> your agents, <strong>engineer</strong> your agents. The first is the current default (local, interactive, multi-threaded); the second adds oversight without systemization; the third treats the agent as a primitive and designs the surrounding system.</p><p>Two principles define the mindset: measure everything on your own data, and continually improve. The supporting toolbelt — blueprints, automations, evals, self-improvement, benchmarks, A/B tests — is an engineering discipline, not a product feature. Factory engineering does not replace product engineering (still owning whether the shipped thing solves a real user problem); it is an added responsibility for senior engineers, and the differentiator between teams that get compounding returns from agents and teams capped at linear ones.</p></div>
-      
-      <pre class="mt-3 bg-slate-900 text-slate-100 rounded-lg p-4 text-xs overflow-x-auto"><code class="block">Prompt your agents.  -&gt;  Manage your agents.  -&gt;  Engineer your agents.
-
-Mindset:
-  1. Measure everything yourself, based on your own data
-  2. Continually improve
-
-Toolbelt: Blueprints · Automations · Evals · Self-improvement · Benchmarks · A/B tests</code></pre>
-      
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=804s" target="_blank" rel="noopener">[13:24]</a> Scorers and self-improvement: closing the loop</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Online evals run across all coding-agent sessions; a Redundant Tests scorer checks delivered test diffs for low-signal or trivial tests.</li><li>Self-improvement: instead of humans reviewing scorer outputs, agents review them and open PRs proposing fixes to their own skills.</li><li>Factory-as-code enables this: agents can diagnose problems with how they work and suggest fixes to their own configuration.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Eval signal compounds into configuration changes while humans stay as approvers — automated quality control with an audit trail. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Scorers are prompts that can misclassify; self-improvement can then write those errors into skill configs unless approvals catch them.</p>
     </article>
     
   </section>
   
+
   
-  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-    <h2 class="text-xl font-bold text-indigo-700 mb-3">✅ Actionable Engineering Checklist</h2>
-    <ul class="space-y-2">
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700">Field playbook <span class="text-xs font-normal text-slate-500">(inferred from the talk, not claims made in it)</span></h2>
+    <div class="mt-3 grid gap-4 md:grid-cols-3 text-sm">
+      <div><h3 class="font-semibold mb-1">Ask the customer</h3><ul class="list-disc pl-5 space-y-1"><li>How are coding agents configured and triggered today — individual local setups or shared definitions in code?</li><li>What per-PR and per-run cost and quality data do you already collect, and who reviews it?</li><li>Where do agent runs execute, and what sandboxing, access control, and audit trail exists?</li></ul></div>
+      <div><h3 class="font-semibold mb-1">Measure in a pilot</h3><ul class="list-disc pl-5 space-y-1"><li>Human interactions per PR and median kickoff-to-PR and kickoff-to-merge cycle time, baselined before rollout.</li><li>Cost per PR, total spend, and most expensive PRs, broken out by model.</li><li>Scorer pass rates for your own failure modes, plus the scorers&#39; answer cost.</li></ul></div>
+      <div><h3 class="font-semibold mb-1">Where it breaks</h3><ul class="list-disc pl-5 space-y-1"><li>Engineers bypass the central factory with local agents, splitting data, cost visibility, and governance.</li><li>Prompt-based scorers misclassify outputs; self-improvement then writes the errors into skill configs.</li><li>Self-improvement proposals overwhelm human approvers, making review the throughput bottleneck.</li></ul></div>
+    </div>
+  </section>
+  
+
+  
+  <section class="bg-amber-50 rounded-xl border border-amber-200 p-5">
+    <h2 class="text-lg font-bold text-amber-800 mb-2">What the talk does not establish</h2>
+    <ul class="list-disc pl-5 space-y-1 text-sm"><li>No control group behind the throughput, review-rate, and cost changes; before/after windows invite confounding.</li><li>The PR review rate metric is undefined; what the percentage counts is unclear in transcript.</li><li>Neither benchmark states N or evaluation window; some costs are approximate, read from a scatter plot.</li><li>All results come from Warp&#39;s own team and codebase; nothing is replicated externally or at a customer.</li></ul>
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">Checklist</h2>
+    <ul class="space-y-2 text-sm">
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Write a factory.yml in the repo today: agents, triggers, workflow stages, models, skills, MCPs, and execution target — no factory without a versioned definition.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Define your agent estate declaratively in versioned config: agents, triggers, workflow, MCPs, run locations. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=235s" target="_blank" rel="noopener">[03:55]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Instrument every run centrally: transcript, triggering surface, model, duration, artifacts, and cost. If you cannot attribute cost per merged PR, you cannot improve the system.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Centralize runs, transcripts, and artifacts so every agent session is inspectable team-wide. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=694s" target="_blank" rel="noopener">[11:34]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Stand up three online scorers before adding more agents: stage-transition compliance, test quality (redundant/trivial tests), and human-feedback capture on every PR.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Stand up online evals with named scorers covering every coding-agent session. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=804s" target="_blank" rel="noopener">[13:24]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Distill 30-50 self-contained tasks from your own merged PRs into an internal benchmark; re-run it whenever a model drops instead of trusting public leaderboards.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Create benchmarks from your own real tasks and A/B test models and factory changes on them. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=965s" target="_blank" rel="noopener">[16:05]</a></span></li>
       
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Route by measured economics, not habit — plot correctness vs. cost per task class and prefer the cheapest model that clears your quality bar.</span></li>
-      
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Close the loop: let agents read scorer failures and open PRs against their own skill/config files, with human review as the merge gate.</span></li>
-      
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Track human interactions per PR as your primary leverage metric; a high count means orchestration work is still being done manually.</span></li>
-      
-      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Keep human-in-the-loop gates only where a scorer cannot adjudicate — treat review attention as the scarce resource the factory exists to conserve.</span></li>
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Wire self-improvement: route scorer findings to agents that draft fix PRs, gated by human approval. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=0LeT996Hz3E&amp;t=898s" target="_blank" rel="noopener">[14:58]</a></span></li>
       
     </ul>
   </section>
   
+
+  
+  <section class="text-sm text-slate-600">
+    <h2 class="text-base font-bold text-slate-700 mb-1">Terms as used in the talk</h2>
+    <dl class="grid gap-x-4 gap-y-1 md:grid-cols-[max-content_1fr]">
+      <dt class="font-semibold">Software factory</dt><dd>Code-defined, closed-loop system for continuously measuring and improving cloud coding agents.</dd><dt class="font-semibold">Factories as code</dt><dd>Declarative, Terraform-style files defining agents, triggers, workflows, MCPs, and where agents run.</dd><dt class="font-semibold">Online evals</dt><dd>Evaluations run across all coding-agent sessions; a scorer prompt judges each output.</dd><dt class="font-semibold">Self-improvement</dt><dd>Agents analyze scorer outputs and propose fixes to their own configuration as PRs.</dd>
+    </dl>
+  </section>
+  
+
   <footer class="text-xs text-slate-400 border-t border-slate-200 pt-4">
-    Autonomously generated by the Hermes YouTube Learning Pipeline (Gemini
-    Interactions API) from the
-    <a class="underline hover:text-slate-600" href="../transcripts/2026-11-22_0LeT996Hz3E_enriched.md">persisted interleaved transcript</a>.
-    Verify claims against the source video before acting on them.
+    Generated by the Hermes YouTube Learning Pipeline from the
+    <a class="underline hover:text-slate-600" href="https://vksepm.github.io/youtube-learning/transcripts/2026-11-22_0LeT996Hz3E_enriched.md">interleaved transcript</a>.
+    Figures come from the speaker's slides; verify against the video before relying on them.
   </footer>
 </main>
-<script>
-  if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose' }); }
-</script>
 </body>
 </html>
