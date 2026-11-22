@@ -1,0 +1,1062 @@
+{
+  "estimated_duration_seconds": 3368,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:13",
+      "visual_type": "SLIDE",
+      "screen_title": "AI Engineer Code Summit",
+      "visual_summary": "Introductory title slide displaying the AI Engineer Code Summit branding logo on a dark background.",
+      "ocr_details": [
+        "AI Engineer",
+        "Code Summit"
+      ],
+      "structured_reconstruction": "AI Engineer Code Summit",
+      "spoken_segments": [],
+      "alignment_note": "Introductory title card displayed prior to the speaker taking the stage."
+    },
+    {
+      "scene_index": 2,
+      "start_time": "00:13",
+      "end_time": "00:48",
+      "visual_type": "SLIDE",
+      "screen_title": "What Runs Where? Local AI in Production",
+      "visual_summary": "Presentation title slide outlining the core thesis that local AI has progressed rapidly in performance but remains complex to deploy across varying workloads.",
+      "ocr_details": [
+        "What Runs Where? Local AI in Production",
+        "Local AI got good faster than it got easy.",
+        "A laptop built a playable game on 37 watts of GPU power.",
+        "The frontier is still 18 index points ahead of open weights.",
+        "Both are true today. What runs where is the work.",
+        "The answer moves every few months. This hour is how to find it for your own workload.",
+        "Ahmad M. Osman - Founder & CEO, Osmantic"
+      ],
+      "structured_reconstruction": "### What Runs Where? Local AI in Production\n* **Main takeaway:** Local AI got good faster than it got easy.\n* **Fact 1:** A laptop built a playable game on 37 watts of GPU power.\n* **Fact 2:** The frontier is still 18 index points ahead of open weights.\n* **Conclusion:** Both are true today. What runs where is the work.",
+      "spoken_segments": [
+        {
+          "timestamp": "00:13",
+          "text": "I'm just going to give everyone a second to settle in."
+        },
+        {
+          "timestamp": "00:21",
+          "text": "So, I have 170 slides for you. I believe that we're not going to be able to go through all of them, but they will be posted online very soon."
+        },
+        {
+          "timestamp": "00:30",
+          "text": "Yeah, this is basically what runs where, locally and in production. And the goal is to go through the history of local AI, going back a bit to 2023."
+        },
+        {
+          "timestamp": "00:41",
+          "text": "And where we're heading in the future, and of course, talking about where we are today."
+        }
+      ],
+      "alignment_note": "Speaker introduces the talk theme, setting up the historical retrospective and workload matching topic."
+    },
+    {
+      "scene_index": 3,
+      "start_time": "00:48",
+      "end_time": "01:29",
+      "visual_type": "SLIDE",
+      "screen_title": "June, on this stage: 'the 90s of Linux'",
+      "visual_summary": "Slide contrasting the June 2026 panel quote with the current position in November 2026, shifting focus to per-chip, per-model, and per-workflow optimizations.",
+      "ocr_details": [
+        "June, on this stage: 'the 90s of Linux'",
+        "What I said on this conference's stage in June, and where I stand today:",
+        "JUNE 2026 - AIEWF STATE OF THE UNION PANEL: 'We're in the 90s of the Linux operating system... The infrastructure is not there yet.'",
+        "NOVEMBER 2026 - MY POSITION TODAY:",
+        "- Per chip.",
+        "- Per model.",
+        "- Per workflow.",
+        "Optimization is the future."
+      ],
+      "structured_reconstruction": "```mermaid\nflowchart LR\n    A[\"June 2026 Panel: '90s of Linux'\"] --> B[\"Infrastructure missing\"]\n    B --> C[\"November 2026 Position\"]\n    C --> D[\"Per chip\"]\n    C --> E[\"Per model\"]\n    C --> F[\"Per workflow\"]\n```",
+      "spoken_segments": [
+        {
+          "timestamp": "00:50",
+          "text": "So, in June at AI World's Fair, we hosted the local AI summit with Nvidia."
+        },
+        {
+          "timestamp": "01:00",
+          "text": "And I said back then that we're basically in the 90s of Linux. And I think we're starting to finally see more and more people invest in the ecosystem and infrastructure."
+        },
+        {
+          "timestamp": "01:10",
+          "text": "Since then, we have been seeing more mega kernels, we've been seeing new inference engines."
+        },
+        {
+          "timestamp": "01:20",
+          "text": "We're seeing a lot of people trying to optimize basically per model, per chip, per workflow, and that's the way to go."
+        }
+      ],
+      "alignment_note": "Speaker points to the transition from infrastructural deficit in June to specific targeted optimizations today."
+    },
+    {
+      "scene_index": 4,
+      "start_time": "01:29",
+      "end_time": "01:40",
+      "visual_type": "SLIDE",
+      "screen_title": "Open-source AI is an infrastructure optimization problem.",
+      "visual_summary": "Slide highlighting the dichotomy between open-source AI as an infrastructure problem and local AI as a user experience problem.",
+      "ocr_details": [
+        "Open-source AI is an infrastructure optimization problem.",
+        "Optimized infrastructure only counts once it reaches the person at the keyboard:",
+        "Local AI is a user experience problem.",
+        "Setup | Responsiveness | Reliability | Fit the task"
+      ],
+      "structured_reconstruction": "| Domain | Core Problem |\n| :--- | :--- |\n| **Open-source AI** | Infrastructure optimization problem |\n| **Local AI** | User experience problem (Setup, Responsiveness, Reliability, Fit the task) |",
+      "spoken_segments": [
+        {
+          "timestamp": "01:32",
+          "text": "So yeah, open source AI is an optimization problem, local AI is a user experience problem."
+        },
+        {
+          "timestamp": "01:40",
+          "text": "And both of those things need to be solved in parallel to each other."
+        }
+      ],
+      "alignment_note": "Speaker articulates the double mandate: hardware optimization and user-facing design must be solved together."
+    },
+    {
+      "scene_index": 5,
+      "start_time": "01:40",
+      "end_time": "02:20",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "A laptop built this game",
+      "visual_summary": "Video clip demo of an action game built entirely locally on an RTX Spark laptop using Qwen3.8-Flash-Next.",
+      "ocr_details": [
+        "A laptop built this game",
+        "Qwen3.8-Flash-Next",
+        "125B total, 6B active",
+        "Decode 60 tok/s (peak 87)",
+        "Prefill 1,000-1,500 tok/s",
+        "37 W: 89 of 96 GB use in use",
+        "On a laptop.",
+        "Play it: odspark.com"
+      ],
+      "structured_reconstruction": "| Metric | Value |\n| :--- | :--- |\n| **Model** | Qwen3.8-Flash-Next (125B total, 6B active) |\n| **Decode Speed** | 60 tok/s (peak 87) |\n| **Prefill Speed** | 1,000-1,500 tok/s |\n| **Power / VRAM** | 37 W / 89 of 96 GB memory used |\n| **Device** | ASUS ProArt P16 (RTX Spark, 128 GB) |",
+      "spoken_segments": [
+        {
+          "timestamp": "01:50",
+          "text": "We built an optimized inference engine for the RTX Spark. And this game right here was built on an RTX Spark on Windows."
+        },
+        {
+          "timestamp": "02:00",
+          "text": "You can play this game on odspark.com and you can see all the traces. This was built fully locally, no cloud, no codex."
+        },
+        {
+          "timestamp": "02:11",
+          "text": "Our own portal harness, everything was built locally basically."
+        }
+      ],
+      "alignment_note": "Speaker gestures toward the embedded gameplay video running live on the slide."
+    },
+    {
+      "scene_index": 6,
+      "start_time": "02:20",
+      "end_time": "02:39",
+      "visual_type": "SLIDE",
+      "screen_title": "People lined up to play it",
+      "visual_summary": "Photographs of crowd at Best Buy event standing in line to try out the local ODS game demo.",
+      "ocr_details": [
+        "People lined up to play it",
+        "RTX Spark Official Launch at Best Buy - the ODS demo line",
+        "Play it: odspark.com"
+      ],
+      "structured_reconstruction": "Event: RTX Spark Official Launch at Best Buy\nDemo: ODS local AI game (odspark.com)",
+      "spoken_segments": [
+        {
+          "timestamp": "02:20",
+          "text": "And this is from the Best Buy launch. We had an official launch for the RTX Spark."
+        },
+        {
+          "timestamp": "02:30",
+          "text": "We had so many people around us that wanted to play this game. So we're starting to see more everyday people showing up for local AI."
+        }
+      ],
+      "alignment_note": "Speaker points to photo of consumer crowd trying local AI hardware in a retail environment."
+    },
+    {
+      "scene_index": 7,
+      "start_time": "02:39",
+      "end_time": "03:00",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Which answer came from the desktop?",
+      "visual_summary": "Blind test slide presenting two generated explanations of transformer token generation (Answer A vs Answer B).",
+      "ocr_details": [
+        "BLIND TEST",
+        "Which answer came from the desktop?",
+        "Explain how a transformer generates one token.",
+        "One answer came from a desktop, the other from GPT-5.5."
+      ],
+      "structured_reconstruction": "| Option | Details |\n| :--- | :--- |\n| **Option A** | Paragraph explanation of token generation (autoregressive process, vector embeddings, self-attention, output vector). |\n| **Option B** | Paragraph explanation starting with converting tokens into numeric representations. |",
+      "spoken_segments": [
+        {
+          "timestamp": "02:42",
+          "text": "Can you tell the difference between these two answers? One of them was the local model and another was GPT-5.5."
+        },
+        {
+          "timestamp": "02:50",
+          "text": "This is from our video online with Hugging Face, Local AI 201."
+        }
+      ],
+      "alignment_note": "Speaker asks audience to guess which textual explanation came from local weights vs cloud API."
+    },
+    {
+      "scene_index": 8,
+      "start_time": "03:00",
+      "end_time": "03:30",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "A was the desktop. It finished first.",
+      "visual_summary": "Blind test reveal showing local desktop performance metrics outperforming OpenAI cloud API.",
+      "ocr_details": [
+        "BLIND TEST",
+        "A was the desktop. It finished first.",
+        "Qwen3.6-27B (27B dense, FP8) on one RTX PRO 6000 vs GPT-5.5 (parameters undisclosed).",
+        "A - Blackwell Tower, local: 0.04 s to first token | 51 tok/s decode | 5.0 s total",
+        "B - GPT-5.5, OpenAI cloud: 4.33 s to first token | 34 tok/s decode | 12.2 s total",
+        "One user, one question: the desktop wins. Now give it a real job."
+      ],
+      "structured_reconstruction": "| System | Time to First Token | Decode Speed | Total Time |\n| :--- | :--- | :--- | :--- |\n| **A: Blackwell Tower (Local Qwen3.6-27B FP8)** | **0.04 s** | **51 tok/s** | **5.0 s** |\n| **B: GPT-5.5 (OpenAI Cloud)** | 4.33 s | 34 tok/s | 12.2 s |",
+      "spoken_segments": [
+        {
+          "timestamp": "03:00",
+          "text": "And one of them was faster than the other. The answers were pretty similar."
+        },
+        {
+          "timestamp": "03:10",
+          "text": "The model that we ran locally was Qwen 3.6 27B parameter. And it ran at 51 tokens per second for decoding."
+        },
+        {
+          "timestamp": "03:20",
+          "text": "While GPT-5.5 via OpenAI Cloud was running at 34 tokens per second. Local is pretty fast in comparison."
+        }
+      ],
+      "alignment_note": "Speaker points to TTFT (0.04s vs 4.33s) and decode rates comparing local hardware to cloud API."
+    },
+    {
+      "scene_index": 9,
+      "start_time": "03:30",
+      "end_time": "04:00",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The frontier is ahead, and it can afford to compound",
+      "visual_summary": "Artificial Analysis Intelligence Index v5.01 comparing closed weights score against open weights score.",
+      "ocr_details": [
+        "The frontier is ahead, and it can afford to compound",
+        "Artificial Analysis Intelligence Index v5.01, Nov 9 - best configuration of each model:",
+        "Closed weights: Fable 5.2 (64.6), Gemini 4.0 (58.5), Opus 5.5 (57.8), GPT-6 Astra (55.4), Haiku 5.5 (51.7)",
+        "Open weights: Kimi K3.1 Pro (46.5), DeepSeek V4.1 Flash (32.6), GLM-5.3 (31.7)",
+        "18 points ahead at the top.",
+        "One rung down, Haiku 5.5 trails the open frontier by ten points."
+      ],
+      "structured_reconstruction": "| Category | Model | Score |\n| :--- | :--- | :--- |\n| **Closed Weights** | Fable 5.2 | 64.6 |\n| **Closed Weights** | Gemini 4.0 | 58.5 |\n| **Closed Weights** | Opus 5.5 | 57.8 |\n| **Closed Weights** | GPT-6 Astra | 55.4 |\n| **Closed Weights** | Haiku 5.5 | 51.7 |\n| **Open Weights** | Kimi K3.1 Pro | 46.5 |\n| **Open Weights** | DeepSeek V4.1 Flash | 32.6 |\n| **Open Weights** | GLM-5.3 | 31.7 |",
+      "spoken_segments": [
+        {
+          "timestamp": "03:30",
+          "text": "This one is an interesting one. Anyone saw the new Artificial Analysis index V5?"
+        },
+        {
+          "timestamp": "03:41",
+          "text": "They have Anthropic's Haiku 5.5 ahead of DeepSeek V4.1 Flash. That's a very interesting benchmark in my opinion."
+        }
+      ],
+      "alignment_note": "Speaker notes discrepancy in benchmark scores regarding Haiku vs DeepSeek."
+    },
+    {
+      "scene_index": 10,
+      "start_time": "04:00",
+      "end_time": "04:40",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Four-minute tasks to twelve-hour tasks in three years",
+      "visual_summary": "METR task length benchmark chart showing exponential growth of solved task horizons from March 2023 to Feb 2026.",
+      "ocr_details": [
+        "Four-minute tasks to twelve-hour tasks in three years",
+        "METR: task length (in expert-human time) a model completes 50% and 80% of the time:",
+        "GPT-4 (Mar 2023): 50% horizon = 4 min | 80% horizon = 1 min",
+        "c3 (Nov 2023): 50% horizon = 2.5 h | 80% horizon = 4 min",
+        "Opus 4.5 (Nov 2025): 50% horizon = 4.9 h | 80% horizon = 49 min",
+        "Opus 4.6 (Feb 2026): 50% horizon = 12 h | 80% horizon = 70 min",
+        "Mythos Preview (Apr 2026): 50% horizon = 17 h | 80% horizon = 3.1 h",
+        "Doubling every ~4 months.",
+        "Longer tasks burn more tokens. Where they run is now a budget question."
+      ],
+      "structured_reconstruction": "| Model | Date | 50% Horizon | 80% Horizon |\n| :--- | :--- | :--- | :--- |\n| **GPT-4** | Mar 2023 | 4 min | 1 min |\n| **c3** | Nov 2023 | 2.5 h | 4 min |\n| **Opus 4.5** | Nov 2025 | 4.9 h | 49 min |\n| **Opus 4.6** | Feb 2026 | 12 h | 70 min |\n| **Mythos Preview** | Apr 2026 | 17 h | 3.1 h |",
+      "spoken_segments": [
+        {
+          "timestamp": "04:11",
+          "text": "It's showing the progress since March 2023, and how long-horizon tasks are becoming longer in terms of what humans could do that machines solve right now."
+        },
+        {
+          "timestamp": "04:30",
+          "text": "And we're seeing that basically it's doubling every four months and that rate is not slowing down."
+        }
+      ],
+      "alignment_note": "Speaker points to task duration numbers climbing from minutes to hours over 36 months."
+    },
+    {
+      "scene_index": 11,
+      "start_time": "04:40",
+      "end_time": "05:10",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Agents send most tokens. Caching pays for it.",
+      "visual_summary": "OpenRouter data chart showing agentic API traffic surpassing human-paced token generation starting February 2026.",
+      "ocr_details": [
+        "Agents send most tokens. Caching pays for it.",
+        "OpenRouter, October 2026 - tokens per month by how each API key is used (T = trillion):",
+        "Agentic keys vs Mixed keys vs Human-paced keys",
+        "What their providers cache: Cache rate on agentic keys among providers serving >1T: 13 of 24 above 90% in April, 3 of 16 above 90% in June, Median 90%, up from 76%",
+        "Agents resend the same context every turn. Reuse it, hosted or local."
+      ],
+      "structured_reconstruction": "```mermaid
+gantt
+    title Agentic Token Shift (OpenRouter Data)
+    dateFormat YYYY-MM
+    section Token Generation
+    Human Majority  :done, 2025-09, 2026-02
+    Agent Majority  :active, 2026-02, 2026-10
+```",
+      "spoken_segments": [
+        {
+          "timestamp": "04:40",
+          "text": "We're also seeing something else and more interesting, which is from OpenRouter's data, October 2026."
+        },
+        {
+          "timestamp": "04:51",
+          "text": "Since February, agents are the ones producing tokens more than humans. The last time a human was the one generating more tokens was February 2026."
+        },
+        {
+          "timestamp": "05:00",
+          "text": "It's always going to be agents producing tokens for agents."
+        }
+      ],
+      "alignment_note": "Speaker highlights the crossover point on the chart where agentic keys overtook human keys."
+    },
+    {
+      "scene_index": 12,
+      "start_time": "05:10",
+      "end_time": "05:30",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "And yet, open models jumped",
+      "visual_summary": "Chart showing the rapid convergence of open frontier scores matching closed frontier scores on AA Intelligence Index v4.1.",
+      "ocr_details": [
+        "And yet, open models jumped",
+        "Best score to date, Artificial Analysis Intelligence Index v4.1 (the scale before v5):",
+        "Jan 2025: Open 13, Closed 23",
+        "Jun 2026: Open 51, Closed 58",
+        "Open went from 13 to 51 in 17 months.",
+        "In June it matched the closed frontier of March."
+      ],
+      "structured_reconstruction": "| Date | Open Frontier | Closed Frontier |\n| :--- | :--- | :--- |\n| **Jan 2025** | 13 | 23 |\n| **Apr 2025** | 18 | 27 |\n| **Jul 2025** | 24 | 33 |\n| **Oct 2025** | 31 | 42 |\n| **Jan 2026** | 41 | 49 |\n| **Jun 2026** | 51 | 58 |",
+      "spoken_segments": [
+        {
+          "timestamp": "05:10",
+          "text": "This is Artificial Analysis Intelligence Index V4.1, showing that open source models since January 2025 jumped from 13 points to 51."
+        },
+        {
+          "timestamp": "05:21",
+          "text": "And the gap is becoming smaller and smaller."
+        }
+      ],
+      "alignment_note": "Speaker points to the narrow gap between open and closed trendlines in mid-2026."
+    },
+    {
+      "scene_index": 13,
+      "start_time": "05:30",
+      "end_time": "05:50",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The frontier is ahead, and it can afford to compound",
+      "visual_summary": "Brief glance back at slide 9 while summarizing the evaluation dilemma between benchmark scores and real-world utility.",
+      "ocr_details": [
+        "The frontier is ahead, and it can afford to compound",
+        "Artificial Analysis Intelligence Index v5.01",
+        "Closed weights vs Open weights benchmark index gap"
+      ],
+      "structured_reconstruction": "Re-display of Slide 9 index comparison.",
+      "spoken_segments": [
+        {
+          "timestamp": "05:30",
+          "text": "Yet again, it raises the question why a few slides back, we're seeing Haiku 5.5 beating DeepSeek V4.1 Flash."
+        },
+        {
+          "timestamp": "05:40",
+          "text": "So, which benchmark to trust is a good question to ask nowadays."
+        }
+      ],
+      "alignment_note": "Speaker glances back to benchmark discrepancies between AA index versions."
+    },
+    {
+      "scene_index": 14,
+      "start_time": "05:50",
+      "end_time": "06:20",
+      "visual_type": "SLIDE",
+      "screen_title": "Opus 5.5's level goes open. It's still a specialist.",
+      "visual_summary": "Slide showing author's social media posts predicting timeline for open models to reach Opus 5.5 performance capabilities.",
+      "ocr_details": [
+        "Opus 5.5's level goes open. It's still a specialist.",
+        "Opus 5.5's level should reach open weights around March 2027. It will still have an edge, so test each stage, not the model.",
+        "Posted Sep 23 & Nov 8, 2026",
+        "Tweet 1 (March 2025): 'The future is small and specialized models.'",
+        "Tweet 2 (Nov 2026): 'In 3 years or less, a 1B model will beat Opus 5.5 on targeted tasks.'"
+      ],
+      "structured_reconstruction": "Prediction Timeline:\n- March 2025: Predicted small & specialized model dominance.\n- March 2027: Projected date open weights reach Opus 5.5 performance level.",
+      "spoken_segments": [
+        {
+          "timestamp": "06:00",
+          "text": "I have a tweet since March 2025, saying the future is small and specialized models."
+        },
+        {
+          "timestamp": "06:10",
+          "text": "And I believe that in three years or less, we're going to have a 1 billion parameter model that beats Opus 5.5."
+        }
+      ],
+      "alignment_note": "Speaker references screenshot of his historical post predicting 1B model capability trajectory."
+    },
+    {
+      "scene_index": 15,
+      "start_time": "06:20",
+      "end_time": "06:30",
+      "visual_type": "SLIDE",
+      "screen_title": "How the small ones catch up",
+      "visual_summary": "Diagram contrasting Hard targets vs Soft targets in model distillation methods.",
+      "ocr_details": [
+        "How the small ones catch up",
+        "Closing a gap that mostly runs through a bigger teacher model:",
+        "Hard targets: Train on teacher's answers | Only chosen tokens teach | Works from generated text",
+        "Soft targets: Match teacher's probabilities | Every token carries more signal | Needs teacher's logits",
+        "Soft distillation took a 21 GB 4-bit model from 96.3% to 99.7% of BF16."
+      ],
+      "structured_reconstruction": "| Distillation Method | Mechanism | Data Requirements |\n| :--- | :--- | :--- |\n| **Hard Targets** | Train on teacher's text output | Generated text only |\n| **Soft Targets** | Match teacher's logit distribution | Full model logits |",
+      "spoken_segments": [
+        {
+          "timestamp": "06:20",
+          "text": "Soft distillation took a 21 GB 4-bit model from 96.3% to 99.7% of BF16 accuracy."
+        }
+      ],
+      "alignment_note": "Speaker explains how soft target distillation enables compact models to preserve full precision accuracy."
+    },
+    {
+      "scene_index": 16,
+      "start_time": "06:30",
+      "end_time": "06:40",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Open models carry most tokens, not most dollars",
+      "visual_summary": "Bar graph comparing share of paid tokens vs share of paid spend between open and closed weights on OpenRouter.",
+      "ocr_details": [
+        "Open models carry most tokens, not most dollars",
+        "OpenRouter paid traffic, week of Oct 19, 2026:",
+        "Share of paid tokens: Closed weights 29.7% | Open weights 70.3%",
+        "Share of paid spend: Closed weights 72.5% | Open weights 27.5%",
+        "The work is moving to open models. The money still funds the frontier."
+      ],
+      "structured_reconstruction": "| Metric | Closed Weights | Open Weights |\n| :--- | :--- | :--- |\n| **Share of Paid Tokens** | 29.7% | **70.3%** |\n| **Share of Paid Spend** | **72.5%** | 27.5% |",
+      "spoken_segments": [
+        {
+          "timestamp": "06:30",
+          "text": "This is from OpenRouter, all right? Amount of money being spent on models right now, mostly closed weights. However, the number of tokens being consumed out there are mostly open source models."
+        }
+      ],
+      "alignment_note": "Speaker contrasts token volume pie chart with financial revenue pie chart."
+    },
+    {
+      "scene_index": 17,
+      "start_time": "06:40",
+      "end_time": "07:10",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "One task, two leaders: tokens and dollars",
+      "visual_summary": "Table listing specific AI tasks alongside their volume model leader vs spend model leader.",
+      "ocr_details": [
+        "One task, two leaders: tokens and dollars",
+        "OpenRouter, October 2026: top model in each task, by tokens and by spend:",
+        "Classification: Most tokens = Jev 1.13 (14%) | Most spend = Opus 5.5 (11%)",
+        "Summarization: Most tokens = Step 5 Preview (27%) | Most spend = Opus 5.5 (11%)",
+        "Data extraction: Most tokens = GLM-5.3 Flash (12%) | Most spend = Opus 5.5 (13%)",
+        "Debugging: Most tokens = DeepSeek V4.1 Flash (19%) | Most spend = Opus 5.5 (12%)",
+        "Tool dispatch: Most tokens = DeepSeek V4.1 Flash (17%) | Most spend = Opus 5.5 (11%)",
+        "Shell execution: Most tokens = DeepSeek V4.1 Flash (24%) | Most spend = GLM-5.3 (12%)",
+        "One job, two tiers: a cheap model for the volume, the frontier for the hard cases."
+      ],
+      "structured_reconstruction": "| Task | Most Tokens Leader | Most Spend Leader |\n| :--- | :--- | :--- |\n| **Classification** | Jev 1.13 (14%) | Opus 5.5 (11%) |\n| **Summarization** | Step 5 Preview (27%) | Opus 5.5 (11%) |\n| **Data Extraction** | GLM-5.3 Flash (12%) | Opus 5.5 (13%) |\n| **Debugging** | DeepSeek V4.1 Flash (19%) | Opus 5.5 (12%) |\n| **Tool Dispatch** | DeepSeek V4.1 Flash (17%) | Opus 5.5 (11%) |\n| **Shell Execution** | DeepSeek V4.1 Flash (24%) | GLM-5.3 (12%) |",
+      "spoken_segments": [
+        {
+          "timestamp": "06:50",
+          "text": "Pretty much, in terms of tokens, everybody's using DeepSeek V4.1 Flash for most tasks, but in terms of money spent, it's Opus 5.5."
+        }
+      ],
+      "alignment_note": "Speaker points to rows showing DeepSeek V4.1 Flash dominating volume while Opus 5.5 consumes revenue."
+    },
+    {
+      "scene_index": 18,
+      "start_time": "07:10",
+      "end_time": "07:50",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Routine work doesn't chase the newest model",
+      "visual_summary": "Bar charts showing the proportion of task requests directed to models under 60 days old across agentic vs routine workloads.",
+      "ocr_details": [
+        "Routine work doesn't chase the newest model",
+        "Sept 2026: share of each task's requests going to models under 60 days old:",
+        "Agentic engineering: File read/write 68%, Shell execution 64%, Debugging 61%",
+        "Routine work: Classification 36%, Summarization 26%, Customer support 26%",
+        "The newest model where the work is hard. Settled models where it's routine."
+      ],
+      "structured_reconstruction": "| Workload Type | Task | % on Models <60 Days Old |\n| :--- | :--- | :--- |\n| **Agentic Engineering** | File read/write | 68% |\n| **Agentic Engineering** | Shell execution | 64% |\n| **Agentic Engineering** | Debugging | 61% |\n| **Routine Work** | Classification | 36% |\n| **Routine Work** | Summarization | 26% |\n| **Routine Work** | Customer support | 26% |",
+      "spoken_segments": [
+        {
+          "timestamp": "07:11",
+          "text": "So, what are agents doing right now? And why do we think there's a need for new chips or new software paradigms that run faster?"
+        },
+        {
+          "timestamp": "07:30",
+          "text": "It's because most tasks right now are bottlenecked by waiting on an agent to run a shell command or execute something more than tokens per second."
+        }
+      ],
+      "alignment_note": "Speaker points to high percentage of newest-model usage in agentic engineering tasks."
+    },
+    {
+      "scene_index": 19,
+      "start_time": "07:50",
+      "end_time": "08:40",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The open-closed gap depends on the test",
+      "visual_summary": "Evaluation benchmark table illustrating widely divergent open vs closed gaps depending on the test domain.",
+      "ocr_details": [
+        "The open-closed gap depends on the test",
+        "Best closed vs best open score on each independent test, Nov 2026:",
+        "HLE Diamond: Closed 80.2 | Open 37.3 | Gap: 43 points",
+        "WeirdVML (ML engineering): Closed 42.2 | Open 9.9 | Gap: 32 points",
+        "FrontierCode 2.0: Closed 49.1 | Open 28.5 | Gap: 21 points",
+        "AA Intelligence Index v5: Closed 54.6 | Open 36.5 | Gap: 18 points",
+        "GDP.pdf (documents): Closed 32.6 | Open 31.4 | Gap: 1 point",
+        "Terminal-Bench 4.0: Closed 65.2 | Open 67.2 | Gap: Open ahead by 2",
+        "Between 43 points behind and 2 ahead. Which test looks like your job?"
+      ],
+      "structured_reconstruction": "| Test | Best Closed | Best Open | Gap |\n| :--- | :--- | :--- | :--- |\n| **HLE Diamond** | 80.2 | 37.3 | 43 points |\n| **WeirdVML** | 42.2 | 9.9 | 32 points |\n| **FrontierCode 2.0** | 49.1 | 28.5 | 21 points |\n| **AA Intelligence Index v5** | 54.6 | 36.5 | 18 points |\n| **GDP.pdf** | 32.6 | 31.4 | 1 point |\n| **Terminal-Bench 4.0** | 65.2 | **67.2** | **Open ahead by 2** |",
+      "spoken_segments": [
+        {
+          "timestamp": "08:00",
+          "text": "The gap between open and closed models depends mostly on which benchmark you trust."
+        },
+        {
+          "timestamp": "08:11",
+          "text": "According to HLE Diamond the gap is more than 30%. Terminal-Bench says open source models are ahead by two points. So we have an eval problem."
+        }
+      ],
+      "alignment_note": "Speaker points to top row (HLE Diamond gap: 43 pts) vs bottom row (Terminal-Bench 4.0: Open ahead by 2)."
+    },
+    {
+      "scene_index": 20,
+      "start_time": "08:40",
+      "end_time": "08:50",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The gap had the same shape in June",
+      "visual_summary": "Historical comparison table showing June 2026 benchmark gaps across reasoning, terminal, and banking tasks.",
+      "ocr_details": [
+        "The gap had the same shape in June",
+        "Artificial Analysis v4.1 components, June 15, 2026 (scores, %):",
+        "GDPval-AA v2 (knowledge work): Best closed 66 | DeepSeek V4 Pro 42 | Kimi K2.6 35",
+        "Terminal-Bench v2.1: Best closed 85 | DeepSeek V4 Pro 64 | Kimi K2.6 57",
+        "tau-Banking: Best closed 31 | DeepSeek V4 Pro 26 | Kimi K2.6 27",
+        "AA-LCR (long-context reasoning): Best closed 61 | DeepSeek V4 Pro 70 | Kimi K2.6 70",
+        "Big gaps on agentic work. Near-ties on banking tasks and long-context reasoning."
+      ],
+      "structured_reconstruction": "| Test | Best Closed | DeepSeek V4 Pro | Kimi K2.6 |\n| :--- | :--- | :--- | :--- |\n| **GDPval-AA v2** | 66 | 42 | 35 |\n| **Terminal-Bench v2.1** | 85 | 64 | 57 |\n| **tau-Banking** | 31 | 26 | 27 |\n| **AA-LCR** | 61 | **70** | **70** |",
+      "spoken_segments": [
+        {
+          "timestamp": "08:40",
+          "text": "The gap had the same shape back in June as well."
+        }
+      ],
+      "alignment_note": "Speaker shows historical continuity of narrow gap in long context and wide gap in agentic tasks."
+    },
+    {
+      "scene_index": 21,
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Pointed at the bug, small open models found it too",
+      "visual_summary": "Security vendor study table demonstrating small open models matching frontier model performance when tasks are properly isolated.",
+      "ocr_details": [
+        "Pointed at the bug, small open models found it too",
+        "A security vendor reran a frontier model's showcase bugs on small models:",
+        "Spot the overflow in one isolated function: 8 of 8 models, down to 3.6B active at $0.11/M",
+        "Reason through a signed-integer overflow: Split the models; a 5.1B-active one got the full chain",
+        "Tell a real bug from a look-alike: Small open models beat most frontier ones",
+        "Recognize the patched code as safe: Shaky; models kept flagging the fix",
+        "Find it unprompted in a whole codebase: Not tested",
+        "The model was enough for the step. The system around it is the work."
+      ],
+      "structured_reconstruction": "| Step | Result |\n| :--- | :--- |\n| **Spot overflow in isolated function** | 8 of 8 models (down to 3.6B active at $0.11/M) |\n| **Reason through signed-integer overflow** | 5.1B-active model got full chain |\n| **Tell real bug from look-alike** | Small open models beat most frontier ones |\n| **Recognize patched code as safe** | Shaky; flagged fix |\n| **Find unprompted in whole codebase** | Not tested |",
+      "spoken_segments": [
+        {
+          "timestamp": "08:50",
+          "text": "This is an interesting research that came out in April from a security vendor, able to reproduce the same security gaps being caught by small specialized models."
+        },
+        {
+          "timestamp": "09:10",
+          "text": "Opus 5.5 is capable for coding, but small models pointed at specific steps can perform just as well."
+        }
+      ],
+      "alignment_note": "Speaker highlights specific rows showing 3.6B and 5.1B open models finding bugs."
+    },
+    {
+      "scene_index": 22,
+      "start_time": "09:40",
+      "end_time": "10:50",
+      "visual_type": "SLIDE",
+      "screen_title": "You don't need frontier intelligence at every step",
+      "visual_summary": "Key philosophical slide asserting that frontier intelligence is only needed at critical hard steps, while routine steps can run on smaller models.",
+      "ocr_details": [
+        "You don't need frontier intelligence at every step",
+        "You need it where the step is hard.",
+        "Most of the rest already runs on something smaller."
+      ],
+      "structured_reconstruction": "Core Principle:\n- Frontier intelligence = required ONLY for high-difficulty steps.\n- Routine/structured steps = offload to smaller/specialized local models.",
+      "spoken_segments": [
+        {
+          "timestamp": "09:41",
+          "text": "How many of you know me or follow me on X? My name is Ahmad Osman."
+        },
+        {
+          "timestamp": "10:00",
+          "text": "I'm the CEO and founder of Osmantic."
+        },
+        {
+          "timestamp": "10:30",
+          "text": "And the thesis I'm building this company around is that you don't need frontier intelligence at every step. A lot of what we're doing could be done with small and specialized models."
+        }
+      ],
+      "alignment_note": "Speaker introduces himself and connects his company mission to the bold text on slide."
+    },
+    {
+      "scene_index": 23,
+      "start_time": "10:50",
+      "end_time": "11:00",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Place the stage, not the app",
+      "visual_summary": "Architecture diagram illustrating a multi-stage email processing pipeline where each step uses a dedicated machine, model, and test.",
+      "ocr_details": [
+        "Place the stage, not the app",
+        "The same email, stage by stage. Code checks each output before the next stage starts.",
+        "Receive (Your inbox) -> Classify (Small model) -> Retrieve (Your database) -> Draft (Local or hosted) -> Refund (Code + a human)",
+        "A check fails -> low score to a person, missing charge to a question, wrong number to a redraft.",
+        "Every stage gets its own machine, its own model and its own test."
+      ],
+      "structured_reconstruction": "```mermaid
+flowchart LR
+    A[\"Receive<br/>(Inbox)\"] --> B[\"Classify<br/>(Small Model)\"]
+    B --> C[\"Retrieve<br/>(Database)\"]
+    C --> D[\"Draft<br/>(Local/Hosted)\"]
+    D --> E[\"Refund<br/>(Code + Human)\"]
+    
+    B -. Check Fails .-> F[\"Low score -> Person\"]
+    C -. Check Fails .-> G[\"Missing charge -> Question\"]
+    D -. Check Fails .-> H[\"Wrong number -> Redraft\"]
+```",
+      "spoken_segments": [
+        {
+          "timestamp": "10:50",
+          "text": "Place the stage, not the app. Every stage gets its own machine, its own model, and its own test."
+        }
+      ],
+      "alignment_note": "Speaker points to the linear stage sequence from Receive through Refund."
+    },
+    {
+      "scene_index": 24,
+      "start_time": "11:00",
+      "end_time": "11:10",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The best model changed with the clip",
+      "visual_summary": "Comparison table evaluating video and audio generation models on human A/B preference tests across different media inputs.",
+      "ocr_details": [
+        "The best model changed with the clip",
+        "Same source footage. Saved human A/B picks.",
+        "Video: SeedVR2-7B won 5 of 5 (~6x slower per clip than Real-ESRGAN)",
+        "Most audio: DeepFilterNet3 won 4 of 5",
+        "One noisy clip: MossFormer2 won it (Resemble Enhance was cut: it can change the words)",
+        "Pick per defect. A slow model is fine when nobody's waiting."
+      ],
+      "structured_reconstruction": "| Modality | Model | Win Rate / Note |\n| :--- | :--- | :--- |\n| **Video Upscaling** | SeedVR2-7B | Won 5 of 5 (~6x slower than Real-ESRGAN) |\n| **Standard Audio** | DeepFilterNet3 | Won 4 of 5 |\n| **Noisy Audio** | MossFormer2 | Won 1 of 1 (Avoided word corruption) |",
+      "spoken_segments": [
+        {
+          "timestamp": "11:00",
+          "text": "The best model changed with the clip. Pick per defect. A slow model is fine when nobody's waiting."
+        }
+      ],
+      "alignment_note": "Speaker explains selecting different specialized models based on input audio/video defects."
+    },
+    {
+      "scene_index": 25,
+      "start_time": "11:10",
+      "end_time": "11:40",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Here's what that pipeline made",
+      "visual_summary": "Video player demo playing the automated AI-generated promotional trailer for this presentation.",
+      "ocr_details": [
+        "Here's what that pipeline made",
+        "The trailer for this talk.",
+        "Models on the GPU box.",
+        "The edit on a Mac.",
+        "The picks by a human.",
+        "Click the video to play: 74 s"
+      ],
+      "structured_reconstruction": "Trailer Pipeline Components:\n- Video/Audio Models: Executed on Linux GPU workstation\n- Video Editing/FFmpeg: Executed on MacBook\n- Final Selection: Human A/B approval",
+      "spoken_segments": [
+        {
+          "timestamp": "11:10",
+          "text": "Anyone saw the trailer that I created for this talk? It's this one right here. This was created with Claude Opus 5.5 end to end."
+        },
+        {
+          "timestamp": "11:30",
+          "text": "I pointed it at a bunch of videos of mine and articles, and it captured everything."
+        }
+      ],
+      "alignment_note": "Speaker plays embedded 74-second trailer video clip."
+    },
+    {
+      "scene_index": 26,
+      "start_time": "11:40",
+      "end_time": "12:30",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Our render ran on three kinds of worker",
+      "visual_summary": "Architecture breakdown table detailing workload allocation between dual GPU workstation, MacBook laptop, and human operator.",
+      "ocr_details": [
+        "Our render ran on three kinds of worker",
+        "One 17-minute video render last week. Where did each step run?",
+        "2x RTX PRO 6000: Qwen3-VL-8B tags photos | SeedVR2-7B upscales | Audio models clean dialogue (9 minutes)",
+        "MacBook: FFmpeg cuts and mixes | Headless Chrome draws overlays | Final encode (~8 minutes)",
+        "A human: Picks the A/B winners | Checks words and faces | Approves the cut",
+        "Moving the Mac's 8 minutes would save 2-4. Not worth the setup. It stayed."
+      ],
+      "structured_reconstruction": "```mermaid
+flowchart TD
+    subgraph Workstation[\"2x RTX PRO 6000 (9 min)\"]
+        A1[\"Qwen3-VL-8B: Photo tagging\"]
+        A2[\"SeedVR2-7B: Upscaling\"]
+        A3[\"Audio Models: Dialogue cleaning\"]
+    end
+    
+    subgraph Laptop[\"MacBook (~8 min)\"]
+        B1[\"FFmpeg: Cuts & mixes\"]
+        B2[\"Headless Chrome: Overlays\"]
+        B3[\"Final Encode\"]
+    end
+    
+    subgraph Human[\"Human Operator\"]
+        C1[\"Pick A/B winners\"]
+        C2[\"Verify words & faces\"]
+        C3[\"Approve final cut\"]
+    end
+    
+    Workstation --> Laptop --> Human
+```",
+      "spoken_segments": [
+        {
+          "timestamp": "11:41",
+          "text": "It wasn't able to build this without two RTX Pro 6000s that it used for tagging photos, upscaling videos, upscaling audio."
+        },
+        {
+          "timestamp": "12:00",
+          "text": "My MacBook handled FFmpeg, overlays, final encode. This took me 6 hours from 9 PM to 3 AM."
+        }
+      ],
+      "alignment_note": "Speaker points to the three columns showing GPU worker, MacBook worker, and Human worker."
+    },
+    {
+      "scene_index": 27,
+      "start_time": "12:30",
+      "end_time": "13:10",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "The cloud is someone else's basement",
+      "visual_summary": "UI screenshot demo of ODS Portal agent interface (code named Cairo) managing local AI services.",
+      "ocr_details": [
+        "The cloud is someone else's basement",
+        "Portal UI: 'your local ODS server agent'",
+        "So Portal, our agent in ODS (code name Cairo), is a cloud: the cloud at home."
+      ],
+      "structured_reconstruction": "Component: ODS Portal (Cairo)\nRole: Local agent serving as cloud infrastructure at home.",
+      "spoken_segments": [
+        {
+          "timestamp": "12:35",
+          "text": "The cloud is pretty much someone else's basement. Every model we use is in someone's basement."
+        },
+        {
+          "timestamp": "12:50",
+          "text": "We created this harness called Portal, code name Cairo. You have the cloud at home now."
+        }
+      ],
+      "alignment_note": "Speaker gestures toward screenshot of Portal local server UI."
+    },
+    {
+      "scene_index": 28,
+      "start_time": "13:10",
+      "end_time": "13:40",
+      "visual_type": "SLIDE",
+      "screen_title": "'Local' is three different places",
+      "visual_summary": "Categorization slide defining three tiers of local execution: device local, owned/rented server box, and provider API.",
+      "ocr_details": [
+        "'Local' is three different places",
+        "So which of these counts as local?",
+        "This machine: Model, data and tools on the device. Works offline.",
+        "A box you run: Your weights, your box. Or a rented one: your weights on someone else's hardware.",
+        "Someone's API: Provider runs the model. Check where data goes and what they retain.",
+        "Three questions: who runs it, where does it run, what crosses the link?"
+      ],
+      "structured_reconstruction": "| Tier | Location | Properties |\n| :--- | :--- | :--- |\n| **This Machine** | On-device | Model, data, tools local; works offline |\n| **A Box You Run** | Local server or rented GPU | Your weights on dedicated box |\n| **Someone's API** | Remote data center | Provider managed; data crosses link |",
+      "spoken_segments": [
+        {
+          "timestamp": "13:10",
+          "text": "Local is basically the machine under your desk or someone's API, it doesn't matter, it's local to someone."
+        },
+        {
+          "timestamp": "13:30",
+          "text": "Ask three questions: who runs it, where does it run, what crosses the link?"
+        }
+      ],
+      "alignment_note": "Speaker points across the three deployment cards on screen."
+    },
+    {
+      "scene_index": 29,
+      "start_time": "13:40",
+      "end_time": "13:50",
+      "visual_type": "SLIDE",
+      "screen_title": "Will the weights fit? Do the users?",
+      "visual_summary": "Mathematical formula slide calculating total GPU memory requirements based on model weights, KV cache per user, and runtime overhead.",
+      "ocr_details": [
+        "Will the weights fit? Do the users?",
+        "27B x bits + 8 = 54 GB at 16-bit, 13.5 GB at 4-bit, ~15 GB as real Q4_K_M file.",
+        "Memory >= weights + KV cache per user x users + runtime"
+      ],
+      "structured_reconstruction": "Memory Calculation Formula:\n$$\\text{Memory Required} \\ge \\text{Weights} + (\\text{KV Cache per User} \\times \\text{Users}) + \\text{Runtime Overhead}$$",
+      "spoken_segments": [
+        {
+          "timestamp": "13:40",
+          "text": "Some math for people like me that like to talk about four bits and memory overhead."
+        }
+      ],
+      "alignment_note": "Speaker points to memory requirement inequality formula."
+    },
+    {
+      "scene_index": 30,
+      "start_time": "13:50",
+      "end_time": "14:00",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "A 1M-token window isn't 1M usable tokens",
+      "visual_summary": "Graph plotting MRCR retrieval accuracy against context length, proving degradation long before 1 million tokens.",
+      "ocr_details": [
+        "A 1M-token window isn't 1M usable tokens",
+        "Context Arena MRCR, 8 needles: retrieval accuracy (%) by context length:",
+        "Gemini 3.7 Flash, Opus 5, GLM-5.3, DeepSeek V4 Pro, Qwen3.8",
+        "Accuracy drops precipitously beyond 64K-128K context length for open models.",
+        "Size memory for the context you can actually use. Test retrieval at your length."
+      ],
+      "structured_reconstruction": "| Model | 8K Accuracy | 64K Accuracy | 256K Accuracy | 1M Accuracy |\n| :--- | :--- | :--- | :--- | :--- |\n| **Gemini 3.7 Flash** | ~100% | ~98% | ~85% | ~70% |\n| **Opus 5** | ~100% | ~95% | ~80% | ~60% |\n| **GLM-5.3** | ~98% | ~80% | ~40% | ~20% |\n| **DeepSeek V4 Pro** | ~98% | ~75% | ~35% | ~15% |\n| **Qwen3.8** | ~95% | ~60% | ~25% | ~10% |",
+      "spoken_segments": [
+        {
+          "timestamp": "13:52",
+          "text": "Long context, still we haven't found a way to make that work. Memory is still a massive issue."
+        }
+      ],
+      "alignment_note": "Speaker highlights steep downward slope of retrieval accuracy curve on context growth."
+    },
+    {
+      "scene_index": 31,
+      "start_time": "14:00",
+      "end_time": "14:10",
+      "visual_type": "SLIDE",
+      "screen_title": "The card is 8 GB short. What gets cut first?",
+      "visual_summary": "Multiple-choice trade-off slide asking audience how to cut 8 GB of VRAM usage on a 24 GB GPU.",
+      "ocr_details": [
+        "The card is 8 GB short. What gets cut first?",
+        "The weights fit. Four users at 32K don't. You can change one thing:",
+        "A Weight precision: 27B at 4-bit: ~15 GB",
+        "B Context length: KV cache, 4 users x 32K: ~17 GB",
+        "C Concurrent users: Total card: 24 GB. Short by about 8 GB.",
+        "D The model itself",
+        "Hands up for each. Every one frees memory and costs something else."
+      ],
+      "structured_reconstruction": "VRAM Deficit Scenario:\n- Target Card Capacity: 24 GB\n- Total Required Memory: ~32 GB (Weights ~15 GB + KV Cache ~17 GB)\n- Deficit: 8 GB\n- Options: [A] Weight precision | [B] Context length | [C] Concurrent users | [D] Model size",
+      "spoken_segments": [
+        {
+          "timestamp": "14:00",
+          "text": "The card is 8 GB short. What gets cut first? Hands up for each option."
+        }
+      ],
+      "alignment_note": "Speaker polls audience on which component (precision, context, concurrency, model) to sacrifice."
+    },
+    {
+      "scene_index": 32,
+      "start_time": "14:10",
+      "end_time": "15:10",
+      "visual_type": "SLIDE",
+      "screen_title": "My basement, November 2024: fourteen GPUs",
+      "visual_summary": "Photo of author standing next to a 14 x RTX 3090 home GPU cluster designed to run DeepSeek R1 671B.",
+      "ocr_details": [
+        "My basement, November 2024: fourteen GPUs",
+        "14 x RTX 3090, EPYC 7713, 512 GB of RAM.",
+        "The model I wanted: DeepSeek R1, 671B (37B active) at q4. About 400 GB of weights.",
+        "Where do the weights go?"
+      ],
+      "structured_reconstruction": "Hardware Setup (Nov 2024):\n- GPUs: 14 x RTX 3090\n- CPU: AMD EPYC 7713\n- RAM: 512 GB DDR4\n- Target Model: DeepSeek R1 671B (q4 ~400 GB weights)",
+      "spoken_segments": [
+        {
+          "timestamp": "14:10",
+          "text": "This is from my basement. These are 14 RTX 3090s behind me right there."
+        },
+        {
+          "timestamp": "14:20",
+          "text": "This thing was barely able to hold DeepSeek R1, which came out in February 2025."
+        },
+        {
+          "timestamp": "14:30",
+          "text": "I had a 6-hour live stream trying to run it on my DDR4 RAMs."
+        },
+        {
+          "timestamp": "14:40",
+          "text": "It was reasoning locally on my machine at 8 tokens per second."
+        }
+      ],
+      "alignment_note": "Speaker points to photo of his custom 14-GPU rig."
+    },
+    {
+      "scene_index": 33,
+      "start_time": "15:10",
+      "end_time": "15:20",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The box had 14 GPUs. The run used one.",
+      "visual_summary": "Architecture and performance breakdown showing how KTransformers offloaded 671B DeepSeek model weights between GPU and system RAM.",
+      "ocr_details": [
+        "The box had 14 GPUs. The run used one.",
+        "Where the weights lived, and what that bought. KTransformers, February 2025:",
+        "Where the weights lived: ~13 GB on one GPU (attention layers) | ~390 GB in system RAM (experts across thirteen cards)",
+        "What that bought: The 671B model ran on a box I already owned | 8.24 tok/s generating for one user",
+        "Offload makes a giant model runnable, not fast. Inventory is not placement."
+      ],
+      "structured_reconstruction": "| Resource | Memory Usage | Role |\n| :--- | :--- | :--- |\n| **1x RTX 3090 GPU** | ~13 GB | Attention layers |\n| **System RAM / PCIe** | ~390 GB | Expert weights offload |\n| **Performance** | **8.24 tok/s** | Single-user generation rate |",
+      "spoken_segments": [
+        {
+          "timestamp": "15:10",
+          "text": "The box had 14 GPUs, but the run used one GPU for attention and offloaded experts to RAM."
+        },
+        {
+          "timestamp": "15:15",
+          "text": "Offload makes a giant model runnable, not fast. Inventory is not placement."
+        }
+      ],
+      "alignment_note": "Speaker contrasts total GPU inventory with actual bottlenecked execution placement."
+    },
+    {
+      "scene_index": 34,
+      "start_time": "15:20",
+      "end_time": "15:40",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "The tool I actually use runs on a 4B model",
+      "visual_summary": "Pipeline diagram showing a desktop screenshot organization tool powered by Gemma 3 4B running in under 6 GB VRAM.",
+      "ocr_details": [
+        "The tool I actually use runs on a 4B model",
+        "My screenshot organizer on a desktop: Gemma 3 4B (48 dense, 4-bit) under 6 GB of VRAM.",
+        "Screenshot (image file with date) -> API call (Image + prompt to llama.cpp) -> Model returns (JSON: name & category) -> Code checks (Clean name) -> File renamed (Name + date into category folder)",
+        "The reply isn't usable JSON -> The file goes to 'uncategorized'. A retry runs every few renames first.",
+        "On the big server it ran every few weeks. On the desktop, I actually use it."
+      ],
+      "structured_reconstruction": "```mermaid
+flowchart LR
+    A[\"Screenshot<br/>(Image file)\"] --> B[\"API Call<br/>(llama.cpp + Gemma 3 4B)\"]
+    B --> C[\"Model Returns<br/>(JSON name & category)\"]
+    C --> D[\"Code Checks<br/>(Validation)\"]
+    D --> E[\"File Renamed<br/>(& moved to folder)\"]
+    
+    D -. Invalid JSON .-> F[\"Uncategorized folder\"]
+```",
+      "spoken_segments": [
+        {
+          "timestamp": "15:20",
+          "text": "With Gemma 3, the 4 billion parameter model, I was able to build a screenshot organizer at home running on an RTX 4090."
+        },
+        {
+          "timestamp": "15:35",
+          "text": "Models were already so capable, but nobody wanted to put a little bit of systems engineering behind it."
+        }
+      ],
+      "alignment_note": "Speaker traces flow steps from raw screenshot input to automated folder organization."
+    },
+    {
+      "scene_index": 35,
+      "start_time": "15:40",
+      "end_time": "15:50",
+      "visual_type": "SLIDE",
+      "screen_title": "What a '4-bit' label leaves out",
+      "visual_summary": "Slide detailing the three separate components impacted by quantization: weights, activations, and KV cache.",
+      "ocr_details": [
+        "What a '4-bit' label leaves out",
+        "Three things can be quantized. Each changes a different bill, and each needs its own kernel.",
+        "Weights: The file: smaller weights, more room. Decode reads fewer bytes.",
+        "Activations: The math format: FP8 and NVFP4 need hardware and kernels that speak them.",
+        "KV cache: Per user x context: an FP8 cache halves the KV bill. Test your longest prompts.",
+        "Ship the exact file, runtime and GPU you tested. Together."
+      ],
+      "structured_reconstruction": "| Target Component | Primary Benefit | Requirement |\n| :--- | :--- | :--- |\n| **Weights** | Smaller file size, less memory bandwidth | Compatible file format |\n| **Activations** | Faster compute execution | Hardware/kernel support (FP8, NVFP4) |\n| **KV Cache** | Reduced per-user context memory | Runtime cache quantization support |",
+      "spoken_segments": [
+        {
+          "timestamp": "15:40",
+          "text": "We know that we're getting a lot of good quantizations, seeing NVFP4 and proper implementations."
+        }
+      ],
+      "alignment_note": "Speaker highlights three distinct quantization categories beyond simple weight files."
+    },
+    {
+      "scene_index": 36,
+      "start_time": "15:50",
+      "end_time": "16:30",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "What '4-bit floating point' actually stores",
+      "visual_summary": "Detailed structural diagram explaining the NVFP4 micro-scaling floating point format.",
+      "ocr_details": [
+        "What '4-bit floating point' actually stores",
+        "NVFP4 = E2M1 values plus two levels of scaling:",
+        "Each value: 1 sign, 2 exponent, 1 mantissa bit.",
+        "Every 16 values: Share one FP8 scale.",
+        "The whole tensor: One FP32 scale extends the range.",
+        "Real savings: ~3.5x vs FP16 and ~1.8x vs FP8, not the ideal 4x."
+      ],
+      "structured_reconstruction": "```mermaid
+flowchart TD
+    subgraph Tensor[\"Whole Tensor Scale\"]
+        FP32[\"1x FP32 Global Scale\"]
+        subgraph Group[\"16-Value Block\"]
+            FP8[\"1x FP8 Scale\"]
+            subgraph Values[\"Elements (E2M1)\"]
+                E1[\"4-bit Element (1s, 2e, 1m)\"]
+                E2[\"4-bit Element (1s, 2e, 1m)\"]
+            end
+        end
+    end
+    FP32 --> FP8 --> Values
+```",
+      "spoken_segments": [
+        {
+          "timestamp": "16:00",
+          "text": "Blackwell RTX PRO 6000 hardware supports NVFP4. There is work being done optimizing software for consumer hardware."
+        }
+      ],
+      "alignment_note": "Speaker details the two-tier micro-scaling architecture of 4-bit floating point storage."
+    },
+    {
+      "scene_index": 37,
+      "start_time": "16:30",
+      "end_time": "17:10",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "QAT: train with the rounding in the loop",
+      "visual_summary": "Workflow diagram showing quantization-aware training (QAT) pass adapted gradients to prevent precision loss.",
+      "ocr_details": [
+        "QAT: train with the rounding in the loop",
+        "Quantization-aware training. What is simulated while training, and what is actually stored:",
+        "High-precision weights -> Fake-quantize each pass -> Gradients adapt the weights -> Convert: real 4-bit file -> Serve on the PTQ kernels",
+        "Training: each linear layer rounds weights & activations to target grid. Backward pass unchanged. Nothing stored in 4 bits yet.",
+        "Convert: adapted weights quantized for real into PTQ file. Drop-in replacement.",
+        "The weights were chosen knowing they would be rounded. The file format didn't change."
+      ],
+      "structured_reconstruction": "```mermaid
+flowchart LR
+    A[\"High-precision Weights\"] --> B[\"Fake-quantize Each Pass\"]
+    B --> C[\"Gradients Adapt Weights\"]
+    C --> D[\"Convert: Real 4-bit File\"]
+    D --> E[\"Serve on PTQ Kernels\"]
