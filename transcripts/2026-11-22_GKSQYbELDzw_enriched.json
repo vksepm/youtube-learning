@@ -1,0 +1,1409 @@
+{
+  "estimated_duration_seconds": 3368,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:20",
+      "visual_type": "SLIDE",
+      "screen_title": "What Runs Where? Local AI in Production",
+      "visual_summary": "Opening title slide for the workshop hosted by Ahmad M. Osman at AI Engineer Code Summit. The slide outlines the primary thesis: local AI has advanced quickly, but placement and optimization across workloads remain the key challenge.",
+      "ocr_details": [
+        "WORKSHOP",
+        "What Runs Where? Local AI in Production",
+        "Local AI got good faster than it got easy.",
+        "A laptop built a playable game on 37 watts of GPU power.",
+        "The frontier is still 18 index points ahead of open weights.",
+        "Both are true today. What runs where is the work.",
+        "The answer moves every few months. This hour is how to find it for your own workload.",
+        "Ahmad M. Osman - Founder & CEO, Osmantic - @TheAhmadOsman",
+        "ODS / AI Engineer Code Summit - San Francisco - November 10, 2026"
+      ],
+      "structured_reconstruction": "# What Runs Where? Local AI in Production\nLocal AI got good faster than it got easy.\n\n- A laptop built a playable game on 37 watts of GPU power.\n- The frontier is still 18 index points ahead of open weights.\n- Both are true today. What runs where is the work.\n\nThe answer moves every few months. This hour is how to find it for your own workload.\n\nAhmad M. Osman | Founder & CEO, Osmantic | @TheAhmadOsman",
+      "spoken_segments": [
+        {
+          "timestamp": "00:13",
+          "text": "I'm just going to give everyone a second to settle in."
+        }
+      ],
+      "alignment_note": "The speaker welcomes the audience while introducing the theme of the workshop shown on the title slide."
+    },
+    {
+      "scene_index": 2,
+      "start_time": "00:21",
+      "end_time": "00:49",
+      "visual_type": "SLIDE",
+      "screen_title": "June, on this stage: 'the 90s of Linux'",
+      "visual_summary": "Slide comparing the speaker's June 2026 panel statement ('the 90s of Linux') with his November 2026 stance emphasizing granular optimization per chip, per model, and per workflow.",
+      "ocr_details": [
+        "WHERE WE ARE",
+        "June, on this stage: 'the 90s of Linux'",
+        "What I said on this conference's stage in June, and where I stand today:",
+        "JUNE 2026 - AIEWF STATE OF THE UNION PANEL",
+        "\"We're in the 90s of the Linux operating system... The infrastructure is not there yet.\"",
+        "NOVEMBER 2026 - MY POSITION TODAY",
+        "- Per chip.",
+        "- Per model.",
+        "- Per workflow.",
+        "Optimization is the future."
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph June_2026 [June 2026: AI World's Fair]\n        A[\"We're in the 90s of the Linux operating system... The infrastructure is not there yet.\"]\n    end\n    subgraph Nov_2026 [November 2026: Position Today]\n        B[\"Per chip\"]\n        C[\"Per model\"]\n        D[\"Per workflow\"]\n    end\n    June_2026 --> Nov_2026",
+      "spoken_segments": [
+        {
+          "timestamp": "00:21",
+          "text": "So, I have 170 slides for you. I believe that we're not going to be able to go through all of them. But they will be posted online very soon."
+        },
+        {
+          "timestamp": "00:30",
+          "text": "yeah, this is basically what runs where and locally in production. And the goal is to go through the history of local AI..."
+        },
+        {
+          "timestamp": "00:40",
+          "text": "you know, probably we're going to go back a bit to 2023. And where we're heading in the future, and of course talking about where we are today."
+        }
+      ],
+      "alignment_note": "The speaker references his previous panel statement from June 2026 displayed on the left side of the slide."
+    },
+    {
+      "scene_index": 3,
+      "start_time": "00:50",
+      "end_time": "01:30",
+      "visual_type": "SLIDE",
+      "screen_title": "Open-source AI is an infrastructure optimization problem.",
+      "visual_summary": "Slide highlighting the core difference between open-source AI (infrastructure optimization problem) and local AI (user experience problem covering setup, responsiveness, reliability, and task fit).",
+      "ocr_details": [
+        "WHERE WE ARE",
+        "Open-source AI is an infrastructure optimization problem.",
+        "Optimized infrastructure only counts once it reaches the person at the keyboard:",
+        "Local AI is a user experience problem.",
+        "Setup",
+        "Responsiveness",
+        "Reliability",
+        "Fits the task"
+      ],
+      "structured_reconstruction": "| Category | Definition | Critical Pillars |\n| :--- | :--- | :--- |\n| **Open-source AI** | Infrastructure optimization problem | Optimized execution engine reaching the end-user |\n| **Local AI** | User experience problem | Setup, Responsiveness, Reliability, Fits the task |",
+      "spoken_segments": [
+        {
+          "timestamp": "01:00",
+          "text": "yeah and back then I said that we are basically in the 90s of Linux. Uh and I think we're starting to finally see more and more people invest in the ecosystem and the infrastructure."
+        },
+        {
+          "timestamp": "01:11",
+          "text": "since then we have been seeing more mega kernels or what people call mega kernels, we've been seeing new inference engines..."
+        },
+        {
+          "timestamp": "01:20",
+          "text": "we're seeing a lot of people trying to optimize basically per model, per chip, per workflow, and that's the way to go."
+        }
+      ],
+      "alignment_note": "Connects 'optimization problem' and 'user experience problem' text on screen with the spoken explanation of infrastructure vs user experience."
+    },
+    {
+      "scene_index": 4,
+      "start_time": "01:31",
+      "end_time": "02:15",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "A laptop built this game",
+      "visual_summary": "Demo slide featuring a video recording of 'Elf of Doom', a playable game generated locally on an ASUS ProArt P16 laptop equipped with an RTX Spark GPU, displaying real-time generation metrics.",
+      "ocr_details": [
+        "LOCAL TODAY",
+        "A laptop built this game",
+        "Qwen3.8-Flash-Next",
+        "125B total, 6B active",
+        "Decode 60 tok/s (peak 87)",
+        "Prefill 1,000-1,500 tok/s",
+        "37 W: 89 of 96 GB in use",
+        "On a laptop.",
+        "Click the video to play - 39 s",
+        "Play it: odsspark.com",
+        "Elf of Doom - ASUS ProArt P16 (RTX Spark), 128 GB - rates as shown on the demo's own panel"
+      ],
+      "structured_reconstruction": "### Demo Spec: Elf of Doom Game Generation\n- **Model**: Qwen3.8-Flash-Next (125B total, 6B active)\n- **Hardware**: ASUS ProArt P16 (RTX Spark), 128 GB RAM\n- **Power Usage**: 37 W (89 of 96 GB memory in use)\n- **Decode Speed**: 60 tok/s (peak 87 tok/s)\n- **Prefill Speed**: 1,000 - 1,500 tok/s\n- **Play Link**: odsspark.com",
+      "spoken_segments": [
+        {
+          "timestamp": "01:32",
+          "text": "Open source AI is an optimization problem, local AI is a user experience problem. And both of those things need to be solved in parallel to each other."
+        },
+        {
+          "timestamp": "01:40",
+          "text": "This is from our recent launch co-launch with Nvidia. We built an optimized inference engine for the RTX Spark..."
+        },
+        {
+          "timestamp": "02:00",
+          "text": "you can play this game on odsspark.com and you can see all the traces. This was built fully locally, no cloud, no Codex..."
+        }
+      ],
+      "alignment_note": "Points to the game video demo and metrics listed on the slide for the RTX Spark laptop demo."
+    },
+    {
+      "scene_index": 5,
+      "start_time": "02:16",
+      "end_time": "02:39",
+      "visual_type": "SLIDE",
+      "screen_title": "People lined up to play it",
+      "visual_summary": "Photo slide showing crowds gathered at the Best Buy launch line for the RTX Spark local AI demo.",
+      "ocr_details": [
+        "LOCAL TODAY",
+        "People lined up to play it",
+        "RTX Spark Official Launch at Best Buy - the ODS demo line",
+        "Play it: odsspark.com",
+        "ODS demo - October 2026"
+      ],
+      "structured_reconstruction": "![Best Buy Launch Line](odsspark_bestbuy_launch.png)\n*RTX Spark Official Launch at Best Buy showing the ODS demo line crowd (October 2026).*",
+      "spoken_segments": [
+        {
+          "timestamp": "02:20",
+          "text": "And this is from the Best Buy launch, official launch for the RTX Spark. We had so many people around us that wanted to play this game..."
+        },
+        {
+          "timestamp": "02:30",
+          "text": "so we're starting to see more of everybody, like everyday persons actually showing up for local AI and interested in what's being done in here."
+        }
+      ],
+      "alignment_note": "Pointers to the photo showing people lined up at the Best Buy launch event."
+    },
+    {
+      "scene_index": 6,
+      "start_time": "02:40",
+      "end_time": "03:00",
+      "visual_type": "SLIDE",
+      "screen_title": "Which answer came from the desktop?",
+      "visual_summary": "Side-by-side blind test comparing token generation explanations from Answer A (desktop local model) and Answer B (GPT-5.5 cloud).",
+      "ocr_details": [
+        "BLIND TEST",
+        "Which answer came from the desktop?",
+        "Explain how a transformer generates one token. One answer came from a desktop, the other from GPT-5.5.",
+        "Hugging Face's Local AI 201 - Nov 10, 2026"
+      ],
+      "structured_reconstruction": "### Blind Test Comparison\nPrompt: \"Explain how a transformer generates one token.\"\n\n- **Answer A**: Autoregressive decoding explanation utilizing token embeddings, positional encoding, residual connections, and softmax prediction.\n- **Answer B**: Multi-stage transformer explanation breaking down attention matrices, feedforward layers, and vocabulary logit projection.",
+      "spoken_segments": [
+        {
+          "timestamp": "02:42",
+          "text": "Can you tell the difference between these two answers? One of them was a local model and another was GPT 5.5."
+        },
+        {
+          "timestamp": "02:50",
+          "text": "This is from our video online with Hugging Face, it's Local AI 201."
+        }
+      ],
+      "alignment_note": "Refers to the side-by-side text boxes marked A and B."
+    },
+    {
+      "scene_index": 7,
+      "start_time": "03:01",
+      "end_time": "03:30",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "A was the desktop. It finished first.",
+      "visual_summary": "Benchmark results revealing Answer A (Blackwell Tower local Qwen3.6-27B FP8) beat GPT-5.5 cloud in both latency and total completion time.",
+      "ocr_details": [
+        "BLIND TEST",
+        "A was the desktop. It finished first.",
+        "Qwen3.6-27B (27B dense, FP8) on one RTX PRO 6000 vs GPT-5.5 (parameters undisclosed).",
+        "A - Blackwell Tower, local: 0.04 s to first token, 51 tok/s decode, 5.0 s total",
+        "B - GPT-5.5, OpenAI cloud: 4.33 s to first token, 34 tok/s decode, 12.2 s total",
+        "One user, one question: the desktop wins. Now give it a real job."
+      ],
+      "structured_reconstruction": "| Option | Environment / Model | Time to First Token | Decode Speed | Total Duration |\n| :--- | :--- | :--- | :--- | :--- |\n| **A** | Blackwell Tower, local (Qwen3.6-27B FP8) | **0.04 s** | **51 tok/s** | **5.0 s** |\n| **B** | GPT-5.5, OpenAI cloud | 4.33 s | 34 tok/s | 12.2 s |",
+      "spoken_segments": [
+        {
+          "timestamp": "03:05",
+          "text": "the model that we ran locally was 3.6 27 billion parameter. And it ran at 51 tokens per second for decoding, while GPT 5.5 via OpenAI Cloud was running at 34 tokens per second."
+        },
+        {
+          "timestamp": "03:20",
+          "text": "And I don't know if you guys are using CLI at this point, but it's pretty slow in comparison to anything local."
+        }
+      ],
+      "alignment_note": "Connects metrics (0.04s vs 4.33s TTFT, 51 tok/s vs 34 tok/s decode) to Desktop A vs Cloud B."
+    },
+    {
+      "scene_index": 8,
+      "start_time": "03:31",
+      "end_time": "04:00",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The frontier is ahead, and it can afford to compound",
+      "visual_summary": "Chart of Artificial Analysis Intelligence Index v5.01 evaluating closed vs open weight models, questioning benchmark fidelity where Haiku 5.5 scores above DeepSeek V4.1 Flash.",
+      "ocr_details": [
+        "WHY NOW",
+        "The frontier is ahead, and it can afford to compound",
+        "Artificial Analysis Intelligence Index v5.01, Nov 9 - best configuration of each model:",
+        "Closed weights: Fable 5.2 (64.6), Gemini 4.8 (59.5), Opus 5.5 (57.3), GPT-6 Astra (55.4), Haiku 5.5 (52.2)",
+        "Open weights: Kimi K3.1 Pro (46.5), DeepSeek V4.1 Flash (32.6), GLM-5.3 (31.7)",
+        "18 points ahead at the top. One rung down, Haiku 5.5 trails the open frontier by ten points."
+      ],
+      "structured_reconstruction": "| Category | Model Name | Index Score |\n| :--- | :--- | :--- |\n| **Closed Weights** | Fable 5.2 | 64.6 |\n| Closed Weights | Gemini 4.8 | 59.5 |\n| Closed Weights | Opus 5.5 | 57.3 |\n| Closed Weights | GPT-6 Astra | 55.4 |\n| Closed Weights | Haiku 5.5 | 52.2 |\n| **Open Weights** | Kimi K3.1 Pro | 46.5 |\n| Open Weights | DeepSeek V4.1 Flash | 32.6 |\n| Open Weights | GLM-5.3 | 31.7 |",
+      "spoken_segments": [
+        {
+          "timestamp": "03:35",
+          "text": "This one is an interesting one. Anyone saw the new Artificial analysis index V5?"
+        },
+        {
+          "timestamp": "03:45",
+          "text": "They have that Anthropic Haiku 5.5 is ahead of DeepSeek V4.1 flash."
+        },
+        {
+          "timestamp": "03:55",
+          "text": "if your evals are showing that Haiku code is beating DeepSeek V4.1 flash, there's a problem there."
+        }
+      ],
+      "alignment_note": "Pointers to Haiku 5.5 (52.2) vs DeepSeek V4.1 Flash (32.6) on the benchmark chart."
+    },
+    {
+      "scene_index": 9,
+      "start_time": "04:01",
+      "end_time": "04:35",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Four-minute tasks to twelve-hour tasks in three years",
+      "visual_summary": "METR task length progression table demonstrating model autonomous horizon capabilities doubling roughly every 4 months.",
+      "ocr_details": [
+        "WHY NOW",
+        "Four-minute tasks to twelve-hour tasks in three years",
+        "METR: task length (in expert-human time) a model completes 50% and 80% of the time:",
+        "GPT-4 (Mar 2023): 4 min (50%), 1 min (80%)",
+        "c3 (Nov 2023): 2.5 min, 4 min",
+        "Opus 4.5 (Nov 2025): 4.9 h, 49 min",
+        "Opus 4.6 (Feb 2026): 12 h, 70 min",
+        "Mythos Preview (Apr 2026): 17 h*, 3.1 h",
+        "Doubling every ~4 months. Longer tasks burn more tokens. Where they run is now a budget question."
+      ],
+      "structured_reconstruction": "| Model | Release Date | 50% Horizon | 80% Horizon |\n| :--- | :--- | :--- | :--- |\n| GPT-4 | Mar 2023 | 4 min | 1 min |\n| c3 | Nov 2023 | 2.5 min | 4 min |\n| Opus 4.5 | Nov 2025 | 4.9 h | 49 min |\n| Opus 4.6 | Feb 2026 | **12 h** | **70 min** |\n| Mythos Preview | Apr 2026 | 17 h* | 3.1 h |",
+      "spoken_segments": [
+        {
+          "timestamp": "04:11",
+          "text": "It's showing the progress since March 2023 and how long long horizon tasks are becoming longer in terms of what humans could do that machines could solve right now."
+        },
+        {
+          "timestamp": "04:25",
+          "text": "We're seeing that basically it's doubling every four months and that rate is not slowing down."
+        }
+      ],
+      "alignment_note": "Speaker gestures toward the METR task length metrics and the exponential trend line."
+    },
+    {
+      "scene_index": 10,
+      "start_time": "04:36",
+      "end_time": "05:08",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Agents send most tokens. Caching pays for it.",
+      "visual_summary": "Line graph based on OpenRouter data showing agent-generated tokens surpassing human-generated tokens starting in February 2026, driving high context-cache hit rates.",
+      "ocr_details": [
+        "WHY NOW",
+        "Agents send most tokens. Caching pays for it.",
+        "OpenRouter, October 2026 - tokens per month by how each API key is used (T = trillion):",
+        "Agentic keys (top red line reaching ~680T)",
+        "Mixed keys / Human-paced keys (bottom lines)",
+        "What their providers cache: Cache rate on agentic keys among providers serving >1T of them:",
+        "13 of 24 above 90% in June",
+        "3 of 16 above 90% in June",
+        "Median 90% vs human 76%",
+        "Agents resend the same context every turn. Reuse it, hosted or local."
+      ],
+      "structured_reconstruction": "| Key Class | Token Volume Trend (Trillions/mo) | Caching Behavior |\n| :--- | :--- | :--- |\n| **Agentic Keys** | Exponential growth (surpassed human in Feb 2026, hit ~680T Oct 2026) | Resends same context every turn; median 90% cache rate |\n| **Human-Paced Keys** | Flat/Slow growth (<100T) | Low context repetition; 76% cache rate |",
+      "spoken_segments": [
+        {
+          "timestamp": "04:40",
+          "text": "This is from Open Router's data, October 2026... the number of tokens are in trillions. And since February, agents are the ones producing tokens more than humans."
+        },
+        {
+          "timestamp": "04:55",
+          "text": "The last time a human was the one generating more tokens out there was February 2026. And I guess we're never going to get there again."
+        }
+      ],
+      "alignment_note": "Points to the agentic token curve overtaking human-paced key volume starting February 2026."
+    },
+    {
+      "scene_index": 11,
+      "start_time": "05:09",
+      "end_time": "05:52",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "And yet, open models jumped",
+      "visual_summary": "Line chart showing rapid progress in open frontier models on Artificial Analysis Intelligence Index v4.1, jumping from 13 to 51 points between Jan 2025 and June 2026.",
+      "ocr_details": [
+        "WHY NOW",
+        "And yet, open models jumped",
+        "Best score to date, Artificial Analysis Intelligence Index v4.1 (the scale before v5):",
+        "Open frontier went from 13 to 51 in 17 months.",
+        "In June it matched the closed frontier of March."
+      ],
+      "structured_reconstruction": "| Month | Open Frontier Score | Closed Frontier Score |\n| :--- | :--- | :--- |\n| Jan 2025 | 13 | ~26 |\n| Apr 2025 | ~18 | ~31 |\n| Jul 2025 | ~24 | ~35 |\n| Oct 2025 | ~31 | ~42 |\n| Jan 2026 | ~42 | ~48 |\n| Jun 2026 | **51** | ~56 |",
+      "spoken_segments": [
+        {
+          "timestamp": "05:10",
+          "text": "This is Artificial Analysis Intelligence Index V4.1. And it's showing that the open source models since January 2025 basically have jumped up from 13 points to 51 on the index."
+        },
+        {
+          "timestamp": "05:25",
+          "text": "And the gap is becoming smaller and smaller."
+        }
+      ],
+      "alignment_note": "Refers to the parallel upward lines comparing open vs closed models over time."
+    },
+    {
+      "scene_index": 12,
+      "start_time": "05:53",
+      "end_time": "06:27",
+      "visual_type": "SLIDE",
+      "screen_title": "Opus 5.5's level goes open. It's still a specialist.",
+      "visual_summary": "Slide featuring tweet posts by @TheAhmadOsman predicting open weights catching up to Opus levels while making a case for 1B-2B small specialist models.",
+      "ocr_details": [
+        "WHY NOW",
+        "Opus 5.5's level goes open. It's still a specialist.",
+        "Opus 5.5's level should reach open weights around March 2027. It will still have an edge, so test each stage, not the model.",
+        "Posted Sep 23 & Nov 8, 2026 by @TheAhmadOsman"
+      ],
+      "structured_reconstruction": "> **@TheAhmadOsman (Sep 23 & Nov 8, 2026)**\n> Opus 5.5's intelligence level is about 6 months out of being available from open-weights labs.\n> The future is small & specialized models.\n> Out-of-distribution tasks are the ones that the big flagship models win.",
+      "spoken_segments": [
+        {
+          "timestamp": "06:00",
+          "text": "I have a tweet since March 2025, saying the future is small and specialized models."
+        },
+        {
+          "timestamp": "06:15",
+          "text": "And I believe that in three years or less, we're going to have a 1 billion parameter model that beats Opus 5.5."
+        }
+      ],
+      "alignment_note": "Direct reference to the author's tweets shown on screen."
+    },
+    {
+      "scene_index": 13,
+      "start_time": "06:28",
+      "end_time": "07:10",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Open models carry most tokens, not most dollars",
+      "visual_summary": "Dual stacked bar charts illustrating that open-weight models represent 70.3% of token traffic but closed models receive 72.5% of total user spend.",
+      "ocr_details": [
+        "WHY NOW",
+        "Open models carry most tokens, not most dollars",
+        "OpenRouter paid traffic, week of Oct 19, 2026, one cohort for both charts:",
+        "Share of paid tokens: Closed weights 29.7%, Open weights 70.3%",
+        "Share of paid spend: Closed weights 72.5%, Open weights 27.5%",
+        "The work is moving to open models. The money still funds the frontier."
+      ],
+      "structured_reconstruction": "| Metric | Closed Weights | Open Weights |\n| :--- | :--- | :--- |\n| **Share of Paid Tokens** | 29.7% | **70.3%** |\n| **Share of Paid Spend** | **72.5%** | 27.5% |",
+      "spoken_segments": [
+        {
+          "timestamp": "06:30",
+          "text": "This is from OpenRouter... amount of money being spent on models right now, mostly closed weights. However, the number of tokens being consumed out there are mostly open source models."
+        },
+        {
+          "timestamp": "06:50",
+          "text": "pretty much in terms of tokens, everybody is using DeepSeek V4.1 Flash... but in terms of money spent it's Opus 5.5."
+        }
+      ],
+      "alignment_note": "Explains the contrast between token volume (70.3% open) and dollar spend (72.5% closed)."
+    },
+    {
+      "scene_index": 14,
+      "start_time": "07:11",
+      "end_time": "07:58",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Routine work doesn't chase the newest model",
+      "visual_summary": "Horizontal bar chart comparing adoption of newly released models (<60 days old) for complex agentic engineering tasks vs routine support/classification tasks.",
+      "ocr_details": [
+        "WHY NOW",
+        "Routine work doesn't chase the newest model",
+        "Sept 2026: share of each task's requests going to models under 60 days old:",
+        "Agentic engineering: File read/write 68%, Shell execution 64%, Debugging 61%",
+        "Routine work: Classification 36%, Summarization 26%, Customer support 26%",
+        "The newest model where the work is hard. Settled models where it's routine."
+      ],
+      "structured_reconstruction": "| Category | Task | Share using Newest Models (<60d old) |\n| :--- | :--- | :--- |\n| **Agentic Engineering** | File read/write | 68% |\n| Agentic Engineering | Shell execution | 64% |\n| Agentic Engineering | Debugging | 61% |\n| **Routine Work** | Classification | 36% |\n| Routine Work | Summarization | 26% |\n| Routine Work | Customer support | 26% |",
+      "spoken_segments": [
+        {
+          "timestamp": "07:15",
+          "text": "What are agents doing right now? And why do we think that there is a need for new chips... you're mostly waiting on an agent to run a shell command or do something, execute something and get the results back."
+        },
+        {
+          "timestamp": "07:35",
+          "text": "More than you are bottlenecked by tokens per second actually."
+        }
+      ],
+      "alignment_note": "Connects shell execution and agent tasks on the chart to real-world latency bottlenecks."
+    },
+    {
+      "scene_index": 15,
+      "start_time": "07:59",
+      "end_time": "08:45",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The open-closed gap depends on the test",
+      "visual_summary": "Comparison table showing huge variance in open vs closed performance depending on evaluation benchmark choice (43 point gap on HLE Diamond vs open leading by 2 points on Terminal-Bench 4.0).",
+      "ocr_details": [
+        "WHY NOW",
+        "The open-closed gap depends on the test",
+        "Best closed vs best open score on each independent test, Nov 2026:",
+        "HLE Diamond: Closed 80.2, Open 37.3 (Gap: 43 points)",
+        "WeirdVML (ML engineering): Closed 42.2, Open 9.9 (Gap: 32 points)",
+        "FrontierCode 2.0: Closed 49.1, Open 28.5 (Gap: 21 points)",
+        "AA Intelligence Index v5: Closed 64.6, Open 46.5 (Gap: 18 points)",
+        "GDP.pdf (documents): Closed 32.6, Open 31.4 (Gap: 1 point)",
+        "Terminal-Bench 4.0: Closed 65.2, Open 67.2 (Open ahead by 2)",
+        "Between 43 points behind and 2 ahead. Which test looks like your job?"
+      ],
+      "structured_reconstruction": "| Test / Benchmark | Best Closed | Best Open | Gap |\n| :--- | :--- | :--- | :--- |\n| HLE Diamond | 80.2 | 37.3 | 43 points closed lead |\n| WeirdVML (ML engineering) | 42.2 | 9.9 | 32 points closed lead |\n| FrontierCode 2.0 | 49.1 | 28.5 | 21 points closed lead |\n| AA Intelligence Index v5 | 64.6 | 46.5 | 18 points closed lead |\n| GDP.pdf (documents) | 32.6 | 31.4 | 1 point closed lead |\n| **Terminal-Bench 4.0** | 65.2 | **67.2** | **Open ahead by 2** |",
+      "spoken_segments": [
+        {
+          "timestamp": "08:00",
+          "text": "So that gap between open and closed models, it depends mostly on which benchmark you trust."
+        },
+        {
+          "timestamp": "08:10",
+          "text": "According to HLE Diamond, the gap is more than 30%. Terminal benchmarks says that open source models are ahead by two points."
+        },
+        {
+          "timestamp": "08:18",
+          "text": "So we have an eval problem, that's for sure."
+        }
+      ],
+      "alignment_note": "Pointers to HLE Diamond row (+43 gap) vs Terminal-Bench row (-2 gap, open ahead)."
+    },
+    {
+      "scene_index": 16,
+      "start_time": "08:46",
+      "end_time": "09:40",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Pointed at the bug, small open models found it too",
+      "visual_summary": "Security audit experiment table showing small specialized models (3.6B active down to 0.1B active) successfully finding code vulnerabilities when isolated to specific steps.",
+      "ocr_details": [
+        "WHY NOW",
+        "Pointed at the bug, small open models found it too",
+        "A security vendor reran a frontier model's showcase bugs on small models:",
+        "Step 1: Spot the overflow in one isolated function -> 8 of 8 models; down to 3.6B active at $0.11/M",
+        "Step 2: Reason through a signed-integer overflow -> Split the models; a 5.1B-active one got the full chain",
+        "Step 3: Tell a real bug from a look-alike -> Small open models beat most frontier ones",
+        "Step 4: Recognize the patched code as safe -> Shaky; models kept flagging the fix",
+        "Step 5: Find it unprompted in a whole codebase -> Not tested",
+        "The model was enough for the step. The system around it is the work."
+      ],
+      "structured_reconstruction": "| Audit Step | Result / Findings |\n| :--- | :--- |\n| **1. Spot overflow in isolated function** | 8 of 8 models succeeded; down to 3.6B active at $0.11/M |\n| **2. Reason signed-integer overflow** | Split models; 5.1B-active model completed full chain |\n| **3. Distinguish real bug vs look-alike** | Small open models beat most frontier ones |\n| **4. Recognize patched code as safe** | Shaky; models repeatedly flagged fix |\n| **5. Find unprompted in whole codebase** | Not tested |",
+      "spoken_segments": [
+        {
+          "timestamp": "08:48",
+          "text": "This is an interesting research came out in April... from a security vendor, pretty much was able to reproduce the same security gaps being caught by small specialized models."
+        },
+        {
+          "timestamp": "09:10",
+          "text": "This tells you something about the idea of small models."
+        }
+      ],
+      "alignment_note": "Explains how small models perform well on focused steps (Steps 1-3) when framed properly."
+    },
+    {
+      "scene_index": 17,
+      "start_time": "09:41",
+      "end_time": "10:50",
+      "visual_type": "SLIDE",
+      "screen_title": "You don't need frontier intelligence at every step",
+      "visual_summary": "Core architectural principle slide stating that frontier intelligence is only needed at difficult reasoning steps, while small specialized models can handle the majority of tasks.",
+      "ocr_details": [
+        "WHY NOW",
+        "You don't need frontier intelligence at every step",
+        "You need it where the step is hard. Most of the rest already runs on something smaller.",
+        "From the index gap, the traffic split and the per-test gaps just shown."
+      ],
+      "structured_reconstruction": "# Core Thesis: Specialized Model Architecture\n- **Frontier Intelligence**: Reserved exclusively for hard reasoning steps.\n- **Small & Specialized Models**: Handles routine execution, routing, classification, and formatting.",
+      "spoken_segments": [
+        {
+          "timestamp": "09:50",
+          "text": "My name is Ahmad Osman, by the way. Let me introduce myself... CEO and founder of a company called Osmotic."
+        },
+        {
+          "timestamp": "10:30",
+          "text": "the thesis that I'm building this company around is that you don't need frontier intelligence at every step. A lot of what we're doing could be done with small and specialized models."
+        }
+      ],
+      "alignment_note": "Speaker aligns his company thesis with the large callout text on the slide."
+    },
+    {
+      "scene_index": 18,
+      "start_time": "10:51",
+      "end_time": "12:34",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Here's what that pipeline made / Our render ran on three kinds of worker",
+      "visual_summary": "Breakdown of a 17-minute video presentation trailer production pipeline distributed across local RTX PRO 6000 GPUs, a MacBook, and human review.",
+      "ocr_details": [
+        "THE RULE",
+        "Our render ran on three kinds of worker",
+        "One 17-minute video render last week. Where did each step run?",
+        "2x RTX PRO 6000: Qwen3-VL-8B tags photos, SeedVR2-7B upscales, Audio models clean dialogue (9 minutes)",
+        "MacBook: FFmpeg cuts and mixes, Headless Chrome draws overlays, Final encode (~8 minutes)",
+        "A human: Picks the A/B winners, Checks words and faces, Approves the cut",
+        "Moving the Mac's 8 minutes would save 2-4. Not worth the setup. It stayed."
+      ],
+      "structured_reconstruction": "flowchart TD\n    subgraph GPU_Box [2x RTX PRO 6000 - 9 min]\n        A1[Qwen3-VL-8B: Photo Tagging]\n        A2[SeedVR2-7B: Video Upscaling]\n        A3[Audio Models: Dialogue Clean]\n    end\n    subgraph Mac [MacBook - 8 min]\n        B1[FFmpeg: Cuts & Mixes]\n        B2[Chrome: Overlays]\n        B3[Final Video Encode]\n    end\n    subgraph Human [Human Reviewer]\n        C1[Select A/B Winners]\n        C2[Inspect Words & Faces]\n        C3[Approve Final Cut]\n    end\n    GPU_Box --> Mac --> Human",
+      "spoken_segments": [
+        {
+          "timestamp": "11:00",
+          "text": "Anyone saw the trailer that I created for this talk? This one right here. This was created with Claude Opus 5.5 end-to-end..."
+        },
+        {
+          "timestamp": "11:50",
+          "text": "however it wasn't able to build this entire thing without... two RTX Pro 6000s that it used for pretty much tagging photos, upscaling videos, upscaling audio."
+        },
+        {
+          "timestamp": "12:10",
+          "text": "This took me 6 hours... I bet you that we're going to have a small and specialized model doing this within 3 years."
+        }
+      ],
+      "alignment_note": "Speaker connects trailer video demo to the 3-worker task allocation table."
+    },
+    {
+      "scene_index": 19,
+      "start_time": "12:35",
+      "end_time": "13:50",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "The cloud is someone else's basement",
+      "visual_summary": "UI screenshot of Portal (code name Cairo), the open-source local agent harness running as a self-hosted cloud server at home.",
+      "ocr_details": [
+        "THE RULE",
+        "The cloud is someone else's basement",
+        "Portal UI showing system prompt and task execution status",
+        "So Portal, our agent in ODS (code name Cairo), is a cloud: the cloud at home.",
+        "ODS Portal - 'your local ODS server agent' - Oct 18, 2026"
+      ],
+      "structured_reconstruction": "### Portal Agent Architecture (Code Name: Cairo)\n- **Concept**: \"The Cloud at Home\"\n- **Function**: Local agent harness executing LLM commands, tool calls, and local inference without relying on external cloud APIs.",
+      "spoken_segments": [
+        {
+          "timestamp": "12:40",
+          "text": "The cloud is pretty much someone else's basement... we created this harness called Portal... code name for this thing is Cairo."
+        },
+        {
+          "timestamp": "13:15",
+          "text": "Local is basically the machine that you have under your desk or someone's API, it doesn't matter..."
+        }
+      ],
+      "alignment_note": "Speaker highlights the Portal agent interface on screen."
+    },
+    {
+      "scene_index": 20,
+      "start_time": "13:51",
+      "end_time": "15:19",
+      "visual_type": "SLIDE",
+      "screen_title": "My basement, November 2024: fourteen GPUs / The box had 14 GPUs. The run used one.",
+      "visual_summary": "Photo of Ahmad Osman with his 14x RTX 3090 home setup, alongside a technical breakdown of running DeepSeek R1 (671B Q4) using CPU system RAM offloading.",
+      "ocr_details": [
+        "WILL IT FIT?",
+        "My basement, November 2024: fourteen GPUs",
+        "14 x RTX 3090, EPYC 7713, 512 GB of RAM.",
+        "The model I wanted: DeepSeek R1, 671B (37B active) at q4. About 400 GB of weights.",
+        "Where do the weights go?",
+        "February 2025: ~13 GB on GPU, ~390 GB in system RAM; 8.24 tok/s generating.",
+        "Offload makes a giant model runnable, not fast. Inventory is not placement."
+      ],
+      "structured_reconstruction": "| Component | Capacity / Allocation | Impact |\n| :--- | :--- | :--- |\n| **GPU VRAM** | 13 GB (1x RTX 3090) | Holds attention layers |\n| **System RAM** | 390 GB (DDR4) | Holds remaining weights |\n| **Total Model** | DeepSeek R1 671B (37B active, Q4) | 400 GB total weights |\n| **Performance** | **8.24 tok/s** | Extremely slow due to CPU-GPU interconnect bottleneck |",
+      "spoken_segments": [
+        {
+          "timestamp": "14:20",
+          "text": "This is from my basement. 14 RTX 3090s behind me right there."
+        },
+        {
+          "timestamp": "14:30",
+          "text": "This thing was barely able to hold the DeepSeek R1 which came out in February 2025."
+        },
+        {
+          "timestamp": "14:45",
+          "text": "It was giving me like eight tokens per second on my RAM..."
+        }
+      ],
+      "alignment_note": "References the photo of his home lab rig and the memory breakdown table for KTransformers offloading."
+    },
+    {
+      "scene_index": 21,
+      "start_time": "15:20",
+      "end_time": "15:45",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "The tool I actually use runs on a 4B model",
+      "visual_summary": "Sequence diagram of a practical desktop screenshot organizer pipeline powered by Gemma 3 4B running locally under 6GB VRAM.",
+      "ocr_details": [
+        "WILL IT FIT?",
+        "The tool I actually use runs on a 4B model",
+        "My screenshot organizer on a desktop: Gemma 3 4B (48B dense, 4B active), under 6 GB of VRAM.",
+        "Screenshot -> API call -> Model returns -> Code checks -> File renamed",
+        "The reply isn't usable JSON (the file goes to 'uncategorized'). A product buys funny renames first.",
+        "On the big server it ran every few weeks. On the desktop, I actually use it."
+      ],
+      "structured_reconstruction": "flowchart LR\n    A[Screenshot] --> B[\"API Call (Gemma 3 4B)\"]\n    B --> C[\"Model Returns JSON\"]\n    C --> D[Code Checks]\n    D --> E[File Renamed]",
+      "spoken_segments": [
+        {
+          "timestamp": "15:25",
+          "text": "Even like with Gemma 3 the four billion parameter model, I was able to build this screenshot organizer at home running on an RTX 4090."
+        },
+        {
+          "timestamp": "15:35",
+          "text": "The models were already so capable, but nobody wanted to put a little bit of systems engineering behind it."
+        }
+      ],
+      "alignment_note": "Speaker traces the 5-step diagram showing desktop Gemma 3 4B processing screenshots."
+    },
+    {
+      "scene_index": 22,
+      "start_time": "15:46",
+      "end_time": "17:09",
+      "visual_type": "SLIDE",
+      "screen_title": "QAT: train with the rounding in the loop",
+      "visual_summary": "Diagram detailing Quantization-Aware Training (QAT), showing how fake-quantization during gradient passes allows low-precision conversion without accuracy drops.",
+      "ocr_details": [
+        "WILL IT FIT?",
+        "QAT: train with the rounding in the loop",
+        "Quantization-aware training: High-precision weights -> Fake-quantize each pass -> Gradients adapt the weights -> Convert: real 4-bit file -> Serve on PTQ kernels",
+        "Training: each linear layer rounds 3 weights and activations to target grid... backward pass is unchanged.",
+        "The weights were chosen knowing they would be rounded. The file format didn't change."
+      ],
+      "structured_reconstruction": "flowchart LR\n    A[High-precision weights] --> B[Fake-quantize each pass]\n    B --> C[Gradients adapt the weights]\n    C --> D[Convert: real 4-bit file]\n    D --> E[Serve on PTQ kernels]",
+      "spoken_segments": [
+        {
+          "timestamp": "16:30",
+          "text": "quantization aware training, which basically is making the model re-assess itself as it's training so that the most used layers are kept at higher precision..."
+        }
+      ],
+      "alignment_note": "Connects QAT flow steps to rounding weights during gradient updates."
+    },
+    {
+      "scene_index": 23,
+      "start_time": "17:10",
+      "end_time": "18:56",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Fewer bits fit a smaller box. What do you lose?",
+      "visual_summary": "Accuracy breakdown of dynamic quantization recipes on DeepSeek V3.1 and GLM-5.3 across 3-bit, 2-bit, and 1-bit compression levels.",
+      "ocr_details": [
+        "WILL IT FIT?",
+        "Fewer bits fit a smaller box. What do you lose?",
+        "DeepSeek V3.1 (thinking) 671B: Baseline 76.1%, '3-bit' 75.6%, '1-bit' 57.8%",
+        "GLM-5.3 753B: Full model 94.3%, '3-bit' 88.5%, '2-bit' 78.5%, '1-bit' 21.7%",
+        "Here '3-bit' landed 0.5 points under baseline; '1-bit' lost 18.3 points (24%)."
+      ],
+      "structured_reconstruction": "### Quantization Degradation Benchmark\n| Model | Precision Level | Score / Accuracy | Performance Loss |\n| :--- | :--- | :--- | :--- |\n| **DeepSeek V3.1 (671B)** | Baseline | 76.1% | - |\n| DeepSeek V3.1 | \"3-bit\" | 75.6% | -0.5 points |\n| DeepSeek V3.1 | \"1-bit\" | 57.8% | -18.3 points |\n| **GLM-5.3 (753B)** | Full Model | 94.3% | - |\n| GLM-5.3 | \"3-bit\" | 88.5% | -5.8 points |\n| GLM-5.3 | \"2-bit\" | 78.5% | -15.8 points |\n| GLM-5.3 | \"1-bit\" | 21.7% | -72.6 points |",
+      "spoken_segments": [
+        {
+          "timestamp": "18:10",
+          "text": "how quantization have evolved, we're seeing that something like GLM 5.3 at four bit is able to recall about 94% of its accuracy, while a year ago DeepSeek 3.1 was only able to do 76.1..."
+        }
+      ],
+      "alignment_note": "Points to the baseline vs 3-bit/1-bit numbers on the slide tables."
+    },
+    {
+      "scene_index": 24,
+      "start_time": "18:57",
+      "end_time": "20:29",
+      "visual_type": "SLIDE",
+      "screen_title": "\"Fast\" at which part? / The bottleneck moves",
+      "visual_summary": "Diagram explaining how prompt length dictates system bottlenecks: Prefill phase is compute-bound, whereas Decode phase is memory-bandwidth bound.",
+      "ocr_details": [
+        "WILL IT BE FAST?",
+        "\"Fast\" at which part?",
+        "Two clocks, two measurements. Long prompt: Prefill (large block) vs Decode (small block). Short prompt: Prefill (small block) vs Decode (large block).",
+        "Time to first token: queue + scheduling + prefill.",
+        "Time per output token: decode, stalls included.",
+        "Measure the user's wait and the system's throughput. Under load they move apart."
+      ],
+      "structured_reconstruction": "flowchart TD\n    subgraph Long_Prompt [Long Prompt / Short Answer]\n        A1[\"PREFILL (Compute Bound - High TTFT)\"] --> A2[\"DECODE (Memory Bandwidth Bound)\"]\n    end\n    subgraph Short_Prompt [Short Prompt / Long Answer]\n        B1[\"PREFILL (Fast TTFT)\"] --> B2[\"DECODE (Memory Bandwidth Bound - High Total Time)\"]\n    end",
+      "spoken_segments": [
+        {
+          "timestamp": "19:05",
+          "text": "How many of you here know the difference between like decode and prefill? Okay, so prefill as we know it is compute bound. Decode is pretty much memory bandwidth bound."
+        },
+        {
+          "timestamp": "19:25",
+          "text": "If you have a long prompt... time to first token is going to take more."
+        }
+      ],
+      "alignment_note": "Refers to the red (prefill) and pink (decode) time bars."
+    },
+    {
+      "scene_index": 25,
+      "start_time": "20:30",
+      "end_time": "21:30",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Fewer bits: where the speed lands",
+      "visual_summary": "Speed comparison table showing how quantization and specialized kernels accelerate decode speeds on mobile and GPU hardware.",
+      "ocr_details": [
+        "WILL IT BE FAST?",
+        "Fewer bits: where the speed lands",
+        "iPhone (Phi-4-mini): PTQ -> QAT | 3.1 -> 2.2 GB | 14 -> 18 tok/s | XNNPACK + TorchAO",
+        "iPhone (Phi-4-mini): 4-bit -> 2-bit | 1.4 -> 0.7 GB | 17 -> 28 tok/s | TorchAO low-bit kernels",
+        "B200 (Gemma 3 27B): FP16 -> NVFP4 | 1.4 HBM | 1.35x | FP4 tensor cores",
+        "Llama.cpp (Llama 3.1): 16 -> Q4_K_M | 15 -> 4.6 GB | 29 -> 72 tok/s | Unpack, then 16-bit math",
+        "Same run, prefill: 16 -> Q4_K_M | same | 923 -> 822 tok/s | Same math, plus unpack"
+      ],
+      "structured_reconstruction": "| Platform / Model | Quant Switch | Memory Delta | Speed Delta | Kernel / Method |\n| :--- | :--- | :--- | :--- | :--- |\n| iPhone (Phi-4-mini) | PTQ -> QAT | 3.1 GB -> 2.2 GB | 14 -> **18 tok/s** | XNNPACK + TorchAO |\n| iPhone (Phi-4-mini) | 4-bit -> 2-bit | 1.4 GB -> 0.7 GB | 17 -> **28 tok/s** | TorchAO low-bit |\n| B200 (Gemma 3 27B) | FP16 -> NVFP4 | 1.4 HBM | **1.35x** | FP4 Tensor Cores |\n| Llama.cpp (Llama 3.1) | 16 -> Q4_K_M | 15 GB -> 4.6 GB | 29 -> **72 tok/s** | Unpack + 16-bit math |\n| Same run (Prefill) | 16 -> Q4_K_M | Same | 923 -> 822 tok/s | Same math + unpack overhead |",
+      "spoken_segments": [
+        {
+          "timestamp": "20:40",
+          "text": "right now an iPhone is basically more capable than running intelligence... than a model that used to require a data center three years ago."
+        },
+        {
+          "timestamp": "21:10",
+          "text": "one and two billion parameter models are going to be the norm."
+        }
+      ],
+      "alignment_note": "Highlights the iPhone speedup rows (14 to 18 tok/s and 17 to 28 tok/s)."
+    },
+    {
+      "scene_index": 26,
+      "start_time": "21:31",
+      "end_time": "22:25",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Prefill wants compute. Decode wants bandwidth.",
+      "visual_summary": "Bar charts comparing 2x DGX Spark against Apple M5 Ultra Studio on DeepSeek V4 Flash, showing DGX Spark winning prefill by 2.4x while M5 Ultra is 6% faster in decode.",
+      "ocr_details": [
+        "WILL IT FIT / SERVE?",
+        "Prefill wants compute. Decode wants bandwidth.",
+        "DeepSeek V4 Flash (284B total, 13B active):",
+        "Prefill (reading prompt): 2x DGX Spark 1,600 vs M5 Ultra Studio 748 (Sparks 2.4x faster)",
+        "Decode (writing answer): 2x DGX Spark 35.8 vs M5 Ultra Studio 38.1 (Mac 6% faster)"
+      ],
+      "structured_reconstruction": "| System Hardware | Memory Bandwidth | Prefill Speed (tok/s) | Decode Speed (tok/s) |\n| :--- | :--- | :--- | :--- |\n| **2x DGX Spark** | ~273 GB/s per unit | **1,600** (2.4x faster) | 35.8 |\n| **M5 Ultra Studio** | ~1.2 TB/s | 748 | **38.1** (6% faster) |",
+      "spoken_segments": [
+        {
+          "timestamp": "21:35",
+          "text": "The M5 Ultra is supposed to have something like 1.2 terabytes per second bandwidth... and the DGX Spark has 273 gigabytes per second."
+        },
+        {
+          "timestamp": "21:45",
+          "text": "For decoding, the Sparks still beat the M5 in prefill by 2.4x while Mac is only 6% faster in decode. Software optimizations matter."
+        }
+      ],
+      "alignment_note": "Gestures to the red/pink bar charts comparing DGX Spark and M5 Ultra Studio."
+    },
+    {
+      "scene_index": 27,
+      "start_time": "22:26",
+      "end_time": "25:40",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Same model, four memory systems / The race, live / The burst, live",
+      "visual_summary": "Live video benchmark racing Qwen3.6-27B across four hardware platforms: Blackwell Tower (RTX PRO 6000), M5 MacBook Pro, DGX Spark, and Strix Halo under single and 50 parallel requests.",
+      "ocr_details": [
+        "WILL IT SERVE?",
+        "Same model, four memory systems",
+        "Blackwell tower (RTX PRO 6000): 96 GB GDDR7, ~1,792 GB/s, FP8 - vLLM",
+        "M5 MacBook Pro (M5 Max): 128 GB unified, ~614 GB/s, Q4_K_M - llama.cpp",
+        "DGX Spark (GB10): 128 GB unified, ~273 GB/s, Q4_K_M - llama.cpp",
+        "Strix Halo (Ryzen AI Max+ 395): 128 GB unified, ~256 GB/s, Q4_K_M - llama.cpp",
+        "Single request speed: Tower 51 tok/s, MacBook 23 tok/s, Strix Halo 13 tok/s, DGX Spark 11 tok/s",
+        "50 parallel requests (Burst): Blackwell Tower 1,291 tok/s total, others stay at ~23-32 tok/s"
+      ],
+      "structured_reconstruction": "### 4-System Hardware Benchmark Race (Qwen3.6-27B)\n| Hardware Platform | Memory & Bandwidth | Stack | 1 User (tok/s) | 50 Users Parallel (tok/s) |\n| :--- | :--- | :--- | :--- | :--- |\n| **Blackwell Tower (RTX PRO 6000)** | 96 GB GDDR7 (~1,792 GB/s) | FP8 - vLLM | **51** | **1,291** |\n| **M5 MacBook Pro (M5 Max)** | 128 GB Unified (~614 GB/s) | Q4_K_M - llama.cpp | 23 | 31 |\n| **Strix Halo (Ryzen AI Max+)** | 128 GB Unified (~256 GB/s) | Q4_K_M - llama.cpp | 13 | 30 |\n| **DGX Spark (GB10)** | 128 GB Unified (~273 GB/s) | Q4_K_M - llama.cpp | 11 | 28 |",
+      "spoken_segments": [
+        {
+          "timestamp": "22:35",
+          "text": "We ran an RTX Pro 6000... M5 MacBook Pro, DGX Spark, and Strix Halo..."
+        },
+        {
+          "timestamp": "23:05",
+          "text": "You can see the GPU beating all of them... 51 tokens per second..."
+        },
+        {
+          "timestamp": "23:45",
+          "text": "50 requests per machine at once. We're seeing that the RTX Pro 6000 becomes almost 1300 tokens per second while everything else is sequential..."
+        }
+      ],
+      "alignment_note": "Direct alignment with live benchmark animation showing 1291 tok/s throughput on Blackwell Tower vs ~30 tok/s on CPU/Unified platforms under batching."
+    },
+    {
+      "scene_index": 28,
+      "start_time": "25:41",
+      "end_time": "27:05",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The engine families / Nine questions before you pick an engine",
+      "visual_summary": "Classification table of major inference engine families (llama.cpp, MLX, ExLlamaV3, vLLM/SGLang/TRT-LLM, NVIDIA Dynamo) detailing target hardware and supported quantization file formats.",
+      "ocr_details": [
+        "WILL IT SERVE?",
+        "The engine families",
+        "llama.cpp: Portable: any GPU or CPU, offline | Typical format: GGUF",
+        "MLX / MLX-LM: Apple unified memory, Mac-first workflows | Typical format: MLX",
+        "ExLlamaV3: Consumer CUDA quants on RTX boxes | Typical format: EXL3",
+        "vLLM / SGLang / TRT-LLM: Production: paged KV, batching | Typical format: FP8, NVFP4, AWQ",
+        "NVIDIA Dynamo: Fleets: disaggregation, routing | Typical format: Engines below it"
+      ],
+      "structured_reconstruction": "| Engine Family | Best Built For | Typical Formats |\n| :--- | :--- | :--- |\n| **llama.cpp** | Portable: any GPU or CPU, offline | GGUF |\n| **MLX / MLX-LM** | Apple unified memory, Mac-first workflows | MLX |\n| **ExLlamaV3** | Consumer CUDA quants on RTX boxes | EXL3 |\n| **vLLM / SGLang / TRT-LLM** | Production: paged KV, batching | FP8, NVFP4, AWQ |\n| **NVIDIA Dynamo** | Fleets: disaggregation, routing | Engines below it |",
+      "spoken_segments": [
+        {
+          "timestamp": "25:55",
+          "text": "Different engines, different quantizations, different file formats... llama.cpp, vLLM, ExLlama..."
+        },
+        {
+          "timestamp": "26:40",
+          "text": "Pick the hardware, workload shape and serving model first. The engine follows."
+        }
+      ],
+      "alignment_note": "References the table classifying LLM inference engines."
+    },
+    {
+      "scene_index": 29,
+      "start_time": "27:06",
+      "end_time": "28:28",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Same open weights, different host, different score",
+      "visual_summary": "Comparison table showing GLM-5.3 accuracy variation on GPQA Diamond depending on hosting provider hardware and inference backend (87.9% on DigitalOcean down to 81.5% on Tenstorrent).",
+      "ocr_details": [
+        "WILL IT SERVE?",
+        "Same open weights, different host, different score",
+        "GLM-5.3 on GPQA Diamond, OpenRouter hosts with 1,700+ graded answers each:",
+        "DigitalOcean: 87.9% GPQA Diamond | 1,914 host score | 28.0K output tokens",
+        "Z.ai (maker): 87.0% | 2,172 | 29.0K",
+        "Wafer: 87.0% | 4,450 | 61.3K",
+        "Morph: 82.9% | 2,733 | 29.0K",
+        "Tenstorrent: 81.5% | 1,723 | 16.9K",
+        "Six points between hosts of one model. Measure the endpoint, not the name."
+      ],
+      "structured_reconstruction": "| Host / Provider | GPQA Diamond Score | Graded Answers | Output Tokens per Task |\n| :--- | :--- | :--- | :--- |\n| **DigitalOcean** | **87.9%** | 1,914 | 28.0K |\n| Z.ai (model maker) | 87.0% | 2,172 | 29.0K |\n| Wafer | 87.0% | 4,450 | 61.3K |\n| Morph | 82.9% | 2,733 | 29.0K |\n| **Tenstorrent** | **81.5%** | 1,723 | 16.9K |",
+      "spoken_segments": [
+        {
+          "timestamp": "27:15",
+          "text": "This is from OpenRouter and it's basically showing benchmarks of GLM 5.3 on different hardware."
+        },
+        {
+          "timestamp": "27:30",
+          "text": "At the bottom we have Tenstorrent down there... chip or model optimization is different from one platform to the next."
+        }
+      ],
+      "alignment_note": "Connects score variance (87.9% to 81.5%) on the same model to host hardware differences."
+    },
+    {
+      "scene_index": 30,
+      "start_time": "28:29",
+      "end_time": "29:26",
+      "visual_type": "SLIDE",
+      "screen_title": "A 100x faster tokenizer bought 11%",
+      "visual_summary": "Mathematical formula slide illustrating Amdahl's Law in LLM serving: a 100x speedup in tokenization (which takes 10% of total time) yields only an 11% end-to-end request speedup.",
+      "ocr_details": [
+        "WILL IT SERVE?",
+        "A 100x faster tokenizer bought 11%",
+        "Suppose tokenization is 10% of request time:",
+        "Component: Tokenizer 100x faster | Everything else unchanged",
+        "Whole request: 1 + (0.90 + 0.10 / 100) = 1.11x faster",
+        "Profile the request before you buy the headline.",
+        "Actual Inc., 'Introducing tok6,' Oct 6, 2026"
+      ],
+      "structured_reconstruction": "$$\\text{Total Time} = T_{\\text{compute}} + T_{\\text{tokenizer}}$$\n$$\\text{If } T_{\\text{tokenizer}} = 0.10 \\times T_{\\text{total}}, \\text{ then } 100\\times \\text{ tokenizer speedup} \\implies 1 + (0.90 + 0.001) = 0.901 \\text{ relative time}$$\n$$\\text{Overall Speedup} = \\frac{1}{0.901} \\approx 1.11\\times \\text{ (11\\% gain)}$$",
+      "spoken_segments": [
+        {
+          "timestamp": "28:30",
+          "text": "This is a very interesting one... came out just last month from a company called Actual Inc. And they built a Rust tokenizer that was 100 times faster."
+        },
+        {
+          "timestamp": "28:50",
+          "text": "But that 100 times faster when it came to the whole request, it made it 1.1% faster."
+        }
+      ],
+      "alignment_note": "Points to the equation formula demonstrating Amdahl's Law in LLM pipelines."
+    },
+    {
+      "scene_index": 31,
+      "start_time": "29:27",
+      "end_time": "32:13",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "DFlash: draft a block in one pass, verify in one / FlashStates: a state exactly where each turn ends",
+      "visual_summary": "Diagram detailing FlashData / FlashStates scheduling optimization, showing state preservation exactly at turn boundaries to eliminate KV cache re-computation penalties.",
+      "ocr_details": [
+        "THREE LEVERS",
+        "Where the state was saved decides what you redo",
+        "vLLM today: A state at each 4,352-token block boundary, never at a turn's end",
+        "FlashStates: A state exactly where each turn ends (prompt blocks, output blocks, state saved, turn ends)",
+        "FlashStates on three hybrid models: GLM-5.3-Flash (3.14x prefix tok/min, -96% p50 TTFT), Nemotron 3 Super (2.27x, -97%), Qwen3.8-Flash-Next (1.54x, -66%)",
+        "The gap between the last saved state and the turn's end is prefill you pay again."
+      ],
+      "structured_reconstruction": "flowchart TD\n    subgraph vLLM_Standard [vLLM Standard - Block Boundary]\n        A1[Prompt Blocks] --> A2[Output Blocks] --> A3[\"Fixed Block Save (4352 tok)\"]\n        A3 --> A4[\"Turn Ends (Unsaved State Re-computed!)\"]\n    end\n    subgraph FlashStates [FlashStates Optimization]\n        B1[Prompt Blocks] --> B2[Output Blocks] --> B3[\"Exact State Saved at Turn End\"]\n        B3 --> B4[\"Zero Re-computation Penalty\"]\n    end",
+      "spoken_segments": [
+        {
+          "timestamp": "30:00",
+          "text": "This paper came out November 9th... called Flash Data."
+        },
+        {
+          "timestamp": "30:30",
+          "text": "What they are doing is basically saving where each turn ends... leading to prefix tokens per minute being almost trebled."
+        },
+        {
+          "timestamp": "30:50",
+          "text": "On GLM-5.3 Flash it's 3.14x performance gain."
+        }
+      ],
+      "alignment_note": "Connects diagram comparing vLLM block saves vs FlashStates turn-end saves to performance gains table."
+    },
+    {
+      "scene_index": 32,
+      "start_time": "32:14",
+      "end_time": "34:50",
+      "visual_type": "SLIDE",
+      "screen_title": "The local agent couldn't change a GPU's lights",
+      "visual_summary": "Scenario slide describing an offline local agent failure when trying to control RTX 5090 RGB lights, highlighting the necessity of web search tool augmentation.",
+      "ocr_details": [
+        "THE CATCH",
+        "The local agent couldn't change a GPU's lights",
+        "A new 5090, Qwen 3.5 27B (27.8B dense), Claude Code: 'change my RGB colors.'",
+        "A bigger model? A bigger GPU? More context? A search engine?",
+        "Result: It failed. You get one change. What do you try first?",
+        "Hands up for each one. Then we'll see what actually fixed it.",
+        "Build a $5,000 AI Datacenter at Home - youtube video reference"
+      ],
+      "structured_reconstruction": "### Debugging Challenge: Offline Agent Failure\n- **Setup**: RTX 5090 GPU + Qwen 3.5 27B local model + Claude Code harness\n- **Task**: \"Change my GPU fan RGB lights\"\n- **Initial Result**: **FAILED** (Missing training knowledge for hardware released post-cutoff)\n- **Fix**: **Provide Search Engine Tool Access** (Agent retrieves dynamic specs & scripts)",
+      "spoken_segments": [
+        {
+          "timestamp": "33:00",
+          "text": "A friend bought a 5090 after Qwen 3.5 27B came out and he tried to change the color of the RGB on the GPU fans... and it wasn't able to do that."
+        },
+        {
+          "timestamp": "33:30",
+          "text": "I asked him: Did you give it a search engine?... Cloud Code comes with a search engine... so it's able to go look on the internet."
+        },
+        {
+          "timestamp": "33:50",
+          "text": "I gave him an API key... asked the same thing with a search engine. Surprise, it was able to change the RGB colors."
+        }
+      ],
+      "alignment_note": "Speaker walks through options A-D on the slide, revealing 'A search engine' as the actual fix."
+    },
+    {
+      "scene_index": 33,
+      "start_time": "34:51",
+      "end_time": "36:13",
+      "visual_type": "SLIDE",
+      "screen_title": "The agent rewrote its own harness",
+      "visual_summary": "Architecture slide showing the Exo agent runtime, where the agent modifies its contextual harness code while keeping model weights and run history immutable.",
+      "ocr_details": [
+        "THE CATCH",
+        "The agent rewrote its own harness",
+        "Exo, a research agent runtime: the agent edits the code around the model, never the weights.",
+        "The agent may edit: The harness (tools, prompts, context rules and memory around model)",
+        "Out of its reach: The run history (append-only), previous versions for rollback",
+        "On held-out work: 35-61% lower model cost on repeated tasks; parallel correctness",
+        "Decisions it kept repeating became code. Novel work still needs fresh reasoning."
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph Agent_Controlled [Agent Editable Zone]\n        A[Tools & Prompts]\n        B[Context Rules]\n        C[Memory Harness]\n    end\n    subgraph Immutable_Zone [Out of Reach]\n        D[Run History / Append-only]\n        E[Model Weights]\n        F[Guardian Check / Guardrails]\n    end\n    Agent_Controlled --> F --> Immutable_Zone",
+      "spoken_segments": [
+        {
+          "timestamp": "35:15",
+          "text": "XO is a paper about an engine harness that we wrote itself to actually improve its own reuse..."
+        },
+        {
+          "timestamp": "35:35",
+          "text": "decisions it kept repeating became code, saving tokens in the long run."
+        }
+      ],
+      "alignment_note": "References the diagram illustrating self-modifying agent harnesses."
+    },
+    {
+      "scene_index": 34,
+      "start_time": "36:14",
+      "end_time": "37:00",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Hard work switches models. Tuned work stays pinned.",
+      "visual_summary": "OpenRouter telemetry chart showing developer behavior: hard coding tasks actively switch models (53%), whereas routine workflows stay pinned to legacy models.",
+      "ocr_details": [
+        "THE CATCH",
+        "Hard work switches models. Tuned work stays pinned.",
+        "OpenRouter: who switches models each month, and who stays on an older version:",
+        "Accounts changing top model: General coding 53%, Customer support 30%, Summarization 27%, Translation 24%",
+        "Requests still on an older version: Grok 70%, Gemini Flash 60%, GPT Sol 54%, Claude Opus 20%",
+        "Pinning is a decision. Make it with an eval, and know what it costs."
+      ],
+      "structured_reconstruction": "| Workload Category | Switching Rate (Top Model) | Pinned Model Distribution |\n| :--- | :--- | :--- |\n| **General Coding** | **53%** (High churn) | Grok (70% pinned) |\n| **Customer Support** | 30% | Gemini Flash (60% pinned) |\n| **Summarization** | 27% | GPT Sol (54% pinned) |\n| **Translation** | 24% (Low churn) | Claude Opus (20% pinned) |",
+      "spoken_segments": [
+        {
+          "timestamp": "36:15",
+          "text": "Which accounts changed their models on OpenRouter? We're seeing generic coding does that more about 53%..."
+        },
+        {
+          "timestamp": "36:45",
+          "text": "DeepSeek V4.1 Flash is better than Haiku... people should be fine with switching models as newer models come out."
+        }
+      ],
+      "alignment_note": "Speaker links switching statistics to developer tendencies to stick to closed models vs testing open releases."
+    },
+    {
+      "scene_index": 35,
+      "start_time": "37:01",
+      "end_time": "38:24",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "A 2B model matched the frontier on Airbnb's job",
+      "visual_summary": "Case study from Airbnb showing a fine-tuned 2.3B Gemma4-E2B model running locally on an RTX PRO 6000 matching frontier cloud API quality at 35 ms latency and 1% cost.",
+      "ocr_details": [
+        "THE MONEY",
+        "A 2B model matched the frontier on Airbnb's job",
+        "A pricing-policy classifier with a 200 ms budget, on 10,000 held-out examples.",
+        "Gemma4-E2B (2.3B dense), fine-tuned: F1 0.563 -> 0.902 | 35 ms median | 85 ms p99 | One RTX PRO 6000",
+        "Frontier APIs (parameters undisclosed): Similar quality | ~900 ms median | Seconds at p99",
+        "On this task, fine-tuning met the quality bar inside a 200 ms budget.",
+        "Airbnb Engineering, 'Frontier quality at 1% of the cost,' Nov 2026"
+      ],
+      "structured_reconstruction": "| Model Setup | F1 Score | Median Latency | p99 Latency | Hardware / Cost |\n| :--- | :--- | :--- | :--- | :--- |\n| **Gemma4-E2B (2.3B Fine-tuned)** | **0.902** | **35 ms** | **85 ms** | 1x RTX PRO 6000 (1% cost) |\n| **Frontier Cloud APIs** | ~0.900 | ~900 ms | >2,000 ms | Cloud API billing (100x cost) |",
+      "spoken_segments": [
+        {
+          "timestamp": "37:05",
+          "text": "Airbnb had an article about how at 1% of the cost, they had the Frontier Intelligence Quality on a 2 billion parameter model."
+        },
+        {
+          "timestamp": "37:45",
+          "text": "If you have some data traces... you can build synthetic data pipelines and RL to beat frontier labs."
+        }
+      ],
+      "alignment_note": "Direct callout to the Gemma4-E2B vs Frontier APIs latency and accuracy table."
+    },
+    {
+      "scene_index": 36,
+      "start_time": "38:25",
+      "end_time": "39:30",
+      "visual_type": "SLIDE",
+      "screen_title": "Specialization doesn't require owning the GPU",
+      "visual_summary": "Slide detailing Fireworks Ember-1 (specialized Kimi K3 2.8T) distillation claims and evaluation criteria.",
+      "ocr_details": [
+        "THE MONEY",
+        "Specialization doesn't require owning the GPU",
+        "Fireworks specialized Kimi K3 (2.8T total, 104B active) and serves it behind an API.",
+        "Their claim: Ember-1, built on Kimi K3, ~40% fewer reasoning tokens, comparable quality on evals",
+        "Your test: Hard-case error rate, Retries and total task cost, Time to an answered answer",
+        "Specialization and placement are separate choices."
+      ],
+      "structured_reconstruction": "- **Fireworks Claim (Ember-1 / Kimi K3)**: 40% reduction in reasoning tokens with equal eval accuracy.\n- **Verification Metrics**: Hard-case error rates, retry costs, total task time.",
+      "spoken_segments": [
+        {
+          "timestamp": "38:30",
+          "text": "There are labs out there like Fireworks that are building specialized models and hosting them..."
+        },
+        {
+          "timestamp": "38:45",
+          "text": "How do we think Opus 5.5 was trained? It's a master-student model..."
+        }
+      ],
+      "alignment_note": "Connects model distillation concepts to Fireworks Ember-1 specification on screen."
+    },
+    {
+      "scene_index": 37,
+      "start_time": "39:31",
+      "end_time": "41:20",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Utilization sets what a token costs on your GPU / The hosted price you compete with keeps falling",
+      "visual_summary": "Economic analysis charts demonstrating how GPU utilization impacts per-token cost ($43.03/M at 1% vs $0.43/M at 10%), alongside hosted API price drops.",
+      "ocr_details": [
+        "THE MONEY",
+        "Utilization sets what a token costs on your GPU",
+        "Output $/million - $2/GPU-hour assumed - 1,291 tok/s burst rate - illustrative GPU floor",
+        "1% busy: $43.03 | 10% busy: $0.43 | GPU floor ($0.40) vs Opus 5.5 ($20/M)",
+        "Below $1/M: GPU at 100% busy vs a cheap API | DeepSeek Flash off-peak ($0.60)",
+        "Same GPU. Same model. Utilization moves the cost 100x.",
+        "The hosted price you compete with keeps falling: Closed fell 57% and open 70% in ten months."
+      ],
+      "structured_reconstruction": "| Utilization Level | Cost per Million Tokens | Comparative Benchmark |\n| :--- | :--- | :--- |\n| **1% Duty Cycle (Idle GPU)** | **$43.03** | Higher than Opus 5.5 ($20/M) |\n| **10% Duty Cycle** | **$0.43** | Below GPU Floor ($0.40) |\n| **100% Duty Cycle** | **~$0.04** | 100x cheaper than cloud APIs |",
+      "spoken_segments": [
+        {
+          "timestamp": "39:35",
+          "text": "There's a certain threshold for which below that, you shouldn't buy a GPU, you should be renting..."
+        },
+        {
+          "timestamp": "40:40",
+          "text": "Prices per million tokens keep dropping... closed fell 57% and open 70% in ten months."
+        }
+      ],
+      "alignment_note": "Gestures to the utilization curve showing cost dropping from $43.03 to $0.43 as utilization rises."
+    },
+    {
+      "scene_index": 38,
+      "start_time": "41:21",
+      "end_time": "42:15",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Price doesn't track quality",
+      "visual_summary": "LM Arena WebDev pricing vs quality table showing Opus 5.5 max ($8.00/M) beating GPT-6 Astra ($20.00/M), while DeepSeek V4.1 Flash ($0.26/M) delivers 30x cost savings.",
+      "ocr_details": [
+        "THE MONEY",
+        "Price doesn't track quality",
+        "LM Arena WebDev, human voters, Nov 8 - blended $/per million tokens (3 input : 1 output):",
+        "Opus 5.5 max: WebDev score 1818 (+12) | Blended $8.00",
+        "Sonnet 5.5 xhigh: WebDev score 1774 (+10) | Blended $4.00",
+        "GPT-6 Astra max: WebDev score 1787 (+9) | Blended $20.00",
+        "Kimi K3.1 Pro max (open - 2.8T / 104B active): WebDev score 1688 (+10) | Blended $4.00",
+        "DeepSeek V4.1 Flash-1017 (open - 748B / 816B): WebDev score 1664 (+7) | Blended $0.26",
+        "The priciest model isn't the best. The cheapest is 30x cheaper. Price your own job."
+      ],
+      "structured_reconstruction": "| Model | WebDev Score | Blended Cost per M Tokens | Price-to-Performance Ratio |\n| :--- | :--- | :--- | :--- |\n| **Opus 5.5 max** | **1818** | $8.00 | Top score / Moderate cost |\n| **GPT-6 Astra max** | 1787 | **$20.00** | High cost / Lower score than Opus |\n| **Sonnet 5.5 xhigh** | 1774 | $4.00 | Mid cost / Strong performance |\n| **DeepSeek V4.1 Flash** | 1664 | **$0.26** | **30x cheaper than Opus** |",
+      "spoken_segments": [
+        {
+          "timestamp": "41:30",
+          "text": "Pricing per million token doesn't track intelligence necessarily... Opus 5.5 max at $8 per million token is beating in WebDev..."
+        },
+        {
+          "timestamp": "41:50",
+          "text": "It's way cheaper than something like Astra, but Astra is probably 6 to 10 times bigger in terms of size."
+        }
+      ],
+      "alignment_note": "Points to Opus 5.5 (1818 score, $8/M) vs GPT-6 Astra (1787 score, $20/M)."
+    },
+    {
+      "scene_index": 39,
+      "start_time": "42:16",
+      "end_time": "44:20",
+      "visual_type": "SLIDE",
+      "screen_title": "A GPU costs the same busy or idle / What breaks when you own it",
+      "visual_summary": "Financial crossover chart comparing hourly GPU rental vs API token billing, followed by operational risks when owning physical hardware.",
+      "ocr_details": [
+        "THE MONEY / OWNING IT",
+        "A GPU costs the same busy or idle",
+        "Cloud GPU at $2/hr = $1,460/mo. Breakdown by API output price:",
+        "Claude Opus 5.5 (undisclosed): $1,460 + $20 = 73M tokens | Break-even total: 3%",
+        "DeepSeek V4.1 Flash (748B): $1,460 + $0.60 = 2,433M tokens | Break-even total: 72%",
+        "Qwen3.6-27B (27B dense): None ($2/hr) | Break-even total: 100%",
+        "What breaks when you own it: Startup and drivers, Dependencies, Silent failures (script printed DONE after FFmpeg died).",
+        "Check the artifact, not the status message."
+      ],
+      "structured_reconstruction": "### GPU Crossover Math ($2/hr GPU = $1,460/mo)\n| Target Model Comparison | API Output Price | Break-even Token Volume | Required Box Utilization |\n| :--- | :--- | :--- | :--- |\n| **Claude Opus 5.5** | $20.00 / M | 73M tokens | **3% busy** |\n| **DeepSeek V4.1 Flash** | $0.60 / M | 2,433M tokens | **72% busy** |\n| **Qwen3.6-27B Local** | $0.00 (Self-hosted) | 3,393M tokens | **100% busy** |",
+      "spoken_segments": [
+        {
+          "timestamp": "42:20",
+          "text": "APIs bill per token. GPUs bill per hour... under 15-30 requests per minute API is cheaper."
+        },
+        {
+          "timestamp": "43:30",
+          "text": "There's a lot of maintenance that goes into owning hardware... silent failures, hardware that dies on you..."
+        },
+        {
+          "timestamp": "44:00",
+          "text": "Check the artifact, not the status message."
+        }
+      ],
+      "alignment_note": "Connects the 3% vs 72% utilization break-even math to hardware maintenance trade-offs."
+    },
+    {
+      "scene_index": 40,
+      "start_time": "44:21",
+      "end_time": "45:45",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Three forces move the line / Three years of the same capability in less hardware",
+      "visual_summary": "Historical timeline table mapping model compression from 2023 to 2026, demonstrating how equivalent intelligence continuously shifts onto smaller hardware footprint.",
+      "ocr_details": [
+        "THE LINE MOVES",
+        "Three years of the same capability in less hardware",
+        "Newer, more efficient models keep matching or beating bigger predecessors:",
+        "2023: Llama 2 70B -> Mixtral 12.9B active (Comparable on Mistral's tests)",
+        "2024: Llama 3.1 405B dense -> Qwen2.5 72B dense (Comparable on Qwen's tests)",
+        "2025: R1 37B active -> gpt-oss 31B active (GPQA 81.0 vs 80.1)",
+        "2026 (Jan): Qwen3.5 397B total -> Qwen3.6 27B dense (SWE Verified 76.2 vs 77.2)",
+        "2026 (Apr): V4 Pro 1.6T total -> V4.1 748B incl. Engram (14/16 ahead, 4 weeks later)",
+        "2026 (Oct): 375B / 501B MOEs -> Nanbeige4.3 33B (AA v5: 18 vs 20)",
+        "The capability keeps moving onto smaller hardware."
+      ],
+      "structured_reconstruction": "| Year | Earlier (Bigger) Model | Later (Smaller) Model | Benchmark / Evidence |\n| :--- | :--- | :--- | :--- |\n| **2023** | Llama 2 70B | Mixtral 12.9B active | Equal performance on Mistral suite |\n| **2024** | Llama 3.1 405B dense | Qwen2.5 72B dense | Equal performance on Qwen suite |\n| **2025** | R1 37B active | gpt-oss 31B active | GPQA 81.0 vs 80.1 |\n| **2026 (Jan)**| Qwen3.5 397B total | **Qwen3.6 27B dense** | **SWE Verified 76.2 vs 77.2** |\n| **2026 (Apr)**| V4 Pro 1.6T total | V4.1 748B + Engram | 14 of 16 tests ahead |\n| **2026 (Oct)**| 375B/501B MOEs | Nanbeige4.3 33B | AA v5: 18 vs 20 |",
+      "spoken_segments": [
+        {
+          "timestamp": "44:25",
+          "text": "Three forces moving the line: more capable models per parameter... specialist models... better engines."
+        },
+        {
+          "timestamp": "45:00",
+          "text": "The same machine I had behind me in that picture... in 2023 ran Llama 2 70B. Today each GPU runs Qwen 3.6 27B."
+        }
+      ],
+      "alignment_note": "Traces the historical progression table from 2023 Llama 2 70B to 2026 small dense models."
+    },
+    {
+      "scene_index": 41,
+      "start_time": "45:46",
+      "end_time": "46:45",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Same lab, 15x fewer parameters, the same band",
+      "visual_summary": "Benchmark comparison table showing Qwen3.6-27B (dense) beating Qwen3.5-397B (MOE) across coding benchmarks (SWE-bench Verified 77.2 vs 76.2).",
+      "ocr_details": [
+        "THE LINE MOVES",
+        "Same lab, 15x fewer parameters, the same band",
+        "Qwen3.5-397B-A17B (17B active) vs Qwen3.6-27B dense, Qwen's own results:",
+        "SWE-bench Verified: 397B MOE 76.2 vs 27B dense 77.2",
+        "SWE-bench Pro: 397B MOE 50.9 vs 27B dense 53.5",
+        "Terminal-Bench 2.0: 397B MOE 52.5 vs 27B dense 59.3",
+        "LiveCodeBench v6: 397B MOE 83.6 vs 27B dense 83.9",
+        "MMLU-Pro: 397B MOE 87.8 vs 27B dense 86.2",
+        "GPQA Diamond: 397B MOE 88.4 vs 27B dense 87.8",
+        "Ahead on four coding tests, behind on two knowledge tests. 27B active against 17B."
+      ],
+      "structured_reconstruction": "| Benchmark Test | Qwen3.5-397B-A17B (MOE, 17B active) | Qwen3.6-27B (Dense, 27B active) | Winner |\n| :--- | :--- | :--- | :--- |\n| **SWE-bench Verified** | 76.2 | **77.2** | 27B Dense |\n| **SWE-bench Pro** | 50.9 | **53.5** | 27B Dense |\n| **Terminal-Bench 2.0** | 52.5 | **59.3** | 27B Dense |\n| **LiveCodeBench v6** | 83.6 | **83.9** | 27B Dense |\n| **MMLU-Pro** | **87.8** | 86.2 | 397B MOE |\n| **GPQA Diamond** | **88.4** | 87.8 | 397B MOE |",
+      "spoken_segments": [
+        {
+          "timestamp": "45:50",
+          "text": "In March we had the 397 billion MOE come out... and a month later the 3.6 27B dense model was beating the 15 times larger MOE on coding tasks."
+        },
+        {
+          "timestamp": "46:30",
+          "text": "Intelligence density is increasing rapidly."
+        }
+      ],
+      "alignment_note": "Points to coding benchmark rows (SWE-bench, Terminal-Bench) where 27B dense beats 397B MOE."
+    },
+    {
+      "scene_index": 42,
+      "start_time": "46:46",
+      "end_time": "48:10",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "DeepSeek's global KV cache shrank 437x",
+      "visual_summary": "Timeline table highlighting a 437x compression reduction in DeepSeek KV cache memory footprint from DeepSeek V1 (12.8 GB) down to V4.1 Flash (29 MB).",
+      "ocr_details": [
+        "THE LINE MOVES",
+        "DeepSeek's global KV cache shrank 437x",
+        "DeepSeek-reported global KV at 32K tokens per user. Weights and workspace are extra.",
+        "DeepSeek V1 (Nov 2023): 12.8 GB (369,120 B/token)",
+        "V3.2 (Dec 2025): 1.6 GB (48,068 B/token)",
+        "V4 Flash (Apr 2026): 115 MB (3,514 B/token)",
+        "V4.1 Flash (Sep 2026): 29 MB (890 B/token)",
+        "Our plain GQA example earlier: 4.3 GB per user at 32K, in decimal units.",
+        "Recompute the full memory budget for each architecture."
+      ],
+      "structured_reconstruction": "| Architecture Version | Release Date | KV Cache per User (32K Context) | Bytes / Token | Compression Factor |\n| :--- | :--- | :--- | :--- | :--- |\n| **DeepSeek V1** | Nov 2023 | 12.8 GB | 369,120 B | Baseline (1x) |\n| **DeepSeek V3.2** | Dec 2025 | 1.6 GB | 48,068 B | ~8x reduction |\n| **DeepSeek V4 Flash** | Apr 2026 | 115 MB | 3,514 B | ~111x reduction |\n| **DeepSeek V4.1 Flash**| Sep 2026 | **29 MB** | **890 B** | **437x reduction** |",
+      "spoken_segments": [
+        {
+          "timestamp": "46:55",
+          "text": "DeepSeek V4.1 Flash... made us go down from 13 gigabytes for 400,000 tokens to 29 megabytes in terms of memory."
+        },
+        {
+          "timestamp": "47:30",
+          "text": "Pretty much trunked that KV cache by 437 times."
+        }
+      ],
+      "alignment_note": "Connects the 12.8 GB -> 29 MB timeline nodes on screen to the 437x compression ratio."
+    },
+    {
+      "scene_index": 43,
+      "start_time": "48:11",
+      "end_time": "50:30",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "The infrastructure I asked for in June is arriving / A megakernel: one launch, an interpreter per SM",
+      "visual_summary": "Architectural diagram of Megakernel inference optimization running on RTX Spark at 72 tok/s decode, showing persistent single-launch execution per Streaming Multiprocessor.",
+      "ocr_details": [
+        "THE LINE MOVES",
+        "The infrastructure I asked for in June is arriving",
+        "Software changes only. The silicon under each result stayed the same:",
+        "Measured elsewhere: dSpark +60-85% speed per user, DistServe 7.4x more requests in SLO",
+        "Ours: ODS on RTX Spark - Qwen3.8 Flash Next (125B, 6B active, NVFP4) - 72 tok/s decode on our own engine",
+        "A megakernel: Hazy Research's Llama-3.2-1B (1.2B dense), May 2025:",
+        "78% of H100 bandwidth at batch one, against about 50% for vLLM and SGLang."
+      ],
+      "structured_reconstruction": "flowchart TD\n    subgraph Megakernel_Design [Megakernel - Interpreter per SM]\n        A[One Forward Pass = One Persistent Kernel] --> B[Global Counters Replace Barriers]\n        B --> C[Prefetch Across Boundary / Shared Memory Paged]\n    end\n    subgraph Performance_Impact [Performance Gain]\n        D[\"78% H100 Bandwidth at Batch 1 vs 50% in vLLM/SGLang\"]\n    end\n    Megakernel_Design --> Performance_Impact",
+      "spoken_segments": [
+        {
+          "timestamp": "49:40",
+          "text": "We got a Windows machine with the RTX Spark running Qwen 3.8 Flash Next... at decode speed 72 tokens per second."
+        },
+        {
+          "timestamp": "50:10",
+          "text": "Megakernel: part of the optimization... 78% of H100 bandwidth at batch one."
+        }
+      ],
+      "alignment_note": "Speaker connects dSpark and ODS megakernel optimizations to hardware throughput gains."
+    },
+    {
+      "scene_index": 44,
+      "start_time": "50:31",
+      "end_time": "51:54",
+      "visual_type": "SLIDE",
+      "screen_title": "In January I put a date on local capability",
+      "visual_summary": "Slide showing the speaker's original prediction tweet from Jan 16, 2026 regarding Opus 4.5 level quality running locally on a single RTX PRO 6000 before year-end.",
+      "ocr_details": [
+        "WHAT'S NEXT",
+        "In January I put a date on local capability",
+        "@TheAhmadOsman tweet (Jan 16, 2026): 'Prediction: We will have Claude Code + Opus 4.5 quality (not nerfed) models running locally at home on a single RTX PRO 6000 before the end of the year.'",
+        "A capability, a card and a deadline: specific enough to check."
+      ],
+      "structured_reconstruction": "> **@TheAhmadOsman (Jan 16, 2026)**\n> **Prediction**: We will have Claude Code + Opus 4.5 quality (not nerfed) models running locally at home on a single RTX PRO 6000 before the end of the year.",
+      "spoken_segments": [
+        {
+          "timestamp": "50:45",
+          "text": "In January, I said that by the end of the year we're going to have Opus 4.5 running on an RTX Pro 6000."
+        },
+        {
+          "timestamp": "50:55",
+          "text": "By April we had that in Qwen 3.6 27B. We already surpassed Opus 4.5 level locally a long time ago."
+        }
+      ],
+      "alignment_note": "Direct reference to the author's January 2026 prediction tweet displayed on screen."
+    },
+    {
+      "scene_index": 45,
+      "start_time": "51:55",
+      "end_time": "53:39",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Engrams + decision models + in-weights edits",
+      "visual_summary": "Architectural diagram outlining the three-pillar recipe for local continual learning: Engram memory, Decision models, and In-weights programming.",
+      "ocr_details": [
+        "WHAT'S NEXT",
+        "Engrams + decision models + in-weights edits",
+        "Three research pieces. One bet: a small local model that keeps learning your job.",
+        "Engram memory: Write a fact into memory embeddings. The backbone stays frozen.",
+        "Decision models: Return a decision, not prose. Thresholds you can test.",
+        "In-weights edits: A big model edits a small model's weights. The loop fix you saw: a repair, not a new skill.",
+        "Engrams + Decision Models + In-weights programming == Continual Learning",
+        "Tweet on Nov 4, 2026 by @TheAhmadOsman"
+      ],
+      "structured_reconstruction": "flowchart LR\n    A[Engram Memory: Fact into Embeddings] --> D[Continual Learning Engine]\n    B[Decision Models: Testable Thresholds] --> D\n    C[In-weights Edits: Weight Repairs] --> D\n    D --> E[Small Local Model Adapts Without Full Retraining]",
+      "spoken_segments": [
+        {
+          "timestamp": "52:25",
+          "text": "Engrams, decision models and weight edits. These are the last three big things that came out in this space for me."
+        },
+        {
+          "timestamp": "52:40",
+          "text": "Anagrams allows you to have an equivalent of a map on your SSD or in memory... decision models add another layer... plus in-weight edits."
+        },
+        {
+          "timestamp": "53:05",
+          "text": "Engrams + Decision Models + In-weight programming equal Continual Learning."
+        }
+      ],
+      "alignment_note": "Explains the three pillars (Engrams, Decision models, In-weight edits) leading to the red summary formula at the bottom of the slide."
+    },
+    {
+      "scene_index": 46,
+      "start_time": "53:40",
+      "end_time": "54:53",
+      "visual_type": "SLIDE",
+      "screen_title": "Which loop are we talking about? / If it learns, every lesson is a release",
+      "visual_summary": "System diagram categorizing AI execution loops (Inside model, Around model, Across experiments) and illustrating continuous learning release management (Log -> Curate -> Adapt -> Gate -> Promote).",
+      "ocr_details": [
+        "WHAT'S NEXT",
+        "Which loop are we talking about?",
+        "Inside the model: A model trained to run its own layers again (more depth, same weights).",
+        "Around the model: Tools, retries, planning, more agents (same model, more calls).",
+        "Across experiments: Change code or weights, evaluate, keep or reject (the compiler agents did this to an engine).",
+        "All three spend compute. Only the third keeps what it learned.",
+        "If it learns, every lesson is a release: Log -> Curate -> Adapt -> Gate -> Promote"
+      ],
+      "structured_reconstruction": "flowchart LR\n    A[Log: Outcomes Graded] --> B[Curate: Label & Dedupe]\n    B --> C[Adapt: Shallowest Fix First]\n    C --> D[\"Gate: Hold-out + Regression\"]\n    D --> E[Promote: Versioned & Reversible]",
+      "spoken_segments": [
+        {
+          "timestamp": "54:05",
+          "text": "We have loops inside models, loops around models, loops across experiments."
+        },
+        {
+          "timestamp": "54:35",
+          "text": "If it learns, every lesson is a release: Log, Curate, Adapt, Gate, Promote. Give it a version, a gate and a way back."
+        }
+      ],
+      "alignment_note": "Connects the 3 loop definitions to the release pipeline lifecycle diagram."
+    },
+    {
+      "scene_index": 47,
+      "start_time": "54:54",
+      "end_time": "56:08",
+      "visual_type": "SLIDE",
+      "screen_title": "So... should you buy a GPU? / Go deeper",
+      "visual_summary": "Final presentation slide providing GPU purchasing advice, resource links (thelocalaibook.com), author contact details, and conference closing screen.",
+      "ocr_details": [
+        "YOUR TURN / THANK YOU",
+        "So... should you buy a GPU? Yes. For a job it can do today.",
+        "Go deeper: The recording, the math, the book, and the primary sources behind today's numbers.",
+        "The Local Book: thelocalaibook.com",
+        "@TheAhmadOsman - find me after, bring your workload.",
+        "AI Engineer Code Summit - https://ai.engineer"
+      ],
+      "structured_reconstruction": "# Conclusion & Resources\n- **Verdict**: Should you buy a GPU? **Yes, for a job it can do today.**\n- **Book**: [thelocalaibook.com](https://thelocalaibook.com)\n- **Speaker**: Ahmad Osman (@TheAhmadOsman)\n- **Conference**: AI Engineer Code Summit",
+      "spoken_segments": [
+        {
+          "timestamp": "55:25",
+          "text": "Should you buy a GPU?... Good question. You tell me."
+        },
+        {
+          "timestamp": "55:35",
+          "text": "By the way, there's a book coming out that will include a lot of this stuff: localaibook.com."
+        },
+        {
+          "timestamp": "55:45",
+          "text": "I have 9 seconds left. Thank you so much."
+        }
+      ],
+      "alignment_note": "Final callouts to the QR/link for the book and social handle on the concluding slide."
+    }
+  ]
+}
