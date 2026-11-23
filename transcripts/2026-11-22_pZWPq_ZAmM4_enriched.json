@@ -1,0 +1,1032 @@
+{
+  "estimated_duration_seconds": 1345,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:12",
+      "visual_type": "SLIDE",
+      "screen_title": "AI Engineer Code Summit Intro",
+      "visual_summary": "Introductory title screens displaying event branding and platinum sponsor logos.",
+      "ocr_details": [
+        "AI Engineer Code Summit",
+        "PRESENTED BY Google DeepMind",
+        "PLATINUM SPONSORS",
+        "aws",
+        "Devin",
+        "databricks",
+        "exa",
+        "FACTORY",
+        "Sonar"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [],
+      "alignment_note": "Intro bumper and sponsor slides shown before speaker walks onto stage."
+    },
+    {
+      "scene_index": 2,
+      "start_time": "00:13",
+      "end_time": "00:41",
+      "visual_type": "SPEAKER_ONLY",
+      "screen_title": "Speaker Stage Intro",
+      "visual_summary": "Fabian Hedin walks onto the stage at AI Engineer Code Summit.",
+      "ocr_details": [
+        "AI Engineer Code Summit",
+        "Google DeepMind",
+        "What it takes to set intelligence free"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:13",
+          "text": "Welcome everyone. I'm glad to be here. I'm Fabian, co-founder and CTO of Lovable."
+        },
+        {
+          "timestamp": "00:20",
+          "text": "And we spent the last few years or so building a platform to let anyone create software and then operate that and deploy that software."
+        },
+        {
+          "timestamp": "00:30",
+          "text": "And the topic of today is what it takes to set intelligence free. And really for us this takes us back to when we started three years ago."
+        }
+      ],
+      "alignment_note": "Fabian introduces himself and states the primary focus of the presentation."
+    },
+    {
+      "scene_index": 3,
+      "start_time": "00:42",
+      "end_time": "00:44",
+      "visual_type": "SLIDE",
+      "screen_title": "What it takes to set intelligence free",
+      "visual_summary": "Title slide with gradient background featuring talk title, speaker name, and company.",
+      "ocr_details": [
+        "Fabian Hedin - AI Engineer Code Summit",
+        "What it takes to set intelligence free",
+        "Fabian Hedin / CTO",
+        "Lovable"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:40",
+          "text": "And I have to say I have a bit of a complicated relationship with agents."
+        }
+      ],
+      "alignment_note": "Presentation title slide with speaker title and affiliation."
+    },
+    {
+      "scene_index": 4,
+      "start_time": "00:45",
+      "end_time": "00:49",
+      "visual_type": "SLIDE",
+      "screen_title": "I have a complicated relationship with agents.",
+      "visual_summary": "Minimal slide with simple text stating speaker's relationship with AI agents.",
+      "ocr_details": [
+        "I have a complicated relationship with agents."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:45",
+          "text": "and I'll tell you why."
+        }
+      ],
+      "alignment_note": "Speaker opens historical reflection on building agent systems."
+    },
+    {
+      "scene_index": 5,
+      "start_time": "00:50",
+      "end_time": "01:11",
+      "visual_type": "SLIDE",
+      "screen_title": "Lovable almost failed because we bet on them in 2023.",
+      "visual_summary": "Slide describing how early reliance on agent architecture nearly led to company failure in 2023.",
+      "ocr_details": [
+        "Lovable almost failed because we bet on them in 2023.",
+        "We thought they were the future"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:50",
+          "text": "We almost failed as a company because we thought back in 2023 that hey, these agents are the future. So let's build for the now."
+        },
+        {
+          "timestamp": "01:00",
+          "text": "I think that we kind of turned out to be true that they were the future but we're definitely wrong on the the now piece in 23."
+        }
+      ],
+      "alignment_note": "Speaker points out that betting on agents in 2023 was premature."
+    },
+    {
+      "scene_index": 6,
+      "start_time": "01:12",
+      "end_time": "01:19",
+      "visual_type": "SLIDE",
+      "screen_title": "But at the time, the intelligence was not there.",
+      "visual_summary": "Slide explaining model capability limitations in 2023.",
+      "ocr_details": [
+        "But at the time, the intelligence was not there."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:10",
+          "text": "So this was back in kind of GPT-4 days. Um and at that time, the intelligence was simply not there to have more of these kind of complex agentic systems."
+        }
+      ],
+      "alignment_note": "Speaker aligns model limitations in GPT-4 era with the failure of multi-agent patterns."
+    },
+    {
+      "scene_index": 7,
+      "start_time": "01:20",
+      "end_time": "01:29",
+      "visual_type": "SLIDE",
+      "screen_title": "Now it is.",
+      "visual_summary": "Vibrant gradient slide declaring that LLM intelligence has reached the required threshold.",
+      "ocr_details": [
+        "Now it is."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:20",
+          "text": "Um but now this, right? Now, the intelligence is actually at a place where you can really build out more complicated systems around them."
+        }
+      ],
+      "alignment_note": "Speaker highlights that present-day models enable robust agentic architectures."
+    },
+    {
+      "scene_index": 8,
+      "start_time": "01:30",
+      "end_time": "01:41",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "How we got here",
+      "visual_summary": "Timeline diagram showing four stages of Lovable's architecture evolution from Spring 2023 to present.",
+      "ocr_details": [
+        "How we got here",
+        "Spring 2023 - GPT Engineer - Prompt -> response, one LLM chain",
+        "Jan 2024 - First agent framework - Async tasks + subagents",
+        "Late 2024 - Back to a chain - One-shot edits in XML",
+        "Now - Agents for real - Tools -> feedback -> next step"
+      ],
+      "structured_reconstruction": "flowchart LR\n    A[\"Spring 2023<br/>GPT Engineer<br/>Prompt -> response, one LLM chain\"] --> B[\"Jan 2024<br/>First agent framework<br/>Async tasks + subagents\"]\n    B --> C[\"Late 2024<br/>Back to a chain<br/>One-shot edits in XML\"]\n    C --> D[\"Now<br/>Agents for real<br/>Tools -> feedback -> next step\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "01:30",
+          "text": "And so, I'll give you kind of a quick background story here of our journey in working with intelligence or these LLMs."
+        }
+      ],
+      "alignment_note": "Speaker references the historical timeline diagram summarizing platform iterations."
+    },
+    {
+      "scene_index": 9,
+      "start_time": "01:42",
+      "end_time": "02:09",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Spring 2023: GPT Engineer",
+      "visual_summary": "Visual of initial product phase (GPT Engineer) with simple single-turn prompt-response execution.",
+      "ocr_details": [
+        "Spring 2023",
+        "GPT Engineer",
+        "Prompt -> response, one LLM call"
+      ],
+      "structured_reconstruction": "Prompt -> response, one LLM call",
+      "spoken_segments": [
+        {
+          "timestamp": "01:42",
+          "text": "And so, back in 2023, we built the first version of our product, we called it GPT Engineer back then."
+        },
+        {
+          "timestamp": "01:50",
+          "text": "and really the UI was very similar to what it is today, where you kind of have a chat and in this preview. But the AI at that point was quite simple, we just had a prompt and response, one LLM call per user message."
+        }
+      ],
+      "alignment_note": "Speaker explains the single LLM call pattern used in early GPT Engineer."
+    },
+    {
+      "scene_index": 10,
+      "start_time": "02:10",
+      "end_time": "03:09",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Jan 2024: First agent framework",
+      "visual_summary": "Multi-agent tree structure showing main-agent spawning specialist subagents and sending XML messages.",
+      "ocr_details": [
+        "Jan 2024",
+        "First agent framework",
+        "Async tasks + subagents",
+        "<agent-started: main-agent>",
+        "<agent-started: todo-app-agent>",
+        "<agent-started: implementation-agent>",
+        "<write-to-agent>",
+        "A todo app"
+      ],
+      "structured_reconstruction": "flowchart TD\n    User[\"User Task: A todo app\"] --> Main[\"<agent-started: main-agent>\"]\n    Main --> Sub1[\"<agent-started: todo-app-agent>\"]\n    Sub1 --> Sub2[\"<agent-started: implementation-agent>\"]\n    Sub2 --> Write[\"<write-to-agent>\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "02:10",
+          "text": "And so we thought, let's go out and build this agentic framework. And so we went and we built this very sophisticated, dare I say, beautiful framework for agents to work."
+        },
+        {
+          "timestamp": "02:30",
+          "text": "We had kind of this one main agent that would talk to the user and that agent would spawn other agents like an implementation agent here in the example."
+        },
+        {
+          "timestamp": "02:50",
+          "text": "And they would all talk to each other, send messages back and forth and we thought, wow, this is beautiful... and in the end it didn't work at all. It just made the product worse."
+        }
+      ],
+      "alignment_note": "Speaker points to the multi-agent XML log visual showing spawned agents communicating."
+    },
+    {
+      "scene_index": 11,
+      "start_time": "03:10",
+      "end_time": "03:39",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Late 2024: Back to a chain",
+      "visual_summary": "Slide showing XML-formatted one-shot file edits used during the pivot back to a simpler linear execution model.",
+      "ocr_details": [
+        "Late 2024",
+        "Back to a chain",
+        "One-shot edits in XML",
+        "Refactor calculateResult to use a separate mathOperations utility file for the calculation logic."
+      ],
+      "structured_reconstruction": "<write_file path=\"src/components/Calculator.tsx\">\nimport { calculateResult } from '../utils/mathOperations';\n</write_file>\n\n<write_file path=\"src/utils/mathOperations.ts\">\nexport function calculateResult(num1: number, num2: number, operation: string): number {\n  return num1 + num2;\n}\n</write_file>",
+      "spoken_segments": [
+        {
+          "timestamp": "03:10",
+          "text": "So in late 24 we went back to a much simpler system... where we had like some smaller LLMs doing some knowledge retrieval and then really just one main LLM kind of writing to the user and writing the code in the same message."
+        },
+        {
+          "timestamp": "03:31",
+          "text": "And this worked great. It was very responsive for users in the UI and it was reliable."
+        }
+      ],
+      "alignment_note": "Speaker points out the XML block format used to stream multi-file modifications in single turns."
+    },
+    {
+      "scene_index": 12,
+      "start_time": "03:40",
+      "end_time": "03:54",
+      "visual_type": "SLIDE",
+      "screen_title": "We're back",
+      "visual_summary": "Gradient slide titled 'We're back' with footnote '(This time agents actually works)'.",
+      "ocr_details": [
+        "We're back",
+        "(This time agents actually works)"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "03:40",
+          "text": "But now it's time again. We're back. We're so back. Agents this time... they work."
+        },
+        {
+          "timestamp": "03:50",
+          "text": "and we're running them in production over billions of tokens per minute on these systems that I'm going to talk about."
+        }
+      ],
+      "alignment_note": "Speaker transitions to discussing production scale agent architecture."
+    },
+    {
+      "scene_index": 13,
+      "start_time": "03:55",
+      "end_time": "05:20",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "The UI is a chat and a preview",
+      "visual_summary": "Wireframe diagram showing split layout: CHAT window on left, PREVIEW canvas on right.",
+      "ocr_details": [
+        "The UI is a chat and a preview",
+        "CHAT",
+        "PREVIEW",
+        "Type what you want. The app changes in front of you."
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph UI [\"lovable.dev\"]\n        Chat[\"CHAT<br/>Human input / intent\"]\n        Preview[\"PREVIEW<br/>Live app outcome\"]\n    end\n    Chat --> Preview",
+      "spoken_segments": [
+        {
+          "timestamp": "03:55",
+          "text": "So if you simplify the UI... To the left we have a chat where humans come in and they kind of describe their intent to build or whatever they want to do."
+        },
+        {
+          "timestamp": "04:15",
+          "text": "And to the right, you have a preview, which is the output or outcomes of what you're building."
+        },
+        {
+          "timestamp": "04:30",
+          "text": "And I think today we've even seen a lot of tooling meant for developers moving to this type of interface where you're not really looking at the code every day."
+        }
+      ],
+      "alignment_note": "Speaker describes the core Lovable interface paradigm (Chat input leading directly to live preview)."
+    },
+    {
+      "scene_index": 14,
+      "start_time": "05:21",
+      "end_time": "05:24",
+      "visual_type": "SLIDE",
+      "screen_title": "You still care about the code, losers?",
+      "visual_summary": "Humorous slide questioning developer fixation on source code.",
+      "ocr_details": [
+        "You still care about the code, losers?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "05:20",
+          "text": "I think today we're kind of in this almost a bit in between..."
+        }
+      ],
+      "alignment_note": "Brief playful slide shown before emphasizing user outcomes."
+    },
+    {
+      "scene_index": 15,
+      "start_time": "05:25",
+      "end_time": "05:49",
+      "visual_type": "SLIDE",
+      "screen_title": "What matters is outcomes.",
+      "visual_summary": "Colorful slide emphasizing outcome orientation over manual code inspection.",
+      "ocr_details": [
+        "What matters is outcomes."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "05:25",
+          "text": "But in the end, what matters is actually not the code... what matters is outcomes, right?"
+        },
+        {
+          "timestamp": "05:35",
+          "text": "Well, for our users, the outcomes is creating a business and monetizing and creating value for others."
+        }
+      ],
+      "alignment_note": "Speaker anchors the product strategy to delivering functional business outcomes."
+    },
+    {
+      "scene_index": 16,
+      "start_time": "05:50",
+      "end_time": "07:50",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Platform Capabilities: Agent, Cloud, Business",
+      "visual_summary": "Three-column grid mapping Lovable platform features across Agent, Cloud, and Business categories.",
+      "ocr_details": [
+        "Agent",
+        "Full-stack apps",
+        "Build, run and test",
+        "Browser verification",
+        "GitHub + code ownership",
+        "Generate MCP servers",
+        "Connect tools + APIs",
+        "Cloud",
+        "Database + authentication",
+        "Storage + realtime",
+        "Edge functions + jobs",
+        "Hosting + custom domains",
+        "Security scanners",
+        "Backups + logs",
+        "Business",
+        "Payments + subscriptions",
+        "Emails",
+        "SEO + AI search",
+        "Google + Meta ads",
+        "Analytics + conversions",
+        "Growth plans + outreach"
+      ],
+      "structured_reconstruction": "| Agent | Cloud | Business |\n| --- | --- | --- |\n| Full-stack apps | Database + authentication | Payments + subscriptions |\n| Build, run and test | Storage + realtime | Emails |\n| Browser verification | Edge functions + jobs | SEO + AI search |\n| GitHub + code ownership | Hosting + custom domains | Google + Meta ads |\n| Generate MCP servers | Security scanners | Analytics + conversions |\n| Connect tools + APIs | Backups + logs | Growth plans + outreach |",
+      "spoken_segments": [
+        {
+          "timestamp": "05:50",
+          "text": "If you look at Lovable, the first thing that you can say about the platform is that we have this agent... specialized at building software."
+        },
+        {
+          "timestamp": "06:25",
+          "text": "The cloud part of the platform is about giving hosting primitives seamlessly... databases, auth, storage, edge functions."
+        },
+        {
+          "timestamp": "07:05",
+          "text": "The last piece is around these business capabilities... payments, emails, SEO, Google & Meta ads, analytics."
+        }
+      ],
+      "alignment_note": "Speaker gestures sequentially across the three feature columns."
+    },
+    {
+      "scene_index": 17,
+      "start_time": "07:51",
+      "end_time": "08:14",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "From 30 minutes to 10+ hours",
+      "visual_summary": "Bar graph showing expansion of max agent task execution time from 30 minutes to 10+ hours.",
+      "ocr_details": [
+        "From 30 minutes to 10+ hours",
+        "Before",
+        "30 minutes",
+        "Now",
+        "10+ hours",
+        "0h",
+        "2h",
+        "4h",
+        "6h",
+        "8h",
+        "10h"
+      ],
+      "structured_reconstruction": "| Mode | Duration |\n| --- | --- |\n| Before | 30 minutes |\n| Now | 10+ hours |",
+      "spoken_segments": [
+        {
+          "timestamp": "07:51",
+          "text": "At some point in Lovable history, we used to limit our agents to work for only 30 minutes because we thought they weren't reliable."
+        },
+        {
+          "timestamp": "08:05",
+          "text": "But now we've changed this to really be without any sort of bound... you can imagine agents working for 10 hours plus."
+        }
+      ],
+      "alignment_note": "Speaker points to the horizontal bar expansion showing multi-hour autonomous execution."
+    },
+    {
+      "scene_index": 18,
+      "start_time": "08:15",
+      "end_time": "08:50",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "What does it take to run an agent for 10+ hours?",
+      "visual_summary": "Diagram laying out the 3 primary sub-systems: Agent runtime, Computer, and Verification.",
+      "ocr_details": [
+        "What does it take to run an agent for 10+ hours?",
+        "Pick up and plan its work",
+        "Read the history",
+        "Call the model",
+        "Run a tool",
+        "Write the result",
+        "Agent runtime",
+        "A place to do its work",
+        "Files",
+        "Running app",
+        "Local database",
+        "Memory",
+        "Computer",
+        "A place to check its work",
+        "Verification"
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph Component1 [\"01. Agent runtime\"]\n        A1[\"Pick up and plan work\"] --> A2[\"Read history\"]\n        A2 --> A3[\"Call model\"]\n        A3 --> A4[\"Run tool\"]\n        A4 --> A5[\"Write result\"]\n    end\n\n    subgraph Component2 [\"02. Computer\"]\n        C1[\"Saved State:<br/>Files | Running app | Local db | Memory\"]\n    end\n\n    subgraph Component3 [\"03. Verification\"]\n        V1[\"A place to check its work\"]\n    end\n\n    Component1 --> Component2 --> Component3",
+      "spoken_segments": [
+        {
+          "timestamp": "08:15",
+          "text": "And so I'll go into some of the things that we've done in our architecture to enable this. The first piece is really around the agent runtime itself..."
+        },
+        {
+          "timestamp": "08:30",
+          "text": "The second piece is the computer, where each of these agents are actually doing their work..."
+        },
+        {
+          "timestamp": "08:40",
+          "text": "The last piece then is the verification itself, where if you want an agent to work for a long amount of time, you need feedback loops."
+        }
+      ],
+      "alignment_note": "Speaker introduces the core agenda of technical architecture sections."
+    },
+    {
+      "scene_index": 19,
+      "start_time": "08:51",
+      "end_time": "10:04",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "The agent runtime: Always-on",
+      "visual_summary": "Agent Control Plane (ACP) architecture diagram showing Inbox queue aggregating external triggers into Task History trajectory.",
+      "ocr_details": [
+        "The agent runtime: Always-on",
+        "Agent control plane (ACP) - Starts agents, and wakes one up when its inbox gets a message",
+        "Inbox",
+        "You",
+        "Other agents",
+        "Scheduled wake-ups",
+        "Task history (trajectory)",
+        "Request",
+        "Tool call",
+        "Result",
+        "What's the status?",
+        "Anyone can drop a message in the inbox. The agent copies it into its history between steps."
+      ],
+      "structured_reconstruction": "flowchart TD\n    You[\"You (Human)\"] --> Inbox\n    Other[\"Other agents\"] --> Inbox\n    Sched[\"Scheduled wake-ups\"] --> Inbox\n\n    subgraph ACP [\"Agent Control Plane (ACP)\"]\n        Inbox[\"Inbox: 'What's the status?'\"]\n    end\n\n    Inbox --> Trajectory[\"Task history (trajectory)<br/>[Request] -> [Tool call] -> [Result] -> [What's the status?] -> [Tool call]\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "08:51",
+          "text": "And so, if we start by looking at the agent runtime itself... you have three different sources that can interact with an agent: yourself, other agents, or a schedule."
+        },
+        {
+          "timestamp": "09:20",
+          "text": "For each agent we have a separate inbox where any of these sources send in messages."
+        },
+        {
+          "timestamp": "09:45",
+          "text": "The agent then can copy that itself into its own what we call a trajectory, basically its task history."
+        }
+      ],
+      "alignment_note": "Speaker points to the inbox node receiving async messages and copying them into task history."
+    },
+    {
+      "scene_index": 20,
+      "start_time": "10:05",
+      "end_time": "11:14",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Fork the task history at any step",
+      "visual_summary": "Tree graph showing history branching capability ('Rewrite it in Rust' fork extending off 'Read file' node).",
+      "ocr_details": [
+        "Fork the task history at any step",
+        "Main",
+        "Improve performance",
+        "Start",
+        "Read file",
+        "Fork",
+        "Rewrite it in Rust",
+        "Edit file",
+        "Test: ok",
+        "Done",
+        "Each event points to the one before it. A fork points to the same parent and copies nothing."
+      ],
+      "structured_reconstruction": "flowchart LR\n    Main1[\"Improve performance\"] --> Main2[\"Start\"] --> Main3[\"Read file\"]\n    Main3 --> Fork1[\"Rewrite it in Rust\"]\n    Fork1 --> Fork2[\"Edit file\"]\n    Fork2 --> Fork3[\"Test: ok\"]\n    Fork3 --> Fork4[\"Done\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "10:05",
+          "text": "And we designed this trajectory with really Git as inspiration. It's an append-only log where each event points towards a parent..."
+        },
+        {
+          "timestamp": "10:40",
+          "text": "Because of this, you get a nice capability just like in Git where you can fork things, right?"
+        },
+        {
+          "timestamp": "11:00",
+          "text": "Unlike Git, we cannot merge agent trajectories, but we can kind of spawn them out."
+        }
+      ],
+      "alignment_note": "Speaker gestures along the blue forked branch on screen."
+    },
+    {
+      "scene_index": 21,
+      "start_time": "11:15",
+      "end_time": "12:25",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "We build every prompt from the task history",
+      "visual_summary": "Diagram showing how raw Task History is dynamically transformed into model-tailored LLM prompts with compaction.",
+      "ocr_details": [
+        "We build every prompt from the task history",
+        "Task history - every event, in order",
+        "Add discount codes",
+        "Read checkout.ts",
+        "Edit discount.ts",
+        "Expired code accepted",
+        "Fix the expiry check",
+        "Build the prompt at every step",
+        "What the model sees: Prompt for this step",
+        "Instructions: System instructions | Selected knowledge",
+        "Earlier steps, summarized",
+        "Recent steps, in full: Edit discount.ts | Expired code accepted | Fix the expiry check"
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph History [\"Task History (All Events)\"]\n        H1[\"Add discount codes\"]\n        H2[\"Read checkout.ts\"]\n        H3[\"Edit discount.ts\"]\n        H4[\"Expired code accepted\"]\n        H5[\"Fix the expiry check\"]\n    end\n\n    History --> Builder[\"Build Prompt Render Engine\"]\n\n    subgraph Prompt [\"Rendered Prompt for Model\"]\n        P1[\"System Instructions & Knowledge\"]\n        P2[\"Summarized Earlier Steps\"]\n        P3[\"Recent Steps (Full Detail)\"]\n    end\n\n    Builder --> Prompt",
+      "spoken_segments": [
+        {
+          "timestamp": "11:15",
+          "text": "Then what we've done is to make sure that we have this append-only log, and from that we can actually build a prompt that we would feed into the actual LLM."
+        },
+        {
+          "timestamp": "11:45",
+          "text": "When you build a prompt... if you have a long history, you probably want to do some sort of compaction and summarize part of that history."
+        },
+        {
+          "timestamp": "12:10",
+          "text": "By separating the prompt from the actual task history, we're able to render prompts for any type of model or task."
+        }
+      ],
+      "alignment_note": "Speaker contrasts the complete persistent task log with the context-compacted rendered prompt."
+    },
+    {
+      "scene_index": 22,
+      "start_time": "12:26",
+      "end_time": "13:04",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Replay a run, event by event",
+      "visual_summary": "Live UI recording of slider stepping through 156 historical events to inspect intermediate thoughts and UI states.",
+      "ocr_details": [
+        "Replay a run, event by event",
+        "Documentation feature overview",
+        "Can you research our docs, and give an overview of the different features... 156 events",
+        "Thought for 3s",
+        "Analyzing documentation categories in links.txt",
+        "Categorizing all documentation pages by section and topic",
+        "Extracting detailed feature list and integration topics",
+        "Testing doc parser script"
+      ],
+      "structured_reconstruction": "Event History Replay Slider [==================|   ] Event 78 / 156\nThought for 3s:\n- Analyzing documentation categories in links.txt\n- Categorizing all documentation pages by section and topic\n- Extracting detailed feature list and integration topics\n- Testing doc parser script",
+      "spoken_segments": [
+        {
+          "timestamp": "12:26",
+          "text": "So to show this event history in progress, we have this debug tool here. Here it's just a recording of me dragging this slider in our UI..."
+        },
+        {
+          "timestamp": "12:40",
+          "text": "and you have 156 events here and each of those is an event in this event history."
+        }
+      ],
+      "alignment_note": "Speaker points to the interactive trajectory debug slider operating across 156 events."
+    },
+    {
+      "scene_index": 23,
+      "start_time": "13:05",
+      "end_time": "13:34",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "The task history lives outside the process",
+      "visual_summary": "Architectural separation diagram showing stateless agent execution processes disconnected from persistent history stores.",
+      "ocr_details": [
+        "The task history lives outside the process",
+        "Process running the agent: Can come and go",
+        "Read the history",
+        "Call the model",
+        "Run a tool",
+        "Write the result",
+        "Task history - kept outside: Every event, in order",
+        "A run can stop between steps. Another process picks it up from the record."
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph Process [\"Process running agent (Stateless)\"]\n        P1[\"Read history\"] --> P2[\"Call model\"] --> P3[\"Run tool\"] --> P4[\"Write result\"]\n    end\n\n    subgraph Storage [\"Task History (Persistent Store)\"]\n        S1[\"Every event, in order\"]\n    end\n\n    Process <--> Storage",
+      "spoken_segments": [
+        {
+          "timestamp": "13:05",
+          "text": "The process that is running these agents, they're separate from the actual task history. And so the process is almost entirely stateless..."
+        },
+        {
+          "timestamp": "13:20",
+          "text": "between each turn, it will actually just persist into the task history and so you can have a process come and go."
+        }
+      ],
+      "alignment_note": "Speaker highlights process statelessness enabling execution handing off between worker nodes."
+    },
+    {
+      "scene_index": 24,
+      "start_time": "13:35",
+      "end_time": "14:36",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "700+ deploys a day. Agents keep working.",
+      "visual_summary": "Timeline diagram showing a 10-hour agent run seamlessly handing off across Process A, B, C, D, E during deployments.",
+      "ocr_details": [
+        "700+ deploys a day. Agents keep working.",
+        "Task history - one run, hours of work",
+        "Process running the agent: Process A -> Process B -> Process C -> Process D -> Process E",
+        "0h -> 10h",
+        "deploy",
+        "The process changes. The task keeps going."
+      ],
+      "structured_reconstruction": "flowchart LR\n    Task[\"Task History (10h Run)\"]\n    PA[\"Process A\"] -- deploy --> PB[\"Process B\"]\n    PB -- deploy --> PC[\"Process C\"]\n    PC -- deploy --> PD[\"Process D\"]\n    PD -- deploy --> PE[\"Process E\"]\n    \n    PA -. executes .-> Task\n    PB -. executes .-> Task\n    PC -. executes .-> Task\n    PD -. executes .-> Task\n    PE -. executes .-> Task",
+      "spoken_segments": [
+        {
+          "timestamp": "13:35",
+          "text": "And then the question is, why do we care about this? Well, at Lovable, we deploy to this system 700 times per day. So that's about once every 2 minutes."
+        },
+        {
+          "timestamp": "13:50",
+          "text": "And you can imagine if you have an agent working for 10 hours... you want to not disrupt that agent when it's working."
+        },
+        {
+          "timestamp": "14:10",
+          "text": "We can actually make sure that we have one agent working on one task but we can have different processes taking up and actually doing the compute."
+        }
+      ],
+      "alignment_note": "Speaker tracks how ongoing long-duration agent tasks persist across back-to-back production deployments."
+    },
+    {
+      "scene_index": 25,
+      "start_time": "14:37",
+      "end_time": "14:55",
+      "visual_type": "SLIDE",
+      "screen_title": "02. Computer",
+      "visual_summary": "Section slide introducing topic 02: Computer (A place to do its work).",
+      "ocr_details": [
+        "02. Computer",
+        "A place to do its work",
+        "Saved: Files | Running app | Local database | Memory"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "14:37",
+          "text": "The second piece of this platform is the computer, so this is where the work is actually happening."
+        }
+      ],
+      "alignment_note": "Transition slide opening the sandbox execution architecture."
+    },
+    {
+      "scene_index": 26,
+      "start_time": "14:56",
+      "end_time": "15:44",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "New computers start from a golden checkpoint",
+      "visual_summary": "Diagram showing base Golden Checkpoint launching new project VMs in 230 milliseconds.",
+      "ocr_details": [
+        "New computers start from a golden checkpoint",
+        "A VM resumes in 230 ms",
+        "Golden checkpoint - Prepared once",
+        "OS + system services",
+        "Common tools installed",
+        "Dev server ready to start",
+        "New computer - Project A: Checkpoint + project code + dependencies",
+        "New computer - Project B: Checkpoint + project code + dependencies",
+        "New computer - Project C: Checkpoint + project code + dependencies",
+        "We run around 1M sandboxes a day. Reusing setup matters at that scale."
+      ],
+      "structured_reconstruction": "flowchart LR\n    Golden[\"Golden Checkpoint (Prepared once)<br/>- OS + system services<br/>- Common tools installed<br/>- Dev server ready to start\"]\n    \n    Golden -- \"Resumes in 230ms\" --> ProjA[\"Project A VM<br/>[Checkpoint] + project code + dependencies\"]\n    Golden -- \"Resumes in 230ms\" --> ProjB[\"Project B VM<br/>[Checkpoint] + project code + dependencies\"]\n    Golden -- \"Resumes in 230ms\" --> ProjC[\"Project C VM<br/>[Checkpoint] + project code + dependencies\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "14:56",
+          "text": "And we've landed in the system that we've worked really hard now to develop, which is checkpointing a computer..."
+        },
+        {
+          "timestamp": "15:10",
+          "text": "We have this common what we call a golden checkpoint which contains the OS and system services... and dev server ready to start."
+        },
+        {
+          "timestamp": "15:25",
+          "text": "And all of that you copy over in about 230 milliseconds. We run around 1M sandboxes a day."
+        }
+      ],
+      "alignment_note": "Speaker points to the 230ms cold start measurement visual."
+    },
+    {
+      "scene_index": 27,
+      "start_time": "15:45",
+      "end_time": "16:15",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "We save the running computer, then resume it",
+      "visual_summary": "State preservation sequence diagram showing active state saved into snapshot and resumed in place.",
+      "ocr_details": [
+        "We save the running computer, then resume it",
+        "Agent turn: Running (Edited files, Installed packages, App + processes running)",
+        "end of turn",
+        "Snapshot: Saved (Files, Memory, Running processes)",
+        "next visit",
+        "Resumed: Running again (Same files, Same packages, App already running)",
+        "Saved at the end of every agent turn. Resumed in place."
+      ],
+      "structured_reconstruction": "flowchart LR\n    Run1[\"Running<br/>- Edited files<br/>- Installed packages<br/>- App running\"] -->|\"end of turn\"| Save[\"Saved Snapshot<br/>- Files<br/>- Memory<br/>- Running processes\"]\n    Save -->|\"next visit\"| Run2[\"Resumed Running<br/>- Same files<br/>- Same packages<br/>- App already running\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "15:45",
+          "text": "And so each time the agent is running and it finishes a turn, we will actually save a checkpoint of that computer."
+        },
+        {
+          "timestamp": "15:55",
+          "text": "And from that, we're able to again very quickly subsecond spin that computer up whenever you need it."
+        }
+      ],
+      "alignment_note": "Speaker points out snapshot saving of RAM and disk state at the conclusion of each agent turn."
+    },
+    {
+      "scene_index": 28,
+      "start_time": "16:16",
+      "end_time": "16:51",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Try different approaches from one snapshot",
+      "visual_summary": "Forking sandbox model diagram branching a single saved state into parallel Draft A and Draft B computers.",
+      "ocr_details": [
+        "Try different approaches from one snapshot",
+        "Latest snapshot: One saved computer (Files, Running app, Local database, Memory)",
+        "Draft A: Reschedule inside the app (same start + its own changes)",
+        "Draft B: Reschedule by email (same start + its own changes)",
+        "Two approaches, tried side by side. This is how Drafts work."
+      ],
+      "structured_reconstruction": "flowchart LR\n    Snap[\"Latest Snapshot<br/>- Files<br/>- Running app<br/>- Local db<br/>- Memory\"]\n    Snap --> DraftA[\"Draft A<br/>Reschedule inside the app<br/>(same start + its own changes)\"]\n    Snap --> DraftB[\"Draft B<br/>Reschedule by email<br/>(same start + its own changes)\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "16:16",
+          "text": "The other thing we can do thanks to this checkpointing is that just like the trajectory itself... we can also fork the computer."
+        },
+        {
+          "timestamp": "16:30",
+          "text": "We have a feature in Lovable that is called drafts where you kind of work in different environments..."
+        }
+      ],
+      "alignment_note": "Speaker demonstrates how sandbox snapshot forking underlies the 'Drafts' user feature."
+    },
+    {
+      "scene_index": 29,
+      "start_time": "16:52",
+      "end_time": "17:20",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Drafts share memory until they change it",
+      "visual_summary": "Memory grid diagram displaying Copy-on-Write (COW) page allocation across parallel drafts.",
+      "ocr_details": [
+        "Drafts share memory until they change it",
+        "Shared snapshot memory",
+        "copied on write",
+        "Shared, unchanged",
+        "Original page, left as it was",
+        "Draft A: Reads the shared pages, Keeps its own copies of pages it changed",
+        "Draft B: Reads the shared pages, Keeps its own copies of pages it changed",
+        "Drafts share every page they haven't changed. A page is copied only when a draft writes to it."
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph Memory [\"Shared Snapshot Memory Grid\"]\n        S[\"Shared pages (Unchanged)\"]\n        W1[\"Copied on write page (Draft A)\"]\n        W2[\"Copied on write page (Draft B)\"]\n    end\n\n    Memory --> DraftA[\"Draft A<br/>Reads shared pages, keeps written page copies\"]\n    Memory --> DraftB[\"Draft B<br/>Reads shared pages, keeps written page copies\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "16:52",
+          "text": "And so we've had to do some optimizations to make this feasible to actually run. One of these optimizations is copy-on-write on the RAM itself."
+        },
+        {
+          "timestamp": "17:05",
+          "text": "as soon as you start writing in a process to RAM, we will kind of copy that page over and only then will you start having to allocate new memory."
+        }
+      ],
+      "alignment_note": "Speaker points to orange copy-on-write blocks in the RAM allocation visual."
+    },
+    {
+      "scene_index": 30,
+      "start_time": "17:21",
+      "end_time": "18:04",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Load only the memory needed to resume",
+      "visual_summary": "Grid visual depicting streaming memory page restoration during VM resume.",
+      "ocr_details": [
+        "Load only the memory needed to resume",
+        "A Lovable computer: dev server + database",
+        "Hundreds of MB",
+        "So a computer streams in only the memory it needs to keep running."
+      ],
+      "structured_reconstruction": "flowchart TD\n    Grid[\"Memory Page Grid (Hundreds of MB)\"] --> OnDemand[\"On-Demand Memory Streaming\"]\n    OnDemand --> Boot[\"Fast VM Boot (Loads active pages first)\"]",
+      "spoken_segments": [
+        {
+          "timestamp": "17:21",
+          "text": "And there's another optimization here also, which is that each of these sandboxes require a few hundreds of megabytes of memory."
+        },
+        {
+          "timestamp": "17:40",
+          "text": "thanks to being able to stream the memory, we can actually boot up the machine before all of the memory is actually ready on it."
+        }
+      ],
+      "alignment_note": "Speaker references the on-demand RAM page streaming graphic."
+    },
+    {
+      "scene_index": 31,
+      "start_time": "18:05",
+      "end_time": "18:34",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Meet OJ: Vite, rewritten in Rust",
+      "visual_summary": "Benchmark slide presenting OJ (Rust-based Vite server) metrics showing 2x faster cold start and 14s to 3s preview time decrease.",
+      "ocr_details": [
+        "Meet OJ: Vite, rewritten in Rust",
+        "2x faster cold starts",
+        "14s -> 3s to get a ready preview",
+        "Every preview runs a real dev server. OJ is one Rust binary that runs your app the way Vite does, with no Node.js underneath.",
+        "Open source: github.com/lovable-dev/oj"
+      ],
+      "structured_reconstruction": "| Metric | Node + Vite | OJ (Rust Vite) |\n| --- | --- | --- |\n| Cold Start Speed | Baseline | 2x faster |\n| Time to Ready Preview | 14s | 3s |\n| Runtime Dependency | Node.js | Single Rust Binary |",
+      "spoken_segments": [
+        {
+          "timestamp": "18:05",
+          "text": "And then we started asking ourselves, how can we make this even more efficient and even faster for our users?"
+        },
+        {
+          "timestamp": "18:15",
+          "text": "we took Vite and we forked it and we rewrote it in Rust. And that made our cold starts two times faster and we went from getting this preview from 14 seconds to 3 seconds."
+        }
+      ],
+      "alignment_note": "Speaker points to the 14s -> 3s speedup metric and open-source GitHub URL."
+    },
+    {
+      "scene_index": 32,
+      "start_time": "18:35",
+      "end_time": "19:15",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "OJ uses less memory, so more previews fit",
+      "visual_summary": "Density comparison graphic demonstrating 6.5x memory reduction when replacing Node+Vite with OJ.",
+      "ocr_details": [
+        "OJ uses less memory, so more previews fit",
+        "6.5x less dev-server memory than Node + Vite",
+        "Measured before the app loads.",
+        "Node + Vite (4 blocks)",
+        "OJ (25 blocks)",
+        "More previews fit on the same machine."
+      ],
+      "structured_reconstruction": "| Parameter | Node + Vite | OJ |\n| --- | --- | --- |\n| Dev-server Memory | Baseline (1x) | 6.5x less |\n| Density per Machine | 4 previews | 25 previews |",
+      "spoken_segments": [
+        {
+          "timestamp": "18:35",
+          "text": "The main thing that we made faster here is that Vite uses Node JS and we're able to drop that dependency... so that made the memory footprint be 6.5 times less."
+        },
+        {
+          "timestamp": "18:55",
+          "text": "we're able to run this extremely efficiently so that we can run lots and lots of agents in parallel."
+        }
+      ],
+      "alignment_note": "Speaker points out the visual contrast between 4 large Node blocks and 25 compact OJ blocks."
+    },
+    {
+      "scene_index": 33,
+      "start_time": "19:16",
+      "end_time": "19:29",
+      "visual_type": "SLIDE",
+      "screen_title": "03. Verification",
+      "visual_summary": "Section transition slide introducing topic 03: Verification.",
+      "ocr_details": [
+        "03. Verification",
+        "A place to check its work"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "19:16",
+          "text": "the last piece now is about verification, and of course this kind of computer and dev server is a big piece of being able to verify what an agent is doing."
+        }
+      ],
+      "alignment_note": "Transition slide opening verification feedback loops."
+    },
+    {
+      "scene_index": 34,
+      "start_time": "19:30",
+      "end_time": "21:09",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Two loops: fix it now, improve it later",
+      "visual_summary": "Comprehensive comparative table detailing Inner Loop checks (turn-time fixes) vs Outer Loop checks (horizon business metrics).",
+      "ocr_details": [
+        "Two loops: fix it now, improve it later",
+        "Inner loop - during the turn",
+        "The agent sees it and fixes it right away",
+        "Build, lint + type errors - Automatic",
+        "Runtime errors - Automatic + tools",
+        "Browser + visual checks - Tools",
+        "Judges in the turn - Automatic",
+        "Domain scanners - Tools",
+        "Backend logs + usage - Tools",
+        "Guardrails + notifications - Automatic",
+        "User-triggered fixes - User",
+        "Outer loop - between turns",
+        "The horizon between turns is long",
+        "Product metrics:",
+        "Production signals - Automatic",
+        "Visitor behaviour - Automatic",
+        "What users tell you - Explicit",
+        "Automatic A/B tests - Automatic",
+        "Business metrics:",
+        "e.g. payments / signups / conversions",
+        "Transactions -> conversions - Automatic",
+        "Feedbacks fed back - Next turn",
+        "Production outcomes reach the agent only as next-turn findings, never as a training signal."
+      ],
+      "structured_reconstruction": "| Inner Loop (During turn) | Type | Outer Loop (Between turns) | Type |\n| --- | --- | --- | --- |\n| Build, lint + type errors | Automatic | Production signals | Automatic |\n| Runtime errors | Automatic + tools | Visitor behaviour | Automatic |\n| Browser + visual checks | Tools | What users tell you | Explicit |\n| Judges in the turn | Automatic | Automatic A/B tests | Automatic |\n| Domain scanners | Tools | Transactions -> conversions | Automatic |\n| Backend logs + usage | Tools | Feedbacks fed back | Next turn |\n| Guardrails + notifications | Automatic | | |\n| User-triggered fixes | User | | |",
+      "spoken_segments": [
+        {
+          "timestamp": "19:30",
+          "text": "If you look at verification, you can think of these feedback loops... this inner loop and this outer loop."
+        },
+        {
+          "timestamp": "19:45",
+          "text": "This inner loop is during the turn of the agent: build, lint errors, type errors, runtime errors, headless browser."
+        },
+        {
+          "timestamp": "20:15",
+          "text": "Then you also have this outer loop between each turn... product metrics, visitor behavior, AB tests, business metrics."
+        }
+      ],
+      "alignment_note": "Speaker walks down both columns comparing real-time inner turn checks against production outer loop feedback signals."
+    },
+    {
+      "scene_index": 35,
+      "start_time": "21:10",
+      "end_time": "22:05",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "The foundations for agents to take on more ambitious goals",
+      "visual_summary": "Graph visual showing networked multi-agent system orchestrating across connected computers and verification nodes.",
+      "ocr_details": [
+        "The foundations for agents to take on more ambitious goals",
+        "FIG 1. - A HUNDRED AGENTS, ONE GOAL",
+        "COMPUTER",
+        "AGENT",
+        "MESSAGE",
+        "VERIFIED",
+        "MOST CONNECTED COMPUTER"
+      ],
+      "structured_reconstruction": "flowchart TD\n    subgraph Swarm [\"A Hundred Agents, One Goal\"]\n        C1[\"MOST CONNECTED COMPUTER\"]\n        A1[\"Agent 1\"] <--> C1\n        A2[\"Agent 2\"] <--> C1\n        A3[\"Agent 3\"] <--> C1\n        A4[\"Agent 4\"] <--> C2[\"Computer 2\"]\n        C1 <--> C2\n    end",
+      "spoken_segments": [
+        {
+          "timestamp": "21:10",
+          "text": "and so this agentic system that we're building is running billions of tokens per minute and these computers we can spawn up with each agent..."
+        },
+        {
+          "timestamp": "21:35",
+          "text": "And now we're kind of back to this quite beautiful setup where you have agents talking to agents and they're orchestrating. And this time it's actually working."
+        }
+      ],
+      "alignment_note": "Speaker points to the multi-agent network topology graph representing scaled autonomous agent interaction."
+    },
+    {
+      "scene_index": 36,
+      "start_time": "22:06",
+      "end_time": "22:25",
+      "visual_type": "SLIDE",
+      "screen_title": "AI Engineer Code Summit Outro",
+      "visual_summary": "Closing graphic with summit branding and web URL.",
+      "ocr_details": [
+        "AI Engineer Code Summit",
+        "PRESENTED BY Google DeepMind",
+        "HTTPS://AI.ENGINEER"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "21:50",
+          "text": "And so if you're curious to try this out, you can head to lovable.dev... thank you so much, it's been a pleasure."
+        }
+      ],
+      "alignment_note": "Final outro banner shown as speaker concludes talk."
+    }
+  ]
+}
