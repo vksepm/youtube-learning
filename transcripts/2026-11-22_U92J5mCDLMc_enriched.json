@@ -1,0 +1,655 @@
+{
+  "estimated_duration_seconds": 847,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:34",
+      "visual_type": "SLIDE",
+      "screen_title": "A new era of software engineering",
+      "visual_summary": "Opening title slide for the presentation featuring speaker Walden Yan, Co-Founder and Chief Product Officer at Cognition. The slide has a clean white background with Cognition logo graphics and dark branding accents.",
+      "ocr_details": [
+        "Cognition",
+        "A new era of software engineering",
+        "Walden Yan Co-Founder and Chief Product Officer, Cognition",
+        "A New Age of Software Engineering",
+        "Walden Yan | Chief Product Officer | Cognition"
+      ],
+      "structured_reconstruction": "Title: A new era of software engineering\nPresenter: Walden Yan (Co-Founder and Chief Product Officer, Cognition)",
+      "spoken_segments": [
+        {
+          "timestamp": "00:13",
+          "text": "Hello, everyone. It's a pleasure to be here today. Quick introduction. I'm Walden. I'm one of the co-founders and chief product officer at Cognition. We build a AI product called Devin."
+        },
+        {
+          "timestamp": "00:25",
+          "text": "I want to spend most of my time here today though kind of abstracting a bit away from that and focusing on what are we doing internally as an engineering team to move way faster."
+        }
+      ],
+      "alignment_note": "The speaker introduces himself and Cognition while standing in front of the opening title slide."
+    },
+    {
+      "scene_index": 2,
+      "start_time": "00:34",
+      "end_time": "01:29",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Cognition's delivery capacity is exploding",
+      "visual_summary": "Bar chart illustrating a 40.4x increase in merged pull request (PR) volume at Cognition over a 12-month period (Oct 2025 - Oct 2026), compared against a 2.7x growth in engineering headcount (R&D) over the same period.",
+      "ocr_details": [
+        "Cognition's delivery capacity is exploding",
+        "Merged PR volume",
+        "Engineering headcount (R&D)",
+        "1x",
+        "40.4x",
+        "2.7x",
+        "Oct 2025",
+        "Feb 2026",
+        "Mar 2026",
+        "Apr 2026",
+        "May 2026",
+        "Jun 2026",
+        "Jul 2026",
+        "Aug 2026",
+        "Sep 2026",
+        "Oct 2026"
+      ],
+      "structured_reconstruction": "| Metric | Oct 2025 | Oct 2026 | Growth Factor |\n| :--- | :--- | :--- | :--- |\n| Merged PR Volume | 1x | 40.4x | 40.4x |\n| Engineering Headcount (R&D) | 1x | 2.7x | 2.7x |",
+      "spoken_segments": [
+        {
+          "timestamp": "00:34",
+          "text": "And so the backdrop I would put for all this is this is what our merged PR throughput looks like at Cognition. The start of this is around 12 months ago, so you're looking at about a snapshot of a year."
+        },
+        {
+          "timestamp": "00:46",
+          "text": "And over this last year, this blue chart here, this 40X is a 40X in the number of merged PRs we're producing on our engineering team."
+        },
+        {
+          "timestamp": "00:56",
+          "text": "Now you might also notice there's a small black line along the bottom there, it's easy to miss. But that 2.7X, that is our engineering headcount growth in the same period."
+        },
+        {
+          "timestamp": "01:07",
+          "text": "So we have been hiring engineers, but each of our engineers is now more than 10X more productive than they were before. And I would dare to say that these PRs are just as high quality, if not higher quality than they were a year ago."
+        },
+        {
+          "timestamp": "01:19",
+          "text": "And so really the crux of what I want to talk about today is what did we do to unlock this 40X engineering throughput?"
+        }
+      ],
+      "alignment_note": "The speaker points directly to the blue bar chart labeled '40.4x' for PR throughput and the dashed line at the bottom labeled '2.7x' for engineering headcount growth."
+    },
+    {
+      "scene_index": 3,
+      "start_time": "01:29",
+      "end_time": "01:39",
+      "visual_type": "SLIDE",
+      "screen_title": "We've transformed how we build",
+      "visual_summary": "Section transition slide with the bold text statement 'We've transformed how we build' on a light patterned Cognition background.",
+      "ocr_details": [
+        "Cognition",
+        "We've transformed how we build"
+      ],
+      "structured_reconstruction": "Section Slide: We've transformed how we build",
+      "spoken_segments": [
+        {
+          "timestamp": "01:29",
+          "text": "And there's a lot of things we did from both the code base to the way we structure engineering teams that I think are very practical steps you can take if you want to reproduce the same results."
+        }
+      ],
+      "alignment_note": "Transition slide signaling the pivot to organizational and architectural changes implemented at Cognition."
+    },
+    {
+      "scene_index": 4,
+      "start_time": "01:39",
+      "end_time": "02:14",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Default autonomous; Human judgement where needed",
+      "visual_summary": "Architecture diagram illustrating the end-to-end software factory pipeline across Triage, Build, Test, Review, Deploy, and Oncall phases. Autonomous Devin agents handle each stage by default, escalating to human judgment only when necessary.",
+      "ocr_details": [
+        "Default autonomous; Human judgement where needed",
+        "Triage (Organize and prioritize issues)",
+        "Build (Implement features and bug fixes)",
+        "Test (Verify changes in dev environment)",
+        "Review (Review PRs and merge to main)",
+        "Deploy (Deploy changes to production)",
+        "Oncall (Monitor and maintain production)",
+        "Devin",
+        "Escalations"
+      ],
+      "structured_reconstruction": "flowchart LR\n    subgraph Pipeline [Software Factory Pipeline]\n        Triage[Triage: Organize & prioritize issues] --> Build[Build: Implement features & fixes]\n        Build --> Test[Test: Verify changes in dev env]\n        Test --> Review[Review: Review PRs & merge to main]\n        Review --> Deploy[Deploy: Deploy changes to prod]\n        Deploy --> Oncall[Oncall: Monitor & maintain prod]\n    end\n    Devin[Devin Agents Autonomous Loop] --> Pipeline\n    Pipeline -. Escalations .-> Human[Human Judgment]",
+      "spoken_segments": [
+        {
+          "timestamp": "01:41",
+          "text": "Many of you are probably familiar with the software factory. How many of you guys have heard of software factory? Let's see a raise of hands. Cool, so I'll start with the basics and then I'll work my way up to the more advanced stuff."
+        },
+        {
+          "timestamp": "01:51",
+          "text": "The basic idea of a software factory is, yeah, by default, everything should be self driving, um we have PRs that go from initial bug report to final merge and monitoring and maintenance without a single human involved."
+        },
+        {
+          "timestamp": "02:04",
+          "text": "oftentimes human judgment is needed though and that's where we have escalations. But by default our entire software development process is just run by Devon from end to end."
+        }
+      ],
+      "alignment_note": "The speaker points to the horizontal stage sequence (Triage to Oncall) and highlights how Devin automates each step with human escalation fallback."
+    },
+    {
+      "scene_index": 5,
+      "start_time": "02:14",
+      "end_time": "03:30",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "We've restructured our teams to ship more",
+      "visual_summary": "Organizational architectural diagram contrasting traditional role-based team structure ('BEFORE: ORGANIZED BY ROLE' with separate Product, Engineering, and QA/Oncall silos) with pod-based vertical structure ('AFTER: ORGANIZED BY VERTICAL' with small pods for Billing, Mobile app, Integrations backed by Devin swarms).",
+      "ocr_details": [
+        "We've restructured our teams to ship more",
+        "BEFORE: ORGANIZED BY ROLE",
+        "PRODUCT",
+        "ENGINEERING (ENG, ENG, ENG)",
+        "QA & ONCALL (QA)",
+        "AFTER: ORGANIZED BY VERTICAL",
+        "VERTICAL 1 e.g. Billing",
+        "VERTICAL 2 e.g. Mobile app",
+        "VERTICAL 3 e.g. Integrations",
+        "PRODUCT",
+        "ENG",
+        "QA",
+        "ONCALL"
+      ],
+      "structured_reconstruction": "flowchart TD\n    subgraph Before [BEFORE: ORGANIZED BY ROLE]\n        P[Product Role] \n        E[Engineering Role: ENG 1, ENG 2, ENG 3]\n        Q[QA & Oncall Role]\n    end\n    subgraph After [AFTER: ORGANIZED BY VERTICAL]\n        subgraph Pod1 [Vertical 1: Billing]\n            E1[2-3 Engineers] --> D1[Devin Swarm]\n            D1 --> Resp1[Product + Eng + QA + Oncall]\n        end\n        subgraph Pod2 [Vertical 2: Mobile App]\n            E2[2-3 Engineers] --> D2[Devin Swarm]\n            D2 --> Resp2[Product + Eng + QA + Oncall]\n        end\n        subgraph Pod3 [Vertical 3: Integrations]\n            E3[2-3 Engineers] --> D3[Devin Swarm]\n            D3 --> Resp3[Product + Eng + QA + Oncall]\n        end\n    end",
+      "spoken_segments": [
+        {
+          "timestamp": "02:14",
+          "text": "One of the things this means is that the role of the software engineer has to change quite a bit. Around March of this year, we had this conversation with engineering team."
+        },
+        {
+          "timestamp": "02:24",
+          "text": "And we said, look, if you are right now just picking off tickets off a linear board and then setting that to an agent and implementing it, you're not going to really be set up for success in the age of AI."
+        },
+        {
+          "timestamp": "02:35",
+          "text": "because anything that is described and can be implemented, we'll be able to send to Devon. So really everyone has to change the way that they're developing."
+        },
+        {
+          "timestamp": "02:44",
+          "text": "And the way we've enforced this is we've taken our larger teams and we've broken them up into smaller pods. And these smaller pods not only are given swarms of agents to do work for them, they are given more vertical responsibility."
+        },
+        {
+          "timestamp": "02:58",
+          "text": "So instead you might have only two or three engineers on a team at a time, but they're responsible for everything beyond the engineering as well. They're responsible for listening to customer bug reports. They're responsible for doing QA testing. They're responsible for doing the PMing and product management and basically every engineer manages their entire own linear board of things to do."
+        },
+        {
+          "timestamp": "03:17",
+          "text": "And they send that to an agent to implement for them. So it's really a fundamental change in the way that our engineers do work."
+        }
+      ],
+      "alignment_note": "The speaker contrasts the left-side role siloing with the right-side vertical pods containing 2-3 engineers deploying agent swarms."
+    },
+    {
+      "scene_index": 6,
+      "start_time": "03:30",
+      "end_time": "04:24",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Debugging, Testing & Merging all from Slack",
+      "visual_summary": "Workflow diagram and Slack UI screenshot showing the instant bug report turnaround process executed entirely within Slack without requiring an IDE or GitHub interface.",
+      "ocr_details": [
+        "Debugging, Testing & Merging all from Slack",
+        "Instant bug report turnaround",
+        "1 Customer reports a bug",
+        "2 Forwarded to the internal channel",
+        "3 Devin replies with a PR and proof",
+        "4 Shared back to the customer",
+        "# team-flasterlable-cognition",
+        "Florian: small product nit for devin review: file comment should scroll into view",
+        "# channel internal-bug-reports",
+        "Devin: PR is ready with all CI passing. Tested both scenarios on the preview deployment (recording attached).",
+        "BEFORE Reported by the customer",
+        "AFTER Proof from Devin"
+      ],
+      "structured_reconstruction": "flowchart LR\n    Step1[1. Customer reports bug video on Slack] --> Step2[2. Forwarded to internal Slack channel & tag Devin]\n    Step3[3. Devin posts PR link & video proof of fix] --> Step4[4. Proof shared directly back to customer]",
+      "spoken_segments": [
+        {
+          "timestamp": "03:32",
+          "text": "Another thing I'd really like to highlight is we work from Slack everywhere. So this is an example of what a customer bug report might look like. They send me a video on Slack."
+        },
+        {
+          "timestamp": "03:41",
+          "text": "And we just forward bug reports straight into our internal channel. And we tag Devin and say, hey, please fix this."
+        },
+        {
+          "timestamp": "03:48",
+          "text": "Devin immediately comes up, shows up at PR. But then also sends back a video with the fix and proof."
+        },
+        {
+          "timestamp": "03:57",
+          "text": "And this makes our lives so much easier because I I literally don't have to leave Slack for most of my work."
+        },
+        {
+          "timestamp": "04:02",
+          "text": "We've abstracted away all of the development to be based on evidence, videos, and I can just send the proof that the fix is ready right back to the customer without having to open an IDE or even GitHub most of the time."
+        },
+        {
+          "timestamp": "04:14",
+          "text": "So this is kind of the end goal you want to reach which is a point where you can do your entire development life cycle without opening up an IDE or without opening up a single coding agent."
+        }
+      ],
+      "alignment_note": "The speaker points to the 4-step list on the left and the Slack video attachments showing 'BEFORE Reported by customer' vs 'AFTER Proof from Devin'."
+    },
+    {
+      "scene_index": 7,
+      "start_time": "04:24",
+      "end_time": "06:33",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Building an Agent-Testable Codebase",
+      "visual_summary": "4-part architectural breakdown showing: 1) Transition from live cloud testing (AWS, live staging DB) to running everything isolated in a single local VM with Docker Compose, 2) Hourly VM snapshots auto-rebuilt from scratch with Devins repairing failed builds, 3) Self-maintaining testing skills in SKILL.md.",
+      "ocr_details": [
+        "Building an Agent-Testable Codebase",
+        "Before Testing against live services",
+        "After Everything on one VM",
+        "Hourly VM snapshots Devins repair failed builds",
+        "Testing skills Devins fix and maintain them",
+        "AWS",
+        "VM",
+        "docker compose",
+        "Application",
+        "SKILL.md",
+        "fix",
+        "run"
+      ],
+      "structured_reconstruction": "flowchart TD\n    subgraph Migration [1. Infrastructure Migration]\n        Before[Before: Cloud Deployments, Staging DB, Live Servers] --> After[After: Docker Compose in single isolated VM]\n    end\n    subgraph RebuildLoop [2. Hourly VM Snapshots]\n        HourlyPull[Hourly Codebase Pull] --> Rebuild[Rebuild VM from scratch]\n        Rebuild -->|Build Failure| Repair[Devin automatically fixes snapshot]\n    end\n    subgraph SkillLoop [3. Testing Skills]\n        SKILL[SKILL.md Testing Protocol] --> Run[Devin runs tests]\n        Run -->|Code Changes| Fix[Devin self-updates SKILL.md]\n    end",
+      "spoken_segments": [
+        {
+          "timestamp": "04:24",
+          "text": "But to get to this point, there's a lot of infrastructure we had to change underneath. And so this is the hard part that really every engineering team has to do if they want to get to that point. It's not just you purchase a coding agent, you got to go change the way you build."
+        },
+        {
+          "timestamp": "04:40",
+          "text": "So before, when we tested our applications, we be testing them against cloud deployments. We'd have a staging environment, connect to a staging database, connect to live servers. And then we'd have our engineers manually go click through and verify that the flows work end to end."
+        },
+        {
+          "timestamp": "04:56",
+          "text": "We did a big migration to move every service to be able to run locally with Docker compose. We've made it so every third party service, we have mocked versions to be able to run locally. And these can all run inside a single virtual machine that every Devon has access to."
+        },
+        {
+          "timestamp": "05:08",
+          "text": "And every code agent in our company now does not need to touch any live services at all to test their changes. They, in fact, these VMs, we rebuild them every hour at the company. Every hour we pull the latest version of the code, we rebuild the entire codebase from scratch to be able to run very quickly and easily from scratch."
+        },
+        {
+          "timestamp": "05:27",
+          "text": "Um and if these builds ever fail because your codebase is rapidly changing. Uh we also have Devon be the first response there. And they're always immediately fixing these VM snapshots."
+        },
+        {
+          "timestamp": "05:47",
+          "text": "Um and by the way, these agents, you need to teach them how to test your codebase as well. But the benefit of using cloud coding agents is that they can self maintain their training loops. So that last section there on testing. Devin will write its own skills for how to test our codebase."
+        },
+        {
+          "timestamp": "06:10",
+          "text": "So the end result of this is literally people do not need to open their laptops anymore to test any code changes. In fact, several engineers at Cognition have already moved to using iPads for the development process."
+        }
+      ],
+      "alignment_note": "The speaker walks through each panel of the slide: moving from AWS live services to isolated Docker Compose VMs, hourly VM snapshot rebuilds, and automated skill files (SKILL.md)."
+    },
+    {
+      "scene_index": 8,
+      "start_time": "06:33",
+      "end_time": "07:04",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Agent Testing of Multi-Player Setups",
+      "visual_summary": "Demonstration showing Devin testing multi-user Zoom voice calls inside a VM, playing spoken audio via virtual audio routing (Blackhole 2ch) between two simulated accounts.",
+      "ocr_details": [
+        "Agent Testing of Multi-Player Setups",
+        "One spoken phrase, speaker Mac to Devin",
+        "BlackHole 2ch",
+        "Zoom Meeting",
+        "Devin audio test",
+        "Text: Hi Devin, my name is Walden. What is the capital of Spain?",
+        "Voice audio route between accounts inside single VM"
+      ],
+      "structured_reconstruction": "// Audio routing setup inside VM for multiplayer voice testing\n{\n  \"audio_driver\": \"BlackHole 2ch\",\n  \"participants\": [\"Account_A (Devin)\", \"Account_B (Devin)\"],\n  \"meeting_platform\": \"Zoom\",\n  \"test_sequence\": [\n    \"Account_A speaks audio memo\",\n    \"Route audio via BlackHole 2ch to Account_B\",\n    \"Account_B transcribes audio and verifies response accuracy\"\n  ]\n}",
+      "spoken_segments": [
+        {
+          "timestamp": "06:33",
+          "text": "I've showed some basic versions of things you can test. We've also tested advanced multiplayer setups which is really cool."
+        },
+        {
+          "timestamp": "06:42",
+          "text": "We've oftentimes when we were developing, Devin's ability to join voice in Zoom calls. We actually had Devin, when it tests, create multiple accounts, have them join the same Zoom call, all from within their one VM, and send voice memos back and forth to make sure that the functionality is working."
+        },
+        {
+          "timestamp": "06:58",
+          "text": "So you can do quite advanced setups if you really push the limits of your codebase."
+        }
+      ],
+      "alignment_note": "The speaker highlights the two Zoom participant windows on screen showing simulated users communicating via BlackHole 2ch virtual audio."
+    },
+    {
+      "scene_index": 9,
+      "start_time": "07:04",
+      "end_time": "08:00",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Recursive Self-Improvement for Agents",
+      "visual_summary": "Diagram showing an Analyzer node parsing thousands of Devin development sessions (e.g., 1,309 to 1,355 sessions) to automatically identify bottlenecks, cut CI times, fix flaky tests, and generate reusable testing skills.",
+      "ocr_details": [
+        "Recursive Self-Improvement for Agents",
+        "DEVIN SESSION ANALYSIS",
+        "1,355 sessions analyzed",
+        "Analyzer",
+        "WHAT DEVIN FOUND AND CHANGED",
+        "9 min -> 40 s (Setup Node on Nixos Docker)",
+        "-18% cost (Sessions re-run full CI on every small edit -> tests scoped to the VP)",
+        "0 retries (One flaky side suite retried 0x/week -> root cause fixed)",
+        "-31% test time (Login by computer use repeated in 80% of test runs -> saved as a skill)"
+      ],
+      "structured_reconstruction": "flowchart LR\n    Sessions[1,355 Devin Sessions] --> Analyzer[Analyzer Agent]\n    Analyzer --> Optimizations\n    subgraph Optimizations [Discovered & Executed Changes]\n        C1[Setup Node on NixOS Docker: 9 min -> 40 s]\n        C2[Scoped CI test suite: -18% cost]\n        C3[Root caused flaky suite: 0 retries]\n        C4[Saved login flow as skill: -31% test time]\n    end",
+      "spoken_segments": [
+        {
+          "timestamp": "07:04",
+          "text": "Um, and it actually on top of all of this, you know, you obviously want recursive self-improvement. I think people think about this from the model sense quite a lot."
+        },
+        {
+          "timestamp": "07:13",
+          "text": "But actually, if you think about it, every single line of code that's being written, every single PR that's being generated, every decision, if you have a cloud agent set up, that's all tracked across your entire codebase."
+        },
+        {
+          "timestamp": "07:25",
+          "text": "So there's no reason why you shouldn't also be able to run agents on top of that, do the data analysis and figure out, where are we wasting time, where are we wasting tokens?"
+        },
+        {
+          "timestamp": "07:37",
+          "text": "And so we have a channel where Devin every day posts ideas about, hey, if we change our node setup, we can say shave like a minute off of our CI. If we change this lint script, we can like catch 20% more of these bugs before they ever hit AI code review."
+        },
+        {
+          "timestamp": "07:51",
+          "text": "Um, and this has actually been a huge unlock where you can just set up these systems and the agents will go and optimize your software factory for you."
+        }
+      ],
+      "alignment_note": "The speaker points to the Analyzer node in the center node cluster and reads through the four specific factory optimization callout boxes on the right."
+    },
+    {
+      "scene_index": 10,
+      "start_time": "08:00",
+      "end_time": "08:24",
+      "visual_type": "SLIDE",
+      "screen_title": "We Give Agents Jobs, not Tasks",
+      "visual_summary": "Title slide introducing a shift in engineering strategy: moving from prompting agents with small discrete tasks to giving them long-running, metric-driven autonomous jobs.",
+      "ocr_details": [
+        "Cognition",
+        "We Give Agents Jobs, not Tasks"
+      ],
+      "structured_reconstruction": "Section Title: We Give Agents Jobs, not Tasks",
+      "spoken_segments": [
+        {
+          "timestamp": "08:00",
+          "text": "Um, this has been really exciting. One of the things that I don't hear people talking about a lot, but I think it's really where things are going next is moving from the world where you're giving tasks to your agents to giving jobs to your agents."
+        },
+        {
+          "timestamp": "08:11",
+          "text": "And this is a bit of a paradigm shift. You you really have to start treating these things like coworkers. So what does giving a job to an agent look like?"
+        }
+      ],
+      "alignment_note": "Transition slide emphasizing the paradigm shift from task-level prompting to outcome-based agent jobs."
+    },
+    {
+      "scene_index": 11,
+      "start_time": "08:24",
+      "end_time": "09:50",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "From delegating tasks to delegating outcomes",
+      "visual_summary": "Architecture diagram displaying the 4-stage job loop: 1) Human expresses desire ('Make our P99 endpoint latency faster'), 2) Devin defines goals & KPIs (840ms -> 500ms, 5,000 ACUs approved), 3) Devin scans codebase & creates 14 issues, 4) Devin continuously monitors & reports progress via Slack mobile alerts.",
+      "ocr_details": [
+        "From delegating tasks to delegating outcomes",
+        "Human: express a desire",
+        "Walden: Make our P99 endpoint latency faster.",
+        "Started Devin",
+        "Devin defines goals and KPIs",
+        "From 840ms -> 500ms",
+        "5,000 ACUs approved",
+        "Devin scans and creates tasks",
+        "14 issues",
+        "Batch order lookups",
+        "Add missing indexes",
+        "Alert if P99 > 1s",
+        "Weekly report",
+        "Devin monitors and reports",
+        "P99 is down 65%. No regressions."
+      ],
+      "structured_reconstruction": "flowchart LR\n    Stage1[Human: Express a desire\n'Make our P99 endpoint latency faster'] --> Stage2[Devin defines goals & KPIs\nFrom 840ms -> 500ms | 5,000 ACUs approved]\n    Stage2 --> Stage3[Devin scans & creates tasks\n14 issues: Batch order lookups, Add indexes, Alerts]\n    Stage3 --> Stage4[Devin monitors & reports\nSlack Mobile Alert: P99 down 65%]",
+      "spoken_segments": [
+        {
+          "timestamp": "08:24",
+          "text": "Imagine I care about backend performance. Really this is what the development flow the future should look like. You should send to your agent, hey, I want to improve P99 latency of my application."
+        },
+        {
+          "timestamp": "08:35",
+          "text": "Instead of you telling it what to do to do that, it should say, okay, P99 latency. Let me add the telemetry to figure out where our P99 latency is today."
+        },
+        {
+          "timestamp": "08:45",
+          "text": "Let me set up alerts so I can figure out where we need to be in the future."
+        },
+        {
+          "timestamp": "08:52",
+          "text": "Let me go break down every single task we need to do to be able to move this latency, let me create Datadog alerts, let me create weekly reports in Slack, and let me send you updates on your phone every day on here's where P99 latency is, and here's how much it's improved."
+        },
+        {
+          "timestamp": "09:05",
+          "text": "This is fundamentally the type of systems that we encourage all of our engineers to be building a cognition. We don't even we don't even want you to be prompting your agents most of the time."
+        },
+        {
+          "timestamp": "09:14",
+          "text": "We want you to just be giving your agent goals that they can work toward over long durations of time. And anything in your company that you think isn't measurable, find a way to measure it."
+        }
+      ],
+      "alignment_note": "The speaker points across the 4 stages from left to right, referencing the initial latency prompt through to the automated Slack mobile report."
+    },
+    {
+      "scene_index": 12,
+      "start_time": "09:50",
+      "end_time": "11:05",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Example 1: 2.8x TPM on NVIDIA Vera Rubins",
+      "visual_summary": "Benchmark timeline chart displaying output tokens per minute per GPU (FCI.1 agentic workload on an 8-GPU pair) rising to 27,336 TPM over one week, surpassing GB300 best (17,185) and GB200 best (9,471). A table lists the 8 autonomous GPU optimization commits made by Devin.",
+      "ocr_details": [
+        "Example 1: 2.8x TPM on NVIDIA Vera Rubins",
+        "OUTPUT TOKENS/MIN PR GPU (FCI.1 AGENTIC WORKLOAD, 8-GPU PAIR)",
+        "27,336",
+        "GB300 best (17,185)",
+        "GB200 best (9,471)",
+        "WHAT DEVIN CHANGED",
+        "As shipped (starting point)",
+        "Merged GPU-to-GPU steps +15%",
+        "Batched draft-model guesses +12%",
+        "Grouped incoming prompts +20%",
+        "Pre-recorded GPU tasks +9%",
+        "More conversations at once (72) +9%",
+        "More memory, less waiting (96) +8%",
+        "Faster memory clock +16%",
+        "Automated tuning (120) +8%",
+        "Sep 18",
+        "Sep 20",
+        "Sep 22",
+        "Sep 24",
+        "Sep 26"
+      ],
+      "structured_reconstruction": "| Optimization Step | Improvement | Impact |\n| :--- | :--- | :--- |\n| As shipped (starting point) | Baseline | Baseline |\n| Merged GPU-to-GPU steps | +15% | Throughput increase |\n| Batched draft-model guesses | +12% | Latency reduction |\n| Grouped incoming prompts | +20% | Efficiency gain |\n| Pre-recorded GPU tasks | +9% | Execution speedup |\n| More conversations at once (72) | +9% | Parallelism |\n| More memory, less waiting (96) | +8% | Buffer expansion |\n| Faster memory clock | +16% | Hardware clocking |\n| Automated tuning (120) | +8% | Final tuning |\n| **Final Peak TPM** | **27,336** | **2.8x over GB200/GB300** |",
+      "spoken_segments": [
+        {
+          "timestamp": "09:50",
+          "text": "So, a great example of this is inference latency. At cognition, we're lucky to be the first receivers of Nvidia's new class of Vero Reuben GPUs."
+        },
+        {
+          "timestamp": "09:59",
+          "text": "Kernels were not built for these GPUs or we received them. So we had to from scratch figure out how do we build our own inferrence stack on top of these this new hardware that's coming out."
+        },
+        {
+          "timestamp": "10:09",
+          "text": "And agents have allowed us to do this in a way that is much more efficient than before. So, we just tell it, hey, we care about the throughput or TPM of these GPUs. Go figure out how to push that to its limits."
+        },
+        {
+          "timestamp": "10:22",
+          "text": "And over the course of what is about I guess here like a week. Um the agent was able to go we we allocated a a permanent set of GPUs to work on. It was able to go find different strategies, test them."
+        },
+        {
+          "timestamp": "10:35",
+          "text": "Uh the strategies that it found worked best it would send to a human engineer for final approval. But basically there's eight or nine different things that were roughly discovered via just giving these agents these high-level goals and we were able to push uh the throughput on these new NVidia Rubin GPUs from what was worse than the new GB300s to what is now significantly better than the previous class of GB300 GPUs."
+        }
+      ],
+      "alignment_note": "The speaker points to the benchmark curve rising above the GB300 (17,185) line up to 27,336 TPM and references the list of 8 changes engineered by Devin."
+    },
+    {
+      "scene_index": 13,
+      "start_time": "11:05",
+      "end_time": "12:15",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Example 2: Android App From Scratch",
+      "visual_summary": "Architecture slide outlining how Devin built an Android app from scratch by using the existing iOS app as a visual/functional blueprint and listening to Slack channels for bug reports and user feedback.",
+      "ocr_details": [
+        "Example 2: Android App From Scratch",
+        "iOS -> Auto-sync iOS Features -> Android",
+        "Monitors Slack channel for bug reports"
+      ],
+      "structured_reconstruction": "flowchart LR\n    iOS[iOS Application Blueprint] -->|Auto-sync iOS Features| Devin[Devin Agent Engine]\n    Slack[Slack Channel Bug Reports] -->|User Feedback Hooks| Devin\n    Devin --> Android[Android Native App (Kotlin)]",
+      "spoken_segments": [
+        {
+          "timestamp": "11:05",
+          "text": "Another example that I like to share with folks. We we are a fairly small engineering team. It means we do not have often times the bandwidth to fully staff things that we might want to do like our Android application."
+        },
+        {
+          "timestamp": "11:21",
+          "text": "But the other day, one of our engineers in our team Samuel. He had this brilliant idea. He said okay look, we have a team of people working on building a great iOS application. Can't we just use that as a blueprint for our Android application and tell Devon hey go maintain parity with from our iOS application to our Android application end to end."
+        },
+        {
+          "timestamp": "11:45",
+          "text": "But it wasn't just hey one Devon session to go do all this. He said setup permanent hooks against our codebase to monitor the iOS application. Uh you know, go listen to the Slack channels for user feedback about our applications, and then go recursively improve our application."
+        }
+      ],
+      "alignment_note": "The speaker explains the two inputs shown on screen: feature extraction from the iOS codebase on the left and automated Slack bug monitor hooks on the right."
+    },
+    {
+      "scene_index": 14,
+      "start_time": "12:15",
+      "end_time": "12:55",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "44 days later, Devin has an Android app.",
+      "visual_summary": "Time-lapse sequence recording 44 days of Devin building the Android application, updating daily PR totals (reaching 1,134 PRs), daily merged PR counts (up to 57 PRs/day), and tracking minimal human messages from engineer Samyok.",
+      "ocr_details": [
+        "44 days later, Devin has an Android app.",
+        "Day 6 Oct 4, 2026 | Pull requests so far: 170 | Merged that day: 30 | Messages from Samyok: 29",
+        "Day 16 Oct 14, 2026 | Pull requests so far: 429 | Merged that day: 37 | Messages from Samyok: 1",
+        "Day 26 Oct 24, 2026 | Pull requests so far: 749 | Merged that day: 57 | Messages from Samyok: 0",
+        "Day 36 Nov 3, 2026 | Pull requests so far: 1,083 | Merged that day: 13 | Messages from Samyok: 0",
+        "Day 44 Nov 11, 2026 | Pull requests so far: 1,134 | Merged that day: 1 | Messages from Samyok: 1"
+      ],
+      "structured_reconstruction": "| Day | Date | Total PRs | PRs Merged That Day | Human Messages (Samyok) |\n| :--- | :--- | :--- | :--- | :--- |\n| Day 6 | Oct 4, 2026 | 170 | 30 | 29 |\n| Day 16 | Oct 14, 2026 | 429 | 37 | 1 |\n| Day 26 | Oct 24, 2026 | 749 | 57 | 0 |\n| Day 36 | Nov 3, 2026 | 1,083 | 13 | 0 |\n| Day 44 | Nov 11, 2026 | 1,134 | 1 | 1 |",
+      "spoken_segments": [
+        {
+          "timestamp": "12:18",
+          "text": "So we really just gave our agent this one high-level prompt, which is, hey, go manage the entire Android application."
+        },
+        {
+          "timestamp": "12:26",
+          "text": "Um and over the course of 44 days, uh we have a working application. which we'll be putting out soon. But as a time-lapse, most days, there's not a single human message going to the sage and working on it."
+        },
+        {
+          "timestamp": "12:38",
+          "text": "And on those days, you know, it's merging upward of like 40, 50 PRs a day. All this is being live QA tested against the iOS application, pixel for pixel, uh testing whatever, you know, escalating only the most important decisions to a human at the end of the day."
+        }
+      ],
+      "alignment_note": "The time-lapse steps through key calendar milestones while the speaker points out days where 50+ PRs were merged with 0 human messages required."
+    },
+    {
+      "scene_index": 15,
+      "start_time": "12:55",
+      "end_time": "13:08",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "It showed its work in Slack.",
+      "visual_summary": "Grid of visual Slack test evidence screenshots alongside final repository stats for the Android project built by Devin.",
+      "ocr_details": [
+        "It showed its work in Slack.",
+        "344,651 lines of Kotlin",
+        "1,134 pull requests merged",
+        "2,841 screenshot tests",
+        "1,217 tickets closed",
+        "856 Devin sessions that shipped Android code",
+        "20.3% of commits written by Devin sessions"
+      ],
+      "structured_reconstruction": "| Repository Metric | Quantity |\n| :--- | :--- |\n| Lines of Kotlin | 344,651 |\n| Pull Requests Merged | 1,134 |\n| Screenshot Tests | 2,841 |\n| Tickets Closed | 1,217 |\n| Devin Sessions Shipping Code | 856 |\n| Commits Written by Devin | 20.3% |",
+      "spoken_segments": [
+        {
+          "timestamp": "12:56",
+          "text": "And most of the time our engineers don't even need to open dev and there is from slack looking at the recordings that it sends back to them."
+        }
+      ],
+      "alignment_note": "The speaker highlights the proof-of-work video screenshots posted to Slack and the summary code volume stats."
+    },
+    {
+      "scene_index": 16,
+      "start_time": "13:08",
+      "end_time": "13:20",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "What it took from Samyok",
+      "visual_summary": "Bar graph breaking down human input over the 44-day build: 183 human messages total, 1,961 words written, 22 days with zero human intervention, resulting in 6 merged PRs per human message.",
+      "ocr_details": [
+        "What it took from Samyok",
+        "183 messages",
+        "1,961 words",
+        "22 days without a single message",
+        "Six pull requests merged for every message he sent.",
+        "Quote: This is all just devin",
+        "Quote: be more ambitious",
+        "Quote: make sure all the sessions are ultra"
+      ],
+      "structured_reconstruction": "| Human Input Metric | Count |\n| :--- | :--- |\n| Total Messages Sent | 183 |\n| Total Words Written | 1,961 |\n| Zero-Message Days | 22 |\n| PRs Merged per Message | 6 |\n\nHuman Guidance Quotes:\n- \"This is all just devin\"\n- \"be more ambitious\"\n- \"make sure all the sessions are ultra\"",
+      "spoken_segments": [
+        {
+          "timestamp": "13:08",
+          "text": "So in the end, the human is barely doing anything in this loop. This is how many messages a human actually had to send to our agent in this entire process."
+        }
+      ],
+      "alignment_note": "The speaker points to the bar graph showing human message frequency collapsing to zero for nearly half of the 44 days."
+    },
+    {
+      "scene_index": 17,
+      "start_time": "13:20",
+      "end_time": "13:26",
+      "visual_type": "SLIDE",
+      "screen_title": "Devin for Android",
+      "visual_summary": "Product announcement slide stating that 999 of 1,134 pull requests were merged with zero human approval, announcing open testing on Google Play.",
+      "ocr_details": [
+        "Devin for Android",
+        "999 of 1,134 pull requests merged with no human approval.",
+        "In open testing on Google Play.",
+        "Devin"
+      ],
+      "structured_reconstruction": "Announcement: Devin for Android\n- 999 of 1,134 PRs merged with 0 human approval\n- Status: In open testing on Google Play",
+      "spoken_segments": [
+        {
+          "timestamp": "13:19",
+          "text": "Um, yeah, and it's not a slop, it's not a slop application. Uh this is actually something that we will be going live with very soon."
+        }
+      ],
+      "alignment_note": "Slide displaying the Google Play release notice for the Android application built autonomously by Devin."
+    },
+    {
+      "scene_index": 18,
+      "start_time": "13:26",
+      "end_time": "14:07",
+      "visual_type": "SPEAKER_ONLY",
+      "screen_title": "It's time to be ambitious.",
+      "visual_summary": "Walden Yan concludes his presentation on stage in front of the final slide 'It's time to be ambitious.', followed by the AI Engineer Code Summit closing title card.",
+      "ocr_details": [
+        "Cognition",
+        "It's time to be ambitious.",
+        "AI Engineer Code Summit",
+        "PRESENTED BY Google DeepMind"
+      ],
+      "structured_reconstruction": "Closing Slide: It's time to be ambitious.",
+      "spoken_segments": [
+        {
+          "timestamp": "13:29",
+          "text": "So cool. Uh that's actually all I had. Um I think the end message from all of this is, if you set up the loop three agents correctly, you can do some pretty incredible stuff. So, I think really most teams are limited by the amount of ambition they have. So, it's time to be ambitious. Thank you."
+        }
+      ],
+      "alignment_note": "The speaker gives his concluding remarks and thanks the audience as the closing slide and event branding display."
+    }
+  ]
+}
