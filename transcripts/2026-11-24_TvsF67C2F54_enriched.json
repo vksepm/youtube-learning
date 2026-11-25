@@ -1,0 +1,1311 @@
+{
+  "estimated_duration_seconds": 1349,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:49",
+      "visual_type": "SLIDE",
+      "screen_title": "How do you trust millions of lines of code?",
+      "visual_summary": "Title slide for the keynote presentation featuring Jared Sumner, Founder of Bun & Claude Code at Anthropic.",
+      "ocr_details": [
+        "How do you trust millions of lines of code?",
+        "Building a JavaScript compiler with Claude",
+        "Jared Sumner",
+        "Bun, Claude Code",
+        "ANTHROPIC"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "00:01",
+          "text": "Hello everyone."
+        },
+        {
+          "timestamp": "00:14",
+          "text": "My name is Jared. Uh, I'm the creator of Bun, uh and I work at Anthropic."
+        },
+        {
+          "timestamp": "00:21",
+          "text": "Um, uh Bun is the JavaScript runtime that powers Cloud code. And recently I merged a several million line of code PR, um, to add an ahead-of-time compiler uh to to Bun"
+        }
+      ],
+      "alignment_note": "Introduction and overview of building an AOT compiler in Bun using Claude Code."
+    },
+    {
+      "scene_index": 2,
+      "start_time": "00:49",
+      "end_time": "01:20",
+      "visual_type": "SLIDE",
+      "screen_title": "What can models do today?",
+      "visual_summary": "Timeline slide showing the evolution of what AI models can do from 2021 to 2026.",
+      "ocr_details": [
+        "What can models do today?",
+        "2021 > autocomplete a line of code",
+        "2023 > write some tests",
+        "2025 > fix this bug and open a PR",
+        "2026 summer > rewrite Bun in Rust",
+        "2026 fall > build an ahead-of-time JavaScript compiler"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "01:00",
+          "text": "And I think one of the challenges right now with large projects is like how do you actually confidently ship a mill like millions of lines of code written by agents."
+        }
+      ],
+      "alignment_note": "Speaker discusses the progression of agent capabilities over the years leading up to building an AOT compiler."
+    },
+    {
+      "scene_index": 3,
+      "start_time": "01:20",
+      "end_time": "01:43",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal prompt showing the initial instruction given to Claude Code on Sep 27.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Sep 27, 12:26 AM",
+        "> Build sound types and AoT into bun and webkit. ... Give Claude Code Go-like performance and memory usage. Modify Webkit freely to do so. Be ambitious!"
+      ],
+      "structured_reconstruction": "Build sound types and AoT into bun and webkit. ... Give Claude Code Go-like performance and memory usage. Modify Webkit freely to do so. Be ambitious!",
+      "spoken_segments": [
+        {
+          "timestamp": "01:21",
+          "text": "This was like the opening prompt after some discussion, with it it was like basically uh we need to make cloud code use a lot less memory and uh and faster"
+        }
+      ],
+      "alignment_note": "Showing the exact prompt given to kick off the project."
+    },
+    {
+      "scene_index": 4,
+      "start_time": "01:43",
+      "end_time": "02:16",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "28,547 agents",
+      "visual_summary": "Grid graphic representing 28,547 agents where each dot is an agent and each color is a compiler version.",
+      "ocr_details": [
+        "28,547 agents",
+        "Each dot is an agent. Each color is a compiler."
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "01:48",
+          "text": "um and it's been a little bit over a month. um uh this is this compiler has gone through five rewrites."
+        }
+      ],
+      "alignment_note": "Visualizing the massive scale of agents and compiler iterations."
+    },
+    {
+      "scene_index": 5,
+      "start_time": "02:16",
+      "end_time": "02:40",
+      "visual_type": "SLIDE",
+      "screen_title": "Design for testability from the start",
+      "visual_summary": "Key principle slide highlighting testability in a way the model can't game.",
+      "ocr_details": [
+        "Design for testability from the start",
+        "In a way the model can't game"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "02:20",
+          "text": "This is kind of the way I think about a project like this is like you're really constrained by how you test that the code works."
+        }
+      ],
+      "alignment_note": "Emphasizing the importance of testability and verification."
+    },
+    {
+      "scene_index": 6,
+      "start_time": "02:40",
+      "end_time": "03:26",
+      "visual_type": "SLIDE",
+      "screen_title": "Why is JavaScript slow?",
+      "visual_summary": "Two-column comparison explaining why JavaScript is slow: 1. The JIT (47% CPU time compiling), 2. Threads (1 of 16 cores runs your JavaScript).",
+      "ocr_details": [
+        "Why is JavaScript slow?",
+        "1. The JIT",
+        "47% of the CPU time is compiling",
+        "2. Threads",
+        "1 of 16 cores runs your JavaScript",
+        "Type-checking Effect with TypeScript 6 in Bun's JIT, on a MacBook Pro."
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "02:50",
+          "text": "and it's because uh for a typical JavaScript based application, rough roughly half of like the the CPU time is just spent compiling code on demand."
+        }
+      ],
+      "alignment_note": "Breaking down JIT overhead and single-threaded nature of JS."
+    },
+    {
+      "scene_index": 7,
+      "start_time": "03:26",
+      "end_time": "03:36",
+      "visual_type": "SLIDE",
+      "screen_title": "What's an ahead-of-time compiler?",
+      "visual_summary": "Diagram contrasting Just-in-time (JIT) compilation interleaving compilation and running, versus Ahead-of-time (AOT) compilation which compiles completely before running.",
+      "ocr_details": [
+        "What's an ahead-of-time compiler?",
+        "Just-in-time (JIT): compiles while your code runs",
+        "Ahead-of-time (AOT): compiles before your code runs",
+        "Compile -> Run",
+        "compiling",
+        "running your code"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "03:30",
+          "text": "This is sort of the difference between a JIT and AOT is that, uh, you compile before whereas with the JIT, you compile as you go along."
+        }
+      ],
+      "alignment_note": "Explaining the mechanical difference between JIT and AOT execution models."
+    },
+    {
+      "scene_index": 8,
+      "start_time": "03:36",
+      "end_time": "03:57",
+      "visual_type": "SLIDE",
+      "screen_title": "Claude Code in the cloud",
+      "visual_summary": "Grid of terminal/server icons illustrating that every cloud session compiles the same code (430 ms and 158 MB to start Claude Code, Linux x64, in a JIT).",
+      "ocr_details": [
+        "Claude Code in the cloud",
+        "Every session compiles the same code",
+        "430 ms and 158 MB to start Claude Code, Linux x64, in a JIT."
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "03:40",
+          "text": "This is particularly important for something like Cloud Code where when using like the Cloud Code, like iOS app where the CPU time is a lot"
+        }
+      ],
+      "alignment_note": "Highlighting redundancy and overhead in cloud-based container execution."
+    },
+    {
+      "scene_index": 9,
+      "start_time": "03:57",
+      "end_time": "04:15",
+      "visual_type": "SLIDE",
+      "screen_title": "We rewrote Bun in Rust. Why not Claude Code?",
+      "visual_summary": "Comparison table showing Bun's Zig to Rust rewrite took 11 days, while rewriting Claude Code from TypeScript to Rust was marked with a question mark.",
+      "ocr_details": [
+        "We rewrote Bun in Rust. Why not Claude Code?",
+        "Bun",
+        "Zig -> Rust",
+        "11 days",
+        "Claude Code",
+        "TypeScript -> Rust",
+        "?"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "04:00",
+          "text": "So we talked a lot about like like should we rewrite cloud code in rust?"
+        },
+        {
+          "timestamp": "04:12",
+          "text": "And we decided not to."
+        }
+      ],
+      "alignment_note": "Comparing Bun's successful Rust rewrite with why Claude Code couldn't easily be rewritten in Rust."
+    },
+    {
+      "scene_index": 10,
+      "start_time": "04:15",
+      "end_time": "04:42",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Bun's tests run bun",
+      "visual_summary": "TypeScript code snippet showing how Bun's tests spawn bun commands and assert exit codes.",
+      "ocr_details": [
+        "Bun's tests run bun",
+        "test(\"bun install\", async () => {",
+        "  const proc = Bun.spawn([\"bun\", \"install\"]);",
+        "  expect(await proc.exited).toBe(0);",
+        "})",
+        "Bun in Zig (pass)",
+        "Bun in Rust (pass)",
+        "Same tests",
+        "0 tests skipped or deleted"
+      ],
+      "structured_reconstruction": "test(\"bun install\", async () => {\n  const proc = Bun.spawn([\"bun\", \"install\"]);\n  expect(await proc.exited).toBe(0);\n})",
+      "spoken_segments": [
+        {
+          "timestamp": "04:20",
+          "text": "Because the tests were written in a language that's independent of the one it runs in. So, because all the tests were written in TypeScript, um, we could run the tests on both the Zig version and the Rust version."
+        }
+      ],
+      "alignment_note": "Showing why Bun's test suite made language porting safe and reliable."
+    },
+    {
+      "scene_index": 11,
+      "start_time": "04:42",
+      "end_time": "05:01",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Claude Code's tests import its source code",
+      "visual_summary": "TypeScript code snippet showing Claude Code tests importing source files directly, making language migration risky.",
+      "ocr_details": [
+        "Claude Code's tests import its source code",
+        "import { wrapText } from \"../src/wrapText\";",
+        "test(\"wraps long lines\", () => {",
+        "  expect(wrapText(\"hello world\", 5)).toEqual(2);",
+        "})",
+        "None of these tests can run on a Rust version",
+        "Rewriting the test suite is risky"
+      ],
+      "structured_reconstruction": "import { wrapText } from \"../src/wrapText\";\n\ntest(\"wraps long lines\", () => {\n  expect(wrapText(\"hello world\", 5)).toEqual(2);\n})",
+      "spoken_segments": [
+        {
+          "timestamp": "04:42",
+          "text": "Whereas for cloud code, uh, we, like cloud code's tests are written in TypeScript. So, we would have to port CloudCode's test suite. And, as soon as you're like rewriting the tests, then you can't really trust the tests anymore."
+        }
+      ],
+      "alignment_note": "Demonstrating the tight coupling between source code and test imports in Cloud Code."
+    },
+    {
+      "scene_index": 12,
+      "start_time": "05:01",
+      "end_time": "05:06",
+      "visual_type": "SLIDE",
+      "screen_title": "What if we just made JavaScript faster?",
+      "visual_summary": "Slide featuring the core question and command: bun compile app.ts",
+      "ocr_details": [
+        "What if we just made JavaScript faster?",
+        "$ bun compile app.ts"
+      ],
+      "structured_reconstruction": "$ bun compile app.ts",
+      "spoken_segments": [
+        {
+          "timestamp": "04:58",
+          "text": "So instead. what if we just make JavaScript faster? So we don't have to rewrite it in rust."
+        }
+      ],
+      "alignment_note": "Pivoting strategy from rewriting in Rust to accelerating JavaScript execution via AOT compilation."
+    },
+    {
+      "scene_index": 13,
+      "start_time": "05:06",
+      "end_time": "05:14",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Prompt screen showing the goal of achieving Go-like memory usage with sound AoT.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Sep 27, 1:52 PM",
+        "> How do we get Go-like memory usage in claude code with sound AoT? It should be like 30 MB footprint on start instead of like 160 MB"
+      ],
+      "structured_reconstruction": "How do we get Go-like memory usage in claude code with sound AoT? It should be like 30 MB footprint on start instead of like 160 MB",
+      "spoken_segments": [
+        {
+          "timestamp": "05:12",
+          "text": "Um, this was another prompt a little bit later. Um, and the result, is that it actually did uh have JavaScript memory like the memory usage, uh it uses about 4x less memory."
+        }
+      ],
+      "alignment_note": "Showing the target metrics specified in prompt for memory footprint."
+    },
+    {
+      "scene_index": 14,
+      "start_time": "05:14",
+      "end_time": "05:39",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Claude Code starts 2.2x faster and uses 4.4x less memory",
+      "visual_summary": "Performance comparison table between Claude Code in a JIT vs Claude Code with bun compile across Startup time, Memory, CPU time, and Instructions.",
+      "ocr_details": [
+        "Claude Code starts 2.2x faster and uses 4.4x less memory",
+        "Startup time | 194 ms (bun compile) vs 430 ms (JIT) | 2.2x",
+        "Memory | 36 MB vs 158 MB | 4.4x",
+        "CPU time | 0.63 s vs 1.82 s | 2.9x",
+        "Instructions | 1.5 billion vs 6.4 billion | 4.2x",
+        "Claude Code in a JIT",
+        "Claude Code with bun compile",
+        "Linux x64. Memory is at the prompt, CPU time and instructions are for 5 turns."
+      ],
+      "structured_reconstruction": "| Metric | Claude Code (JIT) | Claude Code (bun compile) | Improvement |\n|---|---|---|---|\n| Startup time | 430 ms | 194 ms | 2.2x |\n| Memory | 158 MB | 36 MB | 4.4x |\n| CPU time | 1.82 s | 0.63 s | 2.9x |\n| Instructions | 6.4 billion | 1.5 billion | 4.2x |",
+      "spoken_segments": [
+        {
+          "timestamp": "05:15",
+          "text": "Um, and the result, is that it actually did uh have JavaScript memory like the memory usage, uh it uses about 4x less memory. Um, uh it starts about two times faster."
+        }
+      ],
+      "alignment_note": "Presenting benchmark results proving 2.2x faster startup and 4.4x lower memory usage."
+    },
+    {
+      "scene_index": 15,
+      "start_time": "05:39",
+      "end_time": "06:19",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Type-checking Effect with TypeScript",
+      "visual_summary": "Horizontal bar chart comparing TypeScript execution/compilation times across various runtimes (TypeScript 7 Go, TypeScript 6 + bun compile, Node.js, Bun JIT).",
+      "ocr_details": [
+        "Type-checking Effect with TypeScript",
+        "TypeScript 7 (Go) All threads | 2.4 s",
+        "TypeScript 6 + bun compile One thread | 4.2 s",
+        "TypeScript 7 (Go) One thread | 4.8 s",
+        "TypeScript 6 + Node.js | 13.9 s (3.3x faster)",
+        "TypeScript 6 + Bun's JIT | 14.5 s (3.5x faster)",
+        "Type-checking the same project on the same Linux machine. Development build."
+      ],
+      "structured_reconstruction": "| Configuration | Time | Comparison |\n|---|---|---|\n| TypeScript 7 (Go) All threads | 2.4 s | - |\n| TypeScript 6 + bun compile (1 thread) | 4.2 s | - |\n| TypeScript 7 (Go) (1 thread) | 4.8 s | - |\n| TypeScript 6 + Node.js | 13.9 s | 3.3x faster |\n| TypeScript 6 + Bun's JIT | 14.5 s | 3.5x faster |",
+      "spoken_segments": [
+        {
+          "timestamp": "05:45",
+          "text": "So like it's it's possible that if an interesting thing is like uh like TypeScript 7 rewrote their code by by hand, from JavaScript/TypeScript to go and the single threaded version with it when compiled via Bun compile is now faster than the single threaded TypeScript go port."
+        }
+      ],
+      "alignment_note": "Comparing Bun AOT compilation performance against Go ports and JIT runtimes."
+    },
+    {
+      "scene_index": 16,
+      "start_time": "06:19",
+      "end_time": "06:44",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "What if the types are wrong?",
+      "visual_summary": "Code example illustrating how TypeScript types are treated as predictions rather than guarantees, showing Node.js vs bun compile behavior.",
+      "ocr_details": [
+        "What if the types are wrong?",
+        "function double(n: number) { return n + n }",
+        "double(JSON.parse(\"3\"))",
+        "Node.js: \"33\"",
+        "bun compile: \"33\"",
+        "Types only affect performance"
+      ],
+      "structured_reconstruction": "function double(n: number) {\n  return n + n\n}\ndouble(JSON.parse(\"3\"))",
+      "spoken_segments": [
+        {
+          "timestamp": "06:30",
+          "text": "TypeScript is not types TypeScript types are don't necessarily need to be correct. So it treats types as predictions instead of like trusting them."
+        }
+      ],
+      "alignment_note": "Explaining that types are treated as runtime hints/predictions for performance optimization."
+    },
+    {
+      "scene_index": 17,
+      "start_time": "06:44",
+      "end_time": "07:05",
+      "visual_type": "SLIDE",
+      "screen_title": "Models are really good at writing compilers",
+      "visual_summary": "Statement slide explaining why models excel at writing compilers due to ease of testing.",
+      "ocr_details": [
+        "Models are really good at writing compilers",
+        "Because compilers are really easy to test",
+        "How would you test it?",
+        "Bun in Rust | Claude Code in Rust | bun compile",
+        "Tests: Already there | Rewrite first | Already there",
+        "Compare to: Bun in Zig | Harder | The JIT",
+        "Fuzzing: Every parser | Harder to trust | Any program"
+      ],
+      "structured_reconstruction": "| Approach | Bun in Rust | Claude Code in Rust | bun compile |\n|---|---|---|---|\n| Tests | Already there | Rewrite first | Already there |\n| Compare to | Bun in Zig | Harder | The JIT |\n| Fuzzing | Every parser | Harder to trust | Any program |",
+      "spoken_segments": [
+        {
+          "timestamp": "06:47",
+          "text": "And this kind of problem works really well for models because uh they're just really good at writing compilers."
+        }
+      ],
+      "alignment_note": "Highlighting testability advantages of compiler projects for AI agents."
+    },
+    {
+      "scene_index": 18,
+      "start_time": "07:05",
+      "end_time": "07:39",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Tests that predate this project",
+      "visual_summary": "List of existing test suites that predate the project used to verify correctness.",
+      "ocr_details": [
+        "Tests that predate this project",
+        "Claude Code | 560,000 tests",
+        "test262 | 53,578 tests",
+        "WebKit | 11,852 tests",
+        "Bun | 2,188 test files",
+        "Node.js | 3,656 test files"
+      ],
+      "structured_reconstruction": "| Test Suite | Count |\n|---|---|\n| Claude Code | 560,000 tests |\n| test262 | 53,578 tests |\n| WebKit | 11,852 tests |\n| Bun | 2,188 test files |\n| Node.js | 3,656 test files |",
+      "spoken_segments": [
+        {
+          "timestamp": "07:22",
+          "text": "Now with the compiler, uh we have Bun's existing test suite plus web kids tests plus test 262 plus Cloud codes tests."
+        }
+      ],
+      "alignment_note": "Listing the massive pre-existing test suites leveraged to validate the compiler without writing new tests."
+    },
+    {
+      "scene_index": 19,
+      "start_time": "07:39",
+      "end_time": "07:51",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Any test suite can test the compiler",
+      "visual_summary": "CLI command showing how to run tests in AOT mode.",
+      "ocr_details": [
+        "Any test suite can test the compiler",
+        "$ bun test --aot",
+        "Compiles your tests and the code they test"
+      ],
+      "structured_reconstruction": "$ bun test --aot",
+      "spoken_segments": [
+        {
+          "timestamp": "07:42",
+          "text": "And then we also made it so that way Bun itself the Bun's own test runner could be run in the AOT mode."
+        }
+      ],
+      "alignment_note": "Demonstrating the `--aot` flag for testing compiled test suites."
+    },
+    {
+      "scene_index": 20,
+      "start_time": "07:51",
+      "end_time": "08:14",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "62,858 tests match the JIT",
+      "visual_summary": "Table displaying test pass/refusal/difference statistics across test262, WebKit, Node.js, and Bun.",
+      "ocr_details": [
+        "62,858 tests match the JIT",
+        "Same result | Refused | Different",
+        "test262 | 49,473 | 1,685 | 0",
+        "WebKit | 8,624 | 508 | 8",
+        "Node.js | 2,894 | 81 | 0",
+        "Bun | 1,867 | 15 | 3",
+        "Tests from before this project that pass in the JIT. Most of the refused changes a built-in object. 678 of Node.js's can't run in an executable. A bun that a test starts isn't compiled. Linux."
+      ],
+      "structured_reconstruction": "| Test Suite | Same result | Refused | Different |\n|---|---|---|---|\n| test262 | 49,473 | 1,685 | 0 |\n| WebKit | 8,624 | 508 | 8 |\n| Node.js | 2,894 | 81 | 0 |\n| Bun | 1,867 | 15 | 3 |",
+      "spoken_segments": [
+        {
+          "timestamp": "07:58",
+          "text": "Uh, and like the we have one breaking change with or really it's two breaking changes with the ahead of time compiler"
+        }
+      ],
+      "alignment_note": "Reviewing test parity results matching JIT execution behavior."
+    },
+    {
+      "scene_index": 21,
+      "start_time": "08:14",
+      "end_time": "08:41",
+      "visual_type": "SLIDE",
+      "screen_title": "Any JavaScript program is a test",
+      "visual_summary": "Diagram showing equality between running via JIT, AOT compiled, and AOT compiled with types removed.",
+      "ocr_details": [
+        "Any JavaScript program is a test",
+        "bun run app.ts -> 6",
+        "bun compile app.ts -> 6",
+        "bun compile app.js (AOT, types removed) -> 6",
+        "The output has to be the same",
+        "CI runs 18,454 programs like this on every pull request"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "08:20",
+          "text": "one with a jit, one with a head of time compiled and one also without the types. And as long as the three of them uh behave the same, then you know that it works"
+        }
+      ],
+      "alignment_note": "Explaining cross-validation between JIT and AOT execution modes in CI."
+    },
+    {
+      "scene_index": 22,
+      "start_time": "08:41",
+      "end_time": "08:57",
+      "visual_type": "SLIDE",
+      "screen_title": "Our own fuzzers find most of the bugs",
+      "visual_summary": "Statistics slide on custom fuzzers: 352 generators and 49 million programs tested in 5 days.",
+      "ocr_details": [
+        "Our own fuzzers find most of the bugs",
+        "352 generators (arrays-shifted-during-gc, generator-resume-orders, closures-tested-before-escape, many-live-values, all-microtask-kinds)",
+        "49 million programs in 5 days (callee-reassigned-during-call, fields-never-read-by-name, callbacks-around-awaits, constant-arrays-mutated, atom-tables-and-string-conversion)",
+        "Plus Fuzzilli, Google's fuzzer for JavaScript engines"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "08:42",
+          "text": "And just have Claude like turn out code generators to like fuzz different patterns. And you can catch a lot of bugs that way."
+        }
+      ],
+      "alignment_note": "Highlighting custom fuzzer scale and integration with Fuzzilli."
+    },
+    {
+      "scene_index": 23,
+      "start_time": "08:57",
+      "end_time": "09:12",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "46 days",
+      "visual_summary": "Code churn metrics over 46 days of development: +14,742,060 lines added, -10,160,904 lines deleted.",
+      "ocr_details": [
+        "46 days",
+        "+14,742,060",
+        "-10,160,904",
+        "lines of code",
+        "1.1 million lines of compiler. Most of the rest is tests."
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "09:00",
+          "text": "It was a very large project, this is the biggest I think I've worked on. In terms of like code volume. Most of this is tests."
+        }
+      ],
+      "alignment_note": "Showing the massive code volume and net additions/deletions over 46 days."
+    },
+    {
+      "scene_index": 24,
+      "start_time": "09:12",
+      "end_time": "10:07",
+      "visual_type": "SLIDE",
+      "screen_title": "Three modes of working",
+      "visual_summary": "Diagram outlining three development modes: Large structured batches (1 build), Long-running continuous work (Many builds), Keeping track (The same scorecard, every hour).",
+      "ocr_details": [
+        "Three modes of working",
+        "Large structured batches | 1 build",
+        "Long-running continuous work | Many builds",
+        "Keeping track | The same scorecard, every hour"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "09:18",
+          "text": "you have like batches of like, okay, we need to write a lot of code at once. And then after that initial batch, then it's okay, let's have, let's like fix everything"
+        }
+      ],
+      "alignment_note": "Describing the workflow methodology for managing agent-driven development."
+    },
+    {
+      "scene_index": 25,
+      "start_time": "10:07",
+      "end_time": "10:20",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "5 compilers in 46 days",
+      "visual_summary": "Timeline chart showing the progression of 5 compiler rewrites over 46 days with major drops where rewrites started over.",
+      "ocr_details": [
+        "5 compilers in 46 days",
+        "Sep 27, Oct 18, Nov 2",
+        "Lines of code, without tests. Red lines are where we started over."
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "01:50",
+          "text": "this compiler has gone through five rewrites."
+        },
+        {
+          "timestamp": "10:10",
+          "text": "Red lines are where we started over."
+        }
+      ],
+      "alignment_note": "Reviewing the timeline of 5 complete compiler rewrites."
+    },
+    {
+      "scene_index": 26,
+      "start_time": "10:20",
+      "end_time": "10:52",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Compiler 1: start with bytecode",
+      "visual_summary": "Pipeline diagram for Compiler 1: TypeScript -> JavaScript -> Bytecode -> Guess the types -> Machine code.",
+      "ocr_details": [
+        "Compiler 1: start with bytecode",
+        "TypeScript -> JavaScript -> Bytecode -> Guess the types -> Machine code",
+        "types removed",
+        "1,036 MB (Claude Code (It was 330 MB))",
+        "2% less CPU from using types",
+        "It wasn't much faster than the JIT"
+      ],
+      "structured_reconstruction": "graph LR\n    TypeScript --> JavaScript --> Bytecode --> Guess_the_types --> Machine_code",
+      "spoken_segments": [
+        {
+          "timestamp": "10:20",
+          "text": "The first one was not very good. uh, like cloud code was a gigabyte, um, which is terrible."
+        }
+      ],
+      "alignment_note": "Analyzing the flaws of the first bytecode-based compiler iteration."
+    },
+    {
+      "scene_index": 27,
+      "start_time": "10:52",
+      "end_time": "11:04",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal log showing critique of using bytecode instead of native type inference.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Oct 5, 12:20 AM",
+        "> Why are we doing this through bytecode instead of through the type inference?",
+        "> We did it in bytecode mostly because that's where our compiler already lived, not because it's the better place.",
+        "> this design is still wrong imo"
+      ],
+      "structured_reconstruction": "Why are we doing this through bytecode instead of through the type inference?\nWe did it in bytecode mostly because that's where our compiler already lived, not because it's the better place.\nthis design is still wrong imo",
+      "spoken_segments": [
+        {
+          "timestamp": "10:52",
+          "text": "Why are we doing this through bytecode instead of through the type inference?"
+        }
+      ],
+      "alignment_note": "Critiquing the initial design choice during development."
+    },
+    {
+      "scene_index": 28,
+      "start_time": "11:04",
+      "end_time": "11:21",
+      "visual_type": "SLIDE",
+      "screen_title": "Compiler 3: use the type checker",
+      "visual_summary": "Architecture slide for Compiler 3: TypeScript -> Type checker -> Typed IR -> Machine code, showing 2.2x faster startup and 3.4x less memory.",
+      "ocr_details": [
+        "Compiler 3: use the type checker",
+        "TypeScript -> Type checker -> Typed IR -> Machine code",
+        "2.2x faster startup",
+        "3.4x less memory",
+        "Claude Code, compared to the JIT."
+      ],
+      "structured_reconstruction": "graph LR\n    TypeScript --> Type_checker --> Typed_IR --> Machine_code",
+      "spoken_segments": [
+        {
+          "timestamp": "10:55",
+          "text": "bun check exists for you to use it for type inference... And so we added bun check and then we're like, hey Claude, please use bun check."
+        }
+      ],
+      "alignment_note": "Introducing the transition to using the built-in type checker in Compiler 3."
+    },
+    {
+      "scene_index": 29,
+      "start_time": "11:21",
+      "end_time": "11:44",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Does this program use Bun.Archive?",
+      "visual_summary": "Code snippet and bullet points showing tree-shaking parts of Bun APIs that are unused by checking property names.",
+      "ocr_details": [
+        "Does this program use Bun.Archive?",
+        "--trim removes the parts of Bun you don't use",
+        "split(facts, b\"\\n\").any(|line| line.strip_prefix(b\"program-property\") == Some(condition.name))",
+        "Print every property name in the program to a text file",
+        "Search it for the word \"Archive\""
+      ],
+      "structured_reconstruction": "split(facts, b\"\\n\").any(|line| line.strip_prefix(b\"program-property\") == Some(condition.name))",
+      "spoken_segments": [
+        {
+          "timestamp": "11:30",
+          "text": "And like this used as much as possible from JavaScript core's existing code."
+        }
+      ],
+      "alignment_note": "Explaining how dead code elimination and tree-shaking inspect property names."
+    },
+    {
+      "scene_index": 30,
+      "start_time": "11:44",
+      "end_time": "11:51",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal interaction showing text search over property names resulting in deleting 127,553 lines.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Oct 18, 1:05 AM",
+        "> How many like markdown files is this going to be?",
+        "> About 7,600 if I stick to the plan I gave you, which is too many.",
+        "> What the hell are you doing?",
+        "> 1500 markdown files is insane slop"
+      ],
+      "structured_reconstruction": "How many like markdown files is this going to be?\nAbout 7,600 if I stick to the plan I gave you, which is too many.\nWhat the hell are you doing?\n1500 markdown files is insane slop",
+      "spoken_segments": [
+        {
+          "timestamp": "11:51",
+          "text": "And like this used as much as possible from JavaScript core's existing code... But the code was slop. And like like this is not good."
+        }
+      ],
+      "alignment_note": "Highlighting agent-generated code slop (excessive markdown files)."
+    },
+    {
+      "scene_index": 31,
+      "start_time": "11:51",
+      "end_time": "12:19",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal log discussing markdown file generation limits.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Oct 18, 9:53 PM",
+        "How many like markdown files is this going to be?",
+        "About 7,600 if I stick to the plan I gave you, which is too many.",
+        "What the hell are you doing?",
+        "1500 markdown files is insane slop"
+      ],
+      "structured_reconstruction": "How many like markdown files is this going to be?\nAbout 7,600 if I stick to the plan I gave you, which is too many.\nWhat the hell are you doing?\n1500 markdown files is insane slop",
+      "spoken_segments": [
+        {
+          "timestamp": "12:00",
+          "text": "To like when you're doing like a large planning like when you're starting to like have it do a bunch of design docs and stuff. It just loves writing markdown docs and it doesn't make sense."
+        }
+      ],
+      "alignment_note": "Discussing how agents overproduce markdown documentation."
+    },
+    {
+      "scene_index": 32,
+      "start_time": "12:19",
+      "end_time": "12:49",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Writing a compiler in one night",
+      "visual_summary": "Two-step flowchart for writing a compiler in one night: 1. Design and write all the code (Design docs -> Review design -> 140 agents, 1 file each -> Adversarial review), 2. Get it to build and run (Bun builds -> console.log(1+2) prints 3 -> Claude Code runs).",
+      "ocr_details": [
+        "Writing a compiler in one night",
+        "1. Design and write all the code",
+        "Design docs -> Review the design docs -> 140 agents, 1 file each -> Adversarial review",
+        "400,000 lines of code",
+        "2. Get it to build and run",
+        "Bun builds -> console.log(1+2) prints 3 -> Claude Code runs"
+      ],
+      "structured_reconstruction": "graph TD\n    subgraph 1. Design and write all the code\n        A[Design docs] --> B[Review the design docs]\n        B --> C[140 agents, 1 file each]\n        C --> D[Adversarial review]\n    end\n    subgraph 2. Get it to build and run\n        E[Bun builds] --> F[console.log(1+2) prints 3]\n        F --> G[Claude Code runs]\n    end",
+      "spoken_segments": [
+        {
+          "timestamp": "12:30",
+          "text": "to like just to kind of batch get it all out, 140 agents at the same time, write all the code all at the same time, then get cloud code to run."
+        }
+      ],
+      "alignment_note": "Explaining the massive parallel agent batch writing process."
+    },
+    {
+      "scene_index": 33,
+      "start_time": "12:49",
+      "end_time": "13:06",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Compiler 4: analyze the whole program",
+      "visual_summary": "Pipeline diagram for Compiler 4: Type check -> Flow analysis -> 60 passes -> B3 -> Machine code, showing 2.3x faster startup and 4.2x less memory.",
+      "ocr_details": [
+        "Compiler 4: analyze the whole program",
+        "Type check -> Flow analysis -> 60 passes -> B3 -> Machine code",
+        "2.3x faster startup",
+        "4.2x less memory",
+        "Claude Code, compared to the JIT."
+      ],
+      "structured_reconstruction": "graph LR\n    Type_check --> Flow_analysis --> 60_passes --> B3 --> Machine_code",
+      "spoken_segments": [
+        {
+          "timestamp": "12:51",
+          "text": "And this is the fourth one. And this one the code was not slop, pretty good. with like basically the same performance as before."
+        }
+      ],
+      "alignment_note": "Reviewing Compiler 4 architecture and performance."
+    },
+    {
+      "scene_index": 34,
+      "start_time": "13:06",
+      "end_time": "13:30",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Then compiling got slower again",
+      "visual_summary": "Bar chart tracking compilation time regression from 283s down to 33s, then back up to 54s and 55s.",
+      "ocr_details": [
+        "Then compiling got slower again",
+        "Oct 19: 283 s",
+        "Oct 21: 105 s",
+        "Oct 22: 46 s",
+        "Oct 25: 33 s",
+        "Oct 31: 54 s",
+        "Nov 1: 55 s",
+        "Claude Code's public build."
+      ],
+      "structured_reconstruction": "| Date | Compilation Time |\n|---|---|\n| Oct 19 | 283 s |\n| Oct 21 | 105 s |\n| Oct 22 | 46 s |\n| Oct 25 | 33 s |\n| Oct 31 | 54 s |\n| Nov 1 | 55 s |",
+      "spoken_segments": [
+        {
+          "timestamp": "13:08",
+          "text": "However the compilation time was way too slow. Because people coming from like a JavaScript background don't expect any compilation time."
+        }
+      ],
+      "alignment_note": "Highlighting compilation time regression issues."
+    },
+    {
+      "scene_index": 35,
+      "start_time": "13:30",
+      "end_time": "13:59",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal log discussing fixing slow compilation by deleting code and deleting work rather than sizing up passes.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Nov 1, 4:30 PM",
+        "> omfg this used to take 20s",
+        "> We're not going to fix this by sizing up compiler passes. We're going to fix this by deleting code and deleting work.",
+        "> I let it happen: nothing ever failed when the build got slower."
+      ],
+      "structured_reconstruction": "omfg this used to take 20s\nWe're not going to fix this by sizing up compiler passes. We're going to fix this by deleting code and deleting work.\nI let it happen: nothing ever failed when the build got slower.",
+      "spoken_segments": [
+        {
+          "timestamp": "13:30",
+          "text": "so 50 seconds for it like Cloud code is like a pretty large codebase... so we're going to rewrite it again."
+        }
+      ],
+      "alignment_note": "Showing the philosophy of fixing compilation speed regression by code deletion."
+    },
+    {
+      "scene_index": 36,
+      "start_time": "13:59",
+      "end_time": "14:10",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal log questioning whether the rewrite actually changed the design or just added code.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Nov 2, 1:43 AM",
+        "> Wait, so did you do a rewrite and you made it bigger.",
+        "> is the design actually any different, or did we just like write a crap ton of code for no reason?"
+      ],
+      "structured_reconstruction": "Wait, so did you do a rewrite and you made it bigger.\nis the design actually any different, or did we just like write a crap ton of code for no reason?",
+      "spoken_segments": [
+        {
+          "timestamp": "14:00",
+          "text": "And like why is this 900,000 lines of code? This should be a lot like smaller."
+        }
+      ],
+      "alignment_note": "Reflecting on code bloat during iterative rewrites."
+    },
+    {
+      "scene_index": 37,
+      "start_time": "14:10",
+      "end_time": "14:30",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Compiler 5: look at everything once",
+      "visual_summary": "Architecture pipeline comparison between old multi-pass flow analysis and new one-walk design (Scan -> Link -> Walk -> Codegen), dropping build time from 79s to 17s.",
+      "ocr_details": [
+        "Compiler 5: look at everything once",
+        "Before: run flow analysis until nothing changes (Parse -> Type check -> Flow -> Optimize -> Codegen) [79 s]",
+        "After: visit everything once (Scan -> Link -> Walk -> Codegen) [17 s]",
+        "Claude Code's internal build. 16 cores, no cache."
+      ],
+      "structured_reconstruction": "graph LR\n    Scan --> Link --> Walk --> Codegen",
+      "spoken_segments": [
+        {
+          "timestamp": "14:15",
+          "text": "So then we did it one more time, and the code was good and the build time was under 20 seconds."
+        }
+      ],
+      "alignment_note": "Presenting the final Compiler 5 'one-walk' architecture and speedup."
+    },
+    {
+      "scene_index": 38,
+      "start_time": "14:30",
+      "end_time": "14:41",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Why we deleted them",
+      "visual_summary": "Summary table of all 5 compiler designs and what went wrong with each.",
+      "ocr_details": [
+        "Why we deleted them",
+        "1. Bytecode | 1 GB, and types didn't help",
+        "2. Our own type inference | Wrong in a day",
+        "3. The type checker | Fast, but slop",
+        "4. Whole-program analysis | Slow to compile",
+        "5. One walk | Still here"
+      ],
+      "structured_reconstruction": "| # | Design | What was wrong |\n|---|---|---|\n| 1 | Bytecode | 1 GB, and types didn't help |\n| 2 | Our own type inference | Wrong in a day |\n| 3 | The type checker | Fast, but slop |\n| 4 | Whole-program analysis | Slow to compile |\n| 5 | One walk | Still here |",
+      "spoken_segments": [
+        {
+          "timestamp": "14:30",
+          "text": "It's possible that we end up with the sixth time sometime later, but the fifth one is like very shippable"
+        }
+      ],
+      "alignment_note": "Reviewing lessons learned from discarding previous compiler architectures."
+    },
+    {
+      "scene_index": 39,
+      "start_time": "14:41",
+      "end_time": "15:20",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Trying lots of ideas",
+      "visual_summary": "Bar graph showing idea statistics: 551 worked, 1,364 didn't help, 3,277 rejected before building.",
+      "ocr_details": [
+        "Trying lots of ideas",
+        "551 worked",
+        "1,364 didn't help",
+        "3,277 rejected before we built them"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "14:42",
+          "text": "A lot of this was like just like, hey Claude, try this idea and then see what happens and then it would like size up the idea."
+        }
+      ],
+      "alignment_note": "Discussing the high volume of experimental ideas tried by agents."
+    },
+    {
+      "scene_index": 40,
+      "start_time": "15:20",
+      "end_time": "16:09",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Dynamic workflows",
+      "visual_summary": "Comparison diagram between dynamic step-by-step agents (Research -> Plan -> Write -> Review -> Benchmark) versus long-lived subagents (One agent per idea, for days).",
+      "ocr_details": [
+        "Dynamic workflows",
+        "Research -> Plan -> Write -> Review -> Benchmark (A new agent for every step)",
+        "Subagents (One agent per idea, for days)"
+      ],
+      "structured_reconstruction": "graph LR\n    Research --> Plan --> Write --> Review --> Benchmark",
+      "spoken_segments": [
+        {
+          "timestamp": "15:21",
+          "text": "My old approach, particularly with like the the BUN runistry right, was very much leaning on like cloud code workflows to do things. And pretty much now with the most recent models, I mostly just rely on sub agents that are like very long-lived."
+        }
+      ],
+      "alignment_note": "Comparing multi-step pipeline agents vs long-running subagent architecture."
+    },
+    {
+      "scene_index": 41,
+      "start_time": "16:09",
+      "end_time": "16:35",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "Compiling a property access",
+      "visual_summary": "Code snippet and breakdown of how property access is compiled under Known type, Maybe, and Unknown type scenarios.",
+      "ocr_details": [
+        "Compiling a property access",
+        "function dot(a: Vec, b: Vec) { return a.x * b.x + a.y * b.y }",
+        "Known type (Every caller passes a Vec) -> load [12,160]",
+        "Maybe (Some callers pass null) -> check | load [10,568]",
+        "Unknown type (It came from JSON.parse) -> look up by name [33,554]"
+      ],
+      "structured_reconstruction": "function dot(a: Vec, b: Vec) {\n  return a.x * b.x + a.y * b.y\n}",
+      "spoken_segments": [
+        {
+          "timestamp": "16:11",
+          "text": "here's a little more about like how the different parts of the compiler works. um generally it's like there's if we can confidently prove that uh the types are the same, that they're monomorphic, then it can become a field access."
+        }
+      ],
+      "alignment_note": "Explaining the code generation strategies for property access based on type certainty."
+    },
+    {
+      "scene_index": 42,
+      "start_time": "16:35",
+      "end_time": "16:51",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal prompt setting up an hourly Slack update loop.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Nov 2, 12:45 PM",
+        "> let's setup a /loop 1h to post an hourly update to slack",
+        "*Looping..*"
+      ],
+      "structured_reconstruction": "let's setup a /loop 1h to post an hourly update to slack",
+      "spoken_segments": [
+        {
+          "timestamp": "16:38",
+          "text": "and where we'd post a scorecard, comparing a bunch of metrics that we were prioritizing... let's setup a /loop 1h to post an hourly update to slack"
+        }
+      ],
+      "alignment_note": "Demonstrating automated progress updates using `/loop` in Claude Code."
+    },
+    {
+      "scene_index": 43,
+      "start_time": "16:51",
+      "end_time": "17:14",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The scorecard",
+      "visual_summary": "Scorecard table comparing bun compile against JIT across Claude Code startup, CPU time, memory, OpenClaw startup, first frame, and TypeScript.",
+      "ocr_details": [
+        "The scorecard",
+        "bun compile | JIT",
+        "Claude Code startup | 194 ms | 430 ms",
+        "Claude Code CPU time | 633 ms | 1,815 ms",
+        "Claude Code memory | 36 MB | 158 MB",
+        "OpenClaw startup | 2.75 s | 6.66 s",
+        "OpenClaw first frame | 434 ms | 649 ms",
+        "TypeScript | 4.2 s | 14.5 s"
+      ],
+      "structured_reconstruction": "| Metric | bun compile | JIT |\n|---|---|---|\n| Claude Code startup | 194 ms | 430 ms |\n| Claude Code CPU time | 633 ms | 1,815 ms |\n| Claude Code memory | 36 MB | 158 MB |\n| OpenClaw startup | 2.75 s | 6.66 s |\n| OpenClaw first frame | 434 ms | 649 ms |\n| TypeScript | 4.2 s | 14.5 s |",
+      "spoken_segments": [
+        {
+          "timestamp": "16:51",
+          "text": "where we'd post a scorecard, comparing a bunch of metrics that we were prioritizing."
+        }
+      ],
+      "alignment_note": "Presenting the final scorecard metrics across multiple applications."
+    },
+    {
+      "scene_index": 44,
+      "start_time": "17:14",
+      "end_time": "17:36",
+      "visual_type": "SLIDE",
+      "screen_title": "How do you trust it?",
+      "visual_summary": "List of 5 validation layers used to trust the compiler: Existing tests, test262, Fuzzilli, Our own fuzzers, Benchmarks.",
+      "ocr_details": [
+        "How do you trust it?",
+        "1. Existing tests | Claude Code, WebKit, Bun, Node.js",
+        "2. test262 | 53,578 tests",
+        "3. Fuzzilli | With TypeScript types",
+        "4. Our own fuzzers | 352 generators",
+        "5. Benchmarks | JetStream, HTTP servers, TypeScript"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "17:15",
+          "text": "How do you trust it? Existing tests, test262, Fuzzilli, Our own fuzzers, Benchmarks."
+        }
+      ],
+      "alignment_note": "Summarizing the multi-layered trust verification framework."
+    },
+    {
+      "scene_index": 45,
+      "start_time": "17:36",
+      "end_time": "17:46",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal prompt asking whether Fuzzilli was run.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Nov 5, 2:54 AM",
+        "> Did you run Fuzzilli",
+        "*Fuzzing..*"
+      ],
+      "structured_reconstruction": "Did you run Fuzzilli",
+      "spoken_segments": [
+        {
+          "timestamp": "17:36",
+          "text": "Fuzzili is like a JavaScript engine fuzzer that V8 uses... Did you run Fuzzilli"
+        }
+      ],
+      "alignment_note": "Running engine fuzzing via Fuzzilli in the terminal."
+    },
+    {
+      "scene_index": 46,
+      "start_time": "17:46",
+      "end_time": "18:07",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Does the fuzzer find bugs?",
+      "visual_summary": "Bar charts showing fuzzer bug detection results: With a test runner in the executable (found 12), By itself (found 27).",
+      "ocr_details": [
+        "Does the fuzzer find bugs?",
+        "We gave it 31 programs that the compiler gets wrong",
+        "With a test runner in the executable | found 12",
+        "By itself | found 27",
+        "The compiler does fewer optimizations when there's more code"
+      ],
+      "structured_reconstruction": "| Fuzzing Method | Bugs Found |\n|---|---|\n| With test runner in executable | 12 |\n| By itself | 27 |",
+      "spoken_segments": [
+        {
+          "timestamp": "17:51",
+          "text": "And it's also important to check that the tests actually catch things. because it's really easy to fool yourself that it's finding bugs when it's not finding bugs."
+        }
+      ],
+      "alignment_note": "Evaluating fuzzer bug discovery effectiveness."
+    },
+    {
+      "scene_index": 47,
+      "start_time": "18:07",
+      "end_time": "18:57",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "Command-line tools are up to 2x faster",
+      "visual_summary": "Table comparing command-line tool performance (Prettier, marked, Terser, js-beautify, Tailwind, Rollup, UglifyJS) against Node.js and Bun's JIT.",
+      "ocr_details": [
+        "Command-line tools are up to 2x faster",
+        "than Node.js | than Bun's JIT",
+        "Prettier, 1 file | 6.1x faster | 2.6x faster",
+        "marked | 4.5x faster | 1.3x faster",
+        "Terser | 2.0x faster | 1.5x faster",
+        "js-beautify | 1.9x faster | 1.2x faster",
+        "Tailwind | 1.9x faster | 1.4x faster",
+        "Rollup | 1.6x faster | 1.3x faster",
+        "Prettier, 64 files | 1.3x faster | 1.1x faster",
+        "UglifyJS | 2.5x slower | 2.8x slower",
+        "Wall time, with bun compile, Bun canary, MacBook Pro. The output is the same as Node's."
+      ],
+      "structured_reconstruction": "| Tool | vs Node.js | vs Bun's JIT |\n|---|---|---|\n| Prettier (1 file) | 6.1x faster | 2.6x faster |\n| marked | 4.5x faster | 1.3x faster |\n| Terser | 2.0x faster | 1.5x faster |\n| js-beautify | 1.9x faster | 1.2x faster |\n| Tailwind | 1.9x faster | 1.4x faster |\n| Rollup | 1.6x faster | 1.3x faster |\n| Prettier (64 files) | 1.3x faster | 1.1x faster |\n| UglifyJS | 2.5x slower | 2.8x slower |",
+      "spoken_segments": [
+        {
+          "timestamp": "18:10",
+          "text": "It generally for most projects outperforms the JIT. Not always, the you can see the UglifyJS case. and that's basically if it has to use the interpreter a lot"
+        }
+      ],
+      "alignment_note": "Reviewing performance benchmarks across common JavaScript CLI tools."
+    },
+    {
+      "scene_index": 48,
+      "start_time": "18:57",
+      "end_time": "19:15",
+      "visual_type": "SLIDE",
+      "screen_title": "Limitations",
+      "visual_summary": "Slide detailing limitations of AOT compilation: eval and new Function (Slower), Object.prototype (Can't be modified).",
+      "ocr_details": [
+        "Limitations",
+        "eval and new Function",
+        "Slower",
+        "Object.prototype",
+        "Can't be modified"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "18:57",
+          "text": "the other thing is object prototype. this is like a rare edge case, but basically there's a lot of security vulnerabilities in JavaScript applications called like prototype pollution and this usually works by assigning properties onto object.prototype. and the compiler bans that."
+        }
+      ],
+      "alignment_note": "Explaining runtime limitations regarding eval and prototype modification."
+    },
+    {
+      "scene_index": 49,
+      "start_time": "19:15",
+      "end_time": "19:35",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "What do I actually do all day?",
+      "visual_summary": "List of top human prompts sent to Claude Code: continue (34x), hows (32x), commit (9x), sounds good (9x), laptop died please resume (3x).",
+      "ocr_details": [
+        "What do I actually do all day?",
+        "continue | 34x",
+        "hows | 32x",
+        "commit | 9x",
+        "sounds good | 9x",
+        "laptop died please resume | 3x",
+        "About 5,500 messages in 46 days"
+      ],
+      "structured_reconstruction": "| Prompt / Action | Count |\n|---|---|\n| continue | 34x |\n| hows | 32x |\n| commit | 9x |\n| sounds good | 9x |\n| laptop died please resume | 3x |",
+      "spoken_segments": [
+        {
+          "timestamp": "19:15",
+          "text": "for a large project like this, what do you actually do all day? These are like the top messages that I sent. saying, continue, a lot."
+        }
+      ],
+      "alignment_note": "Sharing humorous statistics on developer prompt interactions."
+    },
+    {
+      "scene_index": 50,
+      "start_time": "19:35",
+      "end_time": "20:00",
+      "visual_type": "SLIDE",
+      "screen_title": "Monitor, and stay on track",
+      "visual_summary": "Bullet points on monitoring and corrective prompting: Why are we doing this through bytecode? -> Compiler 2, Couldn't we just use the macro assembler? -> Compiler 5, Why are we measuring -> Compiler 5, rewritten. Claude doesn't ask if it should exist.",
+      "ocr_details": [
+        "Monitor, and stay on track",
+        "Why are we doing this through bytecode -> Compiler 2",
+        "Couldn't we just use the macro assembler -> Compiler 5",
+        "Why are we measuring -> Compiler 5, rewritten",
+        "Claude doesn't ask if it should exist"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "19:36",
+          "text": "What do I actually do all day? Monitor, and stay on track... Claude doesn't ask if it should exist"
+        }
+      ],
+      "alignment_note": "Emphasizing the need for human guidance to keep agents focused and questioning architectural drift."
+    },
+    {
+      "scene_index": 51,
+      "start_time": "20:00",
+      "end_time": "20:25",
+      "visual_type": "CODE_DEMO",
+      "screen_title": "/code/WebKit",
+      "visual_summary": "Terminal prompt showing an ambitious motivational prompt given to Claude Code.",
+      "ocr_details": [
+        "Claude Code",
+        "/code/WebKit",
+        "Nov 10, 9:11 PM",
+        "> I don't think you're being nearly ambitious enough. I think every single one of those, except for the Mobex startup and JS DOM D3 startup ones, are trivially winnable, and you just simply haven't tried hard enough or tried enough things. I think you're not believing in yourself enough, Claude.",
+        "*Believing.. (12h)*"
+      ],
+      "structured_reconstruction": "I don't think you're being nearly ambitious enough. I think every single one of those, except for the Mobex startup and JS DOM D3 startup ones, are trivially winnable, and you just simply haven't tried hard enough or tried enough things. I think you're not believing in yourself enough, Claude.",
+      "spoken_segments": [
+        {
+          "timestamp": "20:02",
+          "text": "I don't think you're being nearly ambitious enough... I think you're not believing in yourself enough, Claude."
+        }
+      ],
+      "alignment_note": "Demonstrating how to nudge agents to be more ambitious."
+    },
+    {
+      "scene_index": 52,
+      "start_time": "20:25",
+      "end_time": "20:53",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "1.6x faster than the JIT on JetStream 3",
+      "visual_summary": "JetStream 3 benchmark bar chart comparing bun compile (446), Bun's JIT (279), and Node.js (203).",
+      "ocr_details": [
+        "1.6x faster than the JIT on JetStream 3",
+        "bun compile | 446",
+        "Bun's JIT | 279",
+        "Node.js | 203",
+        "Each bar is a benchmark. 52 of 62 are faster.",
+        "62 of 77 tests. The others are 12 WebAssembly, 2 workers, and 1 that modifies Object.prototype.",
+        "After the first iteration: 1.36x, Linux x64, development build."
+      ],
+      "structured_reconstruction": "| Engine | Score |\n|---|---|\n| bun compile | 446 |\n| Bun's JIT | 279 |\n| Node.js | 203 |",
+      "spoken_segments": [
+        {
+          "timestamp": "20:27",
+          "text": "JetStream 3 which is one of the main benchmarks that JavaScript engines use. Um uh the bun outperforms both JavaScript core jit and node node JS in like V8 jit in a most of them."
+        }
+      ],
+      "alignment_note": "Presenting JetStream 3 benchmark results showing 1.6x speedup over JIT."
+    },
+    {
+      "scene_index": 53,
+      "start_time": "20:53",
+      "end_time": "21:05",
+      "visual_type": "ARCHITECTURE_DIAGRAM",
+      "screen_title": "Claude Code is building the compiler that builds Claude Code",
+      "visual_summary": "Architecture feedback loop diagram showing Claude Code writing bun compile, and bun compile compiling Claude Code.",
+      "ocr_details": [
+        "Claude Code is building the compiler that builds Claude Code",
+        "Claude Code -> writes -> bun compile",
+        "bun compile -> compiles -> Claude Code"
+      ],
+      "structured_reconstruction": "graph LR\n    Claude_Code -->|writes| bun_compile\n    bun_compile -->|compiles| Claude_Code",
+      "spoken_segments": [
+        {
+          "timestamp": "20:55",
+          "text": "And the whole time like it's been using cloud code to like build the bun compile like to build bun compile itself and then using the build of cloud code that was compiled with bun compile."
+        }
+      ],
+      "alignment_note": "Illustrating the self-hosting dogfooding loop."
+    },
+    {
+      "scene_index": 54,
+      "start_time": "21:05",
+      "end_time": "22:00",
+      "visual_type": "SLIDE",
+      "screen_title": "Large, open-ended projects with Claude",
+      "visual_summary": "Summary slide of best practices for large open-ended agent projects.",
+      "ocr_details": [
+        "Large, open-ended projects with Claude",
+        "- Design for testability first",
+        "- Test your tests",
+        "- What you don't measure regresses",
+        "- Tests don't catch bad design",
+        "- Rewrite instead of refactor",
+        "- Be ambitious"
+      ],
+      "structured_reconstruction": "N/A",
+      "spoken_segments": [
+        {
+          "timestamp": "21:08",
+          "text": "Design for testability first. Test your tests. What you don't measure regresses. Tests don't catch bad design. Rewrite instead of refactor. Be ambitious."
+        }
+      ],
+      "alignment_note": "Recapping key takeaways and principles for working with AI agents on massive codebases."
+    },
+    {
+      "scene_index": 55,
+      "start_time": "22:00",
+      "end_time": "22:25",
+      "visual_type": "SLIDE",
+      "screen_title": "You don't have to rewrite it in Rust",
+      "visual_summary": "Closing slide with commands to try the feature and release announcement.",
+      "ocr_details": [
+        "You don't have to rewrite it in Rust",
+        "$ bun upgrade --canary",
+        "$ bun compile app.ts",
+        "Ships in Bun 1.5"
+      ],
+      "structured_reconstruction": "$ bun upgrade --canary\n$ bun compile app.ts",
+      "spoken_segments": [
+        {
+          "timestamp": "22:00",
+          "text": "You can try this now if you want, by running bun upgrade dash dash canary if you have bun installed. And then just bun compile. Thanks, everyone."
+        }
+      ],
+      "alignment_note": "Closing instructions on how users can try bun compile."
+    }
+  ]
+}

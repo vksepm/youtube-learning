@@ -1,0 +1,23 @@
+{
+  "estimated_duration_seconds": 1282,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:46",
+      "visual_type": "SLIDE",
+      "screen_title": "Software Factories: Escape from Trash Mountain",
+      "visual_summary": "Title slide with graphic of a trash mountain made of electronics and computers, presentation title, speaker name, and credentials.",
+      "ocr_details": [
+        "Software Factories: Escape from Trash Mountain",
+        "Steve Yegge - AI Engineer Code Summit - San Francisco - November 11, 2026",
+        "Steve Yegge | Independent Advisor & Creator of Beads & Gas Town"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {"timestamp": "00:13", "text": "I am really excited to be here and to chat with you."},
+        {"timestamp": "00:20", "text": "I write a custom speech every single time, so this is the speech was written just for you today based on talking to a bunch of you."},
+        {"timestamp": "00:31", "text": "I've been in the industry for about 40 years. I worked at Amazon and Google for about 20 years, I've been all over the place, doing all kinds of stuff."},
+        {"timestamp": "00:40", "text": "And for the last year, a little bit more, I've been independent and just kind of like playing with, um, playing with software factories, yeah?"}
+      ],
+      "alignment_note": "Speaker
