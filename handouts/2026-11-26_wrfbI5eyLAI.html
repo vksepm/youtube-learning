@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1,000 Claude Agents Formalized Fermat&#39;s Last Theorem — Lance Martin, Anthropic — Handout</title>
+  
+  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.inline{display:inline}.flex{display:flex}.table{display:table}.grid{display:grid}.w-full{width:100%}.max-w-4xl{max-width:56rem}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-baseline{align-items:baseline}.justify-between{justify-content:space-between}.gap-2{gap:.5rem}.gap-4{gap:1rem}.gap-x-4{-moz-column-gap:1rem;column-gap:1rem}.gap-y-1{row-gap:.25rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px*var(--tw-divide-y-reverse))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity,1))}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:.25rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199/var(--tw-bg-opacity,1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-indigo-600{--tw-gradient-from:#4f46e5 var(--tw-gradient-from-position);--tw-gradient-to:rgba(79,70,229,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-violet-600{--tw-gradient-to:#7c3aed var(--tw-gradient-to-position)}.p-3{padding:.75rem}.p-5{padding:1.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pl-5{padding-left:1.25rem}.pr-3{padding-right:.75rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.align-top{vertical-align:top}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-tight{line-height:1.25}.tracking-wide{letter-spacing:.025em}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14/var(--tw-text-opacity,1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70/var(--tw-text-opacity,1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255/var(--tw-text-opacity,1))}.text-indigo-200{--tw-text-opacity:1;color:rgb(199 210 254/var(--tw-text-opacity,1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229/var(--tw-text-opacity,1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202/var(--tw-text-opacity,1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60/var(--tw-text-opacity,1))}.text-sky-800{--tw-text-opacity:1;color:rgb(7 89 133/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.accent-indigo-600{accent-color:#4f46e5}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.hover\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:underline:hover{text-decoration-line:underline}@media (min-width:768px){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:grid-cols-\[max-content_1fr\]{grid-template-columns:max-content 1fr}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}}</style>
+  <style>
+    html { scroll-behavior: smooth; }
+    .mermaid-wrap svg { max-width: 100%; height: auto; margin: 0 auto; }
+    @media print {
+      body { background: #fff; }
+      header { background: #fff !important; color: #000 !important; }
+      header * { color: #000 !important; }
+      section, article, tr { break-inside: avoid; }
+      a { text-decoration: none; color: inherit; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+<header class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+  <div class="max-w-4xl mx-auto px-6 py-8">
+    <h1 class="text-2xl md:text-3xl font-bold leading-tight">1,000 Claude Agents Formalized Fermat&#39;s Last Theorem — Lance Martin, Anthropic</h1>
+    <p class="mt-2 text-sm text-indigo-100">
+      AI Engineer · 18 min talk ·
+      <a class="underline hover:text-white" href="https://www.youtube.com/watch?v=wrfbI5eyLAI" target="_blank" rel="noopener">Watch</a> ·
+      <a class="underline hover:text-white" href="https://vksepm.github.io/youtube-learning/transcripts/2026-11-26_wrfbI5eyLAI_enriched.md">Transcript</a> ·
+      2026-11-26 13:59 UTC · <span class="text-indigo-200">gemini-4-hydrogen</span>
+    </p>
+    <p class="mt-4 text-base md:text-lg font-medium text-white">Large Claude teams can complete very long-horizon formalization with only Git and a database, and offline dreaming turns myopic memory writes into coherent, correctable knowledge.</p>
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto px-6 py-6 space-y-6">
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">TL;DR</h2>
+    <ul class="list-disc pl-5 space-y-1">
+      <li>A 1,000-agent Fable 5.2 team formalized Fermat&#39;s Last Theorem with a minimal harness and no human steering, using only Git and a database.</li><li>The lead agent created its own coordination tables unprompted; agent teams can now self-orchestrate very long-horizon work.</li><li>Offline &#39;dreaming&#39; passes repair poison memories and compile transcripts into wikis, improving on search alone.</li><li>Memory-store value is model-dependent: older Sonnet 4.6 gains almost nothing, newer Opus models gain substantially.</li>
+    </ul>
+    <p class="mt-3 text-sm text-slate-600">Lance Martin (Member of Technical Staff, Anthropic) presented two Anthropic blog results at the AI Engineer Code Summit: a large-agent-team formalization of Fermat&#39;s Last Theorem, and agent memory with offline consolidation. All evidence is Anthropic-produced: single runs, Anthropic-run benchmarks, and one eval on the anonymized corpus of Stainless, a company acquired in May; CL-Bench itself is open-source. No costs or third-party replications are given.</p>
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h2 class="text-lg font-bold text-indigo-700">Evidence &amp; caveats</h2>
+      <p class="text-xs text-slate-500">
+        <span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span> on-screen data ·
+        <span class="px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">stated</span> speaker claim ·
+        <span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800">anecdote</span>
+      </p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="text-left text-xs uppercase tracking-wide text-slate-500 border-b border-slate-200">
+          <tr><th class="py-2 pr-3">When</th><th class="py-2 pr-3">Claim</th><th class="py-2 pr-3">Figures</th><th class="py-2">Caveat</th></tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 align-top">
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=144s" target="_blank" rel="noopener">[02:24]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">stated</span></td>
+            <td class="py-2 pr-3">September result: Claude formalized Fermat&#39;s Last Theorem in 11 days, with the Prove2Me harness and researcher support.</td>
+            <td class="py-2 pr-3 text-slate-700">11 days; 30,300 theorems proved, 29,500 used in final proof; 1.5 million Lean lines, over 5x Mathlib</td>
+            <td class="py-2 text-slate-600">Roughly a dozen agents plus heavy scaffolding; no cost figures reported.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=392s" target="_blank" rel="noopener">[06:32]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">stated</span></td>
+            <td class="py-2 pr-3">1,000-agent Fable 5.2 run without Prove2Me or steering; speaker says the team accomplished the formalization autonomously.</td>
+            <td class="py-2 pr-3 text-slate-700">~30-hour run (spoken); hour 16.8: 48 of 60 statements proved; LanglandsTunnel subtree by hour 28.9: 2,364 of 2,418 tasks done</td>
+            <td class="py-2 text-slate-600">Single run; no slide shows a final 60-of-60 count; safety and monitoring structure was still provided.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=271s" target="_blank" rel="noopener">[04:31]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Coordination ran almost entirely through agent-created Postgres tables; Notes carried most communication.</td>
+            <td class="py-2 pr-3 text-slate-700">Across run: 26,347 writes, 281,657 reads; Notes 17,909 writes and 99,365 reads; Announce 66,464 reads</td>
+            <td class="py-2 text-slate-600">Counters from a visualization frame at hour 22.4 of a ~30-hour run; writers and readers are the agents themselves.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=544s" target="_blank" rel="noopener">[09:04]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Memory-store gains grow with model strength; Sonnet 4.6 barely benefits because it unreliably writes and reads memory.</td>
+            <td class="py-2 pr-3 text-slate-700">40 questions, fresh session each; Opus 5.5 0.695 vs 0.585 stateless; Sonnet 4.6 0.364 vs 0.351; gains +0.013 to +0.266 across models (derived)</td>
+            <td class="py-2 text-slate-600">No memory prompting; one benchmark task; Anthropic-run evaluation.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=656s" target="_blank" rel="noopener">[10:56]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Stronger models write far tighter memories over the same 108 hours of Pokémon.</td>
+            <td class="py-2 pr-3 text-slate-700">Sonnet 3.7: 412 files, 917,035 chars; Fable 5: 33 files, 46,446 chars (entire 108h); Sonnet 3.7 has 436k chars in fresh-start or raw memory files</td>
+            <td class="py-2 text-slate-600">Illustrative single runs; progress comparison between the two models is anecdotal.</td>
+          </tr>
+          
+          <tr>
+            <td class="py-2 pr-3 whitespace-nowrap"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=926s" target="_blank" rel="noopener">[15:26]</a><br><span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">measured</span></td>
+            <td class="py-2 pr-3">Offline wiki-building improves corpus question-answering beyond search, and composes with search.</td>
+            <td class="py-2 pr-3 text-slate-700">25 questions; search alone 53%; wiki alone 16% to 48%; wiki plus search 54% to 61% as dreaming tokens scale 1M to 12M</td>
+            <td class="py-2 text-slate-600">Token axis is a 5M-per-session budget, not measured spend; one anonymized company corpus.</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-base font-bold text-indigo-700 mb-2">CL-Bench database task - score with memory store vs stateless baseline (40 questions) <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=544s" target="_blank" rel="noopener">[09:04]</a></h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-slate-100 text-slate-600"><tr><th class="px-3 py-1.5 font-semibold">Model</th><th class="px-3 py-1.5 font-semibold">With memory store</th><th class="px-3 py-1.5 font-semibold">Stateless baseline</th></tr></thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr><td class="px-3 py-1.5">Opus 5.5</td><td class="px-3 py-1.5">0.695</td><td class="px-3 py-1.5">0.585</td></tr><tr><td class="px-3 py-1.5">Sonnet 5.5</td><td class="px-3 py-1.5">0.683</td><td class="px-3 py-1.5">0.517</td></tr><tr><td class="px-3 py-1.5">Opus 5</td><td class="px-3 py-1.5">0.677</td><td class="px-3 py-1.5">0.484</td></tr><tr><td class="px-3 py-1.5">Opus 4.7</td><td class="px-3 py-1.5">0.630</td><td class="px-3 py-1.5">0.364</td></tr><tr><td class="px-3 py-1.5">Sonnet 5</td><td class="px-3 py-1.5">0.488</td><td class="px-3 py-1.5">0.340</td></tr><tr><td class="px-3 py-1.5">Sonnet 4.6</td><td class="px-3 py-1.5">0.364</td><td class="px-3 py-1.5">0.351</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-base font-bold text-indigo-700 mb-2">Postgres coordination-table activity across the 1,000-agent run <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=271s" target="_blank" rel="noopener">[04:31]</a></h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-slate-100 text-slate-600"><tr><th class="px-3 py-1.5 font-semibold">Table</th><th class="px-3 py-1.5 font-semibold">Writes</th><th class="px-3 py-1.5 font-semibold">Reads</th></tr></thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr><td class="px-3 py-1.5">Announce</td><td class="px-3 py-1.5">20</td><td class="px-3 py-1.5">66,464</td></tr><tr><td class="px-3 py-1.5">Assign</td><td class="px-3 py-1.5">27</td><td class="px-3 py-1.5">26,227</td></tr><tr><td class="px-3 py-1.5">Notes</td><td class="px-3 py-1.5">17,909</td><td class="px-3 py-1.5">99,365</td></tr><tr><td class="px-3 py-1.5">Subtasks</td><td class="px-3 py-1.5">7,909</td><td class="px-3 py-1.5">60,425</td></tr><tr><td class="px-3 py-1.5">Landed</td><td class="px-3 py-1.5">436</td><td class="px-3 py-1.5">23,609</td></tr><tr><td class="px-3 py-1.5">Other tables</td><td class="px-3 py-1.5">46</td><td class="px-3 py-1.5">5,567</td></tr><tr><td class="px-3 py-1.5">Total</td><td class="px-3 py-1.5">26,347</td><td class="px-3 py-1.5">281,657</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">System sketch</h2>
+    
+      <div class="mermaid-wrap overflow-x-auto"><svg id="my-svg" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 382px; background-color: white;" viewBox="4 4 382 732" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#my-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:#552222;}#my-svg .error-text{fill:#552222;stroke:#552222;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#666;stroke:#666;}#my-svg .marker.cross{stroke:#666;}#my-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#my-svg p{margin:0;}#my-svg .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#my-svg .cluster-label text{fill:#333;}#my-svg .cluster-label span{color:#333;}#my-svg .cluster-label span p{background-color:transparent;}#my-svg .label text,#my-svg span{fill:#000000;color:#000000;}#my-svg .node rect,#my-svg .node circle,#my-svg .node ellipse,#my-svg .node polygon,#my-svg .node path{fill:#eee;stroke:#999;stroke-width:1px;}#my-svg .rough-node .label text,#my-svg .node .label text,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-anchor:middle;}#my-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#my-svg .rough-node .label,#my-svg .node .label,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-align:center;}#my-svg .node.clickable{cursor:pointer;}#my-svg .root .anchor path{fill:#666!important;stroke-width:0;stroke:#666;}#my-svg .arrowheadPath{fill:#333333;}#my-svg .edgePaths .path{stroke:#666;stroke-width:1px;}#my-svg .flowchart-link{stroke:#666;fill:none;}#my-svg .edgeLabel{background-color:white;text-align:center;}#my-svg .edgeLabel p{background-color:white;}#my-svg .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#my-svg .labelBkg{background-color:rgba(255, 255, 255, 0.5);}#my-svg .cluster rect{fill:hsl(0, 0%, 98.9215686275%);stroke:#707070;stroke-width:1px;}#my-svg .cluster text{fill:#333;}#my-svg .cluster span{color:#333;}#my-svg .node .collapsed-indicator{fill:#707070;stroke:none;opacity:0.6;}#my-svg .node .collapsed-separator{stroke:#707070;stroke-width:0.75px;}#my-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160, 0%, 93.3333333333%);border:1px solid #707070;border-radius:2px;pointer-events:none;z-index:100;}#my-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#000000;}#my-svg rect.text{fill:none;stroke-width:0;}#my-svg .icon-shape,#my-svg .image-shape{background-color:white;text-align:center;}#my-svg .icon-shape p,#my-svg .image-shape p{background-color:white;padding:2px;}#my-svg .icon-shape .label rect,#my-svg .image-shape .label rect{opacity:0.5;background-color:white;fill:white;}#my-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#my-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#my-svg .node .neo-node{stroke:#999;}#my-svg [data-look="neo"].node rect,#my-svg [data-look="neo"].cluster rect,#my-svg [data-look="neo"].node polygon{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].swimlane.cluster rect{filter:none;}#my-svg [data-look="neo"].node path{stroke:url(#my-svg-gradient);stroke-width:1px;}#my-svg [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node .neo-line path{stroke:#999;filter:none;}#my-svg [data-look="neo"].node circle{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node circle .state-start{fill:#000000;}#my-svg [data-look="neo"].icon-shape .icon{fill:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].icon-shape .icon-neo path{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="my-svg_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"/></marker><marker id="my-svg_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edges edgePaths"><path d="M88,156L88,188.92893218813452Q88,196 95.07106781186548,196L160.42893218813452,196Q167.5,196 167.5,203.07106781186548L167.5,212" id="my-svg-L_S_G_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 126.17166137695312 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_S_G_0" data-points="W3sieCI6ODgsInkiOjE1Nn0seyJ4Ijo4OCwieSI6MTk2fSx7IngiOjE2Ny41LCJ5IjoxOTZ9LHsieCI6MTY3LjUsInkiOjIxNn1d" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M167.5,336L167.5,348.9289321881345Q167.5,356 160.42893218813452,356L122.57106781186548,356Q115.5,356 115.5,363.0710678118655L115.5,372" id="my-svg-L_G_R_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 78.67171478271484 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_G_R_0" data-points="W3sieCI6MTY3LjUsInkiOjMzNn0seyJ4IjoxNjcuNSwieSI6MzU2fSx7IngiOjExNS41LCJ5IjozNTZ9LHsieCI6MTE1LjUsInkiOjM3Nn1d" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M211.5,336L211.5,348.9289321881345Q211.5,356 218.57106781186548,356L272.9289321881345,356Q280,356 280,363.0710678118655L280,372" id="my-svg-L_G_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 95.17171478271484 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_G_D_0" data-points="W3sieCI6MjExLjUsInkiOjMzNn0seyJ4IjoyMTEuNSwieSI6MzU2fSx7IngiOjI4MCwieSI6MzU2fSx7IngiOjI4MCwieSI6Mzc2fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M302,520L302,556" id="my-svg-L_D_T_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_D_T_0" data-points="W3sieCI6MzAyLCJ5Ijo1MjB9LHsieCI6MzAyLCJ5Ijo1NjB9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M247,156 L247,168.929 Q247,176 239.929,176 L94,176 A6,6 0 0 0 82,176 L78.571,176 Q71.5,176 71.5,183.071 L71.5,276 L71.5,372" id="my-svg-L_M_R_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 389.0240478515625 4; stroke-dashoffset: 0;" data-edge="true" data-et="edge" data-id="L_M_R_0" data-points="W3sieCI6MjQ3LCJ5IjoxNTZ9LHsieCI6MjQ3LCJ5IjoxNzZ9LHsieCI6NzEuNSwieSI6MTc2fSx7IngiOjcxLjUsInkiOjI3Nn0seyJ4Ijo3MS41LCJ5IjozNzZ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M313,156L313,170.5Q313,176 318.5,176L318.5,176Q324,176 324,181.5L324,276L324,372" id="my-svg-L_M_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 218.8555908203125 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_M_D_0" data-points="W3sieCI6MzEzLCJ5IjoxNTZ9LHsieCI6MzEzLCJ5IjoxNzZ9LHsieCI6MzI0LCJ5IjoxNzZ9LHsieCI6MzI0LCJ5IjoyNzZ9LHsieCI6MzI0LCJ5IjozNzZ9XQ==" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/><path d="M280,156L280,188.92893218813452Q280,196 272.9289321881345,196L218.57106781186548,196Q211.5,196 211.5,203.07106781186548L211.5,212" id="my-svg-L_M_G_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 115.17169189453125 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_M_G_0" data-points="W3sieCI6MjgwLCJ5IjoxNTZ9LHsieCI6MjgwLCJ5IjoxOTZ9LHsieCI6MjExLjUsInkiOjE5Nn0seyJ4IjoyMTEuNSwieSI6MjE2fV0=" data-look="neo" marker-end="url(#my-svg_flowchart-v2-pointEnd-margin)"/></g><g class="edgeLabels"/><g class="nodes"><g class="node default" id="my-svg-flowchart-S-0" data-look="neo" transform="translate(88, 84)"><rect class="basic label-container" style="" x="-76" y="-72" width="152" height="144"/><g class="label" style="" transform="translate(-60, -60)"><rect/><foreignObject width="120" height="120"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Agent sandbox x 1000 - agent loop with bash and file-edit tools</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-G-1" data-look="neo" transform="translate(189.5, 276)"><rect class="basic label-container" style="" x="-76" y="-60" width="152" height="120"/><g class="label" style="" transform="translate(-60, -48)"><rect/><foreignObject width="120" height="96"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Gateway - auth logging and safety monitoring</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-R-3" data-look="neo" transform="translate(93.5, 424)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"/><g class="label" style="" transform="translate(-60, -36)"><rect/><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Git repository - stores code and proofs</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-D-5" data-look="neo" transform="translate(302, 448)"><rect class="basic label-container" style="" x="-76" y="-72" width="152" height="144"/><g class="label" style="" transform="translate(-60, -60)"><rect/><foreignObject width="120" height="120"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Postgres database - coordination tables and team communication</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-T-7" data-look="neo" transform="translate(302, 644)"><rect class="basic label-container" style="" x="-76" y="-84" width="152" height="168"/><g class="label" style="" transform="translate(-60, -72)"><rect/><foreignObject width="120" height="144"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Agent-created tables - Announce Assign Notes Subtasks Landed</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-M-8" data-look="neo" transform="translate(280, 84)"><rect class="basic label-container" style="" x="-76" y="-72" width="152" height="144"/><g class="label" style="" transform="translate(-60, -60)"><rect/><foreignObject width="120" height="120"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Offline monitoring - sensors check runs every 10 minutes</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="my-svg-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><defs><filter id="my-svg-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><linearGradient id="my-svg-gradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="hsl(0, 0%, 83.3333333333%)" stop-opacity="1"/><stop offset="100%" stop-color="hsl(0, 0%, 88.9215686275%)" stop-opacity="1"/></linearGradient></svg></div>
+    
+    <details class="mt-2 text-xs text-slate-500">
+      <summary class="cursor-pointer">Diagram source</summary>
+      <pre class="mt-2 bg-slate-100 rounded p-3 overflow-x-auto"><code>flowchart TD
+  S[Agent sandbox x 1000 - agent loop with bash and file-edit tools] --&gt; G[Gateway - auth logging and safety monitoring]
+  G --&gt; R[Git repository - stores code and proofs]
+  G --&gt; D[Postgres database - coordination tables and team communication]
+  D --&gt; T[Agent-created tables - Announce Assign Notes Subtasks Landed]
+  M[Offline monitoring - sensors check runs every 10 minutes] --&gt; R
+  M --&gt; D
+  M --&gt; G</code></pre>
+    </details>
+  </section>
+  
+
+  
+  <section class="space-y-4">
+    <h2 class="text-lg font-bold text-indigo-700">Deep dives</h2>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=180s" target="_blank" rel="noopener">[03:00]</a> Harness: 1,000 sandboxes, one gateway, two primitives</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Each of 1,000 agents runs in its own sandbox: no internet, no shared filesystem, no direct paths between sandboxes.</li><li>Agents reach only two primitives, Git and a Postgres database; a gateway authenticates, logs, and inspects every request, never trusting agents.</li><li>Offline monitoring runs sensors every 10 minutes, reads Postgres and Git, and blocks a sandbox if needed.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> One auditable egress choke point is what makes a thousand-agent fleet governable; the same shape transfers to any enterprise agent deployment. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Gateway overhead at 1,000x scale, latency and cost of inspecting every call, is unquantified.</p>
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=237s" target="_blank" rel="noopener">[03:57]</a> Agent-authored coordination schema</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Prompting set one lead, 999 helpers, awareness of Git, the database, and the problem statement, nothing more.</li><li>Five minutes in, the lead created five coordination tables, Announce, Assign, Notes, Subtasks, Landed, with no instruction to.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Orchestration schema can be agent-authored; harness engineering shifts to providing state storage and safety, not workflow code. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Single run; schema quality and generality across tasks or models untested.</p>
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=770s" target="_blank" rel="noopener">[12:50]</a> Dreaming: offline memory consolidation and repair</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Agents write memory myopically during tasks, but memory must be globally coherent and non-redundant, a fundamental paradox.</li><li>Dreaming compiles transcripts and notes into representations like wikis and promotes memories into injected context loaded into every session.</li><li>A wrong landmark note trapped Pokémon gameplay in a loop; an offline pass corrected the note and the run reached Cerulean at action 1930.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Design implication for any long-lived agent memory: separate live capture from an offline audit and repair pass, or poison notes persist. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Rescue evidence is one gameplay anecdote, not a controlled experiment.</p>
+    </article>
+    
+    <article class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+      <h3 class="font-semibold text-slate-900"><a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=926s" target="_blank" rel="noopener">[15:26]</a> Wiki quality scales with dreaming compute</h3>
+      <ul class="mt-2 list-disc pl-5 space-y-1 text-sm">
+        <li>Eval: 25 questions answerable only from the anonymized Stainless corpus.</li><li>Search alone scores 53%; wiki alone rises 16% to 48%; wiki plus search 54% to 61% as dreaming tokens scale 1M to 12M.</li><li>Wiki grew from 103 pages and 764 links after 2 sessions to 323 pages and 12,893 links after 128.</li>
+      </ul>
+      <p class="mt-2 text-sm"><span class="font-semibold text-indigo-700">Why it matters:</span> Dreaming tokens are a tunable quality-versus-cost knob for knowledge representations, and learned wikis compose with retrieval rather than replace it. (inference)</p>
+      <p class="mt-1 text-sm"><span class="font-semibold text-rose-700">Watch out:</span> Log-scale token axis is budget, not spend; one corpus, 25 graded questions.</p>
+    </article>
+    
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700">Field playbook <span class="text-xs font-normal text-slate-500">(inferred from the talk, not claims made in it)</span></h2>
+    <div class="mt-3 grid gap-4 md:grid-cols-3 text-sm">
+      <div><h3 class="font-semibold mb-1">Ask the customer</h3><ul class="list-disc pl-5 space-y-1"><li>Which of your long-horizon tasks could run on shared state primitives, a repo and a database, instead of a bespoke harness?</li><li>What is your agent fleet&#39;s egress surface today, and could every request pass one auditable gateway?</li><li>Who audits your agents&#39; stored memories, and what happens when one is wrong?</li></ul></div>
+      <div><h3 class="font-semibold mb-1">Measure in a pilot</h3><ul class="list-disc pl-5 space-y-1"><li>Statements or subtasks completed per hour, plus share of helpers idle or sync-blocked, from shared-state logs.</li><li>Task score with versus without a memory store on your target model, with no memory prompting.</li><li>Errors corrected per offline dreaming pass, per million tokens spent.</li></ul></div>
+      <div><h3 class="font-semibold mb-1">Where it breaks</h3><ul class="list-disc pl-5 space-y-1"><li>Mid-run state loss: agents stop collaborating when no harness keeps project state visible.</li><li>Poison memory: one wrong note loops agents until an offline repair pass runs.</li><li>Gateway bottleneck: inspecting every call from 1,000 sandboxes may cap throughput or inflate cost.</li></ul></div>
+    </div>
+  </section>
+  
+
+  
+  <section class="bg-amber-50 rounded-xl border border-amber-200 p-5">
+    <h2 class="text-lg font-bold text-amber-800 mb-2">What the talk does not establish</h2>
+    <ul class="list-disc pl-5 space-y-1 text-sm"><li>No cost, token, or compute totals for the 1,000-agent run; economics are unquantified.</li><li>Single run reported; no repetition, variance, or cross-model comparison of the formalization result.</li><li>Slides never show the 1,000-agent run completing all 60 statements; completion rests on the speaker&#39;s summary.</li><li>Wiki eval covers one anonymized company corpus and 25 questions; generalization untested.</li></ul>
+  </section>
+  
+
+  
+  <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+    <h2 class="text-lg font-bold text-indigo-700 mb-2">Checklist</h2>
+    <ul class="space-y-2 text-sm">
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Give a multi-agent pilot only Git and a database as shared primitives; log what coordination schema the agents build themselves. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=237s" target="_blank" rel="noopener">[03:57]</a></span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Route all sandbox egress through a gateway that authenticates, logs, and inspects every request for misuse. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=180s" target="_blank" rel="noopener">[03:00]</a></span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Schedule offline monitoring over shared state at a fixed interval, with defined sandbox-block triggers. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=204s" target="_blank" rel="noopener">[03:24]</a></span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Benchmark your target model with versus without a memory store before building any memory tooling. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=580s" target="_blank" rel="noopener">[09:40]</a></span></li>
+      
+      <li class="flex items-start gap-2"><input type="checkbox" class="mt-1 accent-indigo-600"><span>Add an offline pass over transcripts and notes; count poison memories corrected per pass. <a class="font-mono text-xs text-indigo-600 hover:underline" href="https://www.youtube.com/watch?v=wrfbI5eyLAI&amp;t=872s" target="_blank" rel="noopener">[14:32]</a></span></li>
+      
+    </ul>
+  </section>
+  
+
+  
+  <section class="text-sm text-slate-600">
+    <h2 class="text-base font-bold text-slate-700 mb-1">Terms as used in the talk</h2>
+    <dl class="grid gap-x-4 gap-y-1 md:grid-cols-[max-content_1fr]">
+      <dt class="font-semibold">Prove2Me</dt><dd>Domain-specific harness for orchestrating math proofs; keeps shared project state in a queryable graph.</dd><dt class="font-semibold">Dreaming</dt><dd>Offline reflection over transcripts and notes to correct, consolidate, and build memory representations.</dd><dt class="font-semibold">Lean</dt><dd>Proof assistant that computationally verifies every step of a proof.</dd><dt class="font-semibold">Mathlib</dt><dd>Principal community library of formalized math; Claude&#39;s proof is over 5x its size.</dd>
+    </dl>
+  </section>
+  
+
+  <footer class="text-xs text-slate-400 border-t border-slate-200 pt-4">
+    Generated by the Hermes YouTube Learning Pipeline from the
+    <a class="underline hover:text-slate-600" href="https://vksepm.github.io/youtube-learning/transcripts/2026-11-26_wrfbI5eyLAI_enriched.md">interleaved transcript</a>.
+    Figures come from the speaker's slides; verify against the video before relying on them.
+  </footer>
+</main>
+</body>
+</html>

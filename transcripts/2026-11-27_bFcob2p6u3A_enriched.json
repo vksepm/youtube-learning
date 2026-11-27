@@ -1,0 +1,1548 @@
+{
+  "estimated_duration_seconds": 1166,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "start_time": "00:00",
+      "end_time": "00:11",
+      "visual_type": "SLIDE",
+      "screen_title": "AI Engineer Code Summit",
+      "visual_summary": "Opening event title sequence on a black background showing the conference logo, presenting sponsor card, and platinum sponsor logos.",
+      "ocr_details": [
+        "AI Engineer Code Summit",
+        "PRESENTED BY Google DeepMind",
+        "PLATINUM SPONSORS",
+        "aws",
+        "Devin",
+        "databricks",
+        "exa",
+        "FACTORY",
+        "Sonar"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [],
+      "alignment_note": "Introductory title bumpers before the speaker takes the stage."
+    },
+    {
+      "scene_index": 2,
+      "start_time": "00:12",
+      "end_time": "00:19",
+      "visual_type": "SLIDE",
+      "screen_title": "The Work of Art in the Intelligence Age",
+      "visual_summary": "Opens on a wide stage shot at 00:12 with Jason Liu standing in front of the main projection screen, then cuts at 00:16 to the conference picture-in-picture layout featuring the slide on a blue gradient background, speaker cutout on the bottom left, and event branding.",
+      "ocr_details": [
+        "OpenAI",
+        "The Work of Art in the Intelligence Age",
+        "Jason Liu / Developer Experience, OpenAI",
+        "Raising your ambition",
+        "Ambition in AI",
+        "Jason Liu / Developer Experience OpenAI"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:13",
+          "text": "I'm Jason from the Developer Experience team at OpenAI. And I'm super excited to kick off this track on raising your ambition."
+        }
+      ],
+      "alignment_note": "Jason introduces himself and the track name ('Raising your ambition'), matching the bottom-right label on the title slide and the 'Ambition in AI' lower-third."
+    },
+    {
+      "scene_index": 3,
+      "start_time": "00:20",
+      "end_time": "00:43",
+      "visual_type": "SLIDE",
+      "screen_title": "Everything Experience",
+      "visual_summary": "Black slide with large centered white quote text and a smaller subtitle underneath.",
+      "ocr_details": [
+        "\"Everything Experience\"",
+        "AI allows everyone to be a developer"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "00:21",
+          "text": "You know, I joined in March and the Codex app wasn't really a thing for a couple weeks. There was no Astro yet. And when these things launched, I kind of realized that I stopped becoming"
+        },
+        {
+          "timestamp": "00:30",
+          "text": "someone that worked on the Developer Experience team and I worked on the everything experience team now that AI can be a tool that allows everyone to make things. And so I want this talk to not only to be"
+        },
+        {
+          "timestamp": "00:40",
+          "text": "addressable to the people here in this room as developers, but for everyone online as well."
+        }
+      ],
+      "alignment_note": "Jason explains that he shifted from thinking of his role as 'Developer Experience' to the 'Everything Experience' displayed on screen because AI enables anyone to build."
+    },
+    {
+      "scene_index": 4,
+      "start_time": "00:44",
+      "end_time": "01:11",
+      "visual_type": "SLIDE",
+      "screen_title": "What we worked on this year",
+      "visual_summary": "A 3x3 grid of dark grey cards showcasing OpenAI releases and milestones from February through November across coding, science, web apps, cybersecurity, voice, computer use, math, physics, and engineering.",
+      "ocr_details": [
+        "What we worked on this year",
+        "Feb \u00b7 Codex app / Coding",
+        "Apr \u00b7 GPT-Rosalind / Biology",
+        "Jun \u00b7 Sites / Web apps",
+        "Jun \u00b7 Daybreak / Cybersecurity",
+        "Jul \u00b7 GPT-Live / Voice",
+        "Sep \u00b7 GPT-5 Astro / Computer use",
+        "Sep \u00b7 Navier-Stokes / Math",
+        "Oct \u00b7 Quantum field theory / Physics",
+        "Nov \u00b7 3D and Simulation / Engineering"
+      ],
+      "structured_reconstruction": "| Month | Project / Milestone | Domain |\n|---|---|---|\n| Feb | Codex app | Coding |\n| Apr | GPT-Rosalind | Biology |\n| Jun | Sites | Web apps |\n| Jun | Daybreak | Cybersecurity |\n| Jul | GPT-Live | Voice |\n| Sep | GPT-5 Astro | Computer use |\n| Sep | Navier-Stokes | Math |\n| Oct | Quantum field theory | Physics |\n| Nov | 3D and Simulation | Engineering |",
+      "spoken_segments": [
+        {
+          "timestamp": "00:43",
+          "text": "You know, in this year, we've done a lot of different things, right? We wanted a better coding app, we built the Codex app. We've been"
+        },
+        {
+          "timestamp": "00:50",
+          "text": "contributing to things like biology. Folks have wanted to make personal applications so we launched Sites, cybersecurity, voice, computer use. And in this past couple of months, we've done some really"
+        },
+        {
+          "timestamp": "01:00",
+          "text": "ambitious things like our contributions to math and physics and a lot of new physical engineering capabilities. Um, it's kind of crazy to think that a couple years ago we were doing grade school math and now"
+        },
+        {
+          "timestamp": "01:10",
+          "text": "we're able to like tackle Navier-Stokes."
+        }
+      ],
+      "alignment_note": "Jason walks chronologically through the 9 cards on the grid, naming Codex app, biology (GPT-Rosalind), Sites, cybersecurity, voice, computer use, Navier-Stokes in math, physics, and physical engineering."
+    },
+    {
+      "scene_index": 5,
+      "start_time": "01:12",
+      "end_time": "01:27",
+      "visual_type": "SLIDE",
+      "screen_title": "What do you want to make?",
+      "visual_summary": "A centered black square card over a blue gradient background displaying a single prompt question in white text.",
+      "ocr_details": [
+        "What do you want to make?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:12",
+          "text": "So, when I got asked to make a talk a little bit more about what ambition meant, I think the question I keep going back to is like ambition isn't"
+        },
+        {
+          "timestamp": "01:20",
+          "text": "sort of how you do things, but like how you approach these things, right? What do you want to make and how ambitious are you in thinking about the things that you make?"
+        }
+      ],
+      "alignment_note": "The speaker directly poses the question written on the card ('What do you want to make?') as the core framing of ambition."
+    },
+    {
+      "scene_index": 6,
+      "start_time": "01:28",
+      "end_time": "01:39",
+      "visual_type": "SLIDE",
+      "screen_title": "This is a coding conference, after all",
+      "visual_summary": "Black slide with large centered heading and three small icon-labeled topics arranged horizontally underneath.",
+      "ocr_details": [
+        "This is a coding conference, after all",
+        "How to kick off long-running tasks",
+        "Dark factories",
+        "Multi-agents"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:28",
+          "text": "I know this is a coding conference after all and many of the talks here will talk about things like how to run like longer running tasks or I think talk about like dark factories and multi-agents."
+        }
+      ],
+      "alignment_note": "Jason recites the three conference topic labels shown at the bottom of the slide: long-running tasks, dark factories, and multi-agents."
+    },
+    {
+      "scene_index": 7,
+      "start_time": "01:40",
+      "end_time": "01:54",
+      "visual_type": "SLIDE",
+      "screen_title": "This isn't the point for most people.",
+      "visual_summary": "Black slide showing 'Running 1,000 agents.' in grey with a horizontal strikethrough line, followed by 'This isn't the point for most people.' in bright white.",
+      "ocr_details": [
+        "Running 1,000 agents.",
+        "This isn't the point for most people."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:38",
+          "text": "Um, but I think from someone like me, like it might not be as relatable to just say that I have like thousands of agents running in the background, right? I have unlimited tokens and so really I want to give a talk that talks a little bit more about"
+        },
+        {
+          "timestamp": "01:50",
+          "text": "like what I think is the role and responsibility for developers in the future."
+        }
+      ],
+      "alignment_note": "Crossing out 'Running 1,000 agents.' reinforces Jason's statement that having thousands of background agents is not relatable or the point for most people."
+    },
+    {
+      "scene_index": 8,
+      "start_time": "01:55",
+      "end_time": "01:59",
+      "visual_type": "SLIDE",
+      "screen_title": "That's not what I mean by ambition",
+      "visual_summary": "Black slide with large centered text where the word 'ambition' is highlighted in blue.",
+      "ocr_details": [
+        "That's not what I mean by ambition"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "01:55",
+          "text": "Right, and so like using more tokens isn't what I mean by being more ambitious."
+        }
+      ],
+      "alignment_note": "Exact visual echo of the spoken transitional sentence."
+    },
+    {
+      "scene_index": 9,
+      "start_time": "02:00",
+      "end_time": "02:27",
+      "visual_type": "SLIDE",
+      "screen_title": "When execution is free, your ambition is limited by",
+      "visual_summary": "A dark overview slide presenting three pillar cards side by side with icons above each label; key verbs ('own', 'describe', 'pursue') are highlighted in blue.",
+      "ocr_details": [
+        "When execution is free, your ambition is limited by",
+        "what you own",
+        "what you can describe",
+        "what you're curious enough to pursue"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "02:00",
+          "text": "To me, in a world where execution is now free, I think ambition is summed up by these three principles, right? Do you actually believe that you've created this work and"
+        },
+        {
+          "timestamp": "02:10",
+          "text": "that you have ownership of this work? Can you describe what your tastes are and understand how you can tell the model to make things better, and can you describe what good looks like? And"
+        },
+        {
+          "timestamp": "02:20",
+          "text": "then lastly, are you actually curious enough to use AI to pursue other fields? Right? Are you actually able to expand your horizon rather than thinking that you're going to be replaced or something like that?"
+        }
+      ],
+      "alignment_note": "Jason introduces the three-part structure of his talk corresponding left-to-right to the three cards: ownership, description/taste, and curiosity to pursue other fields."
+    },
+    {
+      "scene_index": 10,
+      "start_time": "02:28",
+      "end_time": "02:47",
+      "visual_type": "SLIDE",
+      "screen_title": "Fears",
+      "visual_summary": "Black slide titled 'Fears' listing three questions with circular question-mark icons.",
+      "ocr_details": [
+        "Fears",
+        "Is there going to be more slop?",
+        "Will AI destroy our ability to think?",
+        "Is AI going to replace us?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "02:28",
+          "text": "And this mostly comes from three different fears that people have when it comes to like using AI more. Are we just going to create more slop in the world? You know, is AI"
+        },
+        {
+          "timestamp": "02:40",
+          "text": "going to destroy my ability to think critically, and is AI going to replace us? All right? And so I want to talk about these things one at a time and use that as a way of framing this conversation about ambition."
+        }
+      ],
+      "alignment_note": "Each of the three spoken fears maps 1-to-1 to the three bulleted questions on the slide."
+    },
+    {
+      "scene_index": 11,
+      "start_time": "02:48",
+      "end_time": "02:51",
+      "visual_type": "SLIDE",
+      "screen_title": "01 Own what you ship",
+      "visual_summary": "Section divider card on a blue gradient background showing '01 Own what you ship' with a subtitle and the edge of card '02' peeking from the right.",
+      "ocr_details": [
+        "01",
+        "Own what you ship",
+        "You're still there after it ships.",
+        "02"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "02:48",
+          "text": "And so the first thing is you really want to think about owning the work that you ship."
+        }
+      ],
+      "alignment_note": "Marks the transition into Part 1 of the talk ('01 Own what you ship')."
+    },
+    {
+      "scene_index": 12,
+      "start_time": "02:52",
+      "end_time": "03:03",
+      "visual_type": "SLIDE",
+      "screen_title": "Are we going to get more slop?",
+      "visual_summary": "Minimalist black slide displaying the first fear question in large white text.",
+      "ocr_details": [
+        "Are we going to get more slop?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "02:52",
+          "text": "So the first question is like, are we going to ship more slop? Right? And probably the answer is yes, but I try to think about this the same way that we thought about the camera when it first came out."
+        }
+      ],
+      "alignment_note": "Speaker reads the question on screen and previews his camera analogy."
+    },
+    {
+      "scene_index": 13,
+      "start_time": "03:04",
+      "end_time": "03:11",
+      "visual_type": "SLIDE",
+      "screen_title": "Is the technical work we do creative work?",
+      "visual_summary": "Black slide with 'A show of hands' above the main question, with 'creative work?' highlighted in blue.",
+      "ocr_details": [
+        "A show of hands",
+        "Is the technical work we do creative work?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "03:04",
+          "text": "Right, as a way of, like, show of hands, how many people here feel like the technical work they do is a creative pursuit?"
+        }
+      ],
+      "alignment_note": "Jason gestures to the audience asking for a show of hands matching the prompt on screen."
+    },
+    {
+      "scene_index": 14,
+      "start_time": "03:12",
+      "end_time": "03:23",
+      "visual_type": "SLIDE",
+      "screen_title": "Me too",
+      "visual_summary": "Black slide titled 'Me too' above a captioned still of music producer Rick Rubin saying 'No. I have zero technical ability.'",
+      "ocr_details": [
+        "Me too",
+        "No. I have zero technical ability."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "03:10",
+          "text": "Yeah, you know, me too. These days I don't think of myself as a developer, I mostly am thinking about myself as someone who's trying"
+        },
+        {
+          "timestamp": "03:20",
+          "text": "to will things into existence, right? And I have to again, feel this ownership and describe what I like."
+        }
+      ],
+      "alignment_note": "The Rick Rubin 'zero technical ability' meme humorously parallels Jason's remark that he thinks of himself less as a traditional developer and more as willing things into existence."
+    },
+    {
+      "scene_index": 15,
+      "start_time": "03:24",
+      "end_time": "03:39",
+      "visual_type": "SLIDE",
+      "screen_title": "Engineer. Scientist. Artist.",
+      "visual_summary": "Black slide displaying three stacked titles in large white text: 'Engineer.', 'Scientist.', 'Artist.'",
+      "ocr_details": [
+        "Engineer.",
+        "Scientist.",
+        "Artist."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "03:24",
+          "text": "In a past life, not many people know this. I used to be a machine learning engineer, I used to be a physicist and I used to be an artist. And the story of the camera is something I keep thinking about as we introduce more ways of doing this kind of replication, right, as this way of creating things."
+        }
+      ],
+      "alignment_note": "The three stacked nouns correspond to Jason's past roles: ML engineer ('Engineer.'), physicist ('Scientist.'), and artist ('Artist.')."
+    },
+    {
+      "scene_index": 16,
+      "start_time": "03:40",
+      "end_time": "04:11",
+      "visual_type": "SLIDE",
+      "screen_title": "Was photography art at all?",
+      "visual_summary": "Two-column slide with text on the left asking 'Was photography art at all?' and a historical black-and-white daguerreotype street photograph on the right.",
+      "ocr_details": [
+        "Was photography art at all?",
+        "The painters whose job was to recreate images were pretty stressed out.",
+        "Louis Daguerre, Boulevard du Temple, c. 1838"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "03:41",
+          "text": "When the camera first came out, painters who were busy focusing on their ability to recreate images, yeah, they were a little stressed out. But at that time people weren't even thinking"
+        },
+        {
+          "timestamp": "03:50",
+          "text": "about whether or not photography could change the art world. We weren't thinking about what a movie meant, you see like a Charlie Chaplin film when it comes out. It's really easy to dismiss that as some, you know, silly thing."
+        },
+        {
+          "timestamp": "04:01",
+          "text": "But at some point you realize that not only is photography art but it has changed the art world, right? And now we have film and all these other mediums and there's amazing things that you can explore."
+        }
+      ],
+      "alignment_note": "The Louis Daguerre 1838 photograph anchors the historical analogy about painters feeling threatened when photography arrived."
+    },
+    {
+      "scene_index": 17,
+      "start_time": "04:12",
+      "end_time": "04:23",
+      "visual_type": "SLIDE",
+      "screen_title": "Walter Benjamin Quote",
+      "visual_summary": "Quote slide on a black background featuring an excerpt from Walter Benjamin on the left and his black-and-white portrait on the right.",
+      "ocr_details": [
+        "\"Photography freed the hand of the most important artistic functions.\"",
+        "Walter Benjamin",
+        "The Work of Art in the Age of Mechanical Reproduction"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "04:12",
+          "text": "Walter Benjamin says this in a book, The Work of Art in the Age of Mechanical Reproduction, a book that came out right when the camera became popular. He says photography freed the hand of the most important functions and brought them to the eyes and to the voice, right?"
+        }
+      ],
+      "alignment_note": "Jason cites the exact book and quote displayed on screen (note the talk title itself riffs on Benjamin's essay)."
+    },
+    {
+      "scene_index": 18,
+      "start_time": "04:24",
+      "end_time": "04:43",
+      "visual_type": "SLIDE",
+      "screen_title": "From the hands, to the eye, to the voice",
+      "visual_summary": "Black slide with centered three-line statement tracing the shift in creative control.",
+      "ocr_details": [
+        "From the hands, to the eye, to the voice"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "04:24",
+          "text": "This is kind of the same with like AI now, so I just get to use voice mode on chat. I can just say, you know, do this and do that in the same way that at some point, if you're a photographer or a director, you can just say, you know, move that camera over there, I want a wider shot, I want to capture"
+        },
+        {
+          "timestamp": "04:40",
+          "text": "some kind of feeling, and maybe have a team around me that helps me capture that vision."
+        }
+      ],
+      "alignment_note": "Connects the visual progression ('hands -> eye -> voice') to directing a camera crew or prompting AI via voice mode."
+    },
+    {
+      "scene_index": 19,
+      "start_time": "04:44",
+      "end_time": "05:15",
+      "visual_type": "SLIDE",
+      "screen_title": "Now everyone has a camera",
+      "visual_summary": "Black slide titled 'Now everyone has a camera' with three text columns comparing photo slop, capturing key moments, and childhood access.",
+      "ocr_details": [
+        "Now everyone has a camera",
+        "I can take 1000 photos / I'll probably never look at them. Is that slop? Maybe.",
+        "I just need to capture one moment / Everyone deserves to capture one",
+        "Even 30 years ago... / The first photo of me is from when I was a couple months old"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "04:44",
+          "text": "And now we live in a world where everyone has a camera, and sure, maybe I have a thousand photos in my camera roll that I never look at, maybe that are slop. But it only matters whether or not I've captured a couple of really important moments in my life."
+        },
+        {
+          "timestamp": "05:00",
+          "text": "Right, and having ownership over those moments is the thing that's important. Like, for example, like 30 years ago, like I didn't really have childhood photos because we just grew up in a place where we couldn't afford a camera. Right? And now technology"
+        },
+        {
+          "timestamp": "05:11",
+          "text": "has allowed everyone the ability to have that kind of access. And I sure would have liked to have a camera back then even if it meant a little bit more slop."
+        }
+      ],
+      "alignment_note": "Jason speaks sequentially through each of the three columns from left to right."
+    },
+    {
+      "scene_index": 20,
+      "start_time": "05:16",
+      "end_time": "05:43",
+      "visual_type": "SLIDE",
+      "screen_title": "Painter, or artist?",
+      "visual_summary": "Black slide asking 'Painter, or artist?' with a supporting line explaining that tools and code are mediums.",
+      "ocr_details": [
+        "Painter, or artist?",
+        "The camera, the paintbrush, clay, even code; all just mediums. We're the ones who make it."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "05:19",
+          "text": "Right? And so if you go back to this idea of this painter, I think the question you have to ask yourself is do you identify yourself as the painter in this example or as the artist? Right? Maybe it means that painting photorealistically isn't the skill"
+        },
+        {
+          "timestamp": "05:30",
+          "text": "that's really valuable. But if you think about yourself as the artist, right, whether it is a paintbrush or the camera, whether it is code or clay or anything else, these are just mediums that"
+        },
+        {
+          "timestamp": "05:40",
+          "text": "allow you to express yourself and to make things."
+        }
+      ],
+      "alignment_note": "Directly paraphrases the slide subtitle listing camera, paintbrush, clay, and code as creative mediums."
+    },
+    {
+      "scene_index": 21,
+      "start_time": "05:44",
+      "end_time": "05:59",
+      "visual_type": "SLIDE",
+      "screen_title": "A table / A movie / Open Source",
+      "visual_summary": "Three-column slide on a black background contrasting tool attribution and creative ownership across carpentry, filmmaking, and open source software.",
+      "ocr_details": [
+        "A table / \"I don't say DeWalt made this table.\"",
+        "A movie / A thousand people on set. It's still the director's movie.",
+        "Open Source / Hundreds of contributors. The core maintainers are still responsible for it."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "05:44",
+          "text": "Right? I don't make a table and say like DeWalt made this table. Right? Just because a director has thousands of people on set, it's still the director's movie. And even in open source, we might have thousands of contributors or even agents now running the system, but it's the core maintainers that hold the responsibility for the quality of the work."
+        }
+      ],
+      "alignment_note": "Each sentence maps directly to one of the three columns on screen (DeWalt table, director's movie, open-source maintainers)."
+    },
+    {
+      "scene_index": 22,
+      "start_time": "06:00",
+      "end_time": "06:31",
+      "visual_type": "SLIDE",
+      "screen_title": "Active participant, or passive observer?",
+      "visual_summary": "Black slide posing the choice between active participation and passive observation, with a subtitle about merging 1,000 PRs a day.",
+      "ocr_details": [
+        "Active participant, or passive observer?",
+        "Somewhere, an engineer will merge a thousand PRs a day. The difference is care."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "06:02",
+          "text": "All right. And I don't think that danger these days is whether or not like AI is going to create more slop, right? But instead it's about self-erasure."
+        },
+        {
+          "timestamp": "06:11",
+          "text": "Right? Are you going to be a passive observer of the work that's being created, which results in the slop, or are you going to be someone who is an active participant in the act of creation? Right? And I think many"
+        },
+        {
+          "timestamp": "06:20",
+          "text": "people have been sort of moving themselves away from this. Right, and the only difference between like a person who's making 1,000 PRs versus another is whether or not they actually care about the work and whether they are an active participant."
+        }
+      ],
+      "alignment_note": "Explains the subtitle about merging 1,000 PRs a day: volume isn't the differentiator, caring and active participation are."
+    },
+    {
+      "scene_index": 23,
+      "start_time": "06:32",
+      "end_time": "06:47",
+      "visual_type": "SLIDE",
+      "screen_title": "What do you do as an engineer",
+      "visual_summary": "2x3 grid on a black background with the title in the top-left tile and five dark grey action cards with icons.",
+      "ocr_details": [
+        "What do you do as an engineer",
+        "Use the thing",
+        "Notice where it breaks",
+        "Decide it needs another pass",
+        "No Great Work is one shot",
+        "Iterate"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "06:32",
+          "text": "You know, and so as an engineer, what this means is you just have to use your products more, notice when things break and decide whether things need another pass. Like,"
+        },
+        {
+          "timestamp": "06:40",
+          "text": "a lot of the great examples you see online are not one-shot examples. Right? These are things that you iterate over time because you feel proud to create this kind of work."
+        }
+      ],
+      "alignment_note": "Jason reads through the five cards in order: use the thing, notice where it breaks, decide it needs another pass, not one-shot, iterate."
+    },
+    {
+      "scene_index": 24,
+      "start_time": "06:48",
+      "end_time": "07:03",
+      "visual_type": "SLIDE",
+      "screen_title": "Internally...",
+      "visual_summary": "Black slide titled 'Internally...' with three columns describing OpenAI's internal product culture around Codex.",
+      "ocr_details": [
+        "Internally...",
+        "Codex / They're online talking to the people who use it. What broke, what felt weird, what they should go fix.",
+        "Radical Ownership / A radical sense of ownership over the quality of the product",
+        "Expanding and Contracting / As things slip that kind of ownership helps us bring things back in."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "06:48",
+          "text": "You know, internally, we have a lot of amazing work with like our ownership over like the Codex app, right? Most people here have an incredible sense of ownership over the product, and as things slip as we ship more, we want to"
+        },
+        {
+          "timestamp": "07:00",
+          "text": "bring them together. And again, this is mostly because of the fact that we care."
+        }
+      ],
+      "alignment_note": "Connects internal Codex team practices to the three columns: Codex user feedback, Radical Ownership, and Expanding and Contracting."
+    },
+    {
+      "scene_index": 25,
+      "start_time": "07:04",
+      "end_time": "07:11",
+      "visual_type": "SLIDE",
+      "screen_title": "01 Own what you ship",
+      "visual_summary": "Revisits the blue-gradient section card '01 Own what you ship' before sliding to section 02.",
+      "ocr_details": [
+        "01",
+        "Own what you ship",
+        "You're still there after it ships.",
+        "02"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "07:03",
+          "text": "Right, so, in terms of worrying about slop, I think that the medicine for slop is really the fact that you really need to believe that you own this work."
+        }
+      ],
+      "alignment_note": "Recaps section 01 as the antidote to AI slop."
+    },
+    {
+      "scene_index": 26,
+      "start_time": "07:12",
+      "end_time": "07:23",
+      "visual_type": "SLIDE",
+      "screen_title": "02 Go out and get inspired",
+      "visual_summary": "Section divider card on a blue gradient background displaying '02 Go out and get inspired' with card '03' peeking on the right.",
+      "ocr_details": [
+        "02",
+        "Go out and get inspired",
+        "Learn what you need to be a better critic.",
+        "03"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "07:13",
+          "text": "I think the second thing to address is whether or not you feel like you can actually describe what good looks like. And for that, you need to go out and be inspired."
+        }
+      ],
+      "alignment_note": "Transitions to Part 2 of the framework ('02 Go out and get inspired')."
+    },
+    {
+      "scene_index": 27,
+      "start_time": "07:24",
+      "end_time": "07:35",
+      "visual_type": "SLIDE",
+      "screen_title": "Will AI destroy our ability to think?",
+      "visual_summary": "Black slide posing the second fear question and tying it back to knowing when work is good enough.",
+      "ocr_details": [
+        "Will AI destroy our ability to think?",
+        "If I own the work, how do I know when it's good enough?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "07:24",
+          "text": "So the second question people are asking now is like, do you think AI is going to destroy our ability to think critically, right? If I own the work, how do I know something's good enough?"
+        }
+      ],
+      "alignment_note": "Speaker reads both the headline and subtitle almost verbatim."
+    },
+    {
+      "scene_index": 28,
+      "start_time": "07:36",
+      "end_time": "07:43",
+      "visual_type": "SLIDE",
+      "screen_title": "Does it take away all the effort?",
+      "visual_summary": "Black slide asking 'Does it take away all the effort?' with subtitle 'Can I just hand you a camera?'",
+      "ocr_details": [
+        "Does it take away all the effort?",
+        "Can I just hand you a camera?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "07:35",
+          "text": "If I just hand you a camera and the technology, like does it mean that it takes away all the effort of creation?"
+        }
+      ],
+      "alignment_note": "Ties the camera analogy to the question of creative effort."
+    },
+    {
+      "scene_index": 29,
+      "start_time": "07:44",
+      "end_time": "08:11",
+      "visual_type": "SLIDE",
+      "screen_title": "No. I still need to know what good looks like.",
+      "visual_summary": "Black slide with centered text surrounded by seven illustrated elements of art and design: Line, Shape, Color, Form, Texture, Value, and Space.",
+      "ocr_details": [
+        "No. I still need to know what good looks like.",
+        "Line",
+        "Shape",
+        "Color",
+        "Form",
+        "Texture",
+        "Value",
+        "Space"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "07:40",
+          "text": "And I don't think the answer is yes. Right, instead it's now about having language to describe what's going on. So when I first started art school, you know, maybe I don't know how to develop film,"
+        },
+        {
+          "timestamp": "07:50",
+          "text": "I just use my iPhone. But I still need to understand like the elements of design and what does beautiful look like. Right, space, value, shape, texture, you know, when I would just spend"
+        },
+        {
+          "timestamp": "08:00",
+          "text": "a lot of time thinking, you know what, I don't think I understand what negative space means. Let me go do a lot of sketches and explore a little bit. It's the same thing with like development now, right? I can make multiple apps and I have to think about why I like something and why I don't."
+        }
+      ],
+      "alignment_note": "Jason explicitly names several of the seven visual design elements illustrated around the text (space, value, shape, texture)."
+    },
+    {
+      "scene_index": 30,
+      "start_time": "08:12",
+      "end_time": "08:31",
+      "visual_type": "SLIDE",
+      "screen_title": "My taste exceeded my skill",
+      "visual_summary": "Black slide featuring the heading 'My taste exceeded my skill' and a subtitle warning against vague prompting like 'Make it pop.'",
+      "ocr_details": [
+        "My taste exceeded my skill",
+        "You can't just look in the mirror and say, \"Make it pop.\" 100 times"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "08:12",
+          "text": "And most of my time in art school was just thinking, man, like I can make things. And I can look at them and I just say, I don't like how this looks. And"
+        },
+        {
+          "timestamp": "08:20",
+          "text": "what I was noticing was that my taste and my judgment exceeded my skill. I could not do the thing I liked. Right? And I can't just look in the mirror and tell myself like make it pop a hundred times and know that it's going to be better. I have to go out and develop that language."
+        }
+      ],
+      "alignment_note": "Direct verbal match to the Ira Glass-style taste gap and the 'Make it pop.' subtitle."
+    },
+    {
+      "scene_index": 31,
+      "start_time": "08:32",
+      "end_time": "08:51",
+      "visual_type": "SLIDE",
+      "screen_title": "What does it mean to develop taste?",
+      "visual_summary": "Dark slide titled 'What does it mean to develop taste?' Initially displays a single card on the left ('People say \"Taste is the moat.\"'), then reveals a second card on the right by 08:40 defining taste operationally.",
+      "ocr_details": [
+        "What does it mean to develop taste?",
+        "People say / \"Taste is the moat.\"",
+        "To me / The ability to describe what you like, and to predict what others will like."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "08:32",
+          "text": "Right, people say like taste is the moat, but I think I generally hate that line. Because this doesn't tell you what taste really means."
+        },
+        {
+          "timestamp": "08:40",
+          "text": "Right? To me, taste is the ability to describe what you like and predict what others will like. Right? And building this model of the world and of other people. That's the new thinking."
+        }
+      ],
+      "alignment_note": "The two-stage card reveal matches Jason first critiquing the clich\u00e9 'Taste is the moat' and then introducing his own definition."
+    },
+    {
+      "scene_index": 32,
+      "start_time": "08:52",
+      "end_time": "08:59",
+      "visual_type": "SLIDE",
+      "screen_title": "Ludwig Wittgenstein Quote",
+      "visual_summary": "Black quote slide featuring Wittgenstein's famous line from Tractatus Logico-Philosophicus next to his black-and-white portrait.",
+      "ocr_details": [
+        "\"The limits of my language mean the limits of my world.\"",
+        "Ludwig Wittgenstein",
+        "Tractatus Logico-Philosophicus"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "08:52",
+          "text": "Wittgenstein, the limits of my language means the limits of my world. And I think that's very much the case on pursuing ambitious projects."
+        }
+      ],
+      "alignment_note": "Speaker reads the quote shown on screen."
+    },
+    {
+      "scene_index": 33,
+      "start_time": "09:00",
+      "end_time": "09:19",
+      "visual_type": "SLIDE",
+      "screen_title": "Steve Ruiz Tweet",
+      "visual_summary": "Centered dark-mode screenshot of an X/Twitter post by Steve Ruiz (@steveruizok) sharing a software architecture prompt.",
+      "ocr_details": [
+        "Steve Ruiz @steveruizok",
+        "good prompt \"find all of the implicit state machines in my app\"",
+        "8:24 AM \u00b7 Oct 31, 2026 \u00b7 2.1M Views"
+      ],
+      "structured_reconstruction": "find all of the implicit state machines in my app",
+      "spoken_segments": [
+        {
+          "timestamp": "09:00",
+          "text": "You know, the funny example of just like the use of language, I don't know if Steve is in the room but he made a tweet a couple days ago that just says find all the implicit state machines in my app. I had to go Google what that meant, right?"
+        },
+        {
+          "timestamp": "09:11",
+          "text": "And all of a sudden all the comments are just how like everyone's apps are like 20% faster. These are now like really simple ways of just developing some language to understand what good looks like and how to make things better."
+        }
+      ],
+      "alignment_note": "Jason references Steve Ruiz's tweet on screen as a concrete example of technical vocabulary unlocking better AI outputs."
+    },
+    {
+      "scene_index": 34,
+      "start_time": "09:20",
+      "end_time": "10:07",
+      "visual_type": "BENCHMARK_TABLE",
+      "screen_title": "The generator-discriminator gap",
+      "visual_summary": "Line chart plotting Quality (Y-axis) vs. Time (X-axis) with three curves: 'Your taste' (solid white step-like curve), 'Model capability' (dashed grey rising S-curve starting at 'Model launch'), and 'The work' (dashed blue curve). Where 'Model capability' crosses 'Your taste' is labeled 'Model catches up'. Below the chart is a red warning line, and at 10:04 a blue takeaway line appears at the bottom.",
+      "ocr_details": [
+        "The generator-discriminator gap",
+        "Quality",
+        "Time",
+        "Your taste",
+        "Model launch",
+        "Model catches up",
+        "The work",
+        "Model capability",
+        "Failure: the model can generate far more than we can judge",
+        "What we control: our discriminator, our eyes and our judgment"
+      ],
+      "structured_reconstruction": "| Phase | Model capability vs. Your taste | Trajectory of The work | Key Concept |\n|---|---|---|---|\n| At Model launch | Model capability starts below Your taste | Follows rising Model capability | Human taste leads model output |\n| Before Model catches up | Model capability < Your taste | Improves as model capability grows | Discriminator guides improvement |\n| At Model catches up | Model capability = Your taste | Reaches the level of Your taste | Intersection point |\n| Beyond Model catches up | Model capability > Your taste | Plateaus at Your taste despite higher capability | Failure: model can generate far more than we can judge; we control our discriminator (eyes & judgment) |",
+      "spoken_segments": [
+        {
+          "timestamp": "09:20",
+          "text": "If you think of like model progress, in machine learning there's a really helpful concept called the generator-discriminator gap, right? You have two models, one"
+        },
+        {
+          "timestamp": "09:30",
+          "text": "grades the model and then one actually creates the outputs. And what happens is if the grader is too good then the model can't learn, and if the generator is too good, the discriminator can't help the model improve."
+        },
+        {
+          "timestamp": "09:41",
+          "text": "We are now that discriminator, right? As model capabilities go up, at some point, maybe the model's outputs hit your own taste levels. Then it's really hard"
+        },
+        {
+          "timestamp": "09:50",
+          "text": "to actually improve. And then to make things that are better, you have to go out, develop that language and know what good looks like. And the failure mode here is just not being able to"
+        },
+        {
+          "timestamp": "10:00",
+          "text": "discern whether or not a model can improve. And again, what this means is we have to go out and learn again. We have to think again."
+        }
+      ],
+      "alignment_note": "Jason explains the intersection labeled 'Model catches up' on the chart ('hits your own taste levels') and the red 'Failure' line, followed by the blue takeaway revealed at 10:04."
+    },
+    {
+      "scene_index": 35,
+      "start_time": "10:08",
+      "end_time": "10:43",
+      "visual_type": "SLIDE",
+      "screen_title": "Words I started learning, so I can describe this better to AI",
+      "visual_summary": "Dark slide containing four vertical category cards listing specific UI/UX, typography, layout, and motion design vocabulary terms.",
+      "ocr_details": [
+        "Words I started learning, so I can describe this better to AI",
+        "Typography",
+        "Kerning",
+        "Tracking",
+        "Leading",
+        "X-height",
+        "Type scale",
+        "Line length",
+        "Tabular numbers",
+        "Hierarchy & layout",
+        "Information hierarchy",
+        "Visual weight",
+        "Optical center",
+        "Negative space",
+        "Proximity",
+        "Alignment",
+        "Grid",
+        "Motion",
+        "Easing",
+        "Duration",
+        "Stagger",
+        "Spring",
+        "Shared element transition",
+        "Interruptible animation",
+        "Origin-aware animation",
+        "Interaction",
+        "Affordance",
+        "Touch target",
+        "Focus state",
+        "Empty state",
+        "Progressive disclosure",
+        "Optimistic update",
+        "Layout shift"
+      ],
+      "structured_reconstruction": "| Typography | Hierarchy & layout | Motion | Interaction |\n|---|---|---|---|\n| Kerning | Information hierarchy | Easing | Affordance |\n| Tracking | Visual weight | Duration | Touch target |\n| Leading | Optical center | Stagger | Focus state |\n| X-height | Negative space | Spring | Empty state |\n| Type scale | Proximity | Shared element transition | Progressive disclosure |\n| Line length | Alignment | Interruptible animation | Optimistic update |\n| Tabular numbers | Grid | Origin-aware animation | Layout shift |",
+      "spoken_segments": [
+        {
+          "timestamp": "10:08",
+          "text": "This is an example of a bunch of things I spent my past year learning, like in just building software, right? Like, as I build these applications, I realized, oh man, these websites look really ugly. Like, I need to learn about typography. Like, why is everything"
+        },
+        {
+          "timestamp": "10:20",
+          "text": "italic? I don't understand. And I spent a lot of time learning about typography. Then it was about, like, how the information was presented to avoid looking like slop. And then it was about, like, motion design and"
+        },
+        {
+          "timestamp": "10:30",
+          "text": "how can I make things move in a beautiful way and I got to spend so much time learning about animation. And then learning about, like, interaction patterns and what makes an app feel beautiful. And this is really fun, right? And this is again, spending more time learning in order to make great things."
+        }
+      ],
+      "alignment_note": "Jason walks across the four columns from left to right: Typography, Hierarchy & layout, Motion, and Interaction."
+    },
+    {
+      "scene_index": 36,
+      "start_time": "10:44",
+      "end_time": "10:47",
+      "visual_type": "SLIDE",
+      "screen_title": "With language you can also differentiate",
+      "visual_summary": "Black slide with large centered text highlighting 'differentiate' in blue.",
+      "ocr_details": [
+        "With language you can also differentiate"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "10:43",
+          "text": "And most importantly, having the ability to describe things is what allows you to differentiate, right?"
+        }
+      ],
+      "alignment_note": "Direct verbal match to the text on screen."
+    },
+    {
+      "scene_index": 37,
+      "start_time": "10:48",
+      "end_time": "11:03",
+      "visual_type": "SLIDE",
+      "screen_title": "Think back to the purple apps.",
+      "visual_summary": "Black slide titled 'Think back to the purple apps.' showing three generic AI-generated mobile/web app mockups with purple gradients and rounded cards ('Dayone', 'Pantry', 'Wayfare').",
+      "ocr_details": [
+        "Think back to the purple apps.",
+        "Dayone / My week / November 4 - 10",
+        "Pantry / Broccoli pasta / 25 minutes / Start cooking",
+        "Wayfare / A day in Paris / 6 stops \u00b7 4.2 km / Caf\u00e9 de Flore / Mus\u00e9e d'Orsay / Palais Royal"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "10:50",
+          "text": "If you think about these purple apps, the reason these existed was because the people making these applications like didn't have the sight, they couldn't actually describe what was wrong and they thought this was okay, right? And this limit in language is sort of the problem that we face."
+        }
+      ],
+      "alignment_note": "The three purple UI mockups illustrate the homogeneous default aesthetic produced when builders lack design vocabulary."
+    },
+    {
+      "scene_index": 38,
+      "start_time": "11:04",
+      "end_time": "11:07",
+      "visual_type": "SLIDE",
+      "screen_title": "Where does new language come from?",
+      "visual_summary": "Minimalist black slide posing a centered transition question.",
+      "ocr_details": [
+        "Where does new language come from?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "11:03",
+          "text": "And so then the question now is like, how do we develop this new language?"
+        }
+      ],
+      "alignment_note": "Speaker asks the exact question displayed on the slide."
+    },
+    {
+      "scene_index": 39,
+      "start_time": "11:08",
+      "end_time": "12:11",
+      "visual_type": "SLIDE",
+      "screen_title": "If you want taste, you have to eat",
+      "visual_summary": "2x3 grid on a dark background with the headline in the top-left ('you have to eat' in blue) and five action tiles with icons, plus a footer prompt along the bottom.",
+      "ocr_details": [
+        "If you want taste, you have to eat",
+        "Play games / What makes a game fun, and what kind of stories",
+        "Try other tools / Spend an afternoon with other application",
+        "Look at beautiful things / Learning industrial design",
+        "Learn motion design / to make my application feel more beautiful",
+        "Watch more movies / as I help with marketing",
+        "And ask yourself: 'Am I able to describe what I like?'"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "11:08",
+          "text": "And honestly, the line that I've sort of been partial to now is just like, if you want good taste, you have to eat. You have to go out and explore things. Right? People are like vibe coding video games. Maybe the answer isn't just to like"
+        },
+        {
+          "timestamp": "11:20",
+          "text": "tell the model to do better, but like play some video games and understand what feels good, what animations feel good, what stories matter, what stories do I want to tell. Right? If you're building tools, try other people's"
+        },
+        {
+          "timestamp": "11:30",
+          "text": "tools and applications and understand what you like. Look at beautiful things. I've been doing a lot of like 3D printing with AI. And everything just looks like rectangles glued together, and I just kept saying"
+        },
+        {
+          "timestamp": "11:40",
+          "text": "like, make it more beautiful. Right, and that's a really frustrating experience. And I started looking at like sports cars, like industrial design, I started going to stores and looking at things and going, oh, let me describe"
+        },
+        {
+          "timestamp": "11:50",
+          "text": "and understand what like good curves look like. And again, it's like a really fun experience, and now more of my designs are like incredibly beautiful for what I think is beautiful, right? I've been helping with like"
+        },
+        {
+          "timestamp": "12:00",
+          "text": "marketing and I realize that like I tell the marketing team that they should use like the Codex app more, but I'm not watching more ads. And as I'm watching more movies, I realize there's great stories to tell and everything becomes better again."
+        }
+      ],
+      "alignment_note": "Jason walks through each of the five cards on the slide\u2014Play games, Try other tools, Look at beautiful things (industrial design), Learn motion design, and Watch more movies (marketing)\u2014giving personal examples for each."
+    },
+    {
+      "scene_index": 40,
+      "start_time": "12:12",
+      "end_time": "12:27",
+      "visual_type": "SLIDE",
+      "screen_title": "Thinking about why I like things",
+      "visual_summary": "Black slide with centered statement and subtitle reflecting on curiosity and building systems.",
+      "ocr_details": [
+        "Thinking about why I like things",
+        "It's enriching my world, and inspiring me to build new tools and new systems"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "12:12",
+          "text": "Right? And this is kind of the really exciting part of using these tools. And like, thinking about why I like things and why things are amazing, why things feel good,"
+        },
+        {
+          "timestamp": "12:20",
+          "text": "now is how I spend my time. Right? So I'm not thinking less, I'm thinking more, and it's really enriching my world and making me see things differently."
+        }
+      ],
+      "alignment_note": "Speaker echoes 'thinking about why I like things' and 'enriching my world' directly from the slide."
+    },
+    {
+      "scene_index": 41,
+      "start_time": "12:28",
+      "end_time": "12:51",
+      "visual_type": "SLIDE",
+      "screen_title": "Give your team time to try what other people are making",
+      "visual_summary": "Black slide offering management advice on giving teams time to explore external products.",
+      "ocr_details": [
+        "Give your team time to try what other people are making",
+        "That's how they come back with a point of view"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "12:28",
+          "text": "And if you're running a team, I think that the one takeaway here is that like if you really believe that AI is making you more productive, I think you owe it to yourself and the rest of the team to make space to go out and explore things"
+        },
+        {
+          "timestamp": "12:40",
+          "text": "and try new applications and just actually go out and like experience the world. And if you are someone that makes really great work, inspiring others as well, right? And that's how you can come back with a point of view."
+        }
+      ],
+      "alignment_note": "Directly elaborates on the slide's call for leaders to give teams space to explore others' creations and form a point of view."
+    },
+    {
+      "scene_index": 42,
+      "start_time": "12:52",
+      "end_time": "12:59",
+      "visual_type": "SLIDE",
+      "screen_title": "02 Go out and get inspired",
+      "visual_summary": "Revisits section card 02 on a blue gradient background with the added bold closing line 'You're not thinking less.'",
+      "ocr_details": [
+        "02",
+        "Go out and get inspired",
+        "Learn what you need to be a better critic.",
+        "You're not thinking less.",
+        "03"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "12:52",
+          "text": "So, go out and be inspired, learn to be a better critic, and recognize that you're not thinking less, you're thinking more."
+        }
+      ],
+      "alignment_note": "Summarizes Section 02 by reading the exact phrases on the card."
+    },
+    {
+      "scene_index": 43,
+      "start_time": "13:00",
+      "end_time": "13:15",
+      "visual_type": "SLIDE",
+      "screen_title": "03 Be curious enough to pursue it",
+      "visual_summary": "Section divider card on a blue gradient background introducing the third pillar: '03 Be curious enough to pursue it'.",
+      "ocr_details": [
+        "03",
+        "Be curious enough to pursue it",
+        "What field did you put aside for software?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "13:00",
+          "text": "And the last thing is actually just being curious and really, really curious to pursue new ideas. Like one question I want you guys to think about as you are thinking about your role as software engineers is like what were the things you gave up or put aside to pursue software, right?"
+        }
+      ],
+      "alignment_note": "Transitions into Part 3 of the talk and asks the exact question shown at the bottom of the card."
+    },
+    {
+      "scene_index": 44,
+      "start_time": "13:16",
+      "end_time": "13:23",
+      "visual_type": "SLIDE",
+      "screen_title": "Where else could you use your judgment?",
+      "visual_summary": "Black slide displaying a single centered question.",
+      "ocr_details": [
+        "Where else could you use your judgment?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "13:14",
+          "text": "Where else could you use your judgment and your experience you developed as a software engineer? Because I think people worry about being replaced, but really I think people are needed in way more places."
+        }
+      ],
+      "alignment_note": "Reads the question on screen and pivots to the third fear (being replaced)."
+    },
+    {
+      "scene_index": 45,
+      "start_time": "13:24",
+      "end_time": "13:55",
+      "visual_type": "SLIDE",
+      "screen_title": "For creatives, working across fields was always the case",
+      "visual_summary": "Collage slide on a black background with a centered headline surrounded by historical portraits and captions for Charles and Ray Eames, Michelangelo, and Leonardo da Vinci.",
+      "ocr_details": [
+        "For creatives, working across fields was always the case",
+        "\u2192 Charles and Ray Eames / Furniture, houses, movies, and toys.",
+        "\u2192 Michelangelo / A sculptor, a painter, an architect, and a poet.",
+        "\u2192 Leonardo da Vinci / A painter, an inventor, and a scientist."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "13:24",
+          "text": "If you think about when the invention of like the pencil or sculpting became more easy. All these different industries in the creative world became really, very much multidisciplinary, right? It completely made sense that if you"
+        },
+        {
+          "timestamp": "13:40",
+          "text": "were a furniture designer, you could be an architect, and you could like make a movie and design kids' toys and playgrounds, right? Like Michelangelo is a sculptor and a painter and an architect and a poet."
+        },
+        {
+          "timestamp": "13:50",
+          "text": "You know, it completely made sense that you could do all these things."
+        }
+      ],
+      "alignment_note": "Jason references the Eameses (furniture, houses, movies, toys) and Michelangelo (sculptor, painter, architect, poet) directly from the captioned portraits."
+    },
+    {
+      "scene_index": 46,
+      "start_time": "13:56",
+      "end_time": "14:07",
+      "visual_type": "SLIDE",
+      "screen_title": "Then technology got more complicated",
+      "visual_summary": "Black slide explaining why cross-disciplinary work became difficult as specialization increased.",
+      "ocr_details": [
+        "Then technology got more complicated",
+        "Crossing fields got very hard. But not impossible."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "13:55",
+          "text": "And this is a creative world. Like you invent the pencil, you can do a lot of really amazing things. But with technology, it's become even more complicated"
+        },
+        {
+          "timestamp": "14:00",
+          "text": "to do so. I just can't get like four PhDs. And if I could, like, maybe I'll just be like 50, right? And so, being technical has become incredibly difficult."
+        }
+      ],
+      "alignment_note": "Explains why crossing fields got hard in technical domains without spending decades earning multiple PhDs."
+    },
+    {
+      "scene_index": 47,
+      "start_time": "14:08",
+      "end_time": "14:31",
+      "visual_type": "SLIDE",
+      "screen_title": "Working across fields changes fields, but was quite rare",
+      "visual_summary": "Black slide with centered text surrounded by three portraits and captions of cross-disciplinary scientists: Max Delbr\u00fcck, John Hopfield, and Eric Lander.",
+      "ocr_details": [
+        "Working across fields changes fields, but was quite rare",
+        "\u2192 Max Delbr\u00fcck / A physicist who helped found molecular biology.",
+        "\u2192 John Hopfield / Used the math of magnets to describe neural networks.",
+        "\u2192 Eric Lander / A mathematician who helped lead the Human Genome Project."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "14:11",
+          "text": "But when you do cross-pollinate these different industries, amazing things happen. Like, the founder of molecular biology was a physicist, right? A mathematician"
+        },
+        {
+          "timestamp": "14:20",
+          "text": "started leading the Human Genome Project, right? And the mathematics around magnets is what is used to help understand neural networks. But this is now like super hard to do, because you need so much information."
+        }
+      ],
+      "alignment_note": "Each example spoken corresponds to one of the three scientist profiles on screen (Delbr\u00fcck, Lander, Hopfield)."
+    },
+    {
+      "scene_index": 48,
+      "start_time": "14:32",
+      "end_time": "14:39",
+      "visual_type": "SLIDE",
+      "screen_title": "Jalape\u00f1o, our first chip",
+      "visual_summary": "Two-column slide with text on the left introducing 'Jalape\u00f1o, our first chip' and a photograph on the right of two executives holding a silicon wafer.",
+      "ocr_details": [
+        "Jalape\u00f1o, our first chip",
+        "Our engineers used AI to design a chip that makes AI faster."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "14:32",
+          "text": "Even in our own world, like, we have a bunch of AI helping us design like chips and writing software. These again are just very multidisciplinary pursuits."
+        }
+      ],
+      "alignment_note": "Points to OpenAI's Jalape\u00f1o AI-designed chip shown on the slide as a modern multidisciplinary example."
+    },
+    {
+      "scene_index": 49,
+      "start_time": "14:40",
+      "end_time": "15:07",
+      "visual_type": "SLIDE",
+      "screen_title": "What it could mean to be more ambitious",
+      "visual_summary": "Black slide titled 'What it could mean to be more ambitious' ('ambitious' in blue) featuring two real-world case study photos with captions: Paul Conyngham with his dog Rosie, and Hiroki Tomiyasu on his broccoli farm.",
+      "ocr_details": [
+        "What it could mean to be more ambitious",
+        "\u2192 Paul Conyngham and Rosie / An ML consultant who learned molecular biology to help his dog.",
+        "\u2192 Hiroki Tomiyasu / Runs a broccoli farm in Hokkaido with ChatGPT and Codex."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "14:42",
+          "text": "If you look at what it means to be ambitious, outside in the real world, there is a machine learning consultant using AI and molecular biology to"
+        },
+        {
+          "timestamp": "14:50",
+          "text": "like help treat their dog's cancer. There was this farmer in Hokkaido who used like ChatGPT and like computer vision models to build like robots to automate"
+        },
+        {
+          "timestamp": "15:00",
+          "text": "their farm, right? This cross-pollination and this will to create these things and learn and cross-pollinate across these different paths is what's really inspiring, right?"
+        }
+      ],
+      "alignment_note": "Jason describes the two individuals pictured on the slide: Paul Conyngham (ML consultant treating his dog) and Hiroki Tomiyasu (broccoli farm in Hokkaido)."
+    },
+    {
+      "scene_index": 50,
+      "start_time": "15:08",
+      "end_time": "15:51",
+      "visual_type": "SLIDE",
+      "screen_title": "People like you are needed everywhere",
+      "visual_summary": "Black slide with large centered heading and subtitle encouraging software engineers to learn the languages of other domains.",
+      "ocr_details": [
+        "People like you are needed everywhere",
+        "The fun part is learning the languages of fields that weren't your own."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "15:11",
+          "text": "I think earlier today I saw folks are using AI to like make more robots and also like discover exoplanets, right? And it's that curiosity and that enablement of what AI"
+        },
+        {
+          "timestamp": "15:20",
+          "text": "allows you to do in lowering that barrier is what allows you to be ambitious in those fields, right? And so when it comes to thinking about whether or not you're going to be replaced,"
+        },
+        {
+          "timestamp": "15:30",
+          "text": "a lot of it really is the fact that you now have the skills that everyone needs in every field. It's not just about like writing more apps, but actually thinking about, you know, what were the things I didn't pursue in college"
+        },
+        {
+          "timestamp": "15:40",
+          "text": "to pursue software engineering? How can I go back to those worlds and how can AI make those things easier, right? You can again, develop new language and understand what makes things amazing and then go pursue those things."
+        }
+      ],
+      "alignment_note": "Directly answers the 'Are we going to be replaced?' fear by reiterating that developers' skills are needed everywhere."
+    },
+    {
+      "scene_index": 51,
+      "start_time": "15:52",
+      "end_time": "16:23",
+      "visual_type": "SLIDE",
+      "screen_title": "You're a kid again, with the judgment you built in software",
+      "visual_summary": "Black slide highlighting the combination of beginner's curiosity and seasoned engineering judgment.",
+      "ocr_details": [
+        "You're a kid again, with the judgment you built in software",
+        "Not limited by what you think is possible."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "15:52",
+          "text": "And the great joy of this, and the reason why these like multidisciplinary artists are so successful is as they pursue new mediums,"
+        },
+        {
+          "timestamp": "16:00",
+          "text": "the act of being a kid again means that you have the naivety to ask for what might be impossible, right? The reason this cross-pollination works is if you have the judgment you built in software and you pursue another field, it means that you can ask the question that people might not think is possible, and you have the courage to use AI to help you get there, right? And so there's great benefits in being able to feel new again in a field while having all this experience in AI as well."
+        }
+      ],
+      "alignment_note": "Speaker unpacks both parts of the slide: 'being a kid again' (naivety to ask for the impossible) paired with 'the judgment you built in software'."
+    },
+    {
+      "scene_index": 52,
+      "start_time": "16:24",
+      "end_time": "16:59",
+      "visual_type": "SLIDE",
+      "screen_title": "I am a beginner again",
+      "visual_summary": "2x2 grid on a dark background with 'I am a beginner again' in the top-left and three icon cards detailing Jason's personal cross-disciplinary projects.",
+      "ocr_details": [
+        "I am a beginner again",
+        "Learning drums and music",
+        "Computer use to explore new software",
+        "Hardware Design and Physical Engineering"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "16:25",
+          "text": "Right? In my personal life, I've been like learning the drums, I've been building custom like drumming software, AI is helping me learn how to use like Ableton, I'm connecting my drums up to MIDI and learning there. You know, I've been using computer use to teach me new software that I never really had time to learn, and I've even been using AI to help me design like physical engineering. So I'm 3D printing parts, building chips, and again, these are things I was always curious about but never had the time. And again, part of having AI is not only getting my time back, everything else is accelerated. Right? And so being ambitious is about exploring those pursuits, not just spending more tokens like building an app."
+        }
+      ],
+      "alignment_note": "Jason describes each of the three cards in order: drums/Ableton/MIDI ('Learning drums and music'), computer use ('Computer use to explore new software'), and 3D printing/chips ('Hardware Design and Physical Engineering')."
+    },
+    {
+      "scene_index": 53,
+      "start_time": "17:00",
+      "end_time": "17:11",
+      "visual_type": "SLIDE",
+      "screen_title": "03 Be curious enough to pursue it",
+      "visual_summary": "Revisits section card 03 on a blue gradient background, now showing a second follow-up question at the bottom: 'What do you have time to try now?'",
+      "ocr_details": [
+        "03",
+        "Be curious enough to pursue it",
+        "What field did you put aside for software?",
+        "What do you have time to try now?"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "17:04",
+          "text": "And so this is also what I want you guys to think about, right? Again, what fields did you put aside? How can you pursue them now that you have more time with AI?"
+        }
+      ],
+      "alignment_note": "Speaker reads the two questions shown at the bottom of the card."
+    },
+    {
+      "scene_index": 54,
+      "start_time": "17:12",
+      "end_time": "17:27",
+      "visual_type": "SLIDE",
+      "screen_title": "Get inspired, and be inspiring",
+      "visual_summary": "Black slide displaying 'Get inspired, and be inspiring' with 'and be inspiring' highlighted in blue.",
+      "ocr_details": [
+        "Get inspired, and be inspiring"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "17:14",
+          "text": "And so when I'm talking about like increasing ambition, I'm not just saying like become a biologist, right? What I'm really saying is that like, part of your job now to become more ambitious is to be really inspired. Pursue these things, learn that language. And also for that next generation, to be inspiring."
+        }
+      ],
+      "alignment_note": "Connects the two halves of the displayed phrase to personal inspiration and inspiring the next generation."
+    },
+    {
+      "scene_index": 55,
+      "start_time": "17:28",
+      "end_time": "17:59",
+      "visual_type": "SLIDE",
+      "screen_title": "My advice was always 'solve a problem' not 'read a textbook'",
+      "visual_summary": "Black slide featuring centered text with `'solve a problem'` highlighted in blue.",
+      "ocr_details": [
+        "My advice was always 'solve a problem' not 'read a textbook'"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "17:29",
+          "text": "Right? When people used to ask me how to like learn how to code, it was never a case where I said, you know what? Like, you should go read a textbook on Python. It was always build something. Right? It was always go build a weather app. Go build a like note-taking app. Have a real problem and solve it. And now the scope of these problems are much bigger. And so, as software developers, I think our job now is to not only build amazing things"
+        },
+        {
+          "timestamp": "17:50",
+          "text": "and share them, but also inspire the next generation to have more hope too. Right? Because maybe software is changing, but really we're going to be able to contribute to so many more things."
+        }
+      ],
+      "alignment_note": "Directly paraphrases the contrast shown on the slide between reading a textbook and solving a real problem."
+    },
+    {
+      "scene_index": 56,
+      "start_time": "18:00",
+      "end_time": "18:19",
+      "visual_type": "SLIDE",
+      "screen_title": "The Codex app and Sites are acts of love",
+      "visual_summary": "Black slide listing three checkmark bullets explaining the team culture behind OpenAI's Codex app and Sites.",
+      "ocr_details": [
+        "The Codex app and Sites are acts of love",
+        "They built them for themselves first",
+        "They're online talking to the people who use them",
+        "PMs doing engineering, engineers doing design and prototypes"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "18:00",
+          "text": "Right. And like we see this everywhere. Like for example, the Codex app and Sites, these are all things that were acts of love. Codex app, the Sites product were all built by people who really cared about these things, talking"
+        },
+        {
+          "timestamp": "18:10",
+          "text": "to people online and working through these things, right? And now our PMs can do engineering, our engineers can do design, and this cross-pollination is inspiring others to do the same and take ownership of that work, right?"
+        }
+      ],
+      "alignment_note": "Jason walks through the three bullet points on screen explaining how Codex app and Sites were built."
+    },
+    {
+      "scene_index": 57,
+      "start_time": "18:20",
+      "end_time": "18:27",
+      "visual_type": "SLIDE",
+      "screen_title": "They're good because people cared",
+      "visual_summary": "Black slide with centered white heading and a smaller subtitle underneath.",
+      "ocr_details": [
+        "They're good because people cared",
+        "And when you care, you inspire other people to care"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "18:20",
+          "text": "And most of the things here that exist are here because people are tenacious and are trying and they want things to be beautiful."
+        }
+      ],
+      "alignment_note": "Reinforces the slide's message that quality and craft come from caring."
+    },
+    {
+      "scene_index": 58,
+      "start_time": "18:28",
+      "end_time": "18:43",
+      "visual_type": "SLIDE",
+      "screen_title": "Our mission is to benefit all",
+      "visual_summary": "Minimalist black slide displaying OpenAI's mission statement centered in white text.",
+      "ocr_details": [
+        "Our mission is to benefit all"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "18:28",
+          "text": "You know, and ultimately, our mission at OpenAI is to benefit all. And ultimately what that means isn't just having OpenAI have all this AI to control and, you know, use agent farms or whatever."
+        },
+        {
+          "timestamp": "18:40",
+          "text": "But also making sure that everyone has this technology so they can contribute in their own ways."
+        }
+      ],
+      "alignment_note": "Speaker cites OpenAI's mission statement displayed on screen."
+    },
+    {
+      "scene_index": 59,
+      "start_time": "18:44",
+      "end_time": "18:58",
+      "visual_type": "SLIDE",
+      "screen_title": "When execution is free, your ambition is limited by",
+      "visual_summary": "Revisits the three-pillar summary slide showing 'what you own', 'what you can describe', and 'what you're curious enough to pursue'.",
+      "ocr_details": [
+        "When execution is free, your ambition is limited by",
+        "what you own",
+        "what you can describe",
+        "what you're curious enough to pursue"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "18:44",
+          "text": "And so that's basically it, you know? Think about the things that you own. Go out, get inspired, develop the language you need to describe what beautiful things look like. And just make sure you're actually curious enough and take the time to pursue these new interests."
+        }
+      ],
+      "alignment_note": "Closing recap pointing through each of the three pillars in left-to-right order."
+    },
+    {
+      "scene_index": 60,
+      "start_time": "18:59",
+      "end_time": "19:03",
+      "visual_type": "SLIDE",
+      "screen_title": "That's what makes someone ambitious.",
+      "visual_summary": "Black closing slide with 'ambitious.' in blue and an invitation below.",
+      "ocr_details": [
+        "That's what makes someone ambitious.",
+        "Come tell me what you're making."
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [
+        {
+          "timestamp": "18:59",
+          "text": "And then that's how you become more ambitious. So I'm really excited to see what you guys are building and come by to the booth to chat. Thank you."
+        }
+      ],
+      "alignment_note": "Matches the slide's concluding statement and invitation to share projects."
+    },
+    {
+      "scene_index": 61,
+      "start_time": "19:04",
+      "end_time": "19:09",
+      "visual_type": "SLIDE",
+      "screen_title": "OpenAI | AIE 2026",
+      "visual_summary": "End card showing 'OpenAI' and 'AIE 2026' on a black background; at 19:06-19:09 the camera transitions to a full-screen shot of Jason Liu on stage in front of the projected end card as he steps off.",
+      "ocr_details": [
+        "OpenAI",
+        "AIE 2026"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [],
+      "alignment_note": "Closing branding slide as the speaker finishes and exits the stage to applause."
+    },
+    {
+      "scene_index": 62,
+      "start_time": "19:10",
+      "end_time": "19:25",
+      "visual_type": "SLIDE",
+      "screen_title": "AI Engineer Code Summit",
+      "visual_summary": "Closing conference bumper on a black background displaying the AI Engineer Code Summit logo and URL.",
+      "ocr_details": [
+        "AI Engineer",
+        "Code Summit",
+        "HTTPS://AI.ENGINEER"
+      ],
+      "structured_reconstruction": "",
+      "spoken_segments": [],
+      "alignment_note": "Outro bumper ending the video."
+    }
+  ]
+}
